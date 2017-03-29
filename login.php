@@ -3,11 +3,11 @@
 	$pass=$_POST['clave'];
 	$pass=md5($pass);
 	
-	$sql=mysql_query("SELECT * FROM usuarios WHERE correo='".$_POST["correo"]."'") or die (mysql_error());
-	$num=mysql_num_rows($sql);
+	$sql=$mysqli->query("SELECT * FROM usuarios WHERE correo='".$_POST["correo"]."'") or die (mysql_error());
+	$num=mysqli_num_rows($sql);
 	if ($num !== 1) echo "<script>alert('Correo no registrado');window.location='index.php';</script>";
 
-	$row = mysql_fetch_array($sql);
+	$row = mysqli_fetch_assoc($sql);
 	
 		
 	if($pass==$row['clave']){
@@ -21,6 +21,8 @@
 
 			header("location:./bienvenido.php");
 		}
-	else echo "<script>alert('Clave Invalida');window.location='index.php';</script>";	
+	else echo "<script>alert('Clave Invalida');window.location='index.php';</script>";
+	mysqli_close($mysqli);
+?>	
 	
 	

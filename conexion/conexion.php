@@ -1,8 +1,7 @@
 <?php
 
-	$conexion = mysql_connect("localhost","root","102236");
-	$db = mysql_select_db("eurobet");
+	$mysqli = new MySQLi("localhost","root","102236","eurobet");
 
-	if (!$conexion || !$db) die ("Error al conectar con el servidor -> ".mysql_error());
+	if (!$mysqli) die ("Error al conectar con el servidor -> ".mysqli_error());
 
 ?>

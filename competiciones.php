@@ -74,76 +74,61 @@
                     </div>
                     
                 </div>
+               
                 <div class="row">
-                    <div class="col-lg-6">
-
-                   
-                 <div class="table-responsive">
-
-                    <table class="table">
-                            <?php
-                                include("conexion/conexion.php");
-
-                                 $sql="SELECT * FROM competiciones  WHERE id_deporte='1' and activa=1";
-                                $rs=mysql_query($sql) or die (mysql_error());
-                            ?>
-                        <thead>
-                            <th>Futbol</th>
-                        </thead>
-                        <tbody>
+                    <form action="compe_selec.php" method="POST">
                         <?php
-                            while($row=mysql_fetch_array($rs)) {
-                                echo "<tr>";
                                 
-                                   
-                                        echo "<td>";
-                                        echo '<input type="checkbox" name=""> ';
-                                        echo $row["competicion"];
-                                        echo "</td>";
-                                    
-                                    
-                                
-                                echo "</tr>";
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                            include("conexion/conexion.php");
+                            $sql="SELECT id, deporte FROM deportes";
+                            $rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
+                          
+                            while($row=mysqli_fetch_array($rs)) {
+                                    echo '<div class="col-lg-6">
+                                    <div class="table-responsive">
+                                        <table class="table">    
+                                            <thead>
+                                                <th>'.$row['deporte'].'</th>
+                                            </thead>';
+                                            echo '<tbody>';
+
+                                            $id_dep=$row["id"];
+                                            $sql2="SELECT * FROM competiciones WHERE id_deporte=$id_dep";
+                                            $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
+                                                
+                                            while($row2=mysqli_fetch_array($rs2)) {
+                                                echo '<tr><td>';
+                                                echo '<input type="checkbox" name="competicion[]" value="'.$row2["id_competicion"].'"> ';
+                                                echo $row2["competicion"];
+                                                echo '</td></tr>';
+                                            }
+                                            echo  '</tbody>';
+                                        echo '</table>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
+                                     
+                                ?>
+                           
                     </div>
-                   
+                     <button>Continuar</button>
+                        </form>
+                                
+                            
+                        
+            
                 
             
         
         
-                 </div>
+                
                  <div class="col-lg-6">
                       <table class="table">
-                            <?php
-                                include("conexion/conexion.php");
-
-                                 $sql="SELECT * FROM competiciones  WHERE id_deporte='2' and activa=1";
-                                $rs=mysql_query($sql) or die (mysql_error());
-                            ?>
-                        <thead>
-                            <th>Beisbol</th>
-                        </thead>
-                        <tbody>
-                        <?php
-                            while($row=mysql_fetch_array($rs)) {
-                                echo "<tr>";
-                                
-                                   
-                                        echo "<td>";
-                                        echo '<input type="checkbox" name=""> ';
-                                        echo $row["competicion"];
-                                        echo "</td>";
-                                    
-                                    
-                                
-                                echo "</tr>";
-                            }
-                            ?>
+                            
                         </tbody>
                     </table>
+                   
+                    </form>
                  </div>
                  
 

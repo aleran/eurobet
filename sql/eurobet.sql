@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-03-2017 a las 00:52:56
+-- Tiempo de generación: 29-03-2017 a las 01:01:38
 -- Versión del servidor: 5.5.54-0+deb8u1
 -- Versión de PHP: 5.6.29-0+deb8u1
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `competiciones` (
   `inicio` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
   `fin` varchar(6) COLLATE utf8_unicode_ci NOT NULL,
   `activa` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `competiciones`
@@ -68,7 +68,9 @@ CREATE TABLE IF NOT EXISTS `competiciones` (
 INSERT INTO `competiciones` (`id_competicion`, `competicion`, `id_deporte`, `ambito`, `pais`, `inicio`, `fin`, `activa`) VALUES
 (1, 'UEFA - LIGA DE CAMPEONES ', 1, 'INTERNACIONAL', '', '2016', '2017', 1),
 (2, 'UEFA - EUROPA LEAGUE ', 1, 'INTERNACIONAL', '', '2016', '2017', 1),
-(3, 'MLB', 2, 'NACIONAL', 'USA', '2016', '2017', 1);
+(3, 'MLB', 2, 'NACIONAL', 'USA', '2016', '2017', 1),
+(4, 'NBA', 3, 'NACIONAL', 'USA', '2016', '2017', 1),
+(5, 'NHL', 4, 'NACIONAL', 'USA', '2016', '2017', 1);
 
 -- --------------------------------------------------------
 
@@ -79,7 +81,7 @@ INSERT INTO `competiciones` (`id_competicion`, `competicion`, `id_deporte`, `amb
 CREATE TABLE IF NOT EXISTS `deportes` (
 `id` int(11) NOT NULL,
   `deporte` varchar(50) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `deportes`
@@ -87,7 +89,9 @@ CREATE TABLE IF NOT EXISTS `deportes` (
 
 INSERT INTO `deportes` (`id`, `deporte`) VALUES
 (1, 'FUTBOL (SOCCER)'),
-(2, 'BEISBOL');
+(2, 'BEISBOL'),
+(3, 'BALONCESTO'),
+(4, 'HOCKEY');
 
 -- --------------------------------------------------------
 
@@ -259,12 +263,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `competiciones`
 --
 ALTER TABLE `competiciones`
-MODIFY `id_competicion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id_competicion` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `deportes`
 --
 ALTER TABLE `deportes`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `equipos`
 --
@@ -311,16 +315,16 @@ ADD CONSTRAINT `equipos_ibfk_1` FOREIGN KEY (`id_deporte`) REFERENCES `deportes`
 -- Filtros para la tabla `equipos_competicion`
 --
 ALTER TABLE `equipos_competicion`
-ADD CONSTRAINT `equipos_competicion_ibfk_2` FOREIGN KEY (`id_competicion`) REFERENCES `competiciones` (`id_competicion`),
-ADD CONSTRAINT `equipos_competicion_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id`);
+ADD CONSTRAINT `equipos_competicion_ibfk_1` FOREIGN KEY (`id_equipo`) REFERENCES `equipos` (`id`),
+ADD CONSTRAINT `equipos_competicion_ibfk_2` FOREIGN KEY (`id_competicion`) REFERENCES `competiciones` (`id_competicion`);
 
 --
 -- Filtros para la tabla `partidos`
 --
 ALTER TABLE `partidos`
-ADD CONSTRAINT `partidos_ibfk_3` FOREIGN KEY (`id_competicion`) REFERENCES `competiciones` (`id_competicion`),
 ADD CONSTRAINT `partidos_ibfk_1` FOREIGN KEY (`equipo1`) REFERENCES `equipos` (`id`),
-ADD CONSTRAINT `partidos_ibfk_2` FOREIGN KEY (`equipo2`) REFERENCES `equipos` (`id`);
+ADD CONSTRAINT `partidos_ibfk_2` FOREIGN KEY (`equipo2`) REFERENCES `equipos` (`id`),
+ADD CONSTRAINT `partidos_ibfk_3` FOREIGN KEY (`id_competicion`) REFERENCES `competiciones` (`id_competicion`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
