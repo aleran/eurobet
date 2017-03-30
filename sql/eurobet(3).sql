@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-03-2017 a las 01:01:38
+-- Tiempo de generación: 30-03-2017 a las 15:54:42
 -- Versión del servidor: 5.5.54-0+deb8u1
 -- Versión de PHP: 5.6.29-0+deb8u1
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `equipos` (
 `id` int(11) NOT NULL,
   `equipo` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `id_deporte` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `equipos`
@@ -111,7 +111,9 @@ CREATE TABLE IF NOT EXISTS `equipos` (
 
 INSERT INTO `equipos` (`id`, `equipo`, `id_deporte`) VALUES
 (1, 'REAL MADRID (ESP)', 1),
-(2, 'BAYERN MUNICH (GER)', 1);
+(2, 'BAYERN MUNICH (GER)', 1),
+(3, 'YANKEES', 2),
+(4, 'RED SOX', 2);
 
 -- --------------------------------------------------------
 
@@ -155,6 +157,7 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `gj1` float NOT NULL,
   `gj2` float NOT NULL,
   `empate` float NOT NULL,
+  `v_alta` float NOT NULL,
   `alta` float NOT NULL,
   `baja` float NOT NULL,
   `gpt1` float NOT NULL,
@@ -162,15 +165,19 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `gst1` float NOT NULL,
   `gst2` float NOT NULL,
   `g5to` float NOT NULL,
-  `runline` float NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `g5to2` float NOT NULL,
+  `v_runline` float NOT NULL,
+  `runline1` float NOT NULL,
+  `runline2` float NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `partidos`
 --
 
-INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `hora`, `gj1`, `gj2`, `empate`, `alta`, `baja`, `gpt1`, `gpt2`, `gst1`, `gst2`, `g5to`, `runline`) VALUES
-(1, 1, 1, 2, '2017-04-12', '13:45:00', 319, -114, 277, 3, 0, 0, 0, 0, 0, 0, 0);
+INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `hora`, `gj1`, `gj2`, `empate`, `v_alta`, `alta`, `baja`, `gpt1`, `gpt2`, `gst1`, `gst2`, `g5to`, `g5to2`, `v_runline`, `runline1`, `runline2`) VALUES
+(1, 1, 1, 2, '2017-04-12', '13:45:00', 319, -114, 277, 2.5, 100, -200, 500, 600, 700, 800, 900, 100, 0.5, -200, 300),
+(2, 3, 3, 4, '2017-03-17', '12:00', 200, 100, 300, 7, -200, -500, 900, 800, 500, 600, 700, 400, 1.2, -100, 200);
 
 -- --------------------------------------------------------
 
@@ -273,7 +280,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 -- AUTO_INCREMENT de la tabla `equipos`
 --
 ALTER TABLE `equipos`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `equipos_competicion`
 --
@@ -283,7 +290,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `partidos`
 --
 ALTER TABLE `partidos`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
