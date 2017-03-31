@@ -36,7 +36,7 @@
                 </li>
                 <li>
                     
-                    <a href="#" title="Bienvenido a Eurobet">Apostar</a>
+                    <a href="competiciones.php" title="Bienvenido a Eurobet">Apostar</a>
                 </li>
                 <li>
                     <a href="#" title="Líneas del día">Tickets Activos</a>
