@@ -72,13 +72,17 @@
                                                 echo '<tr>';
 	                                                echo '<td>Equipo</td>';
 	                                                echo '<td>Moneyline</td>';
+	                                                 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
 	                                                 echo '<td>Alta/Baja</td>';
-	                                                echo '<td>Runline</td>';
-                                                    if ($row["id_deporte"] != 2) {
-	                                                echo '<td>Primer Tiempo</td>';
+	                                             	}
+	                                                if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+	                                                	echo '<td>Runline</td>';
+	                                                }
+                                                    if ($row["id_deporte"] == 1) {
+	                                                	echo '<td>Primer Tiempo</td>';
                                                     }
-                                                     if ($row["id_deporte"] != 2) {
-	                                                echo '<td>Segundo Tiempo</td>';
+                                                     if ($row["id_deporte"] == 1) {
+	                                                	echo '<td>Segundo Tiempo</td>';
                                                     }
 	                                                if ($row["id_deporte"] == 2) {
 	                                                	echo '<td>5to ining</td>';
@@ -87,47 +91,61 @@
                                                 echo '</tr>';
                                                 echo '<tr class="agg">';
                                                 	echo '<td>'.$row3["equipo"].'</td>';
-                                                	/*echo '<input type="text" name="id_partido[]" value="'.$row2["id"].'">';
-                                                	echo '<input type="text" class="eq1" name="equipo1[]" value="'.$row3["id"].'">';
-                                                	echo '<input type="text" name="e1uipo2" value="'.$row4["id"].'">';*/
 
-                                                	echo '<td> <input type="checkbox"  name="gj1[]" value="'.$row2["id"].'-'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="alta[]" value="'.$row2["alta"].'"> Alta: '.$row2["alta"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="runline1[]" value="'.$row2["runline1"].'"> '.$row2["runline1"].'</td>';
-                                                    if ($row["id_deporte"] != 2) {
-                                                	echo '<td> <input type="checkbox" name="gpt1[]" value="'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="gst1[]" value="'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
+                                                	echo '<td> <input type="checkbox"  name="gj1[]" value="'.$row2["id"].'/'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
+                                                	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
+                                                		echo '<td> <input type="checkbox" name="alta[]" value="'.$row2["id"].'/'.$row2["alta"].'/'.$row2["v_alta"].'"> Alta: '.$row2["alta"].'</td>';
+                                                	}
+                                                	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+                                                	echo '<td> <input type="checkbox" name="runline1[]" value="'.$row2["id"].'/'.$row2["runline1"].'/'.$row2["v_runline"].'"> '.$row2["runline1"].'</td>';
+	                                                	
+	                                                }
+                                                    if ($row["id_deporte"] == 1) {
+                                                	echo '<td> <input type="checkbox" name="gpt1[]" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
+                                                	echo '<td> <input type="checkbox" name="gst1[]" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
-	                                                	echo '<td> <input type="checkbox" name="g5to[]" value="'.$row2["g5to"].'"> '.$row2["g5to"].'</td>';
+	                                                	echo '<td> <input type="checkbox" name="g5to1[]" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
 	                                                }
                                                 	
 
                                                 echo '</tr>';
                                                  echo '<tr>';
-                                                    if ($row["id_deporte"] != 2) {
+                                                    if ($row["id_deporte"] == 1) {
                                                 	echo '<td>Empate</td>';
-                                                	echo '<td> <input type="checkbox" name="empate[]" value="'.$row2["id"].'-'.$row2["empate"].'"> '.$row2["empate"].'</td>';
+                                                	echo '<td> <input type="checkbox" name="empate[]" value="'.$row2["id"].'/'.$row2["empate"].'"> '.$row2["empate"].'</td>';
                                                     }
                                                     else {
                                                         echo '<td></td>';
                                                         echo '<td></td>';
                                                     }
+                                                    if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
                                                 	echo '<td>'.$row2["v_alta"].'</td>';
-                                                	echo '<td>'.$row2["v_runline"].'</td>';
+                                                	}
+                                                	if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+                                                		echo '<td>'.$row2["v_runline"].'</td>';
+                                                	}
+
+                                                	else {
+                                                		echo '<td></td>';
+                                                	}
                                                 echo '</tr>';
                                                 echo '<tr>';
                                                 	echo '<td> '.$row4["equipo"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="gj2[]" value="'.$row2["id"].'-'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="baja[]" value="'.$row2["baja"].'">  Baja: '.$row2["baja"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="runline2[]" value="'.$row2["runline2"].'"> '.$row2["runline2"].'</td>';
-                                                    if ($row["id_deporte"] != 2) {
-                                                	echo '<td> <input type="checkbox" name="gpt2[]" value="'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
+                                                	echo '<td> <input type="checkbox" name="gj2[]" value="'.$row2["id"].'/'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
+                                                	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
+                                                		echo '<td> <input type="checkbox" name="baja[]" value="'.$row2["id"].'/'.$row2["baja"].'/'.$row2["v_alta"].'">  Baja: '.$row2["baja"].'</td>';
+                                                	}
+                                                	if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+                                                	echo '<td> <input type="checkbox" name="runline2[]" value="'.$row2["id"].'/'.$row2["runline2"].'/'.$row2["v_runline"].'"> '.$row2["runline2"].'</td>';
+                                                }
+                                                    if ($row["id_deporte"] == 1) {
+                                                	echo '<td> <input type="checkbox" name="gpt2[]" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
 
-                                                	echo '<td> <input type="checkbox" name="gst2[]" value="'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
+                                                	echo '<td> <input type="checkbox" name="gst2[]" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
-	                                                	echo '<td> <input type="checkbox" name="g5to2[]" value="'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
+	                                                	echo '<td> <input type="checkbox" name="g5to2[]" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
 	                                                }
                                                 echo '</tr>';
                                                
