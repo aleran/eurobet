@@ -92,6 +92,7 @@
                                            	include("conexion/conexion.php");
                                            		if (isset($_POST["gj1"])){
                                            	 	$gj1=$_POST["gj1"];
+                                           	 	$datos = array();
                            							foreach ($gj1 as $pa => $valor) {
                            								list($p,$l) = explode("/",$valor);
 
@@ -117,7 +118,25 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+
+                                                		for ($i=1; $i<=count ($l); $i++){
+ 
+															if ($l < 0) {
+                                                				$datos[] =1 +100/($l * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l/100;
+                                                			}
+														}  
+                                                		
                            						 	}
+                           						 	
+                           						 	
+
+                           						 
+
+                           						 	
 
                                            	 	}
 
@@ -149,6 +168,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l2); $i++){
+                                                			if ($l2 < 0) {
+                                                				$datos[] =1 +100/($l2 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l2/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -535,9 +565,15 @@
 
                         					
 
-                           					
+                           						foreach ($datos as $dat => $value) {
+                           						 		echo $value."/";
+                           						 	}
                            						
+                           						 	$datos3=array_product($datos);
 
+                           						 	$resultado=  100*$datos3;
+
+                           						 	echo "==".$resultado;
                             				
                            						 			
                            						 		
