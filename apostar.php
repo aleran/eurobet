@@ -215,6 +215,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l3); $i++){
+                                                			if ($l3 < 0) {
+                                                				$datos[] =1 +100/($l3 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l3/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -252,6 +263,18 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+
+                                                		for ($i=1; $i<=count ($l4); $i++){
+                                                			if ($l4 < 0) {
+                                                				$datos[] =1 +100/($l4 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l4/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -289,6 +312,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l5); $i++){
+                                                			if ($l5 < 0) {
+                                                				$datos[] =1 +100/($l5 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l5/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -323,6 +357,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l6); $i++){
+                                                			if ($l6 < 0) {
+                                                				$datos[] =1 +100/($l6 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l6/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -356,6 +401,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l7); $i++){
+                                                			if ($l7 < 0) {
+                                                				$datos[] =1 +100/($l7 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l7/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -390,6 +446,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l8); $i++){
+                                                			if ($l8 < 0) {
+                                                				$datos[] =1 +100/($l8 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l8/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -424,6 +491,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l9); $i++){
+                                                			if ($l9 < 0) {
+                                                				$datos[] =1 +100/($l9 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l9/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -457,6 +535,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l10); $i++){
+                                                			if ($l10 < 0) {
+                                                				$datos[] =1 +100/($l10 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l10/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -490,6 +579,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l11); $i++){
+                                                			if ($l11 < 0) {
+                                                				$datos[] =1 +100/($l11 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l11/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -523,6 +623,17 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l12); $i++){
+                                                			if ($l12 < 0) {
+                                                				$datos[] =1 +100/($l12 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l12/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
                                            	 	}
@@ -557,26 +668,20 @@
                                                 			echo '</td>';
                                             			
                                                 		echo '</tr>';
+
+                                                		for ($i=1; $i<=count ($l13); $i++){
+                                                			if ($l13 < 0) {
+                                                				$datos[] =1 +100/($l13 * -1);
+                                                			}
+                                                			else{
+                                                				$datos[] =1 +$l13/100;
+                                                			}
+ 
+															
+														}  
                            						 	}
 
-                                           	 	}
-                                            
-
-
-                        					
-
-                           						foreach ($datos as $dat => $value) {
-                           						 		echo $value."/";
-                           						 	}
-                           						
-                           						 	$datos3=array_product($datos);
-
-                           						 	$resultado=  100*$datos3;
-
-                           						 	echo "==".$resultado;
-                            				
-                           						 			
-                           						 		
+                                           	 	}	
                            								
                                             		
                                           
@@ -587,14 +692,18 @@
                                 
                                      
                                 ?>
-                           
+                          
                     </div>
-                     <button>Continuar</button>
-                        </form>
-                                
-                            
+                    Monto a Apostar<input type="text" name="monto" id="monto"> <span >Total:</span><fieldset disabled><input type="text" name="premio" id="total"></fieldset>
+                    
                         
-            
+                                
+                         <?php
+                        
+                           	$datos3=array_product($datos);
+                           	echo'<input type="hidden" value="'.$datos3.'" id="poduc_l">';
+                           						
+            			?>
                 
             
         
@@ -605,7 +714,7 @@
                             
                         </tbody>
                     </table>
-                   
+                    <button>Continuar</button>
                     </form>
                  </div>
                  
@@ -635,6 +744,16 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+    $("#monto").keyup(function(){
+    	var monto = $("#monto").val();
+    	console.log(monto);
+    	var producto=$("#poduc_l").val();
+    	var resultado = monto * producto;
+    	resultado=Math.round(resultado);
+    	console.log(resultado);
+    	$("#total").val(resultado);
+    })
     </script>
 </body>
 

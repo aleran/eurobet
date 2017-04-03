@@ -93,7 +93,7 @@
                                             echo '<tbody>';
 
                                             $id_dep=$row["id"];
-                                            $sql2="SELECT * FROM competiciones WHERE id_deporte=$id_dep";
+                                            $sql2="SELECT * FROM competiciones WHERE id_deporte=$id_dep AND activa=1";
                                             $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                                 
                                             while($row2=mysqli_fetch_array($rs2)) {
