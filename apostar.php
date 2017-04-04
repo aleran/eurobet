@@ -76,7 +76,7 @@
                 </div>
                
                 <div class="row">
-                    <form action="compe_selec.php" method="POST">
+                    <form action="apuesta.php" method="POST">
                         <?php
                         	
                             echo '<div class="col-lg-6">
@@ -93,6 +93,7 @@
                                            		if (isset($_POST["gj1"])){
                                            	 	$gj1=$_POST["gj1"];
                                            	 	$datos = array();
+                                           	 	$partidos;
                            							foreach ($gj1 as $pa => $valor) {
                            								list($p,$l) = explode("/",$valor);
 
@@ -107,12 +108,12 @@
                            						 		$row=mysqli_fetch_array($rs);
                            						 		$sql2="SELECT *  FROM equipos  WHERE id='".$row["equipo1"]."'";
                                             			$rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
-                                            			while ( $row2=mysqli_fetch_array($rs2)) {
+                                            			$row2=mysqli_fetch_array($rs2);
                                             				
                                             				echo '<td>';
                                                					echo $row2["equipo"];
                                                 			echo '</td>';
-                                            			}
+                                            			
                                             				echo '<td>';
                                                					echo $l;
                                                 			echo '</td>';
@@ -128,7 +129,18 @@
                                                 			else{
                                                 				$datos[] =1 +$l/100;
                                                 			}
+                                                			
 														}  
+
+														for ($i=1; $i<=count ($p); $i++){
+ 
+															
+                                                				$partidos[] = $p."/"."gj1"."/".$l;
+                                                	
+                                                			
+														}  
+
+
                                                 		
                            						 	}
                            						 	
@@ -176,9 +188,16 @@
                                                 			else{
                                                 				$datos[] =1 +$l2/100;
                                                 			}
+ 															
+															
+														}
+
+															for ($i=1; $i<=count ($p2); $i++){
  
 															
-														}  
+                                                				$partidos[] = $p2."/"."gj2"."/".$l2;
+                                                			
+														}    
                            						 	}
 
                                            	 	}
@@ -225,7 +244,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p3); $i++){
+ 
+															
+                                                				$partidos[] = $p3."/"."empate"."/".$l3;
+                                                			
+														}      
                            						 	}
 
                                            	 	}
@@ -274,7 +300,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p4); $i++){
+ 
+															
+                                                				$partidos[] = $p4."/"."alta"."/".$l4;
+                                                			
+														}       
                            						 	}
 
                                            	 	}
@@ -322,7 +355,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p5); $i++){
+ 
+															
+                                                				$partidos[] = $p5."/"."baja"."/".$l5;
+                                                			
+														}       
                            						 	}
 
                                            	 	}
@@ -367,7 +407,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p6); $i++){
+ 
+															
+                                                				$partidos[] = $p6."/"."runline1"."/".$l6;
+                                                			
+														}         
                            						 	}
 
                                            	 	}
@@ -411,7 +458,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p7); $i++){
+ 
+															
+                                                				$partidos[] = $p7."/"."runline2"."/".$l7;
+                                                			
+														}          
                            						 	}
 
                                            	 	}
@@ -456,7 +510,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p8); $i++){
+ 
+															
+                                                				$partidos[] = $p8."/"."gpt1"."/".$l8;
+                                                			
+														}    
                            						 	}
 
                                            	 	}
@@ -501,7 +562,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p9); $i++){
+ 
+															
+                                                				$partidos[] = $p9."/"."gpt2"."/".$l9;
+                                                			
+														}    
                            						 	}
 
                                            	 	}
@@ -545,7 +613,13 @@
                                                 			}
  
 															
-														}  
+														}
+														for ($i=1; $i<=count ($p10); $i++){
+ 
+															
+                                                				$partidos[] = $p10."/"."gst1"."/".$l10;
+                                                			
+														}   
                            						 	}
 
                                            	 	}
@@ -589,7 +663,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p11); $i++){
+ 
+															
+                                                				$partidos[] = $p11."/"."gst2"."/".$l11;
+                                                			
+														}    
                            						 	}
 
                                            	 	}
@@ -633,7 +714,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p12); $i++){
+ 
+															
+                                                				$partidos[] = $p12."/"."g5to1"."/".$l12;
+                                                			
+														}   
                            						 	}
 
                                            	 	}
@@ -678,7 +766,14 @@
                                                 			}
  
 															
-														}  
+														}
+
+														for ($i=1; $i<=count ($p13); $i++){
+ 
+															
+                                                				$partidos[] = $p13."/"."g5to2"."/".$l13;
+                                                			
+														}   
                            						 	}
 
                                            	 	}	
@@ -694,15 +789,23 @@
                                 ?>
                           
                     </div>
-                    Monto a Apostar<input type="text" name="monto" id="monto"> <span >Total:</span><fieldset disabled><input type="text" name="premio" id="total"></fieldset>
+                    <form action="apuesta.php" method="POST">  
+                    Monto a Apostar<input type="text" name="monto" id="monto"> <span>Total:</span><input type="text" class="total" disabled="">
+                    <input type="hidden" name="premio" class="total">
                     
                         
-                                
+                              
                          <?php
                         
                            	$datos3=array_product($datos);
                            	echo'<input type="hidden" value="'.$datos3.'" id="poduc_l">';
-                           						
+
+                           
+                           	foreach ($partidos as $key => $part) {
+                           		
+
+                           		echo '<input name=partido[] type="hidden" value="'.$part.'">';
+                           	}
             			?>
                 
             
@@ -751,8 +854,8 @@
     	var producto=$("#poduc_l").val();
     	var resultado = monto * producto;
     	resultado=Math.round(resultado);
-    	console.log(resultado);
-    	$("#total").val(resultado);
+    	$(".total").val(resultado);
+    	$(".total").val(resultado);
     })
     </script>
 </body>
