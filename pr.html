@@ -1,0 +1,70 @@
+<style type="text/css" media="print">
+#Imprime {
+	height: auto;
+	width: 310px;
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 7px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000;
+}
+@page{
+   margin: 0;
+}
+</style>
+
+<div id="Imprime">
+    <?php 
+		date_default_timezone_set("America/Chihuahua"); 
+		$fecha = date("Y/m/d H:i:s"); 
+		$idSucursal = getSucursal( $_SESSION['MM_Username']); //se obtiene la sucursal respecto al usuario que inicio sesion
+		$totalV = 0;
+		$totalCosto =0;
+	    $totalImporte=0;
+		
+	?>
+    --------------------------------
+    nombre de la tiendaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>
+    --------------------------------
+    Sucursal: <?php //paramatro recibe ?>   &nbsp;&nbsp;&nbsp;
+    Fecha: <?php echo $fecha ?><br>
+    Vendedor: <?php  //paramatro recibe ?><br>
+    Numero de pedido: <?php //paramatro recibe ?><br>
+    Nombre: <?php //paramatro recibe ?><br>
+    Direccion: <?php //paramatro recibe ?><br>
+    Tel: <?php//paramatro recibe?><br>  
+    <table width="200" border="1">
+  <tr>
+    <td>Descripcion</td>
+    <td>P.UNIT</td>
+    <td>Importe</td>
+  </tr>
+    <?php do { ?>
+      <tr>
+        <td><?php echo $row_ConsultaPedidos['str_descripcion'] ?></td>
+        <td><?php echo $row_ConsultaPedidos['dou_costo'] ?></td>
+        <td><?php echo $row_ConsultaPedidos['dou_importe'] ?></td>
+      </tr>
+      <?php 
+	$totalCosto += $row_ConsultaPedidos['dou_costo'];
+	$totalImporte += $row_ConsultaPedidos['dou_importe'];
+	?>
+      <tr>
+        <?php } while ($row_ConsultaPedidos = mysql_fetch_assoc($ConsultaPedidos)); ?>
+
+  <td>Total:</td>
+    <td><?php echo $totalCosto?></td>
+    <td><?php echo $totalImporte?></td>
+  </tr>
+  </table>
+  <br>
+    </div>
+
+
+    <p><a href="javascript:imprSelec('Imprime')" ><img src="imagenes/printer.png" width="140" height="140" /></a></p>

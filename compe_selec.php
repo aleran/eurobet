@@ -434,7 +434,7 @@
                                 ?>
                         
                    	
-                   <button id="ap">Continuar</button>
+                   <button type="button" id="ap">Continuar</button>
                         </form>
                                  
                             
@@ -458,7 +458,29 @@
         $("#wrapper").toggleClass("toggled");
     });
 
-   
+   $("#ap").click(function(){
+        var formul = document.jugadas,
+            elementos = formul.elements;
+            longElementos = elementos.length-1;
+                var n=0;
+                for(i=0; i < longElementos; i++){
+
+                    if (elementos[i].type=="checkbox") {
+                        if (elementos[i].checked) {
+                            n++;
+                        }
+
+                    }
+                }
+
+            if(n < 2){
+                alert("minimo 2 jugadas");
+             }
+             else if(n >= 15){
+                    alert("Maximo 15 jugadas");
+             }
+
+   })
         
       
   
