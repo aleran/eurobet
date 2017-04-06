@@ -1,12 +1,14 @@
  <?php
+   session_start();
    include("conexion/conexion.php");
+   include("lib/fecha_hora.php");
    do {
-         $caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; //posibles caracteres a usar
+         $caracteres = "1234567890"; //posibles caracteres a usar
          $numerodeletras=9; //numero de letras para generar el texto
-         $ticket = ""; //variable para almacenar la cadena generada
+         $ticket =$_SESSION['agencia']."-". ""; //variable para almacenar la cadena generada
          for($i=0;$i<$numerodeletras;$i++)
          {
-            $ticket .= substr($caracteres,rand(0,strlen($caracteres)),1); /*Extraemos 1 caracter de los caracteres 
+            $ticket .=substr($caracteres,rand(0,strlen($caracteres)),1); /*Extraemos 1 caracter de los caracteres 
             entre el rango 0 a Numero de letras que tiene la cadena */
          }
          $sql="SELECT codigo FROM parlay";
@@ -30,7 +32,7 @@ $partidos= $_POST["partido"];
 
    }
 
-    $sql_parlay="INSERT INTO parlay(codigo,monto,premio,ganar) VALUES('".$ticket."','".$_POST["monto"]."','".$_POST["premio"]."','0')";
+    $sql_parlay="INSERT INTO parlay(codigo,agencia,fecha,hora,monto,premio,ganar,activo) VALUES('".$ticket."','".$_SESSION['agencia']."','".fecha()."','".hora()."','".$_POST["monto"]."','".$_POST["premio"]."','0','1')";
       $rs=mysqli_query($mysqli,$sql_parlay) or die(mysqli_error($mysqli));
    echo "<br>".$ticket;                
                       

@@ -11,13 +11,11 @@
 	
 		
 	if($pass==$row['clave']){
-			ini_set("session.cookie_lifetime","7200");
-			ini_set("session.gc_maxlifetime","7200");
+			ini_set("session.cookie_lifetime","86400");
+			ini_set("session.gc_maxlifetime","86400");
 			session_start();
-			$_SESSION['correo']=$row['correo'];
-			$_SESSION['password']=$pass;
+			$_SESSION['agencia']=$row['agencia'];
 			$_SESSION['tipo']=$row['tipo'];
-			$_SESSION['nombreC']=$row['nombre']. " ". $row['apellido'];
 
 			header("location:./bienvenido.php");
 		}

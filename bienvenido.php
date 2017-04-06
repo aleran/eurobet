@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); ?>
+<?php session_start(); 
+    include("conexion/conexion.php");
+?>
 <head>
 
     <meta charset="utf-8">
@@ -31,8 +33,15 @@
                        BIENVENIDO
                     </a>
                 </li>
+                <?php
+                    if ($_SESSION["tipo"]=="root") {
+                         echo '<li>
+                            <a href="#" title="Creación de cuentas" data-toggle="modal" data-target="#modalUsuarios">Crear Usuarios</a>
+                        </li>';
+                     } 
+                    
+                ?>
                 <li>
-                    <a href="#" title="Registro de datos para creación de cuentas" data-toggle="modal" data-target="#modalRegistro">Tus apuestas</a>
                 </li>
                 <li>
                     
@@ -40,6 +49,9 @@
                 </li>
                 <li>
                     <a href="#" title="Líneas del día">Tickets Activos</a>
+                </li>
+                <li>
+                    <a href="#" title="Líneas del día">Consulta de Tickets</a>
                 </li>
                 <li>
                     <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket">Cambio de Password</a>
@@ -70,7 +82,13 @@
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                   	<h4>Bienvenido <?php echo $_SESSION['nombreC']; ?> <a href="#"> Salir</a></h4>
+                        <?php 
+                            $sql="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                            $rs=mysqli_query($mysqli,$sql);
+                            $row=mysqli_fetch_array($rs);
+                            echo "<h4>Agencia: ". $row["agencia"]; 
+                        ?> 
+                            <a href="#"> Salir</a></h4>
                     </div>
                     
                 </div>
@@ -79,7 +97,89 @@
         <br>
         
             </div>
+            
+            <!-- Modal Crear de Usuarios -->
 
+            <div class="modal fade" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="modalUsuariosLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="modalUsuariosLabel">Registro de Usuarios</h4>
+                        </div>
+                        <div class="modal-body">
+                        
+                            <form class="form-horizontal" method="POST" action="crear_usuarios.php">
+
+                                 <div class="form-group">
+                                    <label for="agencia" class="col-sm-4 control-label">Agencia:</label>
+                                    <div class="col-sm-6">
+                                        <select  name="agencia" id="agencia" class="form-control">
+                                        <?php 
+                                            $sql_agencias="SELECT * FROM agencias";
+                                            $rs_agencias=mysqli_query($mysqli,$sql_agencias) or die(mysqli_error());
+                                            while ($row_agencias=mysqli_fetch_array($rs_agencias)) {
+                                                echo  '<option value='.$row_agencias["id"].'>'.$row_agencias["agencia"].'</option>';
+                                            }
+
+                                        ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="cedula" class="col-sm-4 control-label">Cedula:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombre" class="col-sm-4 control-label">Nombre:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellido" class="col-sm-4 control-label">Apellido:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="correo" class="col-sm-4 control-label">Correo:</label>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" name="correo" id="correo" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clave" class="col-sm-4 control-label">Password:</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="clave" id="clave" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="direccion" class="col-sm-4 control-label">Dirección:</label>
+                                    <div class="col-sm-6">
+                                        <textarea class="form-control" name="direccion" id="direccion"  rows="3" required=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono" class="col-sm-4 control-label">Telefono:</label>
+                                    <div class="col-sm-6">
+                                        <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="" required>
+                                    </div>
+                                </div>
+                            
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button class="btn btn-success">Crear Usuario</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
             
 
           

@@ -32,9 +32,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" title="Registro de datos para creación de cuentas" data-toggle="modal" data-target="#modalRegistro">Regístrate</a>
-                </li>
-                <li>
                     
                     <a href="#" title="Bienvenido a Eurobet">Inicio</a>
                 </li>
@@ -217,10 +214,6 @@
                                 </div>
                             
 
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <button class="btn btn-success">Registrarse</button>
                         </div>
                         </form>
                     </div>

@@ -38,7 +38,7 @@
                     </div>
                     
                 </div>
-               	<form action="apostar.php" method="POST">
+               	<form action="apostar.php" name="jugadas" id="jugadas" method="POST">
                     <div class="row">
                     
                         <?php
@@ -69,7 +69,7 @@
                                             	$sql4="SELECT id, equipo FROM equipos WHERE id=$row2[equipo2]";
                                             	$rs4=mysqli_query($mysqli, $sql4) or die (mysqli_error());
                                             	$row4=mysqli_fetch_array($rs4);
-                                                echo '<tr>';
+                                                echo '<tr class="danger">';
 	                                                echo '<td>Equipo</td>';
 	                                                echo '<td>Moneyline</td>';
 	                                                 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
@@ -92,64 +92,334 @@
                                                 echo '<tr class="agg">';
                                                 	echo '<td>'.$row3["equipo"].'</td>';
 
-                                                	echo '<td> <input type="checkbox"  name="gj1[]" value="'.$row2["id"].'/'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk" name="gj1[]" id="gj1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
                                                 	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
-                                                		echo '<td> <input type="checkbox" name="alta[]" value="'.$row2["id"].'/'.$row2["alta"].'/'.$row2["v_alta"].'"> Alta: '.$row2["alta"].'</td>';
+                                                		echo '<td> <input type="checkbox" class="chk"  name="alta[]" id="alta'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["alta"].'/'.$row2["v_alta"].'"> Alta: ( '.$row2["v_alta"].' ) '.$row2["alta"].'</td>';
                                                 	}
                                                 	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
-                                                	echo '<td> <input type="checkbox" name="runline1[]" value="'.$row2["id"].'/'.$row2["runline1"].'/'.$row2["v_runline"].'"> '.$row2["runline1"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="runline1[]" id="runline1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline1"].'/'.$row2["v_runline1"].'"> ( '.$row2["v_runline1"].' )'.$row2["runline1"].'</td>';
 	                                                	
 	                                                }
                                                     if ($row["id_deporte"] == 1) {
-                                                	echo '<td> <input type="checkbox" name="gpt1[]" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="gst1[]" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="gst1[]" id="gst1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
-	                                                	echo '<td> <input type="checkbox" name="g5to1[]" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
+	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to1[]" id="g5to1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
 	                                                }
                                                 	
 
                                                 echo '</tr>';
-                                                 echo '<tr>';
-                                                    if ($row["id_deporte"] == 1) {
-                                                	echo '<td>Empate</td>';
-                                                	echo '<td> <input type="checkbox" name="empate[]" value="'.$row2["id"].'/'.$row2["empate"].'"> '.$row2["empate"].'</td>';
-                                                    }
-                                                    else {
-                                                        echo '<td></td>';
-                                                        echo '<td></td>';
-                                                    }
-                                                    if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
-                                                	echo '<td>'.$row2["v_alta"].'</td>';
-                                                	}
-                                                	if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
-                                                		echo '<td>'.$row2["v_runline"].'</td>';
-                                                	}
-
-                                                	else {
-                                                		echo '<td></td>';
-                                                	}
-                                                echo '</tr>';
+                                           
                                                 echo '<tr>';
                                                 	echo '<td> '.$row4["equipo"].'</td>';
-                                                	echo '<td> <input type="checkbox" name="gj2[]" value="'.$row2["id"].'/'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="gj2[]" id="gj2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
                                                 	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
-                                                		echo '<td> <input type="checkbox" name="baja[]" value="'.$row2["id"].'/'.$row2["baja"].'/'.$row2["v_alta"].'">  Baja: '.$row2["baja"].'</td>';
+                                                		echo '<td> <input type="checkbox" class="chk"  name="baja[]"" id="baja'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["baja"].'/'.$row2["v_alta"].'">  Baja: ( '.$row2["v_alta"].' )'.$row2["baja"].'</td>';
                                                 	}
                                                 	if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
-                                                	echo '<td> <input type="checkbox" name="runline2[]" value="'.$row2["id"].'/'.$row2["runline2"].'/'.$row2["v_runline"].'"> '.$row2["runline2"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="runline2[]" id="runline2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline2"].'/'.$row2["v_runline2"].'"> ( '.$row2["v_runline2"].' )'.$row2["runline2"].'</td>';
                                                 }
                                                     if ($row["id_deporte"] == 1) {
-                                                	echo '<td> <input type="checkbox" name="gpt2[]" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
 
-                                                	echo '<td> <input type="checkbox" name="gst2[]" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
+                                                	echo '<td> <input type="checkbox" class="chk"  name="gst2[]" id="gst2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
-	                                                	echo '<td> <input type="checkbox" name="g5to2[]" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
+	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to2[]" id="g5to2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
 	                                                }
                                                 echo '</tr>';
-                                               
 
+                                                echo '<tr>';
+                                                    if ($row["id_deporte"] == 1) {
+                                                    echo '<td>Empate</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="empate[]" id="empate'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empate"].'"> '.$row2["empate"].'</td>';
+                                                    echo '<td></td><td></td><td></td><td></td>';
+                                                    }
+
+                                                   
+                                                echo '</tr>';
+                                               
+                                               echo '<script src="js/jquery.js"></script>';
+                                               echo '<script>
+                                                        $(".chk").click(function(){
+                                                            if ($("#gj1'.$row2["id"].'").prop("checked")) {
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+ 
+                                                            }
+                                                            
+
+                                                            if ($("#gj2'.$row2["id"].'").prop("checked")) {
+                                                                 $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                            
+                                                            }
+
+                                                            if ($("#empate'.$row2["id"].'").prop("checked")) {
+                                                                 $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                            
+                                                            }
+
+                                                            if ($("#alta'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                    
+                                                                 $("#baja'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#g5to1'.$row2["id"].'").prop("checked", false)
+
+                                                                     $("#g5to2'.$row2["id"].'").prop("checked", false)
+                                                            
+                                                            }
+
+                                                             if ($("#baja'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                    
+                                                                 $("#alta'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#g5to1'.$row2["id"].'").prop("checked", false)
+
+                                                                     $("#g5to2'.$row2["id"].'").prop("checked", false)
+                                                            
+                                                            }
+
+                                                            if ($("#runline1'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                             if ($("#runline2'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                             if ($("#gpt1'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                            if ($("#gpt2'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                            if ($("#gst1'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                             if ($("#gst2'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                            if ($("#g5to1'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#g5to2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+                                                            if ($("#g5to2'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+
+                                                                   $("#g5to1'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                        
+                                                            
+                                                            }
+
+
+
+
+                                                        })
+                                                         
+                                                    </script>'; 
                                             }
                                             echo  '</tbody>';
                             		 echo '</div>';
@@ -164,7 +434,7 @@
                                 ?>
                         
                    	
-                   <button>Continuar</button>
+                   <button id="ap">Continuar</button>
                         </form>
                                  
                             
@@ -172,32 +442,14 @@
             
                 
             
-        
-        
-                
-               
-                   
-         
-                 
-
-            
-
-          
-
-
-            <!-- Contenido -->
-            
-        
-
-
-        
+    
 
 
 
 
     
 
-    <script src="js/jquery.js"></script>
+    
     <script src="js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
@@ -205,16 +457,9 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-     /* if (!$("<?php $row2["id"]?>").prop( "checked" )) {
-    	$(".eq1").remove();
 
-    }
-    $(".gj1").click(function(){
-    	console.log("entro");
-    	if ($(this).prop( "checked" )) {
-    		$(".agg").append('<input type="text" class="eq1" name="equipo1[]" value="0">');
-    	}
-    })*/
+   
+        
       
   
     </script>
