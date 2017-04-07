@@ -79,9 +79,9 @@
                     <form action="apuesta.php" method="POST">
                         <?php
                         	
-                            echo '<div class="col-lg-6">
+                            echo '<div class="col-lg-8 col-lg-offset-2">
                                  <div class="table-responsive">
-                                    <table class="table">    
+                                    <table class="table table-striped">    
                                         <thead>
                                             <th>Jugadas</th>
                                             <th>Equipos</th>
@@ -789,37 +789,47 @@
                                 ?>
                           
                     </div>
-                    <form action="apuesta.php" method="POST">  
-                    Monto a Apostar<input type="text" name="monto" id="monto"> <span>Total:</span><input type="text" class="total" disabled="">
-                    <input type="hidden" name="premio" class="total">
+                    <center>
+                    <h4>Usted tiene <span id="time"></span> segundos para realizar su apuesta.</h4><br>
+
                     
-                        
-                              
-                         <?php
-                        
-                           	$datos3=array_product($datos);
-                           	echo'<input type="hidden" value="'.$datos3.'" id="poduc_l">';
 
-                           
-                           	foreach ($partidos as $key => $part) {
-                           		
+                    <form class="form-inline" action="apuesta.php" method="POST">
+                      <div class="form-group">
+                        <label for="monto">Monto a Apostar: </label>
+                        <input type="text" name="monto" id="monto" autocomplete="off">
+                      </div>
+                      <div class="form-group">
+                        <label for="total">Ganancia: </label>
+                        <input type="text" class="total" disabled="">
+                      </div>   
+                      <input type="hidden" name="premio" class="total">
+                      
+                          
+                                
+                           <?php
+                          
+                             	$datos3=array_product($datos);
+                             	echo'<input type="hidden" value="'.$datos3.'" id="poduc_l">';
 
-                           		echo '<input name=partido[] type="hidden" value="'.$part.'">';
-                           	}
-            			?>
-                
-            
-        
-        
-                
-                 <div class="col-lg-6">
-                      <table class="table">
-                            
-                        </tbody>
-                    </table>
-                    <button>Continuar</button>
+                             
+                             	foreach ($partidos as $key => $part) {
+                             		
+
+                             		echo '<input name=partido[] type="hidden" value="'.$part.'">';
+                             	}
+              			?>
+                  
+              
+          
+          
+                  
+                   <div class="col-lg-8 col-lg-offset-2">
+                      
+                      <button class="btn btn-warning">Continuar</button>
                     </form>
                  </div>
+
                  
 
             
@@ -857,6 +867,15 @@
     	$(".total").val(resultado);
     	$(".total").val(resultado);
     })
+    var t=90;
+    setInterval(function(){
+      t--;
+      if (t<=0) {
+          
+         window.location="bienvenido.php";
+      }
+      $("#time").html(t);
+    },1000);
     </script>
 </body>
 

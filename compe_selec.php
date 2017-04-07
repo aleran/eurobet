@@ -44,14 +44,16 @@
                         <?php
                                 
                             include("conexion/conexion.php");
+                            include("lib/fecha_hora.php");
                              $competicion=$_POST["competicion"];
                              foreach ($competicion as $pb => $valor) {
 								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
                             	$rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
+                                
                             	while ($row=mysqli_fetch_array($rs)) {
                             		echo '<div class="col-lg-12">
                                 		<div class="table-responsive">
-                                        	<table class="table">    
+                                        	<table class="table table-striped">    
                                             	<thead>
                                                 	<th>'.$row['competicion'].'</th>
 
@@ -59,9 +61,17 @@
                                             	 echo '<tbody>';
 
                                             $id_comp=$row["id_competicion"];
-                                            $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp";
+                                            $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."'";
                                             $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
-                                                
+                                            $num2=mysqli_num_rows($rs2);
+
+                                            if ($num2 == 0) {
+                                                echo "<tr>";
+                                                    echo "<td>";
+                                                        echo "NO HAY PARTIDOS";
+                                                    echo "</td>";
+                                                echo "</tr>";
+                                            }
                                             while($row2=mysqli_fetch_array($rs2)) {
                                             	$sql3="SELECT id, equipo FROM equipos WHERE id=$row2[equipo1]";
                                             	$rs3=mysqli_query($mysqli, $sql3) or die (mysqli_error());
@@ -70,6 +80,7 @@
                                             	$rs4=mysqli_query($mysqli, $sql4) or die (mysqli_error());
                                             	$row4=mysqli_fetch_array($rs4);
                                                 echo '<tr class="danger">';
+                                                echo '<td>Fecha - Hora</td>';
 	                                                echo '<td>Equipo</td>';
 	                                                echo '<td>Moneyline</td>';
 	                                                 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
@@ -90,9 +101,12 @@
 	                                                
                                                 echo '</tr>';
                                                 echo '<tr class="agg">';
+                                                list($a,$m,$d) = explode("-",$row2["fecha"]);
+                                                echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora"].'</td>';
                                                 	echo '<td>'.$row3["equipo"].'</td>';
 
                                                 	echo '<td> <input type="checkbox" class="chk" name="gj1[]" id="gj1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
+
                                                 	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
                                                 		echo '<td> <input type="checkbox" class="chk"  name="alta[]" id="alta'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["alta"].'/'.$row2["v_alta"].'"> Alta: ( '.$row2["v_alta"].' ) '.$row2["alta"].'</td>';
                                                 	}
@@ -112,6 +126,7 @@
                                                 echo '</tr>';
                                            
                                                 echo '<tr>';
+                                                   echo '<td></td>';
                                                 	echo '<td> '.$row4["equipo"].'</td>';
                                                 	echo '<td> <input type="checkbox" class="chk"  name="gj2[]" id="gj2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
                                                 	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
@@ -132,13 +147,16 @@
 
                                                 echo '<tr>';
                                                     if ($row["id_deporte"] == 1) {
+                                                    echo '<td></td>';
                                                     echo '<td>Empate</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="empate[]" id="empate'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empate"].'"> '.$row2["empate"].'</td>';
                                                     echo '<td></td><td></td><td></td><td></td>';
-                                                    }
+                                                      }
 
                                                    
                                                 echo '</tr>';
+
+                                               
                                                
                                                echo '<script src="js/jquery.js"></script>';
                                                echo '<script>
@@ -423,6 +441,7 @@
                                             }
                                             echo  '</tbody>';
                             		 echo '</div>';
+
                             	}
                             	
 							}
@@ -432,10 +451,11 @@
                            
                                      
                                 ?>
-                        
-                   	
-                   <button type="button" id="ap">Continuar</button>
+                               <tr> <td><center><button class="btn btn-primary" type="button" id="ap">Continuar</button></center></td></tr>
                         </form>
+                        
+
+                   
                                  
                             
                         
@@ -453,7 +473,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
-    $(".menu-toggle").click(function(e) {
+    $(".menu-toggle").click(function() {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
@@ -461,7 +481,7 @@
    $("#ap").click(function(){
         var formul = document.jugadas,
             elementos = formul.elements;
-            longElementos = elementos.length-1;
+            longElementos = elementos.length;
                 var n=0;
                 for(i=0; i < longElementos; i++){
 
@@ -479,7 +499,8 @@
              else if(n >= 15){
                     alert("Maximo 15 jugadas");
              }
-
+            else $("#jugadas").submit();
+         
    })
         
       
