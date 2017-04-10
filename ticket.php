@@ -1,9 +1,13 @@
 <?php
 	include("conexion/conexion.php");
 
-	$sql_ticket="SELECT codigo, fecha, hora, monto, premio FROM parlay WHERE codigo='1-9535566'";
+	$sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='1-9535566'";
 	$rs_ticket=(mysqli_query($mysqli, $sql_ticket)) or die(mysqli_error());
 	$row_ticket=mysqli_fetch_array($rs_ticket);
+
+	$sql_agen="SELECT agencia FROM agencias WHERE id='".$row_ticket["agencia"]."'";
+	$rs_agen=mysqli_query($mysqli,$sql_agen) or die(mysqli_error());
+	$row_agen=mysqli_fetch_array($rs_agen);
 
 	
 	echo '<style>
@@ -15,7 +19,8 @@
 	</style>';
 	echo '<div id="ticket">';
 	echo "www.eurobet.com<br>";
-	echo "Agencia: Principal<br>";
+	echo "Agencia: ".$row_agen["agencia"]."<br>";
+	echo "Apuesta: ".$row_ticket["tipo"]."<br>";
 	list($a,$m,$d)= explode("-",$row_ticket["fecha"]);
 	$fecha = $d."/".$m."/".$a;
 	echo "Fecha: ".$fecha." ".$row_ticket["hora"]."<br>";
@@ -129,8 +134,8 @@
 	echo "Ganancia Maxima: ".$row_ticket["premio"]."<br><br>";
 	echo "<p>- Este ticket expira 7 dias luego de la impresión del mismo</p>";
 	echo "<p>- Sin ticket no se reclama el premio</p>";
-	echo "<p>- En caso de un error en la linea, rotación, hora programada, maxima apuesta, apuestas fuera de tiempo o comenzando el evento, las apuestas seran CANCELADAS y el monto del arriesgado será devuelto en consecuencia</p>";
-	echo "<p>Conozci y acepto las reglas</p>";
+	echo "<p>- En caso de un error en la linea, rotación, hora programada, maxima apuesta, apuestas fuera de tiempo o comenzando el evento, las apuestas seran CANCELADAS y el monto del arriesgado será devuelto en consecuencia.</p>";
+	echo "<p>Conozco y acepto las reglas.</p>";
 	echo "<p>visita www.eurobet.com</p>";
 	echo "</div>";
 

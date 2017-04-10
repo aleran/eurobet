@@ -70,9 +70,9 @@
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                   	<?php 
+                   	    <?php 
                     include("conexion/conexion.php");
-                          $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                         $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
                             $rs_ag=mysqli_query($mysqli,$sql_ag);
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
@@ -83,7 +83,7 @@
                 </div>
                
                 <div class="row">
-                    <form action="compe_selec.php" method="POST">
+                    <form action="compe_selec2.php" method="POST">
                         <?php
                                 
                             

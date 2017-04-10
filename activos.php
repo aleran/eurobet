@@ -95,9 +95,61 @@
                     </div>
                     
                 </div>
+                <br><br>
+                <div class="row">
+                	<div class="table-responsive">
+                		<table class="table table-striped">
+	                		<thead>
+	                            <th>Codigo</th>
+	                            <th>Tipo</th>
+	                            <th>Fecha</th>
+	                            <th>Apostado</th>
+	                            <th>Premio</th>
+	                            <th>Ganador</th>
+	                        </thead>
+	                        <tbody>
+	                        	
+                	
+	                <?php 
+	                    $sql_act="SELECT * FROM parlay WHERE activo='1'";
+	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
+	                    while ($row_act=mysqli_fetch_array($rs_act)) {
+	                    			
+	                    		echo"<tr>";
+	                    			echo"<td>";
+	                    				echo "<a href='con_activo.php?codigo=".$row_act["codigo"]."'>".$row_act["codigo"]."</a>";
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["tipo"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["fecha"] ." - ". $row_act["hora"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["monto"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["premio"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				if ($row_act["ganar"]==0) {
+	                    					echo "NO";
+	                    				}
+	                    				else echo "SI";
+	                    			echo"</td>";
+	                    		echo"</tr>";
+
+	                    }
+
+	                ?>
+                    		
+                				
+                			</tbody>
+                		</table>
+                	</div>
                 
             
-        <br>
+                <br>
         
             </div>
             

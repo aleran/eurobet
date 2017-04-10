@@ -95,9 +95,20 @@
                     </div>
                     
                 </div>
+                <br><br>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="" class="btn btn-primary">Tickets Activos</a>
+                        
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="" class="btn btn-danger">Buscar ticket</a>
+                    </div>
+                    
+                </div>
                 
             
-        <br>
+                <br>
         
             </div>
             

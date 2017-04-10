@@ -34,9 +34,9 @@
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                   	  <?php 
+                   		<?php 
                     include("conexion/conexion.php");
-                         $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                           $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
                             $rs_ag=mysqli_query($mysqli,$sql_ag);
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
@@ -45,11 +45,12 @@
                     </div>
                     
                 </div>
-               	<form action="apostar.php" name="jugadas" id="jugadas" method="POST">
+               	<form action="directa.php" name="jugadas" id="jugadas" method="POST">
                     <div class="row">
                     
                         <?php
                                 
+                          
                             include("lib/fecha_hora.php");
                              $competicion=$_POST["competicion"];
                              foreach ($competicion as $pb => $valor) {
@@ -499,12 +500,10 @@
                     }
                 }
 
-            if(n < 2){
-                alert("minimo 2 jugadas");
+            if(n > 1){
+                alert("Puede Seleccionar solo una jugada");
              }
-             else if(n >= 15){
-                    alert("Maximo 15 jugadas");
-             }
+            
             else $("#jugadas").submit();
          
    })

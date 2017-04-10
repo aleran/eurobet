@@ -70,9 +70,9 @@
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                   	  <?php 
+                   	 <?php 
                     include("conexion/conexion.php");
-                            $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                         $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
                             $rs_ag=mysqli_query($mysqli,$sql_ag);
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
@@ -96,7 +96,7 @@
                                         </thead>';
                                         echo '<tbody>';
 
-                                           	
+                                           	include("conexion/conexion.php");
                                            		if (isset($_POST["gj1"])){
                                            	 	$gj1=$_POST["gj1"];
                                            	 	$datos = array();
@@ -810,7 +810,7 @@
                         <label for="total">Ganancia: </label>
                         <input type="text" class="form-control total" disabled="">
                       </div>
-                      <input type="hidden" name="tipo" value="parlay">   
+                      <input type="hidden" name="tipo" value="directa">     
                       <input type="hidden" name="premio" class="total">
                       
                           
@@ -883,13 +883,6 @@
 
         }
 
-       else if($(".total").val() > 10000000){
-            $(".total").val(10000000);
-           
-            if(confirm("La ganancia maxima es de 10 millones de pesos, ¿desa continuar?")){
-              $("#apuesta").submit();
-            }
-        }
         else  $("#apuesta").submit();
       })
       var t=90;

@@ -32,7 +32,7 @@ $partidos= $_POST["partido"];
 
    }
 
-    $sql_parlay="INSERT INTO parlay(codigo,agencia,fecha,hora,monto,premio,ganar,activo) VALUES('".$ticket."','".$_SESSION['agencia']."','".fecha()."','".hora()."','".$_POST["monto"]."','".$_POST["premio"]."','0','1')";
+    $sql_parlay="INSERT INTO parlay(codigo,agencia,tipo,fecha,hora,monto,premio,ganar,activo) VALUES('".$ticket."','".$_SESSION['agencia']."','".$_POST['tipo']."','".fecha()."','".hora()."','".$_POST["monto"]."','".$_POST["premio"]."','0','1')";
       $rs=mysqli_query($mysqli,$sql_parlay) or die(mysqli_error($mysqli));
    echo "<br>".$ticket;                
                       
