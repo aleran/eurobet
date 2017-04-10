@@ -111,7 +111,7 @@
 	                        	
                 	
 	                <?php 
-	                    $sql_act="SELECT * FROM parlay WHERE activo='1'";
+	                    $sql_act="SELECT * FROM parlay WHERE activo='1' AND agencia='".$_SESSION["agencia"]."'";
 	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
 	                    while ($row_act=mysqli_fetch_array($rs_act)) {
 	                    			

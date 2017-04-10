@@ -826,6 +826,8 @@
 
                              		echo '<input name=partido[] type="hidden" value="'.$part.'">';
                              	}
+
+                              
               			?>
                   
               

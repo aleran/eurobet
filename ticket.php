@@ -1,7 +1,7 @@
 <?php
 	include("conexion/conexion.php");
 
-	$sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='1-9535566'";
+	$sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='".$_GET["cod_t"]."'";
 	$rs_ticket=(mysqli_query($mysqli, $sql_ticket)) or die(mysqli_error());
 	$row_ticket=mysqli_fetch_array($rs_ticket);
 
@@ -29,7 +29,7 @@
 
 	$sql="SELECT p.*, a.id_partido, a.logro, a.valor_logro, j.* FROM parlay p
 	JOIN apuestas a ON p.codigo=a.ticket
-	JOIN partidos j ON a.id_partido=j.id WHERE p.codigo='1-9535566'";
+	JOIN partidos j ON a.id_partido=j.id WHERE p.codigo='".$_GET["cod_t"]."'";
 	$rs=(mysqli_query($mysqli, $sql)) or die(mysqli_error());
 	while($row = mysqli_fetch_array($rs)) {
 			$sql_eq1="SELECT equipo from equipos WHERE id='".$row["equipo1"]."'";

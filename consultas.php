@@ -102,7 +102,7 @@
                         
                     </div>
                     <div class="col-lg-6">
-                        <a href="" class="btn btn-danger">Buscar ticket</a>
+                        <a href="" class="btn btn-danger" data-toggle="modal" data-target="#modalT">Buscar ticket</a>
                     </div>
                     
                 </div>
@@ -189,6 +189,41 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             <button class="btn btn-success">Crear Usuario</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+             <!-- Modal Buscar Ticket -->
+
+            <div class="modal fade" id="modalT" tabindex="-1" role="dialog" aria-labelledby="modalUsuariosLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="modalUsuariosLabel">Buscar Ticket por codigo</h4>
+                        </div>
+                        <div class="modal-body">
+                        
+                            <form class="form-horizontal" method="POST" action="con_activo.php">
+
+                                introdusca los numeros despues del guíon
+                                <div class="form-group">
+                                    <label for="codigo" class="col-sm-4 control-label">Codigo:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="codigo" id="codigo" placeholder="" required>
+                                    </div>
+                                </div>
+                                
+                            
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <button class="btn btn-success">Buscar</button>
                         </div>
                         </form>
                     </div>
