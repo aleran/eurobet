@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); 
+<?php include("time_sesion.php");  
     include("conexion/conexion.php");
-    if (!isset($_SESSION["agencia"])) {
-        header("location:index.php");
-    }
+   
 ?>
 <head>
 
@@ -25,7 +23,7 @@
 
 <body>
  
-    <div id="wrapper">
+    <div id="wrapper" class="hidden-print">
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
@@ -78,12 +76,12 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header2.png" class="img-responsive" alt="">
+                <img src="img/header2.png" class="img-responsive hidden-print" alt="">
         </header>
         <br>
             <div class="container-fluid">
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
-                <div class="row">
+                <div class="row hidden-print">
                     <div class="col-lg-6">
                         <?php 
                           $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
@@ -107,18 +105,37 @@
 	                        	
                 	
 	                <?php
-                        if (isset($_GET["codigo"])) {
-                            $codigo=$_GET["codigo"];
+
+                        if ($_SESSION["tipo"]=="root") {
+
+                            if (isset($_GET["codigo"])) {
+                                $codigo=$_GET["codigo"];
+                            }
+                            else if (isset($_POST["codigo"])) {
+                                $codigo=$_POST["codigo"];
+                            }
                         }
-                        else if (isset($_POST["codigo"])) {
-                            $codigo=$_SESSION["agencia"]."-".$_POST["codigo"];
+                        else {
+
+                            if (isset($_GET["codigo"])) {
+                                $codigo=$_GET["codigo"];
+                            }
+                            else if (isset($_POST["codigo"])) {
+                                $codigo=$_SESSION["agencia"]."-".$_POST["codigo"];
+                            }
                         }
+                        
                         
 
 
                         $sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='".$codigo."'";
                         $rs_ticket=(mysqli_query($mysqli, $sql_ticket)) or die(mysqli_error());
+                        $num_ticket=mysqli_num_rows($rs_ticket);
+                        if ($num_ticket < 1) {
+                            echo "<script>alert('Ticket no existe');window.location='consultas.php';</script>";
+                        }
                         $row_ticket=mysqli_fetch_array($rs_ticket);
+                        
 
                         $sql_agen="SELECT agencia FROM agencias WHERE id='".$row_ticket["agencia"]."'";
                         $rs_agen=mysqli_query($mysqli,$sql_agen) or die(mysqli_error());
@@ -243,12 +260,13 @@
                             echo "<p>Conozco y acepto las reglas.</p>";
                             echo "<p>visita www.eurobet.com</p>";
                             echo "</div>";
+                            echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
 
                         	                ?>
                     		
                 	<br><br>
-                	<a href="#" id="anular" class="btn btn-danger">Anular Ticket</a>
-                    <a href="#" id="ganar" class="btn btn-success">Ticket Ganador</a><br>
+                	<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a>
+                    <a href="#" id="ganar" class="btn btn-success hidden-print">Ticket Ganador</a><br>
                 
             
                 <br>
@@ -375,6 +393,9 @@
                 window.location="accion_ticket.php?ganar=<?php echo $row_ticket["codigo"]; ?>"
             }
 
+        })
+        $("#imprimir").click(function(){
+            window.print();
         })
     </script>
 </body>

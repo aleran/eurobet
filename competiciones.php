@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); ?>
+<?php include("time_sesion.php");  ?>
 <head>
 
     <meta charset="utf-8">
@@ -81,9 +81,12 @@
                     </div>
                     
                 </div>
-               
+               <center>Tipo de apuesta: <select name="t_apuesta">
+                   <option id="directa" value="directa">directa</option>
+                   <option id="parlay" value="parlay">parlay</option>
+               </select></center><br>
                 <div class="row">
-                    <form action="compe_selec.php" method="POST">
+                    <form id="form" action="compe_selec2.php" method="POST">
                         <?php
                                 
                             
@@ -175,6 +178,15 @@
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+
+    $("#directa").click(function(){
+        $("#form").attr("action","compe_selec2.php");
+
+    });
+    $("#parlay").click(function(){
+        $("#form").attr("action","compe_selec.php");
+
     });
     </script>
 </body>

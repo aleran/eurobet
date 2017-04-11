@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); ?>
+<?php include("time_sesion.php"); ?>
 <head>
 
     <meta charset="utf-8">
@@ -797,7 +797,12 @@
                           
                     </div>
                     <center>
-                    <h4>Usted tiene <span id="time"></span> segundos para realizar su apuesta.</h4><br>
+                    <?php 
+                      if (isset($_SESSION)) {
+                        echo '<h4>Usted tiene <span id="time"></span> segundos para realizar su apuesta.</h4><br>';
+                      }
+                    ?>
+                    
 
                     
                   <div class="col-lg-3 col-lg-offset-4">
@@ -836,7 +841,11 @@
                   
                    
                       
-                      <button type="button" class="btn btn-warning" id="apostar">Apostar</button>
+                      <?php
+                        if (isset($_SESSION)) {
+                          echo '<button type="button" class="btn btn-warning" id="apostar">Apostar</button>';
+                        }
+                      ?>
                     </form>
                  </div>
 
@@ -894,7 +903,9 @@
         }
         else  $("#apuesta").submit();
       })
-      var t=90;
+      <?php 
+        if (isset($_SESSION)) {
+          echo 'var t=90;
       setInterval(function(){
         t--;
         if (t<=0) {
@@ -902,7 +913,11 @@
            window.location="bienvenido.php";
         }
         $("#time").html(t);
-      },1000);
+      },1000);';
+        }
+      ?>
+       
+      
     </script>
 </body>
 

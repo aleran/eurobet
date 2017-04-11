@@ -1,5 +1,5 @@
  <?php
-   session_start();
+   include("time_sesion.php"); 
    include("conexion/conexion.php");
    include("lib/fecha_hora.php");
    do {

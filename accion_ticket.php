@@ -1,4 +1,5 @@
 <?php
+	include("time_sesion.php");
 	include("conexion/conexion.php");
 	if (isset($_GET["anular"])) {
 

@@ -11,9 +11,12 @@
 	
 		
 	if($pass==$row['clave']){
-			ini_set("session.cookie_lifetime","86400");
-			ini_set("session.gc_maxlifetime","86400");
 			session_start();
+	    	// inicio la sesión
+	    	$_SESSION["autentificado"]= "SI";
+	    	//defino la sesión que demuestra que el usuario está autorizado
+	    	$_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s");
+
 			$_SESSION['agencia']=$row['agencia'];
 			$_SESSION['tipo']=$row['tipo'];
 

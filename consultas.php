@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); 
+<?php include("time_sesion.php"); 
     include("conexion/conexion.php");
-    if (!isset($_SESSION["agencia"])) {
-        header("location:index.php");
-    }
 ?>
 <head>
 
@@ -209,8 +206,15 @@
                         <div class="modal-body">
                         
                             <form class="form-horizontal" method="POST" action="con_activo.php">
-
-                                introdusca los numeros despues del guíon
+                                <?php 
+                                    if ($_SESSION["tipo"]=="root") {
+                                        echo "Introduzca el codigo completo";
+                                    }
+                                    else {
+                                        echo "introduzca los numeros despues del guíon";
+                                    }
+                                ?>
+                                
                                 <div class="form-group">
                                     <label for="codigo" class="col-sm-4 control-label">Codigo:</label>
                                     <div class="col-sm-6">

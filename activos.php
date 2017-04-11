@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); 
+<?php include("time_sesion.php"); 
     include("conexion/conexion.php");
-    if (!isset($_SESSION["agencia"])) {
-        header("location:index.php");
-    }
+    
 ?>
 <head>
 
@@ -91,7 +89,7 @@
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
                         ?> 
-                            <a href="#"> Salir</a></h4>
+                            <a href="cerrar_sesion.php"> Salir</a></h4>
                     </div>
                     
                 </div>
@@ -111,7 +109,13 @@
 	                        	
                 	
 	                <?php 
-	                    $sql_act="SELECT * FROM parlay WHERE activo='1' AND agencia='".$_SESSION["agencia"]."'";
+	                	if ($_SESSION["tipo"]=="root") {
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1'";
+	                	}
+	                	else {
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND agencia='".$_SESSION["agencia"]."'";
+	                	}
+	                    
 	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
 	                    while ($row_act=mysqli_fetch_array($rs_act)) {
 	                    			

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); ?>
+<?php include("time_sesion.php");  ?>
 <head>
 
     <meta charset="utf-8">

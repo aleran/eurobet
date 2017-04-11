@@ -1,4 +1,6 @@
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <?php
+	include("time_sesion.php"); 
 	include("conexion/conexion.php");
 
 	$sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='".$_GET["cod_t"]."'";
@@ -17,6 +19,7 @@
 }
 
 	</style>';
+	echo '<div class="col-lg-6 col-lg-offset-5">';
 	echo '<div id="ticket">';
 	echo "www.eurobet.com<br>";
 	echo "Agencia: ".$row_agen["agencia"]."<br>";
@@ -137,6 +140,18 @@
 	echo "<p>- En caso de un error en la linea, rotación, hora programada, maxima apuesta, apuestas fuera de tiempo o comenzando el evento, las apuestas seran CANCELADAS y el monto del arriesgado será devuelto en consecuencia.</p>";
 	echo "<p>Conozco y acepto las reglas.</p>";
 	echo "<p>visita www.eurobet.com</p>";
+	echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button> ";
+	echo "<a href='bienvenido.php' class='btn btn-success hidden-print'  type='button'>Volver</a><br>";
 	echo "</div>";
+	echo "</div><br>";
+
+	
 
 ?>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+	$("#imprimir").click(function(){
+    	window.print();
+    })
+</script>

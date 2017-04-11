@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); 
+<?php include("time_sesion.php");  
     include("conexion/conexion.php");
-    if (!isset($_SESSION["agencia"])) {
-        header("location:index.php");
-    }
 ?>
 <head>
 

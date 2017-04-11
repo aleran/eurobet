@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start(); ?>
+<?php include("time_sesion.php");  ?>
 <head>
 
     <meta charset="utf-8">
@@ -52,6 +52,9 @@
                                 
                           
                             include("lib/fecha_hora.php");
+                            if (!isset($_POST["competicion"])) {
+                              echo "<script>alert('no selecciono ligas');window.location='competiciones.php'</script>";
+                            }
                              $competicion=$_POST["competicion"];
                              foreach ($competicion as $pb => $valor) {
 								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
