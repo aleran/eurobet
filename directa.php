@@ -42,7 +42,7 @@
                                     $row_ag=mysqli_fetch_array($rs_ag);
                                     echo "<h4>Agencia: ". $row_ag["agencia"]; 
                                  
-                                    echo '<a href="#"> Salir</a></h4>';
+                                    echo '<a href="cerrar_sesion.php"> Salir</a></h4>';
                              } 
                             ?>
                     </div>
