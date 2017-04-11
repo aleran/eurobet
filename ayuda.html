@@ -8,9 +8,11 @@
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
     <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
     <meta name="author" content="">
-    <title>¿Cómo apostar en EuroBet?</title>
+    <title>EUROBET:.Cómo apostar</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/box.css" rel="stylesheet">
+    <link href="css/caja-descargas.css" rel="stylesheet">
     <link href="pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
     <link rel="icon"  href="balon.ico">
 
@@ -18,12 +20,23 @@
 
 </head>
 
+
+ <header>
+                <a href="index.php"><img src="img/apuesta10.jpg" class="img-responsive" alt=""></a>
+        </header>
+
 <body>
 
-<h1>Cómo apostar en EuroBet</h1>
+<div class="cajadetexto" rel="">
+
+<h1>CÓMO APOSTAR EN EUROBET</h1><br>
+    
+   
+
+
     
     <p>
-    Este programa esta orientado a tomar y pagar apuestas en diversos deportes tales como el Béisbol de Grandes Ligas, el Fútbol y Baloncesto de los Estados Unidos, el Boxeo y el Fútbol de varios países como lo son LaLiga Santander, La Liga Premier, La Serie A.
+    Este sitio web está orientado a tomar y pagar apuestas en diversos deportes tales como: Béisbol de las Grandes Ligas, Fútbol,  Baloncesto de los Estados Unidos, Boxeo y Fútbol de varios países como lo son LaLiga Santander de España, La Liga Premier de Inglaterra, La Serie A de Italia.
     
     </p><br>
     
@@ -32,96 +45,104 @@
         
 Es un valor entre 100 y 9999. Se le coloca el signo menos para identificar al equipo favorito o macho. El valor del Logro para el otro equipo (Hembra) tendrá signo positivo y se deriva del Logro del favorito o Macho.<br><br>
         
-Igualmente se asigna un Logro a otros tipos de apuestas tales como Alta/Baja. Para efectos de los cálculos matemáticos el valor del logro se divide por cien y el resultado es utilizado en las funciones matemáticas definidas mas adelante.<br><br>
+Igualmente se asigna un Logro a otros tipos de apuestas tales como Altas y Bajas. Para efectos de los cálculos matemáticos el valor del logro se divide por cien y el resultado es utilizado en las funciones matemáticas definidas mas adelante.<br><br>
 
     </p>
     
   <p>
     
     
-    1.- PREMIO: Es el valor monetario producto de la relación entre el monto jugado y el logro asignado al equipo ganador y se expresa matemáticamente en las siguientes versiones:<br><br>
+    <strong>1.- PREMIO:</strong> Es el valor monetario producto de la relación entre el monto jugado y el logro asignado al equipo ganador y se expresa matemáticamente en las siguientes versiones:<br><br>
 
 <strong>A.- CUANDO EL EQUIPO GANADOR ES EL FAVORITO O MACHO:</strong><br><br>
-PREMIO = Montojugado / LogroM,  + MontoJugado, donde LogroM  es el logro del equipo favorito o macho y normalmente se identifica por un signo negativo. (-150)<br><br>
+<strong>PREMIO =</strong> Montojugado / LogroM,  + MontoJugado, donde LogroM  es el logro del equipo favorito o macho y normalmente se identifica por un signo negativo. (-180)<br><br>
 
-B.- CUANDO EL EQUIPO GANADOR NO ES EL FAVORITO O HEMBRA:
+<strong>B.- CUANDO EL EQUIPO GANADOR NO ES EL FAVORITO O HEMBRA:</strong>
 PREMIO = Montojugado * LogroH + MontoJugado, donde LogroH  es el logro del equipo no favorito y  se identifica por ser un valor positivo.(150)<br><br>
 
-C.- APUESTA ALTA O BAJA:<br><br>
-PREMIO = Montojugado / Logro(A/B)  + MontoJugado, donde logro(a/b) es valor asignado para apuesta de altas y bajas y que normalmente es de -120 pero puede variar.<br><br>
+<strong>C.- APUESTA ALTA O BAJA:</strong><br><br>
+<strong>PREMIO =</strong> Montojugado / Logro(A/B)  + MontoJugado, donde logro(a/b) es valor asignado para apuesta de altas y bajas y que normalmente es de -109 pero puede variar.<br><br>
 
-D.- APUESTA DE “RUN LINE”:
+<strong>D.- APUESTA DE “RUN LINE”:</strong>
 PREMIO = Montojugado / LogroR/L + MontoJugado, donde LogrojR/L  es el valor asignado a ese juego o equipo en particular.<br><br>
 
-2.- APUESTA O EQUIPO GANADOR:<br><br>
+<strong>2.- APUESTA O EQUIPO GANADOR:</strong><br><br>
 
 El ganador se establece de acuerdo a las siguientes reglas y escenarios:<br><br>
 
-A.-POR DERECHO o MONEYLINE:<br><br>
+<strong>A.-POR DERECHO o APUESTA DIRECTA:</strong><br><br>
 
 Cuando se apuesta a un solo equipo en particular. El premio se calcula aplicando las reglas anteriores.<br><br>
 
-B.- ALTA o BAJA:<br><br>
+<strong>B.- ALTA o BAJA:</strong><br><br>
 
-La suma de las carreras obtenidas por lo dos equipos establece un valor (a/bfinal). Igualmente se establece un valor de referencia que es definido como limite(a/b). y el cual es establecido por La Vegas. Si el resultado final esta por encima del limite(a/b) gana la apuesta alta de lo contrario gana la apuesta baja. El premio se calcula de acuerdo a la regla establecida. En el caso que el valor final (a/bfinal) sea igual al limite(a/b) se declara un empate y el montojugado = premio. Si es la única apuesta hecha se le regresa el monto apostado  al apostador.<br><br>
+La suma de las carreras, goles o puntos obtenidos por lo dos equipos establece un valor (a/b final). Igualmente se establece un valor de referencia que es definido como limite(a/b). y el cual es establecido por La Vegas. Si el resultado final esta por encima del limite(a/b) gana la apuesta <strong>ALTA</strong> de lo contrario gana la apuesta <strong>BAJA</strong>. El premio se calcula de acuerdo a la regla establecida. En el caso que el valor final (a/bfinal) sea igual al limite(a/b) se declara un empate y el montojugado = premio. Si es la única apuesta hecha se le regresa el monto apostado  al apostador.<br><br>
 
-C.- RUN LINE:<br><br>
+<strong>C.- RUN LINE:</strong><br><br>
 
 En este caso ambos equipos salen con el mismo logro (LogroM = LogroH) excepto para el Baseball, en donde cada equipo sale con un logro diferente. El favorito o macho se establece por que da unos puntos o carreras de ventaja (RunLine) al otro equipo. El equipo macho para poder ser el ganador deberá sacar una ventaja mayor que el valor del “RunLine” de lo contrario pierde el juego aun habiendo tenido en términos absolutos más puntos o carreras que el equipo contrario. El equipo ganador será el que obtenga mas puntos sumados o restados el RunLine.  Este valor se  asigna al juego y tendrá signo negativo para establecer el macho y signo positivo para establecer la hembra, de manera que el total de puntos o carreras alcanzadas por el Macho se le restara el “RunLine” y si el resultante es mayor del marcador alcanzado por la hembra se convierte en el equipo ganador, de lo contrario el ganador será la Hembra. El cálculo del premio se hace de acuerdo a las reglas para apuestas por Derecho o moneyline.<br><br>
 
-D.- MEDIO JUEGO:<br><br>
+<strong>D.- MEDIO JUEGO:</strong><br><br>
 
 Se hacen las mismas apuestas definidas anteriormente, con la diferencia que el resultado final se establece al finalizar el quinto 5º inning en el caso del Baseball o el primer tiempo en los demás deportes. Esta apuesta no se puede combinar con apuestas de juego completo.<br><br>
 
-E.- PARLAY:<br><br>
+<strong>E.- PARLAY:</strong><br><br>
 
 Es una combinación de las apuestas definidas anteriormente. El premio final se calcula en forma de cascada, de manera que el premio de la primera apuesta mas el monto apostado es el monto apostado de la segunda apuesta y así sucesivamente. Generalmente se establece un límite al número de apuestas. Para que el ticket sea ganador deberá acertar todas las apuestas. En el caso de un empate de Alta/Baja el monto apostado es igual al premio de la apuesta anterior. Igualmente cuando un juego sea suspendido y existan apuestas en ese juego.<br><br>
 
-3.-EVENTOS PARA APOSTAR:<br><br>
+<strong>3.-EVENTOS PARA APOSTAR:</strong><br><br>
 
-En general se apuesta a cualquier tipo de evento (deportes,mis universo,american idol, etc...) siempre y cuando la agencia desee tomar la apuesta y tenga la posibilidad de colocar los respectivos logros.
-A continuación se describen las características particulares de cada deporte.
-A.- BASEBALL (MLB, LVBP, Serie del Caribe)<br><br>
+<p align="justify">En general se apuesta a cualquier tipo de evento (deportes,mis universo,american idol, etc...) siempre y cuando la agencia desee tomar la apuesta y tenga la posibilidad de colocar los respectivos logros.</p>
+A continuación se describen las características particulares de cada deporte.<br><br>
+<strong>A.- BÉISBOL (MLB, Liga de México, Serie del Caribe)</strong><br><br>
 
-En el Baseball se pueden hacer los siguientes tipos de apuestas:<br><br>
+En el Béisbol se pueden hacer los siguientes tipos de apuestas:<br><br>
 
 Por Derecho o moneyline
-Alta y Baja con un logro fijo de -120.
+Alta y Baja con un logro fijo de -109.
 Run Line. En este caso uno de los equipos da 1 ½  de ventaja al otro equipo convirtiéndose en Macho con un Logro establecido por Las Vegas.
 Parlay de las apuestas anteriores.
 Quinto inning con las apuestas anteriores.<br><br>
  
 
-B.- FUTBOL Y BASKETBALL AMERICANOS (NFL, NBA, NCAA)<br><br>
+<strong>B.- FUTBOL Y BALONCESTO  AMERICANO (NFL, NBA, NCAA)</strong><br><br>
 
 En estos deportes todos los equipos salen pagando con el mismo logro -110.. Se juega bajo la variante del “Spread” en donde el macho da unos puntos de ventaja a la hembra. Acepta las siguientes apuestas:<br><br>
 
 Por derecho o moneyline.
-Alta y Baja con logro fijo de -120.
+Alta y Baja con logro fijo de -109.
 Parlay
 Medio juego<br><br>
  
 
 Igualmente se apuesta bajo la modalidad de Money Line en la cual cada equipo tiene su respectivo logro.<br><br>
 
-C.- FUTBOL  o SOCCER:<br><br>
+<strong>C.- FÚTBOL</strong><br><br>
 
-En este caso se incluye el Empate como otra apuesta. Acepta las siguientes apuestas:
+<p align="justify">En este caso se incluye el Empate como otra apuesta. Acepta las siguientes apuestas:
 
 Por derecho o moneyline (Ganador o empate)
 Alta y Baja
 Parlay
-Medio juego<br><br>
+Medio juego</p><br><br>
  
 
-D.- HOCKEY (NHL):<br><br>
+<strong>D.- HOCKEY (NHL):</strong><br><br>
 
 Cada equipo sale con su respectivo logro, acepta las siguientes apuestas:
 
 Por Derecho o moneyline
-Alta y Baja con un logro fijo de -120<br><br>
+Alta y Baja con un logro fijo de -109<br><br>
+
+
+<a href="index.php">Volver a Inicio</a>
     
         </p>
+        
+        </div>
+        
+        
+        
 </body>
 
 </html>

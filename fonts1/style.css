@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'eurobeticons';
+  src:  url('eurobeticons.eot?pgd307');
+  src:  url('eurobeticons.eot?pgd307#iefix') format('embedded-opentype'),
+    url('eurobeticons.ttf?pgd307') format('truetype'),
+    url('eurobeticons.woff?pgd307') format('woff'),
+    url('eurobeticons.svg?pgd307#eurobeticons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'eurobeticons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-check:before {
+  content: "\e900";
+}
+.icon-credit:before {
+  content: "\e901";
+}
+.icon-magnifying-glass:before {
+  content: "\e905";
+}
+.icon-print:before {
+  content: "\e902";
+}
+.icon-squared-cross:before {
+  content: "\e903";
+}
+.icon-user:before {
+  content: "\e904";
+}
+

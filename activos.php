@@ -6,16 +6,9 @@
 ?>
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
-    <meta name="author" content="">
-    <title>EuroBet :: Tu sitio de apuestas parlay en la web</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
-    <link rel="icon"  href="balon.ico">
+     <?php
+        include("head.php");
+    ?>
 
 
 
@@ -26,57 +19,18 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menu</a></div>
-                <li class="sidebar-brand">
-                    <a href="#">
-                       BIENVENIDO
-                    </a>
-                </li>
-                <?php
-                    if ($_SESSION["tipo"]=="root") {
-                         echo '<li>
-                            <a href="#" title="Creación de cuentas" data-toggle="modal" data-target="#modalUsuarios">Crear Usuarios</a>
-                        </li>';
-                     } 
-                    
-                ?>
-                <li>
-                </li>
-                <li>
-                    
-                    <a href="competiciones.php" title="Bienvenido a Eurobet">Apostar</a>
-                </li>
-                <li>
-                    <a href="#" title="Líneas del día">Tickets Activos</a>
-                </li>
-                <li>
-                    <a href="#" title="Líneas del día">Consulta de Tickets</a>
-                </li>
-                <li>
-                    <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket">Cambio de Password</a>
-                </li>
-                <li>
-                    <a href="#" title="Conoce nuestras políticas y términos de prestación de Servicio">Consulta tu Parlay</a>
-                </li>
-                <li>
-                    <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros">Reglas</a>
-                </li>
-                <li>
-                    <a href="#" title="PQR - Peticiones, Quejas y Reclamos">Contáctenos</a>
-                </li>
-                
-            </ul>
-        </div>
-    </div>
+        <!-- Menu -->
+        <?php 
+            include("menu2.php");
+        ?>
+</div>
 
         <!-- /#sidebar-wrapper -->
        
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header2.png" class="img-responsive" alt="">
+                <img src="img/header3.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">

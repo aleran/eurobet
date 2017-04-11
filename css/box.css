@@ -1,0 +1,37 @@
+.cajadetexto {
+  position: relative;
+  text-align: justify;
+  display: block;
+  background-color: #D6D9DA;
+  padding:10px;
+  color:#333;
+  margin-bottom:30px;
+}
+
+.caja[rel] {
+  padding-top: 40px;
+}
+
+.cajadetexto[rel]:after {
+  content: attr(rel);
+   position: absolute;
+text-align: left;
+   top: 0;
+   left: 0;
+   right: 0;
+}
+
+.cajadetexto[rel]:after {
+  content: attr(rel);
+  text-align: justify;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   background: orange;
+   padding: 5px;
+   font-size: 26px;
+  line-height: 0;
+  color: #fff;
+  font: bold 20px Arial, Helvetica, Sans-Serif;
+}

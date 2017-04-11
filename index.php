@@ -3,52 +3,76 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
-    <meta name="author" content="">
-    <title>EuroBet :: Tu sitio de apuestas parlay en la web</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
-    <link rel="icon"  href="balon.ico">
+    <?php
+        include("head.php");
+    ?>
 
 
 
 </head>
 
+
+
 <body>
+    <div style="float:right;">
+        <script src="js/meses.js"></script>
+    </div>
+
+
+    <script src="js/fecha.js"></script>
+
+    <div id="reloj" style="font-size:14px;"></div>
+    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 jugadas ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
  
     <div id="wrapper">
 
         <!-- Sidebar -->
+        <!-- Menu -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menu</a></div>
+            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menú</a></div>
                 <li class="sidebar-brand">
                     <a href="#">
-                       BIENVENIDO
+                       <span class="icon-home"></span>&nbsp;BIENVENIDO
                     </a>
                 </li>
+                
                 <li>
                     
-                    <a href="#" title="Bienvenido a Eurobet">Inicio</a>
+                    <a href="index.php" title="Bienvenido a Eurobet"><span class="icon-checkmark2"></span>&nbsp;Inicio</a>
+                </li>
+                
+                <li>
+                    <a href="#" title="Registro de datos para creación de cuentas" data-toggle="modal" data-target="#modalRegistro"><span class="icon-user-tie"></span>&nbsp;Regístrate</a>
+                </li>
+                
+                <li>
+                    <a href="competiciones.php" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
                 </li>
                 <li>
-                    <a href="#" title="Líneas del día">Logros / Líneas</a>
+                    <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket"><span class="icon-coin-dollar"></span>&nbsp;Consulta tu Ticket</a>
+                </li>
+                
+                
+                <li>
+                    <a href="reglas-de-juego.html" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
+                            
                 </li>
                 <li>
-                    <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket">Consulta tu Parlay</a>
+                    <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros"><span class="icon-bullhorn"></span>&nbsp;¿Cómo Apostar?</a>
                 </li>
                 <li>
-                    <a href="#" title="Conoce nuestras políticas y términos de prestación de Servicio">Reglas</a>
+                    <a href="juego-responsable.html" target="_blank" title="Juego Responsable"><span class="icon-hammer2"></span>&nbsp;Responsabilidad</a>
                 </li>
                 <li>
-                    <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros">¿Cómo Apostar?</a>
+                    <a href="formulario_contacto.html" target="_blank" title="PQR - Peticiones, Quejas y Reclamos"><span class="icon-pushpin"></span>&nbsp;Contáctenos</a>
                 </li>
                 <li>
-                    <a href="#" title="PQR - Peticiones, Quejas y Reclamos">Contáctenos</a>
+                    <a href="descargas.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-download"></span>&nbsp;Descargas</a>
+                </li>
+                
+                <li>
+                    <a href="registro.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-file-text2"></span>&nbsp;Informes</a>
                 </li>
                 
             </ul>
@@ -60,7 +84,7 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header2.png" class="img-responsive" alt="">
+                <img src="img/header3.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">
@@ -160,76 +184,14 @@
 
             <!-- Modal Registro de Usuarios -->
 
-            <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="modalRegistroLabel">Registro de Usuarios</h4>
-                        </div>
-                        <div class="modal-body">
-                        
-                            <form class="form-horizontal" method="POST" action="registrar.php">
-                                <div class="form-group">
-                                    <label for="cedula" class="col-sm-4 control-label">Cedula:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="nombre" class="col-sm-4 control-label">Nombre:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="apellido" class="col-sm-4 control-label">Apellido:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="correo" class="col-sm-4 control-label">Correo:</label>
-                                    <div class="col-sm-6">
-                                        <input type="email" class="form-control" name="correo" id="correo" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="clave" class="col-sm-4 control-label">Password:</label>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control" name="clave" id="clave" placeholder="" required>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="direccion" class="col-sm-4 control-label">Dirección:</label>
-                                    <div class="col-sm-6">
-                                        <textarea class="form-control" name="direccion" id="direccion"  rows="3" required=""></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="telefono" class="col-sm-4 control-label">Telefono:</label>
-                                    <div class="col-sm-6">
-                                        <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="" required>
-                                    </div>
-                                </div>
-                            
-
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+            
 
 
             <!-- Contenido -->
             <footer>
-                 <div class="container-fluid">
-                    <div class="col-lg-5 col-lg-offset-1 social" >
-                        <a href=""><img src="img/fb.png" alt="Facebook" ></a> <a href=""><img src="img/tw.png" alt="Twitter"></a> <a href=""><img src="img/ig.png" alt="Instagram" ></a> <a href=""><img src="img/yt.png" alt="YouTube"></a>
-                    </div>
-                    <div class="col-lg-5 col-lg-offset-1 copyr">© Copyright 2017 EuroBet</div>
-                    
-                </div>
+                 <?php
+                    include("footer.php");
+                 ?>
     
             </footer>
         </div>

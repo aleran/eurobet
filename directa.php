@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include("time_sesion.php");  ?>
+<?php session_start();  ?>
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
-    <meta name="author" content="">
-    <title>EuroBet :: Tu sitio de apuestas parlay en la web</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
-    <link rel="icon"  href="balon.ico">
+      <?php
+        include("head.php");
+    ?>
 
 
 
@@ -20,50 +13,20 @@
 
 <body>
  
-    <div id="wrapper">
+   <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menu</a></div>
-                <li class="sidebar-brand">
-                    <a href="#">
-                       BIENVENIDO
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Registro de datos para creación de cuentas" data-toggle="modal" data-target="#modalRegistro">Tus apuestas</a>
-                </li>
-                <li>
-                    
-                    <a href="#" title="Bienvenido a Eurobet">Apostar</a>
-                </li>
-                <li>
-                    <a href="#" title="Líneas del día">Tickets Activos</a>
-                </li>
-                <li>
-                    <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket">Cambio de Password</a>
-                </li>
-                <li>
-                    <a href="#" title="Conoce nuestras políticas y términos de prestación de Servicio">Consulta tu Parlay</a>
-                </li>
-                <li>
-                    <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros">Reglas</a>
-                </li>
-                <li>
-                    <a href="#" title="PQR - Peticiones, Quejas y Reclamos">Contáctenos</a>
-                </li>
-                
-            </ul>
-        </div>
+        <!-- Menu -->
+        <?php 
+            include("menu2.php");
+        ?>
     </div>
-
         <!-- /#sidebar-wrapper -->
        
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header2.png" class="img-responsive" alt="">
+                <img src="img/header3.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">
@@ -72,12 +35,16 @@
                     <div class="col-lg-6">
                    	 <?php 
                     include("conexion/conexion.php");
-                         $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
-                            $rs_ag=mysqli_query($mysqli,$sql_ag);
-                            $row_ag=mysqli_fetch_array($rs_ag);
-                            echo "<h4>Agencia: ". $row_ag["agencia"]; 
-                        ?> 
-                            <a href="#"> Salir</a></h4>
+                        if (isset($_SESSION["agencia"])) {
+                                
+                                  $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                                    $rs_ag=mysqli_query($mysqli,$sql_ag);
+                                    $row_ag=mysqli_fetch_array($rs_ag);
+                                    echo "<h4>Agencia: ". $row_ag["agencia"]; 
+                                 
+                                    echo '<a href="#"> Salir</a></h4>';
+                             } 
+                            ?>
                     </div>
                     
                 </div>
@@ -798,7 +765,7 @@
                     </div>
                     <center>
                     <?php 
-                      if (isset($_SESSION)) {
+                      if (isset($_SESSION["tipo"])) {
                         echo '<h4>Usted tiene <span id="time"></span> segundos para realizar su apuesta.</h4><br>';
                       }
                     ?>
@@ -838,7 +805,7 @@
                   
                    
                       <?php
-                        if (isset($_SESSION)) {
+                        if (isset($_SESSION["tipo"])) {
                           echo '<button type="button" class="btn btn-warning" id="apostar">Apostar</button>';
                         }
                       ?>
@@ -894,7 +861,7 @@
         else  $("#apuesta").submit();
       })
        <?php 
-        if (isset($_SESSION)) {
+        if (isset($_SESSION["tipo"])) {
           echo 'var t=90;
       setInterval(function(){
         t--;

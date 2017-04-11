@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<html lang="es">
+  <head>
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    
+    <title>EuroBet:.Contáctenos</title>
+
+    <!-- Bootstrap -->
+    <link rel="icon" href="balon.ico">
+    <link href="css1/bootstrap.min.css" rel="stylesheet">
+    <link href="css1/estilos.css" rel="stylesheet">
+    <script type="text/javascript" src="js1/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head> 
+  
+    <div style="float:right;">
+<script type="text/javascript">
+//<![CDATA[
+function makeArray() {
+for (i = 0; i<makeArray.arguments.length; i++)
+this[i + 1] = makeArray.arguments[i];}
+var months = new makeArray('Enero','Febrero','Marzo','Abril','Mayo',
+'Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+var date = new Date();
+var day = date.getDate();
+var month = date.getMonth() + 1;
+var yy = date.getYear();
+var year = (yy < 1000) ? yy + 1900 : yy;
+document.write("Hoy es: " + day + " de " + months[month] + " de " + year);
+//]]>
+</script>
+</div>
+
+
+
+
+  
+  
+  <br>
+<body>
+    
+   <h1><b>Formulario de Contacto EuroBet</b></h1>
+   <br>
+   
+    <div id="formulario">
+        <form class="form-inline" role="form" action="php/contacto.php" method="POST" id="contacto" title="Nombre">
+        <label for="nombre">Nombre Completo</label>
+        <input class="form-control name=" name="nombre" type="text" required="required" id="nombre" placeholder="Ejm : Guillermo Amaya" tabindex="1" title="Nombre">
+        <br>
+        <label for="email">Correo Electrónico</label>
+        <input class="form-control name=" name="email" type="email" required="required" id="email" placeholder="Ejm: area2@gmail.com" tabindex="2" title="Email">
+        <br>
+        <label for="telefono">Teléfono</label>
+        <input class="form-control name=" name="telefono" type="text" id="telefono" placeholder="Ejm : 322 7425787" tabindex="3" title="Telefono">
+        <br>
+        <label for="ciudad">Ciudad</label>
+        <input class="form-control name=" name="ciudad" type="text" id="ciudad" placeholder="Ejm: Bogotá" tabindex="4" title="ciudad">
+        <br>
+        
+        <label for="Mensaje">Redacte su mensaje</label>
+        <textarea class="form-control name=" name="mensaje" rows="4" id="mensaje" placeholder="Escriba su mensaje por favor" tabindex="5"></textarea>
+        <br>
+        <input class="btn btn-primary" type="submit" name="enviar" tabindex="7" value="Enviar"><input type="reset" tabindex="8" class="btn btn-primary" value="Borrar">
+        <input type="hidden" name="estado" value="1">
+        
+        </form>
+    </div>
+</body>
+</html>

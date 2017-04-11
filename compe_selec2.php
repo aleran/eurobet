@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include("time_sesion.php");  ?>
+<?php session_start()  ?>
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
-    <meta name="author" content="">
-    <title>EuroBet :: Tu sitio de apuestas parlay en la web</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
-    <link rel="icon"  href="balon.ico">
+     <?php
+        include("head.php");
+    ?>
 
 
 
 </head>
 
 <body>
- 
+    <div style="float:right;">
+        <script src="js/meses.js"></script>
+    </div>
 
 
+    <script src="js/fecha.js"></script>
+
+    <div id="reloj" style="font-size:14px;"></div>
+    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 jugadas ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <!-- Menu -->
+        <?php 
+            include("menu2.php");
+        ?>
+</div>
         <!-- /#sidebar-wrapper -->
        
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header2.png" class="img-responsive" alt="">
+                <img src="img/header3.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">
@@ -36,12 +44,28 @@
                     <div class="col-lg-6">
                    		<?php 
                     include("conexion/conexion.php");
-                           $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
-                            $rs_ag=mysqli_query($mysqli,$sql_ag);
-                            $row_ag=mysqli_fetch_array($rs_ag);
-                            echo "<h4>Agencia: ". $row_ag["agencia"]; 
-                        ?> 
-                            <a href="#"> Salir</a></h4>
+
+                          $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("y/m/d")."' AND inicio='0'";
+                            $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
+                            while ($row_inicio=mysqli_fetch_array($rs_inicio)) {
+
+                                if ($row_inicio["hora"] <= date("H:i:s")) {
+                                    $sql_act="UPDATE partidos SET inicio='1' WHERE id='".$row_inicio["id"]."'";
+                                    $rs_act=mysqli_query($mysqli,$sql_act) or die(mysqli_error());
+                                    
+                                }
+                            }
+                            
+                           if (isset($_SESSION["agencia"])) {
+                                
+                                  $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                                    $rs_ag=mysqli_query($mysqli,$sql_ag);
+                                    $row_ag=mysqli_fetch_array($rs_ag);
+                                    echo "<h4>Agencia: ". $row_ag["agencia"]; 
+                                 
+                                    echo '<a href="#"> Salir</a></h4>';
+                             } 
+                            ?>
                     </div>
                     
                 </div>
