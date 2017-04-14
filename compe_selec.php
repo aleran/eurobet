@@ -127,9 +127,7 @@
                                                     if ($row["id_deporte"] == 1) {
 	                                                	echo '<td>Primer Tiempo</td>';
                                                     }
-                                                     if ($row["id_deporte"] == 1) {
-	                                                	echo '<td>Segundo Tiempo</td>';
-                                                    }
+                                                    
 	                                                if ($row["id_deporte"] == 2) {
 	                                                	echo '<td>5to ining</td>';
 	                                                }
@@ -151,7 +149,7 @@
 	                                                }
                                                     if ($row["id_deporte"] == 1) {
                                                 	echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gst1[]" id="gst1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
+                                                	
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
 	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to1[]" id="g5to1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
@@ -173,7 +171,7 @@
                                                     if ($row["id_deporte"] == 1) {
                                                 	echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
 
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gst2[]" id="gst2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
+                                                	
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
 	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to2[]" id="g5to2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
