@@ -1,18 +1,29 @@
 <?php
 	echo '<div id="sidebar-wrapper" class="">
             <ul class="sidebar-nav">
-            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menú</a></div>
-                <li class="sidebar-brand">
-                    <a href="#">
-                       <span class="icon-home"></span>&nbsp;Sesion Iniciada
-                    </a>
-                </li>
-                
-                <li>
+            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menú</a></div>';
+
+                if(isset($_SESSION["tipo"])){
+                    echo '<li class="sidebar-brand">
+                        <a href="#">
+                           <span class="icon-home"></span>&nbsp;Sesion Iniciada
+                        </a>
+                    </li>';
+                }
+
+                else {
+                    echo '<li class="sidebar-brand">
+                        <a href="#">
+                           <span class="icon-home"></span>&nbsp;BIENVENIDO
+                        </a>
+                    </li>';
+                }
+                echo '<li>
                     
                     <a href="bienvenido.php" title="Bienvenido a Eurobet"><span class="icon-checkmark2"></span>&nbsp;Inicio</a>
                 </li>';
-                if ($_SESSION["tipo"]=="root") {
+                if(isset($_SESSION["tipo"])){
+                    if ($_SESSION["tipo"]=="root") {
 
                     echo '<li>
                     <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
@@ -22,16 +33,25 @@
                         <a href="consultas.php" title="Consulta de Tickets Activos"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
                     </li>';
                     
+                    }
                 }
                 
+                
+                if(isset($_SESSION["tipo"])){
+                    echo '<li>
+                        <a href="competiciones.php" title="Apuesta"><span class="icon-coin-dollar"></span>&nbsp;Apostar</a>
+                    </li>';
+                }
+                else {
 
-               echo '<li>
-                    <a href="competiciones.php" title="Apuesta"><span class="icon-coin-dollar"></span>&nbsp;Apostar</a>
-                </li>
+                     echo '<li>
+                        <a href="competiciones.php" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>';
+
+                }
                 
                 
                 
-                <li>
+                echo '<li>
                     <a href="reglas-de-juego.html" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
                             
                 </li>

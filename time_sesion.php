@@ -2,7 +2,7 @@
     session_start(); 
     //antes de hacer los cálculos, compruebo que el usuario está logueado
     //utilizamos el mismo script que antes
-    if ($_SESSION["autentificado"] != "SI") {
+   /* if ($_SESSION["autentificado"] != "SI") {
         //si no está logueado lo envío a la página de autentificación
         header("Location: index.php");
     } else {
@@ -20,5 +20,5 @@
         }else {
         $_SESSION["ultimoAcceso"] = $ahora;
        }
-    }
+    }*/
 ?>

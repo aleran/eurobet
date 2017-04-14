@@ -853,8 +853,8 @@
       })
 
       $("#apostar").click(function(){
-        if ($("#monto").val()< 500000 || $("#monto").val() > 1000000) {
-          alert("El monto a apostar debe estar entre 500 mil pesos y 1 millon de pesos");
+        if ($("#monto").val()< 5000 || $("#monto").val() > 10000000) {
+          alert("El monto a apostar debe estar entre $5000 y $10000000");
 
         }
 

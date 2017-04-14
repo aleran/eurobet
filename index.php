@@ -22,7 +22,7 @@
     <script src="js/fecha.js"></script>
 
     <div id="reloj" style="font-size:14px;"></div>
-    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 jugadas ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
+    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
  
     <div id="wrapper">
 
@@ -70,10 +70,11 @@
                 <li>
                     <a href="descargas.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-download"></span>&nbsp;Descargas</a>
                 </li>
-                
                 <li>
-                    <a href="registro.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-file-text2"></span>&nbsp;Informes</a>
+                    <a href="http://www.mismarcadores.com" target="_blank" title="Resultados de Deportes en Vivo"><span class="icon-file-text2"></span>&nbsp;Resultados</a>
                 </li>
+                
+                
                 
             </ul>
         </div>

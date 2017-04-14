@@ -57,7 +57,7 @@
                 
             
         <br><br><br><br>
-            <h1>Bienvenido!! Comience a Apostar.</h1>
+            <h1>¡Bienvenido!, Comience a Apostar.</h1>
             </div>
             
             <!-- Modal Crear de Usuarios -->

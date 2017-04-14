@@ -45,7 +45,7 @@
                    		<?php 
                     include("conexion/conexion.php");
 
-                          $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("y/m/d")."' AND inicio='0'";
+                          $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
                             while ($row_inicio=mysqli_fetch_array($rs_inicio)) {
 
@@ -529,6 +529,9 @@
 
             if(n > 1){
                 alert("Puede Seleccionar solo una jugada");
+             }
+             else if(n < 1) {
+                alert("Debe seleccionar una jugada");
              }
             
             else $("#jugadas").submit();

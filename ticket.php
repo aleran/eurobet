@@ -21,14 +21,14 @@
 	</style>';
 	echo '<div class="col-lg-6 col-lg-offset-5">';
 	echo '<div id="ticket">';
-	echo "www.eurobet.com<br>";
+	echo "www.eurobet.com.co<br>";
 	echo "Agencia: ".$row_agen["agencia"]."<br>";
 	echo "Apuesta: ".$row_ticket["tipo"]."<br>";
 	list($a,$m,$d)= explode("-",$row_ticket["fecha"]);
 	$fecha = $d."/".$m."/".$a;
 	echo "Fecha: ".$fecha." ".$row_ticket["hora"]."<br>";
 	echo "Ticket: ".$row_ticket["codigo"]."<br>";
-	echo "El ticket caduca a los 5 dias.<br><br>";
+	echo "El ticket caduca a los 5 días.<br><br>";
 
 	$sql="SELECT p.*, a.id_partido, a.logro, a.valor_logro, j.* FROM parlay p
 	JOIN apuestas a ON p.codigo=a.ticket
@@ -135,11 +135,11 @@
 	echo "Apostado: ".$row_ticket["monto"]."<br>";
 	echo "------------------------------------------------------------<br>";
 	echo "Ganancia Maxima: ".$row_ticket["premio"]."<br><br>";
-	echo "<p>- Este ticket expira 7 dias luego de la impresión del mismo</p>";
-	echo "<p>- Sin ticket no se reclama el premio</p>";
-	echo "<p>- En caso de un error en la linea, rotación, hora programada, maxima apuesta, apuestas fuera de tiempo o comenzando el evento, las apuestas seran CANCELADAS y el monto del arriesgado será devuelto en consecuencia.</p>";
+	echo "<p>- Este ticket expira 7 días luego de la impresión del mismo</p>";
+	echo "<p>- Sin ticket no se cobra el premio</p>";
+	echo "<p>- En caso de un error en la linea, rotación, hora programada, máxima apuesta, apuestas fuera de tiempo o comenzando el evento, las apuestas serán CANCELADAS y el monto del arriesgado será devuelto en consecuencia.</p>";
 	echo "<p>Conozco y acepto las reglas.</p>";
-	echo "<p>visita www.eurobet.com</p>";
+	echo "<p>visita www.eurobet.com.co</p>";
 	echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button> ";
 	echo "<a href='bienvenido.php' class='btn btn-success hidden-print'  type='button'>Volver</a><br>";
 	echo "</div>";

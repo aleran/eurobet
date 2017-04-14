@@ -35,7 +35,7 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header3.png" class="img-responsive" alt="">
+                <a href="index.php"><img src="img/header3.png" class="img-responsive" alt=""></a>
         </header>
         <br>
             <div class="container-fluid">
@@ -44,6 +44,7 @@
                     <div class="col-lg-6">
                    	<?php
                     include("conexion/conexion.php");
+
                     if (isset($_SESSION["agencia"])) {
                         
                           $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
@@ -57,17 +58,14 @@
                     </div>
                     
                 </div>
-               <center>Tipo de apuesta: <select name="t_apuesta">
-                   <option id="parlay" value="directa">parlay</option>
-                   <option id="directa" value="parlay">directa</option>
-               </select></center><br>
+                <center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a> <a href="competiciones2.php" class="btn btn-info">Directa</a></center>
                 <div class="row">
                     <form id="form" action="compe_selec.php" method="POST">
                         <?php
                                 
                             
 
-                            $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("y/m/d")."' AND inicio='0'";
+                            $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
                             while ($row_inicio=mysqli_fetch_array($rs_inicio)) {
 
@@ -156,14 +154,7 @@
         $("#wrapper").toggleClass("toggled");
     });
 
-    $("#directa").click(function(){
-        $("#form").attr("action","compe_selec2.php");
-
-    });
-    $("#parlay").click(function(){
-        $("#form").attr("action","compe_selec.php");
-
-    });
+   
     </script>
 </body>
 

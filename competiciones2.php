@@ -1,61 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include("time_sesion.php");  ?>
+<?php session_start();  ?>
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-    <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
-    <meta name="author" content="">
-    <title>EuroBet :: Tu sitio de apuestas parlay en la web</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
-    <link rel="icon"  href="balon.ico">
+     <?php
+        include("head.php");
+    ?>
 
 
 
 </head>
 
 <body>
- 
+    <div style="float:right;">
+        <script src="js/meses.js"></script>
+    </div>
+
+
+    <script src="js/fecha.js"></script>
+
+<div id="reloj" style="font-size:14px;"></div>
+<div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 jugadas ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-            <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle">Cerrar Menu</a></div>
-                <li class="sidebar-brand">
-                    <a href="#">
-                       BIENVENIDO
-                    </a>
-                </li>
-                <li>
-                    <a href="#" title="Registro de datos para creación de cuentas" data-toggle="modal" data-target="#modalRegistro">Tus apuestas</a>
-                </li>
-                <li>
-                    
-                    <a href="#" title="Bienvenido a Eurobet">Apostar</a>
-                </li>
-                <li>
-                    <a href="#" title="Líneas del día">Tickets Activos</a>
-                </li>
-                <li>
-                    <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket">Cambio de Password</a>
-                </li>
-                <li>
-                    <a href="#" title="Conoce nuestras políticas y términos de prestación de Servicio">Consulta tu Parlay</a>
-                </li>
-                <li>
-                    <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros">Reglas</a>
-                </li>
-                <li>
-                    <a href="#" title="PQR - Peticiones, Quejas y Reclamos">Contáctenos</a>
-                </li>
-                
-            </ul>
-        </div>
+        <!-- Menu -->
+        <?php 
+            include("menu2.php");
+        ?>
     </div>
 
         <!-- /#sidebar-wrapper -->
@@ -63,27 +35,32 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header2.png" class="img-responsive" alt="">
+                <img src="img/header3.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                   	    <?php 
+                    <?php
                     include("conexion/conexion.php");
-                         $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                    if (isset($_SESSION["agencia"])) {
+                        
+                          $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
                             $rs_ag=mysqli_query($mysqli,$sql_ag);
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
-                        ?> 
-                            <a href="cerrar_sesion.php"> Salir</a></h4>
+                         
+                            echo '<a href="cerrar_sesion.php"> Salir</a></h4>';
+                     } 
+                    ?>
                     </div>
                     
                 </div>
+                <center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a> <a href="competiciones2.php" class="btn btn-info">Directa</a></center>
                
                 <div class="row">
-                    <form action="compe_selec2.php" method="POST">
+                    <form id="form" action="compe_selec2.php" method="POST">
                         <?php
                                 
                             
@@ -176,6 +153,8 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+   
     </script>
 </body>
 
