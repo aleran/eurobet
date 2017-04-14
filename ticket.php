@@ -65,7 +65,7 @@
 
 
 		if ($row["logro"]=="empate") {
-			echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Enpate: ".$row["empate"]."<br>";
+			echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Empate: ".$row["empate"]."<br>";
 			echo "Fecha: ".$fecha2."<br>";
 			echo "Hora: ".$row["hora"]."<br>";
 			echo "----------------------------------------<br>";
