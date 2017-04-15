@@ -47,14 +47,22 @@
                     </div>
                     
                 </div>
-                <br><br>
+                
                 <div class="row">
+                    <?php 
+                        list($a,$m,$d) = explode("-", $_POST["desde"]);
+                        $desde=$d."/".$m."/".$a;
+                         list($a2,$m2,$d2) = explode("-", $_POST["hasta"]);
+                        $hasta=$d2."/".$m2."/".$a2;
+
+                    ?>
+                    <h3> Tickets Del: <?php echo $desde; ?> Al: <?php echo $hasta; ?></h3>
                 	<div class="table-responsive">
                 		<table class="table table-striped">
 	                		<thead>
 	                            <th>Codigo</th>
 	                            <th>Tipo</th>
-	                            <th>Fecha</th>
+	                            <th>Fecha - Hora</th>
 	                            <th>Apostado</th>
 	                            <th>Premio</th>
 	                            <th>Ganador</th>
@@ -64,15 +72,16 @@
                 	
 	                <?php 
 	                	if ($_SESSION["tipo"]=="root") {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1'";
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
 	                	}
 	                	else {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND agencia='".$_SESSION["agencia"]."'";
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND agencia='".$_SESSION["agencia"]."'AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
 	                	}
 	                    
 	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
 	                    while ($row_act=mysqli_fetch_array($rs_act)) {
-	                    			
+	                    		list($a3,$m3,$d3) = explode("-", $row_act["fecha"]);
+                                $fecha=$d3."/".$m3."/".$a3;
 	                    		echo"<tr>";
 	                    			echo"<td>";
 	                    				echo "<a href='con_activo.php?codigo=".$row_act["codigo"]."'>".$row_act["codigo"]."</a>";
@@ -81,7 +90,7 @@
 	                    				echo $row_act["tipo"];
 	                    			echo"</td>";
 	                    			echo"<td>";
-	                    				echo $row_act["fecha"] ." - ". $row_act["hora"];
+	                    				echo $fecha ." - ". $row_act["hora"];
 	                    			echo"</td>";
 	                    			echo"<td>";
 	                    				echo $row_act["monto"];

@@ -58,7 +58,7 @@
                 <br><br>
                 <div class="row">
                     <div class="col-lg-6">
-                        <a href="activos.php" class="btn btn-primary">Tickets Activos</a>
+                        <a href="tickets_fecha.php" class="btn btn-primary">Tickets Activos</a>
                         
                     </div>
                     <div class="col-lg-6">

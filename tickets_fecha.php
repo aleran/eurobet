@@ -47,29 +47,13 @@
                     </div>
                     
                 </div>
-                <br><br><br>
+                <br><br> 
                 <div class="row">
                
                     <div class="col-sm-6 col-xs-offset-2">
-                	
-	                	 <form class="form-horizontal" method="POST" action="saldo_agencia.php">
+                		<center><h3>Seleccione las fechas para mostrar tickets:</h3><br></center>
+	                	 <form class="form-horizontal" method="POST" action="activos.php">
 
-                            <div class="form-group">
-                                <label for="agencia" class="col-sm-4 control-label">Agencia:</label>
-                                <div class="col-sm-6">
-                                    <select  name="agencia" id="agencia" class="form-control">
-                                    	<?php 
-                                            $sql_agencias="SELECT * FROM agencias";
-                                            $rs_agencias=mysqli_query($mysqli,$sql_agencias) or die(mysqli_error());
-                                            while ($row_agencias=mysqli_fetch_array($rs_agencias)) {
-                                                echo  '<option value='.$row_agencias["id"].'>'.$row_agencias["agencia"].'</option>';
-                                            }
-
-                                        ?>
-                                    </select>
-                                </div>
-                                 
-                            </div>
                             <div class="form-group">
                                 <label for="desde" class="col-sm-4 control-label">Desde:</label>
                                 <div class="col-sm-6">
@@ -84,7 +68,7 @@
                                     <input type="text"  name="hasta" id="hasta" class="form-control" autocomplete="off">
                                     	
                                 </div>
-                                 <button class="btn btn-primary">Consultar</button>
+                                 <button class="btn btn-success">Ver Tickets</button>
                             </div>
                             
 

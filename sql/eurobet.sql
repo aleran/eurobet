@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-04-2017 a las 02:02:58
+-- Tiempo de generación: 15-04-2017 a las 14:44:22
 -- Versión del servidor: 5.5.54-0+deb8u1
 -- Versión de PHP: 5.6.29-0+deb8u1
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `apuestas` (
   `logro` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `valor_logro` float NOT NULL,
   `ticket` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `apuestas`
@@ -161,7 +161,20 @@ INSERT INTO `apuestas` (`id`, `id_partido`, `logro`, `valor_logro`, `ticket`) VA
 (185, 4, 'gj1', -400, '2-6012250'),
 (186, 4, 'baja', 700, '2-6012250'),
 (187, 10, 'gj1', 188, '2-638402'),
-(188, 7, 'gj2', 500, '2-638402');
+(188, 7, 'gj2', 500, '2-638402'),
+(189, 10, 'gj1', 188, '2-4860054'),
+(190, 4, 'gj1', -400, '2-4860054'),
+(191, 4, 'gj1', -400, '2-958432'),
+(192, 4, 'baja', 700, '2-958432'),
+(193, 4, 'gj1', -400, '2-51994676'),
+(194, 4, 'baja', 700, '2-51994676'),
+(195, 4, 'gj2', 500, '2-01066221'),
+(196, 9, 'gpt1', 167, '2-01066221'),
+(197, 9, 'gj1', 187, '2-2748320'),
+(198, 9, 'baja', -122, '2-2748320'),
+(199, 9, 'empate', 214, '2-2168612'),
+(200, 4, 'gj1', -400, '2-08739369'),
+(201, 4, 'baja', 700, '2-08739369');
 
 -- --------------------------------------------------------
 
@@ -281,20 +294,27 @@ CREATE TABLE IF NOT EXISTS `parlay` (
   `premio` decimal(10,0) NOT NULL,
   `ganar` int(1) NOT NULL,
   `activo` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `parlay`
 --
 
 INSERT INTO `parlay` (`id`, `codigo`, `agencia`, `tipo`, `fecha`, `hora`, `monto`, `premio`, `ganar`, `activo`) VALUES
-(40, '1-7870830', 2, 'parlay', '2017-04-10', '15:06:46', 500000, 3750000, 0, 1),
+(40, '1-7870830', 2, 'parlay', '2017-04-10', '15:06:46', 500000, 3750000, 1, 1),
 (41, '1-146383', 2, 'parlay', '2017-04-10', '15:17:37', 500000, 3600000, 0, 1),
 (42, '1-12645937', 2, 'parlay', '2017-04-10', '23:25:54', 600000, 10000000, 0, 1),
 (44, '1-14355500', 1, 'parlay', '2017-04-10', '23:43:14', 1000000, 10000000, 0, 1),
 (45, '2-68456991', 2, 'parlay', '2017-04-11', '00:07:30', 500100, 10000000, 0, 1),
 (46, '2-6012250', 2, 'parlay', '2017-04-11', '00:25:31', 500000, 5000000, 0, 1),
-(47, '2-638402', 2, 'parlay', '2017-04-11', '01:26:15', 500000, 8640000, 0, 1);
+(47, '2-638402', 2, 'parlay', '2017-04-11', '01:26:15', 500000, 8640000, 0, 1),
+(48, '2-4860054', 2, 'parlay', '2017-04-11', '17:56:00', 500000, 1800000, 0, 1),
+(49, '2-958432', 2, 'parlay', '2017-04-13', '20:54:10', 5000, 50000, 0, 1),
+(50, '2-51994676', 2, 'parlay', '2017-04-13', '22:24:04', 500000, 5000000, 0, 1),
+(51, '2-01066221', 2, 'parlay', '2017-04-13', '23:06:26', 500000, 8010000, 0, 1),
+(52, '2-2748320', 2, 'parlay', '2017-04-13', '23:22:05', 50000, 261123, 0, 1),
+(53, '2-2168612', 2, 'directa', '2017-04-14', '18:33:16', 5000, 15700, 0, 1),
+(54, '2-08739369', 2, 'parlay', '2017-04-14', '22:37:07', 50000, 500000, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -317,8 +337,6 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `baja` float NOT NULL,
   `gpt1` float NOT NULL,
   `gpt2` float NOT NULL,
-  `gst1` float NOT NULL,
-  `gst2` float NOT NULL,
   `g5to1` float NOT NULL,
   `g5to2` float NOT NULL,
   `v_runline1` float NOT NULL,
@@ -326,22 +344,21 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `runline1` float NOT NULL,
   `runline2` float NOT NULL,
   `inicio` int(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `partidos`
 --
 
-INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `hora`, `gj1`, `gj2`, `empate`, `v_alta`, `alta`, `baja`, `gpt1`, `gpt2`, `gst1`, `gst2`, `g5to1`, `g5to2`, `v_runline1`, `v_runline2`, `runline1`, `runline2`, `inicio`) VALUES
-(1, 1, 1, 2, '2017-04-07', '04:36:00', 318, -117, 286, 2.5, -146, 128, 500, 600, 700, 800, 900, 100, 1.5, -0.5, -101, -117, 1),
-(2, 3, 3, 4, '2017-03-17', '12:00:00', 200, 100, 300, 7, -200, -500, 900, 800, 500, 600, 700, 400, 1.2, 0, -100, 200, 0),
-(3, 4, 5, 6, '2017-04-06', '12:00:00', -200, 150, 0, 202, -150, 300, 0, 0, 0, 0, 0, 0, 45, 0, 800, -900, 0),
-(4, 5, 7, 8, '2017-04-18', '03:00:00', -400, 500, 0, 30, 800, 700, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 7, 9, 10, '2017-04-16', '02:00:00', -500, 200, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 0, -100, 200, 0),
-(6, 6, 13, 14, '2017-04-09', '03:00:00', 300, -200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(7, 8, 15, 16, '2017-04-11', '05:00:00', -800, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(9, 1, 17, 18, '2017-04-09', '03:40:00', 187, 171, 214, 2.5, 104, -122, 167, 151, 127, 131, 0, 0, 0, 0, -104, -114, 1),
-(10, 1, 2, 1, '2017-04-15', '03:40:00', 188, 172, 215, 2.6, 105, -121, 168, 152, 128, 132, 1, 1, 1, 1, -103, -113, 0);
+INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `hora`, `gj1`, `gj2`, `empate`, `v_alta`, `alta`, `baja`, `gpt1`, `gpt2`, `g5to1`, `g5to2`, `v_runline1`, `v_runline2`, `runline1`, `runline2`, `inicio`) VALUES
+(1, 1, 1, 2, '2017-04-12', '12:00:00', 318, -117, 286, 2.5, -146, 128, 500, 600, 900, 100, 1.5, -0.5, -101, -117, 1),
+(2, 3, 3, 4, '2017-03-17', '12:00:00', 200, 100, 300, 7, -200, -500, 900, 800, 700, 400, 1.2, 0, -100, 200, 0),
+(3, 4, 5, 6, '2017-04-06', '12:00:00', -200, 150, 0, 202, -150, 300, 0, 0, 0, 0, 45, 0, 800, -900, 0),
+(4, 5, 7, 8, '2017-04-18', '03:00:00', -400, 500, 0, 30, 800, 700, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(5, 7, 9, 10, '2017-04-16', '02:00:00', -500, 200, 1, 2, 3, 4, 5, 6, 9, 10, 50, 0, -100, 200, 0),
+(6, 6, 13, 14, '2017-04-09', '03:00:00', 300, -200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(7, 8, 15, 16, '2017-04-11', '05:00:00', -800, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
+(9, 1, 17, 18, '2017-05-09', '03:40:00', 187, 171, 214, 2.5, 104, -122, 167, 151, 0, 0, 0, 0, -104, -114, 0);
 
 -- --------------------------------------------------------
 
@@ -440,7 +457,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT de la tabla `apuestas`
 --
 ALTER TABLE `apuestas`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=189;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=202;
 --
 -- AUTO_INCREMENT de la tabla `competiciones`
 --
@@ -465,12 +482,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT de la tabla `parlay`
 --
 ALTER TABLE `parlay`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT de la tabla `partidos`
 --
 ALTER TABLE `partidos`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --

@@ -20,7 +20,13 @@
         <!-- Sidebar -->
         <!-- Menu -->
         <?php 
-            include("menu2.php");
+            if (isset($_SESSION["tipo"])) {
+               include("menu2.php");
+            }
+            else {
+                include("menu1.php");
+            }
+            
         ?>
     </div>
         
