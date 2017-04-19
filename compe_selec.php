@@ -102,7 +102,7 @@
                                             	 echo '<tbody>';
 
                                             $id_comp=$row["id_competicion"];
-                                            $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."'";
+                                            $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."' ORDER BY fecha ASC";
                                             $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                             $num2=mysqli_num_rows($rs2);
 

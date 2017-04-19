@@ -19,7 +19,7 @@
                     <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
                     </li>
                      <li>
-                        <a href="saldos.php" title="Resumen Economico"><span class="icon-coin-dollar"></span>&nbsp;Resumen E</a>
+                        <a href="saldos.php" title="Resumen Economico"><span class="icon-coin-dollar"></span>&nbsp;Cuentas</a>
                     </li>
                     
                     <li>
