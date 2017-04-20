@@ -22,7 +22,7 @@
     <script src="js/fecha.js"></script>
 
 <div id="reloj" style="font-size:14px;"></div>
-<div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 jugadas ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
+<div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un máximo de 15, monto mínimo de apuesta $5000 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
     <div id="wrapper">
 
         <!-- Sidebar -->
@@ -50,7 +50,7 @@
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
                         ?> 
-                            <a href="cerrar_sesion.php"> Salir</a></h4>
+                            <a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>
                     </div>
                     
                 </div>
@@ -90,7 +90,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cedula" class="col-sm-4 control-label">Cedula:</label>
+                                    <label for="cedula" class="col-sm-4 control-label">Cédula:</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required>
                                     </div>
@@ -126,7 +126,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="telefono" class="col-sm-4 control-label">Telefono:</label>
+                                    <label for="telefono" class="col-sm-4 control-label">Teléfono:</label>
                                     <div class="col-sm-6">
                                         <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="" required>
                                     </div>

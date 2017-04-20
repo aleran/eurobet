@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <?php session_start(); ?>
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
 
     
      <?php
@@ -242,6 +242,60 @@
                            						 	}
 
                                            	 	}
+
+                                              if (isset($_POST["empatept"])){
+                                                $empatept=$_POST["empatept"];
+                                        foreach ($empatept as $pa => $valor30) {
+                                          list($p30,$l30) = explode("/",$valor30);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "Empate 1 T";
+                                                      echo '</td>';
+
+                                                    $sql40="SELECT * FROM partidos WHERE id='$p30'";
+                                          $rs40=mysqli_query($mysqli, $sql40) or die (mysqli_error());
+
+                                          $row40=mysqli_fetch_array($rs40);
+                                          $sql50="SELECT *  FROM equipos  WHERE id='".$row40["equipo1"]."'";
+                                                  $rs50=mysqli_query($mysqli, $sql50) or die (mysqli_error());
+                                                  $row50=mysqli_fetch_array($rs50);
+                                                  $sql60="SELECT *  FROM equipos  WHERE id='".$row40["equipo2"]."'";
+                                                  $rs60=mysqli_query($mysqli, $sql60) or die (mysqli_error());
+                                                  $row60=mysqli_fetch_array($rs60);
+
+
+                                                    
+                                                    echo '<td>';
+                                                        echo $row50["equipo"]." - ". $row60["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo $l30;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+                                                    for ($i=1; $i<=count ($l30); $i++){
+                                                      if ($l30 < 0) {
+                                                        $datos[] =1 +100/($l30 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l30/100;
+                                                      }
+ 
+                              
+                            }
+
+                            for ($i=1; $i<=count ($p30); $i++){
+ 
+                              
+                                                        $partidos[] = $p30."/"."empatept"."/".$l30;
+                                                      
+                            }      
+                                        }
+
+                                              }
                                                
 
                                                if (isset($_POST["alta"])){
@@ -509,6 +563,8 @@
 
                                            	 	}
 
+                                              
+
 
                                            	 	if (isset($_POST["gpt2"])){
                                            	 		$gpt2=$_POST["gpt2"];
@@ -561,7 +617,107 @@
 
                                            	 	}
 
-                                     
+                                              if (isset($_POST["gst1"])){
+                                                $gst1=$_POST["gst1"];
+                                        foreach ($gst1 as $pa => $valor80) {
+                                          list($p80,$l80) = explode("/",$valor80);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "Ganar 2T";
+                                                      echo '</td>';
+
+                                                    $sql190="SELECT * FROM partidos WHERE id='$p80'";
+                                          $rs190=mysqli_query($mysqli, $sql190) or die (mysqli_error());
+
+                                          $row190=mysqli_fetch_array($rs190);
+                                          $sql200="SELECT *  FROM equipos  WHERE id='".$row190["equipo1"]."'";
+                                                  $rs200=mysqli_query($mysqli, $sql200) or die (mysqli_error());
+                                                  $row200=mysqli_fetch_array($rs200);
+
+
+                                                    
+                                                    echo '<td>';
+                                                        echo $row200["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo $l80;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+                                                    for ($i=1; $i<=count ($l80); $i++){
+                                                      if ($l80 < 0) {
+                                                        $datos[] =1 +100/($l80 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l80/100;
+                                                      }
+ 
+                              
+                            }
+
+                            for ($i=1; $i<=count ($p80); $i++){
+ 
+                              
+                                                        $partidos[] = $p80."/"."gst1"."/".$l80;
+                                                      
+                            }    
+                                        }
+
+                                              }
+
+                                              if (isset($_POST["gst2"])){
+                                                $gst2=$_POST["gst2"];
+                                        foreach ($gst2 as $pa => $valor90) {
+                                          list($p90,$l90) = explode("/",$valor90);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "Ganar 2T";
+                                                      echo '</td>';
+
+                                                    $sql220="SELECT * FROM partidos WHERE id='$p90'";
+                                          $rs220=mysqli_query($mysqli, $sql220) or die (mysqli_error());
+
+                                          $row220=mysqli_fetch_array($rs220);
+                                          $sql230="SELECT *  FROM equipos  WHERE id='".$row220["equipo2"]."'";
+                                                  $rs230=mysqli_query($mysqli, $sql230) or die (mysqli_error());
+                                                  $row230=mysqli_fetch_array($rs230);
+
+
+                                                    
+                                                    echo '<td>';
+                                                        echo $row230["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo  $l90;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+                                                    for ($i=1; $i<=count ($l90); $i++){
+                                                      if ($l90 < 0) {
+                                                        $datos[] =1 +100/($l90 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l90/100;
+                                                      }
+ 
+                              
+                            }
+
+                            for ($i=1; $i<=count ($p90); $i++){
+ 
+                              
+                                                        $partidos[] = $p90."/"."gst2"."/".$l90;
+                                                      
+                            }    
+                                        }
+
+                                              }
 
 
                                            	 	if (isset($_POST["g5to1"])){
@@ -690,16 +846,17 @@
                   <div class="col-lg-3 col-lg-offset-4">
                     <form action="apuesta.php" method="POST">
                       <div class="form-group">
-                        <label for="monto">Monto a Apostar: </label>
+                        <label for="monto">Monto de Apuesta: </label>
                         <input type="text" class="form-control" name="monto" id="monto" autocomplete="off">
                       </div>
                       <div class="form-group">
-                        <label for="total">Ganancia: </label>
+                        <label for="total">Su Ganancia: </label>
                         <input type="text" class="form-control total" disabled="">
                       </div>
                       <input type="hidden" name="tipo" value="parlay">   
                       <input type="hidden" name="premio" class="total">
-                      
+                      <h4>Monto Minimo Colombia:$5000</h4> 
+                      <h4>Monto Minimo Mexico:$30 </h4><br>
                           
                                 
                            <?php
@@ -771,15 +928,15 @@
       })
 
       $("#apostar").click(function(){
-        if ($("#monto").val()< 5000 || $("#monto").val() > 1000000) {
-          alert("El monto a apostar debe estar entre $5000 y $1000000");
+        if ($("#monto").val()< 30 || $("#monto").val() > 1000000) {
+          alert("El monto a apostar debe estar entre $5.000 y $1.000.000 para Colombia y $30 a $60.000 para Mexico");
 
         }
 
        else if($(".total").val() > 10000000){
             $(".total").val(10000000);
            
-            if(confirm("La ganancia maxima es de 10 millones de pesos, 多desa continuar?")){
+            if(confirm("La ganancia máxima es de 10 millones de pesos, ¿desea continuar?")){
               $("#apuesta").submit();
             }
         }

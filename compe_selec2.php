@@ -20,7 +20,7 @@
     <script src="js/fecha.js"></script>
 
     <div id="reloj" style="font-size:14px;"></div>
-    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 jugadas ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
+    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un máximo de 15, monto mínimo $5000 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
 
     <div id="wrapper">
 
@@ -131,6 +131,7 @@
 	                                                }
                                                     if ($row["id_deporte"] == 1) {
 	                                                	echo '<td>Primer Tiempo</td>';
+                                                        echo '<td>Segundo Tiempo</td>';
                                                     }
                                                      
 	                                                if ($row["id_deporte"] == 2) {
@@ -153,8 +154,9 @@
 	                                                	
 	                                                }
                                                     if ($row["id_deporte"] == 1) {
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
-                                                	
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gst1[]" id="gst1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
+                                                    
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
 	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to1[]" id="g5to1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
@@ -174,9 +176,10 @@
                                                 	echo '<td> <input type="checkbox" class="chk"  name="runline2[]" id="runline2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline2"].'/'.$row2["v_runline2"].'"> ( '.$row2["v_runline2"].' )'.$row2["runline2"].'</td>';
                                                 }
                                                     if ($row["id_deporte"] == 1) {
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gst2[]" id="gst2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
 
-                                                	
+                                                    
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
 	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to2[]" id="g5to2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
@@ -184,11 +187,12 @@
                                                 echo '</tr>';
 
                                                 echo '<tr>';
-                                                    if ($row["id_deporte"] == 1) {
+                                                     if ($row["id_deporte"] == 1) {
                                                     echo '<td></td>';
                                                     echo '<td>Empate</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="empate[]" id="empate'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empate"].'"> '.$row2["empate"].'</td>';
-                                                    echo '<td></td><td></td><td></td><td></td>';
+                                                    echo '<td></td><td></td>';
+                                                     echo '<td> <input type="checkbox" class="chk"  name="empatept[]" id="empatept'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empatept"].'"> '.$row2["empatept"].'</td>';
                                                       }
 
                                                    
@@ -254,6 +258,29 @@
                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
 
                                                                    $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empatept'.$row2["id"].'").prop("checked", false)
+                                                            
+                                                            }
+
+                                                            if ($("#empatept'.$row2["id"].'").prop("checked")) {
+                                                                 $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#gpt1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empate'.$row2["id"].'").prop("checked", false)
                                                             
                                                             }
 
@@ -489,7 +516,7 @@
                            
                                      
                                 ?>
-                               <tr> <td><center><button class="btn btn-primary" type="button" id="ap">Continuar</button></center></td></tr>
+                               <tr> <td><center><button class="btn btn-primary" id="ap">Continuar</button></center></td></tr>
                         </form>
                         
 
@@ -516,35 +543,42 @@
         $("#wrapper").toggleClass("toggled");
     });
 
-   $("#ap").click(function(){
         var formul = document.jugadas,
-            elementos = formul.elements;
-            longElementos = elementos.length;
-                var n=0;
-                for(i=0; i < longElementos; i++){
+        elementos = formul.elements;
+        longElementos = elementos.length;
+        var validar = function validar(e){
+            
+            var n=0;
+            for(i=0; i < longElementos; i++){
 
-                    if (elementos[i].type=="checkbox") {
-                        if (elementos[i].checked) {
-                            n++;
-                        }
-
+                if (elementos[i].type=="checkbox") {
+                    if (elementos[i].checked) {
+                        n++;
                     }
-                }
 
-            if(n > 1){
+                }
+            }
+
+           if(n > 1){
                 alert("Puede Seleccionar solo una jugada");
+                e.preventDefault();
              }
-             else if(n < 1) {
+            else if(n < 1) {
                 alert("Debe seleccionar una jugada");
+                e.preventDefault();
              }
             
-            else $("#jugadas").submit();
          
-   })
+    }
+     formul.addEventListener("submit", validar)   
         
       
   
     </script>
+    
+   <h6><center><strong>IMPORTANTE:</strong> LOS VALORES DE LAS LÍNEAS PUEDEN CAMBIAR DURANTE EL DÍA <strong>SIN PREVIO AVISO</strong></center></h6>
+    <h6><center><strong>SE INFORMA:</strong> QUE EN CASO DE EMPATE DE LOGRO (PUSH), DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h6>
+    
 </body>
 
 

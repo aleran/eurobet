@@ -43,7 +43,7 @@
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
                         ?> 
-                            <a href="cerrar_sesion.php"> Salir</a></h4>
+                            <a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>
                     </div>
                     
                 </div>
@@ -104,8 +104,8 @@
                             list($a,$m,$d)= explode("-",$row_ticket["fecha"]);
                             $fecha = $d."/".$m."/".$a;
                             echo "Fecha: ".$fecha." ".$row_ticket["hora"]."<br>";
-                            echo "Ticket: ".$row_ticket["codigo"]."<br>";
-                            echo "El ticket caduca a los 5 días.<br><br>";
+                            echo "Serial: ".$row_ticket["codigo"]."<br>";
+                            echo "Ticket vigente por 7 días.<br><br>";
 
                             $sql="SELECT p.*, a.id_partido, a.logro, a.valor_logro, j.* FROM parlay p
                             JOIN apuestas a ON p.codigo=a.ticket
@@ -126,15 +126,15 @@
                                     echo $row_eq1["equipo"]."-> Ganar: ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
                                     echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
 
-                                     }
+                                }
 
                                 if ($row["logro"]=="gj2") {
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Ganar: ".$row["valor_logro"]."<br>";
                                     echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
                                 }
 
 
@@ -142,28 +142,35 @@
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Empate: ".$row["valor_logro"]."<br>";
                                     echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
+                                }
+
+                                if ($row["logro"]=="empatept") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Empate 1T: ".$row["valor_logro"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "-------------------------------------------------------------<br>";
+                                                            
                                 }
 
                                 if ($row["logro"]=="alta") {
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Alta( ".$row["v_alta"]." ): ".$row["valor_logro"]."<br>";
-                                   echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
                                 }
 
                                 if ($row["logro"]=="baja") {
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Baja( ".$row["v_alta"]." ): ".$row["valor_logro"]."<br>";
-                                   echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
                                 }
 
                                 if ($row["logro"]=="runline1") {
                                     echo $row_eq1["equipo"]."-> Runline( ".$row["v_runline1"]." ): ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
-                                   echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
                                 }
 
                                 if ($row["logro"]=="runline2") {
@@ -171,29 +178,43 @@
                                     echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
 
-                                    
+                                                            
                                 }
 
                                 if ($row["logro"]=="gpt1") {
                                     echo $row_eq1["equipo"]."-> Ganar 1T: ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
-                                   echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
 
                                 }
 
                                 if ($row["logro"]=="gpt2") {
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Ganar 1T: ".$row["valor_logro"]."<br>";
-                                   echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
                                 }
+
+                                 if ($row["logro"]=="gst1") {
+                                    echo $row_eq1["equipo"]."-> Ganar 2T: ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "-------------------------------------------------------------<br>";
+
+                                }
+
+                                if ($row["logro"]=="gst2") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Ganar 2T: ".$row["valor_logro"]."<br>";
+                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    echo "-------------------------------------------------------------<br>";
+                                }
+             
 
 
                                 if ($row["logro"]=="g5to1") {
                                     echo $row_eq1["equipo"]."-> Ganar 5to I: ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
                                     echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
 
                                 }
 
@@ -201,19 +222,19 @@
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Ganar 5to I: ".$row["valor_logro"]."<br>";
                                     echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     echo "-------------------------------------------------------------<br>";
-                                    
+                                                            
                                 }
 
                              }
 
                             echo "Apostado: ".$row_ticket["monto"]."<br>";
                            echo "-------------------------------------------------------------<br>";
-                            echo "Ganancia Máxima: ".$row_ticket["premio"]."<br><br>";
-                            echo "- Este ticket expira 7 días luego de la impresión del mismo.<br>";
+                            echo "Ganancia : ".$row_ticket["premio"]."<br><br>";
+                            echo "- Este ticket expira 7 días luego de su impresión<br>";
                             echo "- Sin ticket no se cobra el premio.<br>";
-                            echo "- En caso de un error en la línea, rotación, hora programada, máxima apuesta, apuestas fuera de tiempo o comenzando el evento, las apuestas serán CANCELADAS y el monto del arriesgado será devuelto en consecuencia.<br>";
-                            echo "Conozco y acepto las reglas.<br>";
-                            echo "visita www.eurobet.com.co<br>";
+                            echo "- En caso de error de línea, hora programada, apuestas fuera de tiempo o comenzando el evento, estas serán CANCELADAS y el monto apostado será devuelto en consecuencia.<br>";
+                            echo "Conozco y acepto las reglas de EUROBET.<br>";
+                            echo "¡Mucha suerte!<br>";
                             echo "</div><br>";
                             echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
 

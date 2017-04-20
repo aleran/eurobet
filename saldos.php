@@ -53,23 +53,25 @@
                     <div class="col-sm-6 col-xs-offset-2">
                 	
 	                	 <form class="form-horizontal" method="POST" action="saldo_agencia.php">
+                            <?php
+                                if ($_SESSION["tipo"]=="root") {
+                                    echo '<div class="form-group">
+                                    <label for="agencia" class="col-sm-4 control-label">Agencia:</label>
+                                    <div class="col-sm-6">
+                                        <select  name="agencia" id="agencia" class="form-control">';
+                                        $sql_agencias="SELECT * FROM agencias";
+                                                $rs_agencias=mysqli_query($mysqli,$sql_agencias) or die(mysqli_error());
+                                                while ($row_agencias=mysqli_fetch_array($rs_agencias)) {
+                                                    echo  '<option value='.$row_agencias["id"].'>'.$row_agencias["agencia"].'</option>';
+                                                }
 
-                            <div class="form-group">
-                                <label for="agencia" class="col-sm-4 control-label">Agencia:</label>
-                                <div class="col-sm-6">
-                                    <select  name="agencia" id="agencia" class="form-control">
-                                    	<?php 
-                                            $sql_agencias="SELECT * FROM agencias";
-                                            $rs_agencias=mysqli_query($mysqli,$sql_agencias) or die(mysqli_error());
-                                            while ($row_agencias=mysqli_fetch_array($rs_agencias)) {
-                                                echo  '<option value='.$row_agencias["id"].'>'.$row_agencias["agencia"].'</option>';
-                                            }
-
-                                        ?>
-                                    </select>
-                                </div>
-                                 
-                            </div>
+                                 }  echo '</select>
+                                    </div>
+                                     
+                                </div>';
+                                              
+                                  
+                            ?>
                             <div class="form-group">
                                 <label for="desde" class="col-sm-4 control-label">Desde:</label>
                                 <div class="col-sm-6">

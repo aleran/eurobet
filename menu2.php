@@ -18,9 +18,6 @@
                     echo '<li>
                     <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
                     </li>
-                     <li>
-                        <a href="saldos.php" title="Resumen Economico"><span class="icon-coin-dollar"></span>&nbsp;Cuentas</a>
-                    </li>
                     
                     <li>
                         <a href="consultas.php" title="Consulta de Tickets Activos"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
@@ -37,7 +34,9 @@
 
                     
                 
-                
+                     echo '<li>
+                                <a href="saldos.php" title="Resumen Económico detallado de Agencias"><span class="icon-coin-dollar"></span>&nbsp;Cuentas</a>
+                            </li>';
                 
                 echo '<li>
                     <a href="reglas-de-juego.html" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
@@ -56,10 +55,7 @@
                     <a href="descargas.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-download"></span>&nbsp;Descargas</a>
                 </li>
                 
-                <li>
-                    <a href="registro.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-file-text2"></span>&nbsp;Informes</a>
-                </li>
-                
+               
             </ul>
         </div>';
 ?>

@@ -4,7 +4,7 @@
     include("conexion/conexion.php");
     
 ?>
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
      <?php
         include("head.php");
@@ -61,10 +61,10 @@
                 		<table class="table table-striped">
 	                		<thead>
 	                            <th>Codigo</th>
-	                            <th>Tipo</th>
+	                            <th>Apuesta</th>
 	                            <th>Fecha - Hora</th>
 	                            <th>Apostado</th>
-	                            <th>Premio</th>
+	                            <th>Ganancia</th>
 	                            <th>Ganador</th>
 	                        </thead>
 	                        <tbody>

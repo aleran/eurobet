@@ -21,7 +21,7 @@ echo '<div id="sidebar-wrapper">
                     <a href="competiciones.php" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
                 </li>
                 <li>
-                    <a href="#" title="Por Favor ingrese los últimos 9 dígitos de su ticket"><span class="icon-coin-dollar"></span>&nbsp;Consulta tu Ticket</a>
+                    <a href="#" title="¡PRÓXIMAMENTE!"><span class="icon-coin-dollar"></span>&nbsp;Recargas</a>
                 </li>
                 
                 
