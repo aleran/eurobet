@@ -65,7 +65,7 @@
                              $row_ganan=mysqli_fetch_array($rs_ganan);
 
 
-                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND ganar='1' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND ganar='1' AND activo='1' AND pagado='1'  AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
                              $row_perdi=mysqli_fetch_array($rs_perdi);
 

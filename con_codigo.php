@@ -241,14 +241,20 @@
                                             ?>
                            
                     
-                    <?php 
+                    <?php
+
+                        if ($_SESSION["tipo"]=="root") {
+                                 echo ' <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
+                                        <br>';
+
+                                } 
                         if ($row_ticket["ganar"]=='1') {
                             echo "<h3>Ganador</h3>";
-                             if ($_SESSION["tipo"]=="root") {
-                                echo ' <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
-                                        <br>';
+                             if ($_SESSION["tipo"]=="root"|| $_SESSION["tipo"]=="admin") {
+                               
                                  echo '<a href="#" id="pagar" class="btn btn-success hidden-print">Pagar Ticket</a><br> ';
                             }
+                              
 
                         }
                         else if ($row_ticket["ganar"]=='3') {
@@ -258,9 +264,9 @@
                              echo '<a href="#" id="perder" class="btn btn-warning hidden-print">Ticket Perdedor</a><br>';
                             }
                         }
-                       /* else {
+                        else {
                             echo "<h3>Perdedeor</h3>";
-                        }*/
+                        }
 
 
 

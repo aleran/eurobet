@@ -239,10 +239,15 @@
                             echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
 
                                             ?>
-                             <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
-                    <br><br>
+                             
                     
-                    <?php 
+                    <?php
+
+                    if ($_SESSION["tipo"]=="root") {
+                            echo '<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
+                                <br><br>';
+
+                        } 
                         if ($row_ticket["ganar"]=='1') {
                             echo "<h3>Ganador</h3>";
 
@@ -254,9 +259,9 @@
                              echo '<a href="#" id="perder" class="btn btn-warning hidden-print">Ticket Perdedor</a><br>';
                             }
                         }
-                       /* else {
+                        else {
                             echo "<h3>Perdedeor</h3>";
-                        }*/
+                        }
 
 
 
