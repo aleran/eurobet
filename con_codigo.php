@@ -239,12 +239,16 @@
                             echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
 
                                             ?>
-                             <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
-                    <br><br>
+                           
                     
                     <?php 
                         if ($row_ticket["ganar"]=='1') {
                             echo "<h3>Ganador</h3>";
+                             if ($_SESSION["tipo"]=="root") {
+                                echo ' <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
+                                        <br>';
+                                 echo '<a href="#" id="pagar" class="btn btn-success hidden-print">Pagar Ticket</a><br> ';
+                            }
 
                         }
                         else if ($row_ticket["ganar"]=='3') {
@@ -379,21 +383,28 @@
         $("#anular").click(function(e){
             e.preventDefault();
             if (confirm("¿Seguro desea anular el ticket?")) {
-                window.location="accion_ticket.php?anular=<?php echo $row_ticket["codigo"];?>&desde=<?php echo $_GET["desde"];?>&hasta=<?php echo $_GET["hasta"];?>"
+                window.location="accion_ticket2.php?anular=<?php echo $row_ticket["codigo"];?>"
             }
 
         });
         $("#ganar").click(function(e){
             e.preventDefault();
             if (confirm("¿Seguro que este ticket es Ganador?")) {
-                window.location="accion_ticket.php?ganar=<?php echo $row_ticket["codigo"];?>&desde=<?php echo $_GET["desde"];?>&hasta=<?php echo $_GET["hasta"];?>"
+                window.location="accion_ticket2.php?ganar=<?php echo $row_ticket["codigo"];?>"
             }
 
         });
         $("#perder").click(function(e){
             e.preventDefault();
             if (confirm("¿Seguro que este ticket es Perdedor?")) {
-                window.location="accion_ticket.php?perder=<?php echo $row_ticket["codigo"];?>&desde=<?php echo $_GET["desde"];?>&hasta=<?php echo $_GET["hasta"];?>"
+                window.location="accion_ticket2.php?perder=<?php echo $row_ticket["codigo"];?>"
+            }
+
+        })
+        $("#pagar").click(function(e){
+            e.preventDefault();
+            if (confirm("¿Seguro que desea pagar este ticket?")) {
+                window.location="accion_ticket.php?pagar=<?php echo $row_ticket["codigo"];?>"
             }
 
         })

@@ -56,10 +56,10 @@
                     }
                  </style>
                     <div class="col-sm-6 col-xs-offset-4 ">
-                    
-                                
-                    
-                    <?php
+                	
+	                        	
+                	
+	                <?php
 
                         if ($_SESSION["tipo"]=="root") {
 
@@ -83,7 +83,7 @@
                         
 
 
-                        $sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio, ganar, pagado FROM parlay WHERE codigo='".$codigo."'";
+                        $sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='".$codigo."'";
                         $rs_ticket=(mysqli_query($mysqli, $sql_ticket)) or die(mysqli_error());
                         $num_ticket=mysqli_num_rows($rs_ticket);
                         if ($num_ticket < 1) {
@@ -238,29 +238,14 @@
                             echo "</div><br>";
                             echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
 
-                                            ?>
-                             <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
-                    <br><br>
-                    
+                        	                ?>
+                    		
+                	<br><br>
+                	<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a>
                     <?php 
-                        if ($row_ticket["ganar"]=='1') {
-                            echo "<h3>Ganador</h3>";
-
+                        if ($_SESSION["tipo"]=="root") {
+                             echo '<a href="#" id="ganar" class="btn btn-success hidden-print">Ticket Ganador</a><br>';
                         }
-                        else if ($row_ticket["ganar"]=='3') {
-
-                            if ($_SESSION["tipo"]=="root") {
-                             echo '<a href="#" id="ganar" class="btn btn-success hidden-print">Ticket Ganador</a> ';
-                             echo '<a href="#" id="perder" class="btn btn-warning hidden-print">Ticket Perdedor</a><br>';
-                            }
-                        }
-                       /* else {
-                            echo "<h3>Perdedeor</h3>";
-                        }*/
-
-
-
-                        
                    
                     ?>
                 
@@ -382,24 +367,17 @@
                 window.location="accion_ticket.php?anular=<?php echo $row_ticket["codigo"];?>&desde=<?php echo $_GET["desde"];?>&hasta=<?php echo $_GET["hasta"];?>"
             }
 
-        });
+        })
         $("#ganar").click(function(e){
             e.preventDefault();
-            if (confirm("¿Seguro que este ticket es Ganador?")) {
+            if (confirm("¿Seguro que este ticket es ganador?")) {
                 window.location="accion_ticket.php?ganar=<?php echo $row_ticket["codigo"];?>&desde=<?php echo $_GET["desde"];?>&hasta=<?php echo $_GET["hasta"];?>"
-            }
-
-        });
-        $("#perder").click(function(e){
-            e.preventDefault();
-            if (confirm("¿Seguro que este ticket es Perdedor?")) {
-                window.location="accion_ticket.php?perder=<?php echo $row_ticket["codigo"];?>&desde=<?php echo $_GET["desde"];?>&hasta=<?php echo $_GET["hasta"];?>"
             }
 
         })
         $("#imprimir").click(function(){
             window.print();
-        });
+        })
     </script>
 </body>
 

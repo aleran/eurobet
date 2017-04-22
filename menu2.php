@@ -17,13 +17,9 @@
 
                     echo '<li>
                     <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
-                    </li>
+                    </li>';
                     
-                    <li>
-                        <a href="consultas.php" title="Consulta de Tickets Activos"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
-                    </li>
-                    '
-                    ;
+                   
                     
                     }
                 
@@ -33,7 +29,10 @@
                     </li>';
 
                     
-                
+                     echo '<li>
+                        <a href="consultas.php" title="Consulta de Tickets Activos"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
+                    </li>';
+                    
                      echo '<li>
                                 <a href="saldos.php" title="Resumen Económico detallado de Agencias"><span class="icon-coin-dollar"></span>&nbsp;Cuentas</a>
                             </li>';

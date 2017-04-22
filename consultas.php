@@ -57,11 +57,15 @@
                 </div>
                 <br><br>
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <a href="tickets_fecha.php" class="btn btn-primary" title="muestra de tickets en juego">TICKETS ACTIVOS</a>
                         
                     </div>
-                    <div class="col-lg-6">
+                     <div class="col-lg-4">
+                        <a href="por_pagar.php" class="btn btn-warning" title="muestra de tickets en juego">TICKETS POR PAGAR</a>
+                        
+                    </div>
+                    <div class="col-lg-4">
                         <a href="" class="btn btn-danger" data-toggle="modal" data-target="#modalT">BUSCAR TICKET</a>
                     </div>
                     
@@ -168,7 +172,7 @@
                         </div>
                         <div class="modal-body">
                         
-                            <form class="form-horizontal" method="POST" action="con_activo.php">
+                            <form class="form-horizontal" method="POST" action="con_codigo.php">
                                 <?php 
                                     if ($_SESSION["tipo"]=="root") {
                                         echo "Introduzca el codigo completo";

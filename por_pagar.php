@@ -49,24 +49,8 @@
                 </div>
                 
                 <div class="row">
-                    <?php
-
-                         if (isset($_POST["desde"])) {
-                             $desde=$_POST["desde"];
-                             $hasta=$_POST["hasta"];
-                         } 
-                         else {
-                             $desde=$_GET["desde"];
-                             $hasta=$_GET["hasta"];
-                         } 
-
-                        list($a,$m,$d) = explode("-", $desde);
-                        $de=$d."/".$m."/".$a;
-                         list($a2,$m2,$d2) = explode("-", $hasta);
-                        $a=$d2."/".$m2."/".$a2;
-
-                    ?>
-                    <h3> Tickets Del: <?php echo $de; ?> Al: <?php echo $a; ?></h3>
+                    
+                  <h3>Tickets por pagar</h3>
                 	<div class="table-responsive">
                 		<table class="table table-striped">
 	                		<thead>
@@ -82,10 +66,10 @@
 	                <?php
                        
 	                	if ($_SESSION["tipo"]=="root") {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='3' AND pagado='0' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND pagado='0'";
 	                	}
 	                	else {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='3' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'";
 	                	}
 	                    
 	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
@@ -94,7 +78,7 @@
                                 $fecha=$d3."/".$m3."/".$a3;
 	                    		echo"<tr>";
 	                    			echo"<td>";
-	                    				echo "<a href='con_activo.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
+	                    				echo "<a href='con_pp.php?codigo=".$row_act["codigo"]."'>".$row_act["codigo"]."</a>";
 	                    			echo"</td>";
 	                    			echo"<td>";
 	                    				echo $row_act["tipo"];
