@@ -172,7 +172,7 @@
 <script>
 	          
         window.print();
-        window.location.replace("bienvenido.php");
+        window.location.replace("competiciones.php");
 
        
     

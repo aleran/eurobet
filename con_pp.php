@@ -83,7 +83,7 @@
                         
 
 
-                        $sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio, ganar, pagado FROM parlay WHERE codigo='".$codigo."'";
+                        $sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio, ganar, pagado, push FROM parlay WHERE codigo='".$codigo."'";
                         $rs_ticket=(mysqli_query($mysqli, $sql_ticket)) or die(mysqli_error());
                         $num_ticket=mysqli_num_rows($rs_ticket);
                         if ($num_ticket < 1) {
@@ -236,6 +236,10 @@
                             echo "Conozco y acepto las reglas de EUROBET.<br>";
                             echo "¡Mucha suerte!<br>";
                             echo "</div><br>";
+                                if ($row_ticket["push"]!="") {
+                                    echo "*PUSH*: ".$row_ticket["push"]."<br><br>";
+
+                                }
                             echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
 
                         	                ?>
