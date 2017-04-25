@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 24-04-2017 a las 01:00:15
+-- Tiempo de generación: 25-04-2017 a las 02:59:06
 -- Versión del servidor: 5.5.54-0+deb8u1
 -- Versión de PHP: 5.6.29-0+deb8u1
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `apuestas` (
   `logro` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `valor_logro` float NOT NULL,
   `ticket` varchar(10) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=231 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=241 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `apuestas`
@@ -203,7 +203,17 @@ INSERT INTO `apuestas` (`id`, `id_partido`, `logro`, `valor_logro`, `ticket`) VA
 (227, 9, 'gj1', 187, '2-02673948'),
 (228, 9, 'baja', -122, '2-02673948'),
 (229, 9, 'gj1', 187, '2-8272390'),
-(230, 9, 'baja', -122, '2-8272390');
+(230, 9, 'baja', -122, '2-8272390'),
+(231, 9, 'gj1', 187, '2-332388'),
+(232, 9, 'baja', -122, '2-332388'),
+(233, 9, 'gj1', 187, '2-5170866'),
+(234, 9, 'gj1', 187, '2-23742999'),
+(235, 9, 'baja', -122, '2-23742999'),
+(236, 9, 'empate', 214, '2-60292854'),
+(237, 9, 'alta', 104, '2-60292854'),
+(238, 9, 'gj1', 187, '2-8681115'),
+(239, 9, 'gj1', 187, '2-11723102'),
+(240, 9, 'baja', -122, '2-11723102');
 
 -- --------------------------------------------------------
 
@@ -312,6 +322,25 @@ CREATE TABLE IF NOT EXISTS `equipos_competicion` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `paises`
+--
+
+CREATE TABLE IF NOT EXISTS `paises` (
+`id` int(11) NOT NULL,
+  `pais` varchar(100) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `paises`
+--
+
+INSERT INTO `paises` (`id`, `pais`) VALUES
+(1, 'COLOMBIA'),
+(2, 'VENEZUELA');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `parlay`
 --
 
@@ -328,7 +357,7 @@ CREATE TABLE IF NOT EXISTS `parlay` (
   `pagado` varchar(1) COLLATE utf8_unicode_ci NOT NULL,
   `push` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
   `activo` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `parlay`
@@ -362,7 +391,13 @@ INSERT INTO `parlay` (`id`, `codigo`, `agencia`, `tipo`, `fecha`, `hora`, `monto
 (65, '2-96901825', 2, 'parlay', '2017-04-23', '23:19:25', 5200, 27157, 3, '0', '', 1),
 (66, '2-35770989', 2, 'parlay', '2017-04-23', '23:36:36', 50000, 261123, 3, '0', '', 1),
 (67, '2-02673948', 2, 'parlay', '2017-04-23', '23:37:44', 5000, 26112, 3, '0', '', 1),
-(68, '2-8272390', 2, 'parlay', '2017-04-23', '23:45:03', 5000, 26112, 3, '0', '', 1);
+(68, '2-8272390', 2, 'parlay', '2017-04-23', '23:45:03', 5000, 26112, 3, '0', '', 1),
+(69, '2-332388', 2, 'parlay', '2017-04-24', '23:25:09', 500, 2611, 3, '0', '', 1),
+(70, '2-5170866', 2, 'directa', '2017-04-24', '23:28:25', 5000000, 14350000, 1, '0', '', 1),
+(71, '2-23742999', 2, 'parlay', '2017-04-25', '00:05:05', 5000, 26112, 3, '0', '', 1),
+(72, '2-60292854', 2, 'parlay', '2017-04-25', '00:22:55', 0, 0, 3, '0', '', 1),
+(73, '2-8681115', 2, 'directa', '2017-04-25', '01:35:00', 5000, 14350, 3, '0', '', 1),
+(74, '2-11723102', 2, 'parlay', '2017-04-25', '01:41:17', 40000, 208898, 3, '0', '', 1);
 
 -- --------------------------------------------------------
 
@@ -377,6 +412,8 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `equipo2` int(11) NOT NULL,
   `fecha` date NOT NULL,
   `hora` time NOT NULL,
+  `fecha_v` date NOT NULL,
+  `hora_v` time NOT NULL,
   `gj1` float NOT NULL,
   `gj2` float NOT NULL,
   `empate` float NOT NULL,
@@ -394,22 +431,23 @@ CREATE TABLE IF NOT EXISTS `partidos` (
   `v_runline2` float NOT NULL,
   `runline1` float NOT NULL,
   `runline2` float NOT NULL,
-  `inicio` int(1) NOT NULL
+  `inicio` int(1) NOT NULL,
+  `inicio_v` int(1) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `partidos`
 --
 
-INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `hora`, `gj1`, `gj2`, `empate`, `v_alta`, `alta`, `baja`, `gpt1`, `gpt2`, `empatept`, `gst1`, `gst2`, `g5to1`, `g5to2`, `v_runline1`, `v_runline2`, `runline1`, `runline2`, `inicio`) VALUES
-(1, 1, 1, 2, '2017-04-23', '12:00:00', 318, -117, 286, 2.5, -146, 128, 500, 600, 787, 85, 86, 900, 100, 1.5, -0.5, -101, -117, 1),
-(2, 3, 3, 4, '2017-05-05', '12:00:00', 200, 100, 300, 7, -200, -500, 900, 800, 0, 0, 0, 700, 400, 1.2, 0, -100, 200, 0),
-(3, 4, 5, 6, '2017-04-25', '12:00:00', -200, 150, 0, 202, -150, 300, 0, 0, 0, 0, 0, 0, 0, 45, 0, 800, -900, 0),
-(4, 5, 7, 8, '2017-06-18', '03:00:00', -400, 500, 0, 30, 800, 700, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(5, 7, 9, 10, '2017-04-30', '02:00:00', -500, 200, 1, 2, 3, 4, 5, 6, 0, 0, 0, 9, 10, 50, 0, -100, 200, 0),
-(6, 6, 13, 14, '2017-04-20', '03:00:00', 300, -200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-(7, 8, 15, 16, '2017-04-18', '05:00:00', -800, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1),
-(9, 1, 17, 18, '2017-05-09', '03:40:00', 187, 171, 214, 2.5, 104, -122, 167, 151, 0, 0, 0, 0, 0, 0, 0, -104, -114, 0);
+INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `hora`, `fecha_v`, `hora_v`, `gj1`, `gj2`, `empate`, `v_alta`, `alta`, `baja`, `gpt1`, `gpt2`, `empatept`, `gst1`, `gst2`, `g5to1`, `g5to2`, `v_runline1`, `v_runline2`, `runline1`, `runline2`, `inicio`, `inicio_v`) VALUES
+(1, 1, 1, 2, '2017-04-23', '12:00:00', '0000-00-00', '00:00:00', 318, -117, 286, 2.5, -146, 128, 500, 600, 787, 85, 86, 900, 100, 1.5, -0.5, -101, -117, 1, 0),
+(2, 3, 3, 4, '2017-05-05', '12:00:00', '0000-00-00', '00:00:00', 200, 100, 300, 7, -200, -500, 900, 800, 0, 0, 0, 700, 400, 1.2, 0, -100, 200, 0, 0),
+(3, 4, 5, 6, '2017-04-25', '12:00:00', '0000-00-00', '00:00:00', -200, 150, 0, 202, -150, 300, 0, 0, 0, 0, 0, 0, 0, 45, 0, 800, -900, 0, 0),
+(4, 5, 7, 8, '2017-06-18', '03:00:00', '0000-00-00', '00:00:00', -400, 500, 0, 30, 800, 700, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(5, 7, 9, 10, '2017-04-30', '02:00:00', '0000-00-00', '00:00:00', -500, 200, 1, 2, 3, 4, 5, 6, 0, 0, 0, 9, 10, 50, 0, -100, 200, 0, 0),
+(6, 6, 13, 14, '2017-04-20', '03:00:00', '0000-00-00', '00:00:00', 300, -200, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+(7, 8, 15, 16, '2017-04-18', '05:00:00', '0000-00-00', '00:00:00', -800, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0),
+(9, 1, 17, 18, '2017-05-09', '03:40:00', '2017-05-09', '04:40:00', 187, 171, 214, 2.5, 104, -122, 167, 151, 0, 0, 0, 0, 0, 0, 0, -104, -114, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -419,6 +457,7 @@ INSERT INTO `partidos` (`id`, `id_competicion`, `equipo1`, `equipo2`, `fecha`, `
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
 `id` int(11) NOT NULL,
+  `pais` int(11) NOT NULL,
   `agencia` int(11) NOT NULL,
   `cedula` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -428,14 +467,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `direccion` text COLLATE utf8_unicode_ci NOT NULL,
   `telefono` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `tipo` varchar(20) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `agencia`, `cedula`, `nombre`, `apellido`, `correo`, `clave`, `direccion`, `telefono`, `tipo`) VALUES
-(7, 2, '123456', 'dad', 'dadsa', 'ale.ran92@gmail.com', 'c33367701511b4f6020ec61ded352059', 'dada', '13213', 'root');
+INSERT INTO `usuarios` (`id`, `pais`, `agencia`, `cedula`, `nombre`, `apellido`, `correo`, `clave`, `direccion`, `telefono`, `tipo`) VALUES
+(7, 2, 2, '123456', 'dad', 'dadsa', 'ale.ran92@gmail.com', 'c33367701511b4f6020ec61ded352059', 'dada', '13213', 'root'),
+(8, 1, 1, '32134', 'dsadas', 'dadas', 'ale.ran92@gmail.comdsd', 'e10adc3949ba59abbe56e057f20f883e', 'dasdas', '323232', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -478,6 +518,12 @@ ALTER TABLE `equipos_competicion`
  ADD PRIMARY KEY (`id`), ADD KEY `id_equipo` (`id_equipo`), ADD KEY `id_competicion` (`id_competicion`);
 
 --
+-- Indices de la tabla `paises`
+--
+ALTER TABLE `paises`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `parlay`
 --
 ALTER TABLE `parlay`
@@ -508,7 +554,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT de la tabla `apuestas`
 --
 ALTER TABLE `apuestas`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=231;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=241;
 --
 -- AUTO_INCREMENT de la tabla `competiciones`
 --
@@ -530,10 +576,15 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 ALTER TABLE `equipos_competicion`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `paises`
+--
+ALTER TABLE `paises`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT de la tabla `parlay`
 --
 ALTER TABLE `parlay`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=75;
 --
 -- AUTO_INCREMENT de la tabla `partidos`
 --
@@ -543,7 +594,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- Restricciones para tablas volcadas
 --

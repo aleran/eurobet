@@ -87,16 +87,7 @@
                             }
                             
 
-                            $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
-                            $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
-                            while ($row_inicio=mysqli_fetch_array($rs_inicio)) {
-
-                                if ($row_inicio["hora"] <= date("H:i:s")) {
-                                    $sql_act="UPDATE partidos SET inicio='1' WHERE id='".$row_inicio["id"]."'";
-                                    $rs_act=mysqli_query($mysqli,$sql_act) or die(mysqli_error());
-                                    
-                                }
-                            }
+                            
 
                             $sql="SELECT id, deporte FROM deportes";
                             $rs=mysqli_query($mysqli, $sql) or die (mysqli_error());

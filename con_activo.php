@@ -143,6 +143,7 @@
                                     else {
                                          echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
                                     }
+                                    echo "-------------------------------------------------------------<br>";
                                                             
                                 }
 
@@ -209,7 +210,13 @@
 
                                 if ($row["logro"]=="runline2") {
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Runline( ".$row["valor_logro"]." ): ".$row["runline2"]."<br>";
-                                    echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    if ($_SESSION["pais"]==1) {
+                                        echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    }
+                                    else {
+                                         echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+                                    }
+                                    
                                     echo "-------------------------------------------------------------<br>";
 
                                                             
