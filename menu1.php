@@ -10,7 +10,7 @@ echo '<div id="sidebar-wrapper">
                 
                 <li>
                     
-                    <a href="index.php" title="Bienvenido a Eurobet"><span class="icon-checkmark2"></span>&nbsp;Inicio</a>
+                    <a href="index.php?pais='.$_GET["pais"].'"" title="Bienvenido a Eurobet"><span class="icon-checkmark2"></span>&nbsp;Inicio</a>
                 </li>
                 
                 <li>
@@ -18,7 +18,7 @@ echo '<div id="sidebar-wrapper">
                 </li>
                 
                 <li>
-                    <a href="competiciones.php" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
+                    <a href="competiciones.php?pais='.$_GET["pais"].'" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
                 </li>
                 <li>
                     <a href="#" title="¡PRÓXIMAMENTE!"><span class="icon-coin-dollar"></span>&nbsp;Recargas</a>
@@ -26,17 +26,17 @@ echo '<div id="sidebar-wrapper">
                 
                 
                 <li>
-                    <a href="reglas-de-juego.html" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
+                    <a href="reglas-de-juego.html?pais='.$_GET["pais"].'"" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
                             
                 </li>
                 <li>
-                    <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros"><span class="icon-bullhorn"></span>&nbsp;¿Cómo Apostar?</a>
+                    <a href="ayuda.html?pais='.$_GET["pais"].'"" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros"><span class="icon-bullhorn"></span>&nbsp;¿Cómo Apostar?</a>
                 </li>
                 <li>
-                    <a href="juego-responsable.html" target="_blank" title="Juego Responsable"><span class="icon-hammer2"></span>&nbsp;Responsabilidad</a>
+                    <a href="juego-responsable.html?pais='.$_GET["pais"].'"" target="_blank" title="Juego Responsable"><span class="icon-hammer2"></span>&nbsp;Responsabilidad</a>
                 </li>
                 <li>
-                    <a href="formulario_contacto.html" target="_blank" title="PQR - Peticiones, Quejas y Reclamos"><span class="icon-pushpin"></span>&nbsp;Contáctenos</a>
+                    <a href="formulario_contacto.html?pais='.$_GET["pais"].'"" target="_blank" title="PQR - Peticiones, Quejas y Reclamos"><span class="icon-pushpin"></span>&nbsp;Contáctenos</a>
                 </li>
                 <li>
                     <a href="descargas.html" target="_blank" title="Descarga de Software para taquillas"><span class="icon-download"></span>&nbsp;Descargas</a>

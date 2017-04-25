@@ -928,19 +928,45 @@
       })
 
       $("#apostar").click(function(){
-        if ($("#monto").val()< 30 || $("#monto").val() > 1000000) {
-          alert("El monto a apostar debe estar entre $5.000 y $1.000.000 para Colombia y $30 a $60.000 para Mexico");
+        <?php 
+            if ($_SESSION["pais"]==1) {
+              echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 1000000) {
+                      alert("El monto a apostar debe estar entre $5.000 y $1.000.000 para Colombia y $30 a $60.000 para Mexico");
 
-        }
+                    }';
 
-       else if($(".total").val() > 10000000){
-            $(".total").val(10000000);
+              echo 'else if($(".total").val() > 10000000){
+                      $(".total").val(10000000);
            
-            if(confirm("La ganancia m«¡xima es de 10 millones de pesos, ¢Ädesea continuar?")){
-              $("#apuesta").submit();
+                      if(confirm("La ganancia m«¡xima es de 10 millones de pesos, ¢Ädesea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                    }';
+              echo 'else  $("#apuesta").submit();';
+              
             }
-        }
-        else  $("#apuesta").submit();
+
+            else {
+              echo 'if ($("#monto").val()< 500 || $("#monto").val() > 40000) {
+                      alert("El monto a apostar debe estar entre 500 Bs y 40.000 Bs");
+
+                    }';
+
+              echo 'else if($(".total").val() > 300000){
+                      $(".total").val(10000000);
+           
+                      if(confirm("La ganancia m«¡xima es de 300 mil bolivares, ¢Ädesea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                    }';
+              echo 'else  $("#apuesta").submit();';
+            }
+
+          ?>
+        
+
+       
+        
       })
       <?php 
         if (isset($_SESSION["tipo"])) {

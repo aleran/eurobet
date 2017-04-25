@@ -63,13 +63,27 @@
                     </div>
                     
                 </div>
-                <center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a> <a href="competiciones2.php" class="btn btn-info">Directa</a></center>
+                 <?php 
+                    if (isset($_SESSION["pais"])) {
+                        echo '<center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a> <a href="competiciones2.php" class="btn btn-info">Directa</a></center>';
+                    }
+
+                    else {
+                        echo '<center>Tipo de Apuesta: <a href="competiciones.php?pais='.$_GET["pais"].'" class="btn btn-primary">Parlay</a> <a href="competiciones2.php?pais='.$_GET["pais"].'" class="btn btn-info">Directa</a></center>';
+                    }
+
+                ?>
                
                 <div class="row">
-                    <form id="form" action="compe_selec2.php" method="POST">
+                   
                         <?php
                                 
-                            
+                            if (isset($_SESSION["pais"])) {
+                                echo '<form id="form" action="compe_selec2.php" method="POST">';
+                            }
+                            else {
+                                echo '<form id="form" action="compe_selec2.php?pais='.$_GET["pais"].'" method="POST">';
+                            }
 
                             $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("y/m/d")."' AND inicio='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());

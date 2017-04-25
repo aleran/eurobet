@@ -917,12 +917,32 @@
       })
 
       $("#apostar").click(function(){
-        if ($("#monto").val()< 5000 || $("#monto").val() > 10000000) {
-          alert("El monto a apostar debe estar entre $5000 y $10000000");
+        <?php
+          if ($_SESSION["pais"]==1) {
+            echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 10000000) {
+                    alert("El monto a apostar debe estar entre $5000 y $10000000");
 
-        }
+                  }';
+            echo 'else  $("#apuesta").submit();';
+          }
+          else {
+             echo 'if ($("#monto").val()< 5000) {
+                    alert("El monto minimo a apostar entre 5.000 Bs");
 
-        else  $("#apuesta").submit();
+                  }';
+              echo 'else if($(".total").val() > 1000000){
+                      $(".total").val(1000000);
+           
+                      if(confirm("La ganancia m«¡xima es de 1 millon de Bs, ¢Ädesea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                    }';
+              echo 'else  $("#apuesta").submit();';
+          }
+        ?>
+        
+
+        
       })
        <?php 
         if (isset($_SESSION["tipo"])) {

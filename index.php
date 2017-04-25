@@ -11,11 +11,16 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script type="text/javascript">
-	$(document).ready(function(){javascript:void(0)
-		$("#myModal").modal('show');
-	});
-</script>
+<?php 
+    if (!isset($_GET["pais"])) {
+        echo '<script type="text/javascript">
+    $(document).ready(function(){javascript:void(0)
+        $("#myModal").modal("show");
+    });
+</script>';
+    }
+?>
+
 
 </head>
 
@@ -39,12 +44,16 @@
                 <h4 class="modal-title"><center>¡Hola!, Bienvenido a EuroBet</center></h4>
             </div>
             <div class="modal-body">
-                <p>Este es un sitio de apuestas deportivas sólo para mayores de 18 años , ¿Deseas continuar?</p>
+                <p>Este es un sitio de apuestas deportivas sólo para mayores de 18 años , ¿Deseas continuar? Elije el pais:</p>
+                <select name="pais" id="pais">
+                    <option value="1">Colombia</option>
+                    <option value="2">Venezuela</option>
+                </select>
                 
             </div>
             <div class="modal-footer">
                 <a href="http://www.google.com.co"><button type="button" class="btn btn-danger" title="Redirige a google">Salir</button></a>
-                <button type="button" class="btn btn-success" data-dismiss="modal" Title="Soy mayor de edad">Continuar</button>
+                <button type="button" class="btn btn-success" id="continuar" data-dismiss="modal" Title="Soy mayor de edad">Continuar</button>
             </div>
         </div>
     </div>
@@ -88,6 +97,26 @@
                                     
                                 </div>
                                 <div class="item">
+                                    <img src="img/confederaciones.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/hockey_finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="carousel-caption">
+                                        <h3>Hockey Playoffs</h3>
+                                        <p>Los mejores equipos se disputan el titulo</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/nba_finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="carousel-caption">
+                                        <h3>NBA Playoffs</h3>
+                                        <p>Vive con nostros toda la pasión</p>
+                                    </div>
+                                </div>
+                                 <div class="item">
                                     <img src="img/futbol.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="carousel-caption">
                                         <h3>Fútbol</h3>
@@ -193,6 +222,10 @@
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+     $("#continuar").click(function() {
+        var pais_s=$("#pais").val()
+        window.location="index.php?pais="+pais_s;
     });
     </script>
 </body>

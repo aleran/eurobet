@@ -120,7 +120,21 @@
                         <div class="modal-body">
                         
                             <form class="form-horizontal" method="POST" action="crear_usuarios.php">
+                                <div class="form-group">
+                                    <label for="pais" class="col-sm-4 control-label">Pais:</label>
+                                    <div class="col-sm-6">
+                                        <select  name="pais" id="pais" class="form-control">
+                                        <?php 
+                                            $sql_pais="SELECT * FROM paises";
+                                            $rs_pais=mysqli_query($mysqli,$sql_pais) or die(mysqli_error());
+                                            while ($row_pais=mysqli_fetch_array($rs_pais)) {
+                                                echo  '<option value='.$row_pais["id"].'>'.$row_pais["pais"].'</option>';
+                                            }
 
+                                        ?>
+                                        </select>
+                                    </div>
+                                </div>
                                  <div class="form-group">
                                     <label for="agencia" class="col-sm-4 control-label">Agencia:</label>
                                     <div class="col-sm-6">
@@ -138,7 +152,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cedula" class="col-sm-4 control-label">Cedula:</label>
+                                    <label for="cedula" class="col-sm-4 control-label">Cédula:</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required>
                                     </div>
@@ -174,7 +188,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="telefono" class="col-sm-4 control-label">Telefono:</label>
+                                    <label for="telefono" class="col-sm-4 control-label">Teléfono:</label>
                                     <div class="col-sm-6">
                                         <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="" required>
                                     </div>

@@ -19,6 +19,7 @@
 
 			$_SESSION['agencia']=$row['agencia'];
 			$_SESSION['tipo']=$row['tipo'];
+			$_SESSION['pais']=$row['pais'];
 
 			header("location:./bienvenido.php");
 		}
