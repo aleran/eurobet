@@ -18,6 +18,7 @@
 	    	$_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s");
 
 			$_SESSION['agencia']=$row['agencia'];
+			$_SESSION['usuario']=$row['cedula'];
 			$_SESSION['tipo']=$row['tipo'];
 			$_SESSION['pais']=$row['pais'];
 

@@ -13,11 +13,13 @@
                     
                     <a href="bienvenido.php" title="Bienvenido a Eurobet"><span class="icon-checkmark2"></span>&nbsp;Inicio</a>
                 </li>';
+                 echo '<li>
+                        <a href="buscar_usuario.php" title="Recarga de saldo"><span class="icon-coin-dollar"></span>&nbsp;Recargas</a>
+                        </li>';
                     if ($_SESSION["tipo"]=="root") {
-
-                    echo '<li>
-                    <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
-                    </li>';
+                        echo '<li>
+                        <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
+                        </li>';
                     
                    
                     
