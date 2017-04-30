@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mÃ­nimo de 2 jugadas y un maximo de 15, montos minimos de apuesta: Colombia: $ 5.000 , Mexico: $ 30 , Venezuela : Bs.F 500 ,::EuroBet - Tus Apuestas seguras en lÃ­nea</marquee></div>
   
 
     <div id="wrapper">
@@ -855,8 +856,7 @@
                       </div>
                       <input type="hidden" name="tipo" value="parlay">   
                       <input type="hidden" name="premio" class="total">
-                      <h4>Monto Minimo Colombia:$5000</h4> 
-                      <h4>Monto Minimo Mexico:$30 </h4><br>
+                      
                           
                                 
                            <?php
@@ -938,7 +938,7 @@
               echo 'else if($(".total").val() > 10000000){
                       $(".total").val(10000000);
            
-                      if(confirm("La ganancia m«¡xima es de 10 millones de pesos, ¢Ädesea continuar?")){
+                      if(confirm("La ganancia mÃ¡xima es de 10 millones de pesos, Â¿desea continuar?")){
                       $("#apuesta").submit();
                       }
                     }';
@@ -948,14 +948,14 @@
 
             else {
               echo 'if ($("#monto").val()< 500 || $("#monto").val() > 40000) {
-                      alert("El monto a apostar debe estar entre 500 Bs y 40.000 Bs");
+                      alert("El monto a apostar debe estar entre Bs.F 500 y Bs.F 40.000");
 
                     }';
 
               echo 'else if($(".total").val() > 300000){
-                      $(".total").val(10000000);
+                      $(".total").val(300000);
            
-                      if(confirm("La ganancia m«¡xima es de 300 mil bolivares, ¢Ädesea continuar?")){
+                      if(confirm("La ganancia maxima es de Bs.F 300.000 Â¿desea continuar?")){
                       $("#apuesta").submit();
                       }
                     }';

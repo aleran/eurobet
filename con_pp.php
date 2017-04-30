@@ -197,7 +197,7 @@
                                 }
 
                                 if ($row["logro"]=="runline1") {
-                                    echo $row_eq1["equipo"]."-> Runline( ".$row["v_runline1"]." ): ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
+                                    echo $row_eq1["equipo"]."-> Runline (".$row["v_runline1"]."): ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
                                      if ($_SESSION["pais"]==1) {
                                         echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     }
@@ -209,7 +209,7 @@
                                 }
 
                                 if ($row["logro"]=="runline2") {
-                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Runline( ".$row["valor_logro"]." ): ".$row["runline2"]."<br>";
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Runline (".$row["v_runline2"]."): ".$row["valor_logro"]."<br>";
                                     if ($_SESSION["pais"]==1) {
                                         echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
                                     }

@@ -93,12 +93,13 @@
                                     <tr>
                                         <td>Saldo:</td>
                                         <td><?php echo $row["saldo"]; ?></td>
+                                        <input type="hidden" id="saldo" value="<?php echo $row["saldo"]; ?>">
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRecargas">Recargar saldo</button>
-                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalPagar">Pagar al usuario</button>
+                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#modalPagar">Pagar al usuario</button>
 
                     </div>
                     
@@ -148,7 +149,7 @@
                         </div>
                         <div class="modal-body">
                         
-                            <form class="form-horizontal" method="POST" action="recargar.php">
+                            <form class="form-horizontal" method="POST" action="recargar.php" name="form_pagar">
                                 
                                 <div class="form-group">
                                     <label for="pagar" class="col-sm-4 control-label">Monto a Pagar:</label>
@@ -162,9 +163,10 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <button class="btn btn-success">Pagar</button>
+                            <button type="button" class="btn btn-success" id="btn_pagar">Pagar</button>
                         </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -290,6 +292,19 @@
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
+    });
+    $("#btn_pagar").click(function(){
+        var saldo_actual=$("#saldo").val();
+        var monto_pagar=$("#pagar").val();
+        console.log(saldo_actual);
+        console.log(monto_pagar);
+
+            if (saldo_actual < monto_pagar) {
+                alert("saldo insuficiente para pagar esa cantidad");
+            }
+            else {
+                document.form_pagar.submit();
+            }
     });
     </script>
 </body>
