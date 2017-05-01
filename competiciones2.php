@@ -50,7 +50,15 @@
                     <div class="col-lg-6">
                     <?php
                     include("conexion/conexion.php");
-                    if (isset($_SESSION["agencia"])) {
+                     if($_SESSION["tipo"]=="normal"){
+                        $sql_normal="SELECT nombre,apellido FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
+                        $rs_normal=mysqli_query($mysqli,$sql_normal) or die(mysqli_error());
+                        $row_normal=mysqli_fetch_array($rs_normal);
+                        echo "<h4>Usuario: ". $row_normal["nombre"].", ".$row_normal["apellido"]."";
+                        echo '<a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>'; 
+                    }
+                    else {
+                        if (isset($_SESSION["agencia"])) {
                         
                           $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
                             $rs_ag=mysqli_query($mysqli,$sql_ag);
@@ -58,7 +66,8 @@
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
                          
                             echo '<a href="cerrar_sesion.php"> Salir</a></h4>';
-                     } 
+                        } 
+                    }
                     ?>
                     </div>
                     

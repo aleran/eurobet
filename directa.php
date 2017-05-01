@@ -41,15 +41,24 @@
                     <div class="col-lg-6">
                    	 <?php 
                     include("conexion/conexion.php");
+                          if($_SESSION["tipo"]=="normal"){
+                        $sql_normal="SELECT nombre,apellido FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
+                        $rs_normal=mysqli_query($mysqli,$sql_normal) or die(mysqli_error());
+                        $row_normal=mysqli_fetch_array($rs_normal);
+                        echo "<h4>Usuario: ". $row_normal["nombre"].", ".$row_normal["apellido"]."";
+                        echo '<a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>'; 
+                    }
+                    else {
                         if (isset($_SESSION["agencia"])) {
-                                
-                                  $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
-                                    $rs_ag=mysqli_query($mysqli,$sql_ag);
-                                    $row_ag=mysqli_fetch_array($rs_ag);
-                                    echo "<h4>Agencia: ". $row_ag["agencia"]; 
-                                 
-                                    echo '<a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>';
-                             } 
+                        
+                          $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                            $rs_ag=mysqli_query($mysqli,$sql_ag);
+                            $row_ag=mysqli_fetch_array($rs_ag);
+                            echo "<h4>Agencia: ". $row_ag["agencia"]; 
+                         
+                            echo '<a href="cerrar_sesion.php"> Salir</a></h4>';
+                        } 
+                    }
                             ?>
                     </div>
                     
@@ -832,10 +841,22 @@
                       if (isset($_SESSION["tipo"])) {
                         echo '<h4>Usted tiene <span id="time"></span> segundos para realizar su apuesta.</h4><br>';
                       }
+                        if ($_SESSION["tipo"]=="normal") {
+                        $sql_saldo="SELECT saldo FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
+                        $rs_saldo=mysqli_query($mysqli,$sql_saldo) or die(mysqli_error());
+                        $row_saldo=mysqli_fetch_array($rs_saldo);
+
+                      }
                     ?>
 
                     
                   <div class="col-lg-3 col-lg-offset-4">
+                    <?php 
+                        if ($_SESSION["tipo"]=="normal") {
+                          echo '<span>Saldo: '.$row_saldo["saldo"].'</span><br>';
+                          echo '<input type="hidden" id="saldo" value="'.$row_saldo["saldo"].'">';
+                        }
+                      ?>
                     <form action="apuesta.php" method="POST">
                       <div class="form-group">
                         <label for="monto">Monto a Apostar: </label>
@@ -919,25 +940,64 @@
       $("#apostar").click(function(){
         <?php
           if ($_SESSION["pais"]==1) {
-            echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 10000000) {
+            if ($_SESSION["tipo"]=="normal") {
+              echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
+                      alert("El saldo es insuficiente para realizar la apuesta");
+
+                    }';
+              echo 'else {';
+                echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 10000000) {
                     alert("El monto a apostar debe estar entre $5000 y $10000000");
 
                   }';
-            echo 'else  $("#apuesta").submit();';
-          }
-          else {
-             echo 'if ($("#monto").val()< 5000) {
-                    alert("El monto minimo a apostar entre 5.000 Bs");
+                echo 'else  $("#apuesta").submit();';
+              echo '}';
+            }
+            else {
+               echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 10000000) {
+                    alert("El monto a apostar debe estar entre $5000 y $10000000");
 
                   }';
-              echo 'else if($(".total").val() > 1000000){
+                echo 'else  $("#apuesta").submit();';
+
+            }
+            
+          }
+          else {
+             if ($_SESSION["tipo"]=="normal") {
+                echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
+                      alert("El saldo es insuficiente para realizar la apuesta");
+
+                    }';
+                echo 'else {';
+                   echo 'if ($("#monto").val()< 5000) {
+                    alert("El monto minimo a apostar es 5.000 Bs");
+
+                  }';
+                  echo 'else if($(".total").val() > 1000000){
                       $(".total").val(1000000);
            
-                      if(confirm("La ganancia m«¡xima es de 1 millon de Bs, ¢Ädesea continuar?")){
+                      if(confirm("La ganancia máxima es de 1 millon de Bs, ¿desea continuar?")){
                       $("#apuesta").submit();
                       }
                     }';
-              echo 'else  $("#apuesta").submit();';
+                  echo 'else  $("#apuesta").submit();';
+                echo '}';
+            }
+              else {
+                 echo 'if ($("#monto").val()< 5000) {
+                        alert("El monto minimo a apostar es 5.000 Bs");
+
+                      }';
+                  echo 'else if($(".total").val() > 1000000){
+                          $(".total").val(1000000);
+               
+                          if(confirm("La ganancia máxima es de 1 millon de Bs, ¿desea continuar?")){
+                          $("#apuesta").submit();
+                          }
+                        }';
+                  echo 'else  $("#apuesta").submit();';
+              }
           }
         ?>
         

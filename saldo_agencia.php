@@ -49,52 +49,42 @@
                 </div>
                 <br>
                 <?php
-                        if ($_SESSION["tipo"]=="admin") {
+                        if ($_SESSION["tipo"]=="root") {
 
-                             $sql="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
-                            $rs=mysqli_query($mysqli,$sql);
-                            $row=mysqli_fetch_array($rs);
-
-                            $sql_sum="SELECT SUM(monto) AS t_monto,  SUM(premio) as t_arr FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
-                            $rs_sum=mysqli_query($mysqli,$sql_sum) or die(mysqli_error());
-                            $row_sum=mysqli_fetch_array($rs_sum);
-                           
-
-                            $sql_ganan="SELECT SUM(monto) AS ganado FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND activo='1' AND ganar='0' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
-                            $rs_ganan=mysqli_query($mysqli,$sql_ganan) or die(mysqli_error());
-                             $row_ganan=mysqli_fetch_array($rs_ganan);
-
-
-                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND ganar='1' AND activo='1' AND pagado='1'  AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
-                            $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
-                             $row_perdi=mysqli_fetch_array($rs_perdi);
-
-                            $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
-                            
-                            $total= $row_ganan["ganado"] - $total_perdido;
-                        }
-                        else {
                             $sql="SELECT agencia FROM agencias WHERE id='".$_POST["agencia"]."'";
                                 $rs=mysqli_query($mysqli,$sql);
                                 $row=mysqli_fetch_array($rs);
 
-                            $sql_sum="SELECT SUM(monto) AS t_monto,  SUM(premio) as t_arr FROM parlay WHERE agencia='".$_POST["agencia"]."' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_sum="SELECT SUM(monto) AS t_monto FROM parlay WHERE agencia='".$_POST["agencia"]."' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_sum=mysqli_query($mysqli,$sql_sum) or die(mysqli_error());
                             $row_sum=mysqli_fetch_array($rs_sum);
-                               
-
-                            $sql_ganan="SELECT SUM(monto) AS ganado FROM parlay WHERE agencia='".$_POST["agencia"]."' AND activo='1' AND ganar='0' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
-                            $rs_ganan=mysqli_query($mysqli,$sql_ganan) or die(mysqli_error());
-                             $row_ganan=mysqli_fetch_array($rs_ganan);
 
 
                             $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_POST["agencia"]."' AND ganar='1' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
                              $row_perdi=mysqli_fetch_array($rs_perdi);
 
-                            $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
+                            $total_perdido=$row_perdi["arr_perdido"];
                             
-                            $total= $row_ganan["ganado"] - $total_perdido;
+                            $total=  $row_sum["t_monto"] - $total_perdido;
+                        }
+                        else {
+                            $sql="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
+                                $rs=mysqli_query($mysqli,$sql);
+                                $row=mysqli_fetch_array($rs);
+
+                            $sql_sum="SELECT SUM(monto) AS t_monto FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $rs_sum=mysqli_query($mysqli,$sql_sum) or die(mysqli_error());
+                            $row_sum=mysqli_fetch_array($rs_sum);
+
+
+                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND ganar='1' AND activo='1' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
+                             $row_perdi=mysqli_fetch_array($rs_perdi);
+
+                            $total_perdido=$row_perdi["arr_perdido"];
+                            
+                            $total=  $row_sum["t_monto"] - $total_perdido;
                         }
 
                     ?>
@@ -124,11 +114,10 @@
                                 <th colspan="2">Del: <?php echo $f1; ?> Al: <?php echo $f2; ?></th>
                             </thead>
                             <tbody>
+                               
                                 <tr><td>Apostado:</td> <td><?php echo $row_sum["t_monto"]; ?></td></tr>
-                                <tr><td>Arriesgado:</td> <td><?php echo $row_sum["t_arr"]; ?></td></tr>
-                                <tr><td>Ganado:</td> <td><?php echo $row_ganan["ganado"]; ?></td></tr>
                                 <tr><td>Perdido:</td> <td><?php echo $total_perdido; ?></td></tr>
-                                <tr><td>Total<br>(Ganado - Perdido):</td> <td><br><?php echo $total; ?></td></tr>
+                                <tr><td>Total:</td> <td><?php echo $total; ?></td></tr>
                                 <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
                             </tbody>
                         </table>   

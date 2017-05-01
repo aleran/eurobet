@@ -31,6 +31,15 @@ $partidos= $_POST["partido"];
 
     $sql_parlay="INSERT INTO parlay(codigo,agencia,tipo,fecha,hora,monto,premio,ganar,pagado,activo) VALUES('".$ticket."','".$_SESSION['agencia']."','".$_POST['tipo']."','".fecha()."','".hora()."','".$_POST["monto"]."','".$_POST["premio"]."','3','0','1')";
       $rs=mysqli_query($mysqli,$sql_parlay) or die(mysqli_error($mysqli));
+      if ($_SESSION["tipo"]=="normal") {
+
+         $sql_s="SELECT saldo FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
+         $rs_s=mysqli_query($mysqli,$sql_s) or die(mysqli_error());
+         $row_s=mysqli_fetch_array($rs_s);
+         $saldo_final = $row_s["saldo"] - $_POST["monto"];
+         $sql_as="UPDATE usuarios SET saldo='".$saldo_final."' WHERE cedula='".$_SESSION["usuario"]."'";
+         $rs_as=mysqli_query($mysqli,$sql_as) or die(mysqli_error($mysqli));
+      }
    echo "<script>window.location='ticket.php?cod_t=".$ticket."'</script>";                
                       
 ?>
