@@ -35,20 +35,20 @@
     <script src="js/fecha.js"></script>
 
     <div id="reloj" style="font-size:14px;"></div>
-    <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un maximo de 15 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
+    <div id="avisow"><marquee>..::<strong>IMPORTANTE:</strong> Nuestra plataforma permite un mínimo de 2 jugadas y un máximo de 15. Montos mínimos de apuesta: <strong>COLOMBIA:</strong> $ 5.000 , <strong>VENEZUELA</strong> : Bs.F 500 ,  <strong>MÉXICO</strong>: $ 30 ::<strong>EUROBET  - ¡Tus Apuestas seguras en línea! - </strong></marquee></div>
     <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 
-                <h4 class="modal-title"><center>¡Hola!, Bienvenido a EuroBet</center></h4>
+                <h4 class="modal-title"><center>¡HOLA!, BIENVENIDO A EUROBET</center></h4>
             </div>
             <div class="modal-body">
-                <p>Este es un sitio de apuestas deportivas sólo para mayores de 18 años , ¿Deseas continuar? Elije el pais:</p>
-                <select name="pais" id="pais">
-                    <option value="1">Colombia</option>
-                    <option value="2">Venezuela</option>
-                </select>
+                <p>Este es un sitio de apuestas deportivas sólo para mayores de 18 años , ¿Deseas continuar?&nbsp;&nbsp; <strong>Elija su país y presione continuar:</strong></p>
+                <center><select name="pais" id="pais">
+                    <option value="1">COLOMBIA</option>
+                    <option value="2">VENEZUELA</option>
+                </select></center>
                 
             </div>
             <div class="modal-footer">
@@ -93,8 +93,29 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                   <a href="#"> <img src="img/RECARGA.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
-                                    
+                                   <a href="#"> <img src="img/fcolombia.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
+                                    <div class="carousel-caption">
+                                        <h3>Fútbol Colombiano</h3>
+                                        <p>¡Vive con nosotros toda la pasión!</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/RECARGA.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/fseleccion.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/beisbolv.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
                                 </div>
                                 <div class="item">
                                     <img src="img/confederaciones.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
@@ -181,8 +202,10 @@
                         </div>
                     </div>
                     <div class="col-lg-6 descripcion">
-                        <p><strong>EuroBet</strong> reúne un grupo de profesionales dedicados al mundo de las apuestas de Parlay, estamos ubicados en Colombia y en la actualidad poseemos clientes en todo el territorio nacional y fuera de nuestras fronteras. </p>
-                        <p>Nuestro personal cuenta con años de experiencia en el ambiente de apuestas deportivas por Internet.</p>
+                        <p><strong>EUROBET</strong> reúne un grupo de profesionales dedicados al mundo de las apuestas  Parlay, estamos  en Colombia y en la actualidad poseemos clientes en todo nuestro país, así como también Venezuela, México y otros países</p>
+                        
+                        <p><strong>¡Juega tranquilo y seguro!</strong>, Donde estés, a través de cualquier dispositivo y a la hora que desees.</p>
+                        <p><a href="ayuda.html"><strong>¿Listo para ganar?</strong></a></p>
                     </div>
                 </div>
                 <div class="row">
@@ -302,6 +325,8 @@
                     </div>
                 </div>
             </div>
+
+            
 
 
             <!-- Contenido -->
