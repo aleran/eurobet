@@ -59,14 +59,27 @@
 	        	<div class="row">
                     <div class="col-lg-6">
                         <?php 
-                            $sql_r="SELECT * FROM usuarios WHERE cedula='".$_POST["usuario"]."' AND tipo='normal' AND agencia='".$_SESSION["agencia"]."'";
-                            $rs_r=mysqli_query($mysqli,$sql_r) or die (mysqli_error());
-                            $num_r=mysqli_num_rows($rs_r);
-                            if ($num_r < 1) {
-                                echo "<script>alert('usuario no existe');window.location='buscar_usuario.php'</script>";
+                            if ($_SESSION["tipo"]=="root") {
+                                $sql_r="SELECT * FROM usuarios WHERE cedula='".$_POST["usuario"]."' AND tipo='normal'";
+                                $rs_r=mysqli_query($mysqli,$sql_r) or die (mysqli_error());
+                                $num_r=mysqli_num_rows($rs_r);
+                                if ($num_r < 1) {
+                                    echo "<script>alert('usuario no existe');window.location='buscar_usuario.php'</script>";
+                                }
+                                $row=mysqli_fetch_array($rs_r);
                             }
+                            else {
+                                $sql_r="SELECT * FROM usuarios WHERE cedula='".$_POST["usuario"]."' AND tipo='normal' AND agencia='".$_SESSION["agencia"]."'";
+                                $rs_r=mysqli_query($mysqli,$sql_r) or die (mysqli_error());
+                                $num_r=mysqli_num_rows($rs_r);
+                                if ($num_r < 1) {
+                                    echo "<script>alert('usuario no existe');window.location='buscar_usuario.php'</script>";
+                                }
+                                $row=mysqli_fetch_array($rs_r);
+                            }
+                            
 
-                            $row=mysqli_fetch_array($rs_r);
+                            
                         ?>
                         <div class="table-responsive">
                             <table class="table table-striped">
@@ -294,8 +307,8 @@
         $("#wrapper").toggleClass("toggled");
     });
     $("#btn_pagar").click(function(){
-        var saldo_actual=$("#saldo").val();
-        var monto_pagar=$("#pagar").val();
+        var saldo_actual=parseInt($("#saldo").val());
+        var monto_pagar=parseInt($("#pagar").val());
         console.log(saldo_actual);
         console.log(monto_pagar);
 

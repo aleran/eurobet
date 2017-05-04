@@ -66,10 +66,10 @@
 	                <?php
                        
 	                	if ($_SESSION["tipo"]=="root") {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND pagado='0'";
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND cedula='' AND pagado='0'";
 	                	}
 	                	else {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'";
+	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND cedula='' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'";
 	                	}
 	                    
 	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());

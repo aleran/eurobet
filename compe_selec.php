@@ -27,10 +27,16 @@
 
         <!-- Sidebar -->
         <!-- Menu -->
-        <?php 
+       <?php 
             if (isset($_SESSION["tipo"])) {
-               include("menu2.php");
+              if ($_SESSION["tipo"]=="normal") {
+                include("menu3.php");
             }
+              else {
+                include("menu2.php");
+              } 
+            }
+            
             else {
                 include("menu1.php");
             }
@@ -567,8 +573,8 @@
                                <tr> <td><center><button class="btn btn-primary" id="ap">Continuar</button></center></td></tr>
                         </form>
                         
-
-                   
+                    
+                        
                                  
                             
                         

@@ -58,7 +58,7 @@
             
 	        	<div class="row">
                     <div class="col-lg-6">
-                        <h3>Buscar usuario:</h3>
+                        <h3>Buscar usuario para Recargar o Pagar:</h3>
                         <form class="form-horizontal" method="POST" action="saldo_usuario.php">
                         	<div class="form-group">
                                     <label for="usuario" class="col-sm-4 control-label">Cedula del Usuario:</label>

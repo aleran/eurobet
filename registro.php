@@ -16,7 +16,8 @@
 		}
 		$sql="INSERT INTO usuarios VALUES (null, '$_POST[pais]', '$_POST[agencia]','$_POST[cedula]', '$_POST[nombre]', '$_POST[apellido]', '$_POST[correo]', '".md5($_POST["clave"])."', '$_POST[direccion]', '$_POST[telefono]', '0', 'normal')";
 		$rs= mysqli_query($mysqli,$sql) or die(mysqli_error($mysqli));
-		include("correo_registro.php");
+		echo "<script>alert('Registrado correctamente');window.location='index.php';</script>";
+		//include("correo_registro.php");
 
 	}
 

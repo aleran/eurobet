@@ -20,10 +20,16 @@
 
         <!-- Sidebar -->
         <!-- Menu -->
-        <?php 
+         <?php 
             if (isset($_SESSION["tipo"])) {
-               include("menu2.php");
+              if ($_SESSION["tipo"]=="normal") {
+                include("menu3.php");
             }
+              else {
+                include("menu2.php");
+              } 
+            }
+            
             else {
                 include("menu1.php");
             }
@@ -864,11 +870,15 @@
                     <?php 
                         if ($_SESSION["tipo"]=="normal") {
                           echo '<span>Saldo: '.$row_saldo["saldo"].'</span><br>';
-                          echo '<input type="hidden" id="saldo" value="'.$row_saldo["saldo"].'">';
                         }
                       ?>
                     
                     <form action="apuesta.php" method="POST">
+                    <?php 
+                        if ($_SESSION["tipo"]=="normal") {
+                          echo '<input type="hidden" name="saldo" id="saldo" value="'.$row_saldo["saldo"].'">';
+                        }
+                      ?>
                       <div class="form-group">
                         <label for="monto">Monto de Apuesta: </label>
                         <input type="text" class="form-control" name="monto" id="monto" autocomplete="off">

@@ -20,9 +20,6 @@ echo '<div id="sidebar-wrapper">
                 <li>
                     <a href="competiciones.php?pais='.$_GET["pais"].'" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
                 </li>
-                <li>
-                    <a href="#" title="¡PRÓXIMAMENTE!"><span class="icon-coin-dollar"></span>&nbsp;Recargas</a>
-                </li>
                 
                 
                 <li>

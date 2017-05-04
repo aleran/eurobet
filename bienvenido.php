@@ -27,8 +27,14 @@
 
         <!-- Sidebar -->
         <!-- Menu -->
-        <?php 
-            include("menu2.php");
+        <?php
+            if ($_SESSION["tipo"]=="normal") {
+                include("menu3.php");
+            } 
+            else {
+                include("menu2.php");
+            }
+           
         ?>
     </div>
 
@@ -69,6 +75,14 @@
             
         <br><br><br><br>
             <h1>¡Bienvenido!, Comience a Apostar.</h1>
+            <?php 
+                if ($_SESSION["tipo"]=="normal") {
+                $sql_sal="SELECT saldo FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
+                $rs_sal=mysqli_query($mysqli,$sql_sal) or die(mysqli_error());
+                $row_sal=mysqli_fetch_array($rs_sal);
+                echo "<center><h3>Saldo: ". $row_sal["saldo"]."</h3></center>";
+                }
+            ?>
             </div>
             
             <!-- Modal Crear de Usuarios -->
