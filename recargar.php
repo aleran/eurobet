@@ -9,6 +9,9 @@
 
 	    $sql_recarga="UPDATE usuarios SET saldo='".$saldo_final."' WHERE cedula='".$_POST["cedula"]."'";
 	    $rs_recarga=mysqli_query($mysqli,$sql_recarga) or die(mysqli_error($mysqli));
+
+	    $sql_trans="INSERT INTO trans_usuario VALUES(null, '".$_SESSION["agencia"]."', '".$_POST["cedula"]."', '".date("Y-m-d")."', 'recarga','".$_POST["recarga"]."')";
+	    $rs_trans=mysqli_query($mysqli,$sql_trans) or die(mysqli_error($mysqli));
 	    echo "<script>alert('recarga realizada');window.location='buscar_usuario.php';</script>";
     }
 
@@ -23,6 +26,9 @@
 
 	    	$sql_pagar="UPDATE usuarios SET saldo='".$saldo_final."' WHERE cedula='".$_POST["cedula"]."'";
 	    	$rs_pagar=mysqli_query($mysqli,$sql_pagar) or die(mysqli_error($mysqli));
+
+	    	$sql_trans="INSERT INTO trans_usuario VALUES(null, '".$_SESSION["agencia"]."', '".$_POST["cedula"]."', '".date("Y-m-d")."', 'pago','".$_POST["pagar"]."')";
+	    	$rs_trans=mysqli_query($mysqli,$sql_trans) or die(mysqli_error($mysqli));
 	    	echo "<script>alert('Pago realizado');window.location='buscar_usuario.php';</script>";
      	}
      	else {

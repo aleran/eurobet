@@ -67,6 +67,14 @@
                             $total_perdido=$row_perdi["arr_perdido"];
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
+
+                            $sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $rs_recargas=mysqli_query($mysqli,$sql_recargas) or die(mysqli_error());
+                            $row_recargas=mysqli_fetch_array($rs_recargas);
+
+                            $sql_pagos="SELECT SUM(monto) AS t_pagos FROM trans_usuario WHERE tipo='pago' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $rs_pagos=mysqli_query($mysqli,$sql_pagos) or die(mysqli_error());
+                            $row_pagos=mysqli_fetch_array($rs_pagos);
                         }
                         else {
                             $sql="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
@@ -85,6 +93,14 @@
                             $total_perdido=$row_perdi["arr_perdido"];
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
+
+                            $sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE agencia='".$_SESSION["agencia"]."' AND tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $rs_recargas=mysqli_query($mysqli,$sql_recargas) or die(mysqli_error());
+                            $row_recargas=mysqli_fetch_array($rs_recargas);
+
+                            $sql_pagos="SELECT SUM(monto) AS t_pagos FROM trans_usuario WHERE agencia='".$_SESSION["agencia"]."' AND tipo='pago' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $rs_pagos=mysqli_query($mysqli,$sql_pagos) or die(mysqli_error());
+                            $row_pagos=mysqli_fetch_array($rs_pagos);
                         }
 
                     ?>
@@ -163,7 +179,7 @@
 
                             $total_perdido1=$row_perdi1["arr_perdido"];
                             
-                            $total=  $row_sum1["t_monto"] - $total_perdido1;
+                            $total1=  $row_sum1["t_monto"] - $total_perdido1;
                         }
 
                     ?>
@@ -193,6 +209,40 @@
                                 <tr><td>Apostado:</td> <td><?php echo $row_sum1["t_monto"]; ?></td></tr>
                                 <tr><td>Perdido:</td> <td><?php echo $total_perdido1; ?></td></tr>
                                 <tr><td>Total:</td> <td><?php echo $total1; ?></td></tr>
+                                <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
+                            </tbody>
+                        </table>   
+                    </div>
+                    
+                    </div>
+            </div>
+
+            <div class="row">
+                    
+                    <div class="col-sm-6 col-xs-offset-3">
+                    <?php
+                  
+                            echo '<h3>Recargas y Pagos a usuarios</h3>';
+                        
+                    ?>
+                    
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <?php 
+                                    list($a,$m,$d)=explode("-", $_POST["desde"]);
+                                    $f1=$d."/".$m."/".$a;
+                                    list($a2,$m2,$d2)=explode("-", $_POST["hasta"]);
+                                    $f2=$d2."/".$m2."/".$a2;
+                                ?>
+                                <th colspan="2">Del: <?php echo $f1; ?> Al: <?php echo $f2; ?></th>
+                            </thead>
+                            <tbody>
+                               
+                                <tr><td>Recargas:</td> <td><?php echo $row_recargas["t_recargas"]; ?></td></tr>
+                                <tr><td>Pagos:</td> <td><?php echo $row_pagos["t_pagos"]; ?></td></tr>
+                                
                                 <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
                             </tbody>
                         </table>   
