@@ -68,11 +68,11 @@
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
 
-                            $sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE agencia='".$_POST["agencia"]."' AND tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_recargas=mysqli_query($mysqli,$sql_recargas) or die(mysqli_error());
                             $row_recargas=mysqli_fetch_array($rs_recargas);
 
-                            $sql_pagos="SELECT SUM(monto) AS t_pagos FROM trans_usuario WHERE tipo='pago' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_pagos="SELECT SUM(monto) AS t_pagos FROM trans_usuario WHERE agencia='".$_POST["agencia"]."' AND tipo='pago' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_pagos=mysqli_query($mysqli,$sql_pagos) or die(mysqli_error());
                             $row_pagos=mysqli_fetch_array($rs_pagos);
                         }
