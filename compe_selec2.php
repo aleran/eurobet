@@ -267,6 +267,8 @@
 
                                                                  $("#runline2'.$row2["id"].'").prop("checked", false)
 
+                                                                 $("#alta'.$row2["id"].'").prop("checked", false)
+
                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
 
                                                                    $("#gpt2'.$row2["id"].'").prop("checked", false)
@@ -286,6 +288,8 @@
                                                                 $("#runline1'.$row2["id"].'").prop("checked", false)
 
                                                                  $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#alta'.$row2["id"].'").prop("checked", false)
 
                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
 
@@ -387,6 +391,7 @@
 
                                                                 $("#runline2'.$row2["id"].'").prop("checked", false)
 
+                                                                 $("#alta'.$row2["id"].'").prop("checked", false)
 
                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
 
@@ -409,7 +414,8 @@
                                                                 $("#empate'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#runline1'.$row2["id"].'").prop("checked", false)
-
+                                                                
+                                                                 $("#alta'.$row2["id"].'").prop("checked", false)
 
                                                                   $("#gpt1'.$row2["id"].'").prop("checked", false)
 
