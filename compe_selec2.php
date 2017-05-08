@@ -112,12 +112,18 @@
                     
                         <?php
                                 
-                          
                             include("lib/fecha_hora.php");
-                            if (!isset($_POST["competicion"])) {
+
+                             if (isset($_POST["competicion"])) {
+                                $competicion=$_POST["competicion"];
+                            }
+                            else if (isset($_GET["compe_select"])) {
+                                $competicion=unserialize(urldecode(stripslashes($_GET["compe_select"])));
+                            }
+                           
+                            if (!isset($competicion)) {
                               echo "<script>alert('no selecciono ligas');window.location='competiciones.php?pais=".$_GET["pais"]."'</script>";
                             }
-                             $competicion=$_POST["competicion"];
                              foreach ($competicion as $pb => $valor) {
 								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
                             	$rs=mysqli_query($mysqli, $sql) or die (mysqli_error());

@@ -3,7 +3,7 @@
 	include("time_sesion.php"); 
 	include("conexion/conexion.php");
 
-	$sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio FROM parlay WHERE codigo='".$_GET["cod_t"]."'";
+	$sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio, tipo FROM parlay WHERE codigo='".$_GET["cod_t"]."'";
 	$rs_ticket=(mysqli_query($mysqli, $sql_ticket)) or die(mysqli_error());
 	$row_ticket=mysqli_fetch_array($rs_ticket);
 
@@ -11,7 +11,8 @@
 	$rs_agen=mysqli_query($mysqli,$sql_agen) or die(mysqli_error());
 	$row_agen=mysqli_fetch_array($rs_agen);
 
-	
+    $compe_select=array();
+
 	echo '<style>
 		#ticket {
 		width: 302px;
@@ -225,7 +226,10 @@
             echo "-------------------------------------------------------------<br>";
                                     
         }
-
+        if (!in_array($row["id_competicion"], $compe_select)) {
+            $compe_select[]=$row["id_competicion"];
+        }
+        
     }
 
                             echo "Apostado: ".$row_ticket["monto"]."<br>";
@@ -240,7 +244,8 @@
 	echo "<a href='bienvenido.php' class='btn btn-success hidden-print'  type='button'>Volver</a><br>";
 	echo "</div>";
 	echo "</div><br>";
-
+    $compe_select=serialize($compe_select);
+    $compe_select=urlencode($compe_select);
 	
 
 ?>
@@ -249,7 +254,14 @@
 <script>
 	          
         window.print();
-        window.location.replace("competiciones.php");
+        <?php if ($row_ticket["tipo"]=="parlay") { ?>
+        window.location="compe_selec.php?compe_select=<?php echo $compe_select;?>";
+        <?php } 
+        else { ?>
+
+            window.location="compe_selec2.php?compe_select=<?php echo $compe_select;?>";
+        <?php }?>
+        
 
        
     
