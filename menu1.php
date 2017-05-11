@@ -18,7 +18,7 @@ echo '<div id="sidebar-wrapper">
                 </li>
                 
                 <li>
-                    <a href="competiciones.php?pais='.$_GET["pais"].'" target="_blank" title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
+                    <a href="competiciones.php?pais='.$_GET["pais"].'"  title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
                 </li>
                 
                 

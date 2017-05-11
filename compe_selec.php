@@ -325,6 +325,8 @@
                                                                    $("#gst2'.$row2["id"].'").prop("checked", false)
 
                                                                    $("#empatept'.$row2["id"].'").prop("checked", false)
+                                                                   
+                                                                   $("#baja'.$row2["id"].'").prop("checked", false)
                                                             
                                                             }
 

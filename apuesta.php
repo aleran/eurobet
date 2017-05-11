@@ -2,7 +2,8 @@
    include("time_sesion.php"); 
    include("conexion/conexion.php");
    include("lib/fecha_hora.php");
-   do {
+   if (isset($_POST["monto"])) {
+       do {
          $caracteres = "1234567890"; //posibles caracteres a usar
          $numerodeletras=8; //numero de letras para generar el texto
          $ticket =$_SESSION['agencia']."-". ""; //variable para almacenar la cadena generada
@@ -50,6 +51,8 @@ $partidos= $_POST["partido"];
          $rs=mysqli_query($mysqli,$sql_parlay) or die(mysqli_error($mysqli));
 
       }
-   echo "<script>window.location='ticket.php?cod_t=".$ticket."'</script>";                
+   echo "<script>window.location='ticket.php?cod_t=".$ticket."'</script>";       
+   }
+           
                       
 ?>
