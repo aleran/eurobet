@@ -2,7 +2,7 @@
    include("time_sesion.php"); 
    include("conexion/conexion.php");
    include("lib/fecha_hora.php");
-   if (isset($_POST["monto"])) {
+   if (isset($_SESSION["tipo"])) {
        do {
          $caracteres = "1234567890"; //posibles caracteres a usar
          $numerodeletras=8; //numero de letras para generar el texto
