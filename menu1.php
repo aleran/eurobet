@@ -26,6 +26,9 @@ echo '<div id="sidebar-wrapper">
                     <a href="reglas-de-juego.html?pais='.$_GET["pais"].'"" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
                             
                 </li>
+                 <li>
+                    <a href="consulta_tu_ticket.php?pais='.$_GET["pais"].'"" target="_blank" title="Consulta tu ticket"><span class="icon-file-text2"></span>&nbsp;Consulta tu Ticket</a>
+                </li>
                 <li>
                     <a href="ayuda.html?pais='.$_GET["pais"].'"" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros"><span class="icon-bullhorn"></span>&nbsp;¿Cómo Apostar?</a>
                 </li>

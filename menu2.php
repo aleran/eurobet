@@ -31,12 +31,16 @@
                     </li>';
 
                     
-                     echo '<li>
+                    echo '<li>
                         <a href="consultas.php" title="Consulta de Tickets Activos"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
                     </li>';
                     
-                     echo '<li>
+                    echo '<li>
                                 <a href="saldos.php" title="Resumen Económico detallado de Agencias"><span class="icon-coin-dollar"></span>&nbsp;Cuentas</a>
+                            </li>';
+
+                    echo '<li>
+                                <a href="cambiar_clave.php" title="Cambiar Contraseña"><span class="icon-checkmark2"></span>&nbsp;Cambiar Clave</a>
                             </li>';
                 
                 echo '<li>

@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<?php include("time_sesion.php"); 
-    include("conexion/conexion.php");
-    
-?>
-<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+<head>
 
      <?php
         include("head.php");
@@ -15,131 +11,95 @@
 </head>
 
 <body>
- 
+    <div style="float:right;">
+        <script src="js/meses.js"></script>
+    </div>
+
+
+    <script src="js/fecha.js"></script>
+
+<div id="reloj" style="font-size:14px;"></div>
+<div id="avisow"><marquee>..::<strong>IMPORTANTE:</strong> <strong>LA COMBINACIÓN GANAR Y ALTA, RUNLINE Y ALTA NO SE ENCUENTRA DISPONIBLE, PUEDES JUGAR GANAR Y BAJA O EMPATE Y ALTA/BAJA</strong> -- Nuestra plataforma permite un mínimo de 2 jugadas y un máximo de 15. Montos mínimos de apuesta: <strong>COLOMBIA:</strong> $ 5.000 , <strong>VENEZUELA</strong> : Bs.F 500 ,  <strong>MÉXICO</strong>: $ 30 ::<strong>EUROBET  - ¡Tus Apuestas seguras en línea! --- </strong></marquee></div>
     <div id="wrapper">
 
         <!-- Sidebar -->
         <!-- Menu -->
         <?php 
-            include("menu2.php");
+
+                include("menu1.php");
+  
+            
         ?>
-</div>
+    </div>
 
         <!-- /#sidebar-wrapper -->
        
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header3.png" class="img-responsive" alt="">
+                <a href="index.php"><img src="img/header3.png" class="img-responsive" alt=""></a>
         </header>
         <br>
             <div class="container-fluid">
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                        <?php 
-                          $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
-                            $rs_ag=mysqli_query($mysqli,$sql_ag);
-                            $row_ag=mysqli_fetch_array($rs_ag);
-                            echo "<h4>Agencia: ". $row_ag["agencia"]; 
-                        ?> 
-                            <a href="cerrar_sesion.php"> Salir</a></h4>
+                   	
+                   		<h3>Introduzca el codigo del ticket:</h3>
+                   		<br>
+                    	<form class="form-horizontal" name="" method="POST" action="con_tu_ticket.php?pais=<?php echo $_GET["pais"] ?>">
+                                
+                              
+
+                                <div class="form-group">
+                                    <label for="codigo" class="col-sm-4 control-label">Codigo del ticket:</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ejm: 1-2231313" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-6 col-sm-offset-3"">
+                                        <button class="btn btn-warning">Consulta Ticket</button>
+                                    </div>
+                                </div>
+                                
+                            
+
+                        </form>
+                    
+                    
                     </div>
                     
                 </div>
-                
-                <div class="row">
-                    
-                  <h3>Tickets por pagar</h3>
-                	<div class="table-responsive">
-                		<table class="table table-striped">
-	                		<thead>
-	                            <th>Codigo</th>
-	                            <th>Apuesta</th>
-	                            <th>Fecha - Hora</th>
-	                            <th>Apostado</th>
-	                            <th>Ganancia</th>
-	                        </thead>
-	                        <tbody>
-	                        	
-                	
-	                <?php
+   
+                     
                        
-	                	if ($_SESSION["tipo"]=="root") {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND cedula='' AND pagado='0'";
-                            $sql_t_pagar="SELECT SUM(premio) AS t_pagar FROM parlay WHERE activo='1' AND ganar='1' AND cedula='' AND pagado='0'";
-                            $rs_t_pagar=mysqli_query($mysqli, $sql_t_pagar) or die(mysqli_error());
-                            $row_t_pagar=mysqli_fetch_array($rs_t_pagar);
-	                	}
-	                	else {
-	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND cedula='' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'";
-
-                            $sql_t_pagar="SELECT SUM(premio) AS t_pagar FROM parlay WHERE activo='1' AND ganar='1' AND cedula='' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'";
-                            $rs_t_pagar=mysqli_query($mysqli, $sql_t_pagar) or die(mysqli_error());
-                            $row_t_pagar=mysqli_fetch_array($rs_t_pagar);
-	                	}
-	                    
-	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
-	                    while ($row_act=mysqli_fetch_array($rs_act)) {
-	                    		list($a3,$m3,$d3) = explode("-", $row_act["fecha"]);
-                                $fecha=$d3."/".$m3."/".$a3;
-	                    		echo"<tr>";
-	                    			echo"<td>";
-	                    				echo "<a href='con_pp.php?codigo=".$row_act["codigo"]."'>".$row_act["codigo"]."</a>";
-	                    			echo"</td>";
-	                    			echo"<td>";
-	                    				echo $row_act["tipo"];
-	                    			echo"</td>";
-	                    			echo"<td>";
-	                    				echo $fecha ." - ". $row_act["hora"];
-	                    			echo"</td>";
-	                    			echo"<td>";
-	                    				echo $row_act["monto"];
-	                    			echo"</td>";
-	                    			echo"<td>";
-	                    				echo $row_act["premio"];
-	                    			echo"</td>";
-	                    		echo"</tr>";
-
-	                    }
-                        echo"<tr>";
-                            echo"<td></td>";
-                            echo"<td></td>";
-                            echo"<td></td>";
-                            echo"<td><b>Total a Pagar:<b></td>";
-                            echo"<td>";
-                        echo $row_t_pagar["t_pagar"];
-                            echo"<td>";
-                        echo"<tr>";
-	                ?>
-                    		
-                				
-                			</tbody>
-                		</table>
-                	</div>
+                                
+                            
+                        
+            
                 
             
-                <br>
         
-            </div>
-            
-            <!-- Modal Crear de Usuarios -->
+        
+                <!-- Modal Registro de Usuarios -->
 
-            <div class="modal fade" id="modalUsuarios" tabindex="-1" role="dialog" aria-labelledby="modalUsuariosLabel">
+            <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="modalUsuariosLabel">Registro de Usuarios</h4>
+                            <h4 class="modal-title" id="modalRegistroLabel">Registrate</h4>
                         </div>
                         <div class="modal-body">
                         
-                            <form class="form-horizontal" method="POST" action="crear_usuarios.php">
+                            <form class="form-horizontal" name="registro" method="POST" action="registro.php">
                                 <div class="form-group">
                                     <label for="pais" class="col-sm-4 control-label">Pais:</label>
                                     <div class="col-sm-6">
                                         <select  name="pais" id="pais" class="form-control">
-                                        <?php 
+                                        <?php
+                                            include("conexion/conexion.php"); 
                                             $sql_pais="SELECT * FROM paises";
                                             $rs_pais=mysqli_query($mysqli,$sql_pais) or die(mysqli_error());
                                             while ($row_pais=mysqli_fetch_array($rs_pais)) {
@@ -191,9 +151,21 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="correo2" class="col-sm-4 control-label">Confirmar Correo:</label>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" name="correo2" id="correo2" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="clave" class="col-sm-4 control-label">Password:</label>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control" name="clave" id="clave" placeholder="" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="clave2" class="col-sm-4 control-label">Confirmar Password:</label>
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control" name="clave2" id="clave2" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -219,6 +191,8 @@
                     </div>
                 </div>
             </div>
+                 
+
             
 
           
@@ -244,6 +218,8 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+   
     </script>
 </body>
 
