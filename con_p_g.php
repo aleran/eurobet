@@ -309,10 +309,10 @@
                             echo "</div>";
 
                             if ($row_ticket["ganar"]==1) {
-                                echo "<h3>Ganador</h3>";
+                                echo "<h3><center><strong>GANADOR</strong></center></h3>";
                             }
                             else if ($row_ticket["ganar"]==0) {
-                                 echo "<h3>Perdedor</h3>";
+                                 echo "<h3><center><strong>PERDEDOR</strong></center></h3>";
                             }
                    
                     ?>

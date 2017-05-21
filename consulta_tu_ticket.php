@@ -45,21 +45,21 @@
                 <div class="row">
                     <div class="col-lg-6">
                    	
-                   		<h3>Introduzca el codigo del ticket:</h3>
+                   		<h3>Por favor, ingrese el serial  del ticket:</h3>
                    		<br>
                     	<form class="form-horizontal" name="" method="POST" action="con_tu_ticket.php?pais=<?php echo $_GET["pais"] ?>">
                                 
                               
 
                                 <div class="form-group">
-                                    <label for="codigo" class="col-sm-4 control-label">Codigo del ticket:</label>
+                                    <label for="codigo" class="col-sm-4 control-label">Serial:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ejm: 1-2231313" required>
+                                        <input type="text" class="form-control" name="codigo" id="codigo" placeholder="Ejm: 5-2231313" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-6 col-sm-offset-3"">
-                                        <button class="btn btn-warning">Consulta Ticket</button>
+                                        <button class="btn btn-info">CONSULTAR</button>
                                     </div>
                                 </div>
                                 

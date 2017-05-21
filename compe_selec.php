@@ -125,7 +125,7 @@
                             }
                            
                             if (!isset($competicion)) {
-                              echo "<script>alert('no selecciono ligas');window.location='competiciones.php?pais=".$_GET["pais"]."'</script>";
+                              echo "<script>alert('¡No seleccionó ligas!');window.location='competiciones.php?pais=".$_GET["pais"]."'</script>";
                             }
                              foreach ($competicion as $pb => $valor) {
 								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
@@ -159,7 +159,7 @@
                                             if ($num2 == 0) {
                                                 echo "<tr>";
                                                     echo "<td>";
-                                                        echo "NO HAY PARTIDOS";
+                                                        echo "POR AHORA NO HAY PARTIDOS, INTENTA MÁS TARDE";
                                                     echo "</td>";
                                                 echo "</tr>";
                                             }
@@ -172,7 +172,7 @@
                                             	$row4=mysqli_fetch_array($rs4);
                                                 echo '<tr class="danger">';
                                                 echo '<td>Fecha - Hora</td>';
-	                                                echo '<td>Equipo</td>';
+	                                                echo '<td>Equipos</td>';
 	                                                echo '<td>Moneyline</td>';
 	                                                 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4) {
 	                                                 echo '<td>Alta/Baja</td>';
@@ -585,7 +585,7 @@
                            
                                      
                                 ?>
-                               <tr> <td><center><button class="btn btn-primary" id="ap">Continuar</button></center></td></tr>
+                               <tr> <td><center><button class="btn btn-primary" id="ap">CONTINUAR</button></center></td></tr>
                         </form>
                         
                     
@@ -643,7 +643,7 @@
   
     </script>
     
-    <h6><center><strong>IMPORTANTE:</strong> LOS VALORES DE LAS LÍNEAS PUEDEN CAMBIAR DURANTE EL DÍA <strong>SIN PREVIO AVISO</strong></center></h6>
+   <h3><center><strong>ATENCIÓN:</strong><strong> LAS PERSONAS QUE JUGARON EL LOGRO DE <font color="BLUE">MILLONARIOS A 565</font> ESA JUGADA NO ES VÁLIDA SERÁ CANCELADA SIN EXCEPCIÓN <font color="RED">EL LOGRO REAL ES -350</font>, PARA APUESTAS COMBINADAS SE TOMARÁ COMO <font color="GREEN">PUSH</font></strong></center></h3>
     <h6><center><strong>SE INFORMA:</strong> QUE EN CASO DE EMPATE DE LOGRO (PUSH), DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h6>
 </body>
 

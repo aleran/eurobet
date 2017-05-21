@@ -77,6 +77,8 @@
                     </div>
                     
                 </div>
+                <h3><center><strong>ATENCIÓN:</strong><strong> LAS PERSONAS QUE JUGARON EL LOGRO DE <font color="BLUE">MILLONARIOS A 565</font> ESA JUGADA NO ES VÁLIDA SERÁ CANCELADA SIN EXCEPCIÓN <font color="RED">EL LOGRO REAL ES -350</font>, PARA APUESTAS COMBINADAS SE TOMARÁ COMO <font color="GREEN">PUSH</font></strong></center></h3>
+                
                  <?php 
                     if (isset($_SESSION["pais"])) {
                         echo '<center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a> <a href="competiciones2.php" class="btn btn-info">Directa</a></center>';

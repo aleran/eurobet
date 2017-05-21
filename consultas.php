@@ -67,10 +67,10 @@
                         
                     </div>
                      <div class="col-lg-2">
-                        <a href="tickets_fecha_p.php" class="btn btn-danger">Perdedores</a>
+                        <a href="tickets_fecha_p.php" class="btn btn-danger">PERDEDORES</a>
                     </div>
                     <div class="col-lg-2">
-                        <a href="tickets_fecha_g.php" class="btn btn-success">Ganadores</a>
+                        <a href="tickets_fecha_g.php" class="btn btn-success">GANADORES</a>
                     </div>
                     <div class="col-lg-2">
                         <a href="" class="btn btn-info" data-toggle="modal" data-target="#modalT">BUSCAR</a>

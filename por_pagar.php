@@ -106,7 +106,7 @@
                             echo"<td></td>";
                             echo"<td></td>";
                             echo"<td></td>";
-                            echo"<td><b>Total a Pagar:<b></td>";
+                            echo"<td><b>Monto a Pagar :<b></td>";
                             echo"<td>";
                         echo $row_t_pagar["t_pagar"];
                             echo"<td>";

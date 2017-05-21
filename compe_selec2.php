@@ -747,7 +747,7 @@
   
     </script>
     
-   <h6><center><strong>IMPORTANTE:</strong> LOS VALORES DE LAS LÍNEAS PUEDEN CAMBIAR DURANTE EL DÍA <strong>SIN PREVIO AVISO</strong></center></h6>
+  <h3><center><strong>ATENCIÓN:</strong><strong> LAS PERSONAS QUE JUGARON EL LOGRO DE <font color="BLUE">MILLONARIOS A 565</font> ESA JUGADA NO ES VÁLIDA SERÁ CANCELADA SIN EXCEPCIÓN <font color="RED">EL LOGRO REAL ES -350</font>, PARA APUESTAS COMBINADAS SE TOMARÁ COMO <font color="GREEN">PUSH</font></strong></center></h3>
     <h6><center><strong>SE INFORMA:</strong> QUE EN CASO DE EMPATE DE LOGRO (PUSH), DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h6>
     
 </body>

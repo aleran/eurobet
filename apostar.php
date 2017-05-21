@@ -77,6 +77,8 @@
                     </div>
                     
                 </div>
+                
+                
                
                 <div class="row">
                     <form action="apuesta.php" id="apuesta" method="POST">
