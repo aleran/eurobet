@@ -57,14 +57,14 @@
                     <div class="col-lg-6">
                    	  <?php 
                     include("conexion/conexion.php");
-                        if ($_SESSION["pais"]==1 || $_GET["pais"]==1) {
+                        if ($_SESSION["pais"]==2 || $_GET["pais"]==2) {
 
-                            $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
+                            $sql_inicio="SELECT id, hora_v FROM partidos WHERE fecha_v='".date("Y-m-d")."' AND inicio_v='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
                             while ($row_inicio=mysqli_fetch_array($rs_inicio)) {
 
-                                if ($row_inicio["hora"] <= date("H:i:s")) {
-                                    $sql_act="UPDATE partidos SET inicio='1' WHERE id='".$row_inicio["id"]."'";
+                                if ($row_inicio["hora_v"] <= date("H:i:s")) {
+                                    $sql_act="UPDATE partidos SET inicio_v='1' WHERE id='".$row_inicio["id"]."'";
                                     $rs_act=mysqli_query($mysqli,$sql_act) or die(mysqli_error());
                                     
                                 }
@@ -74,12 +74,12 @@
 
                         else {
 
-                            $sql_inicio="SELECT id, hora_v FROM partidos WHERE fecha_v='".date("Y-m-d")."' AND inicio_v='0'";
+                             $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
                             while ($row_inicio=mysqli_fetch_array($rs_inicio)) {
 
-                                if ($row_inicio["hora_v"] <= date("H:i:s")) {
-                                    $sql_act="UPDATE partidos SET inicio_v='1' WHERE id='".$row_inicio["id"]."'";
+                                if ($row_inicio["hora"] <= date("H:i:s")) {
+                                    $sql_act="UPDATE partidos SET inicio='1' WHERE id='".$row_inicio["id"]."'";
                                     $rs_act=mysqli_query($mysqli,$sql_act) or die(mysqli_error());
                                     
                                 }
@@ -192,14 +192,15 @@
                                                 echo '</tr>';
                                                 echo '<tr class="agg">';
 
-                                                if ($_SESSION["pais"]==1 || $_GET["pais"]==1) {
+                                                if ($_SESSION["pais"]==2 || $_GET["pais"]==2) {
                                                     list($a,$m,$d) = explode("-",$row2["fecha"]);
-                                                    echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora"].'</td>';
+                                                    echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora_v"].'</td>';
+                                                    
                                                 }
 
                                                 else {
                                                     list($a,$m,$d) = explode("-",$row2["fecha_v"]);
-                                                    echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora_v"].'</td>';
+                                                    echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora"].'</td>';
 
                                                 }
                                               

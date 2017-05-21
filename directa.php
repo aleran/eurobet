@@ -976,6 +976,32 @@
             }
             
           }
+
+          else if ($_SESSION["pais"]==3) {
+            if ($_SESSION["tipo"]=="normal") {
+              echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
+                      alert("El saldo es insuficiente para realizar la apuesta");
+
+                    }';
+              echo 'else {';
+                echo 'if ($("#monto").val()< 30 || $("#monto").val() > 10000000) {
+                    alert("El monto a apostar debe estar entre $30 y $10000000");
+
+                  }';
+                echo 'else  $("#apuesta").submit();';
+              echo '}';
+            }
+            else {
+               echo 'if ($("#monto").val()< 30 || $("#monto").val() > 10000000) {
+                    alert("El monto a apostar debe estar entre $30 y $10000000");
+
+                  }';
+                echo 'else  $("#apuesta").submit();';
+
+            }
+            
+          }
+
           else {
              if ($_SESSION["tipo"]=="normal") {
                 echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {

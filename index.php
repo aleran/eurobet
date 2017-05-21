@@ -48,6 +48,7 @@
                 <center><select name="pais" id="pais">
                     <option value="1">COLOMBIA</option>
                     <option value="2">VENEZUELA</option>
+                    <option value="3">MEXICO</option>
                 </select></center>
                 
             </div>

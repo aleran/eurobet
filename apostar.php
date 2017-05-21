@@ -975,7 +975,7 @@
                     echo 'else {';
 
                       echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 1000000) {
-                      alert("El monto a apostar debe estar entre $5.000 y $1.000.000 para Colombia y $30 a $60.000 para Mexico");
+                      alert("El monto a apostar debe estar entre $5.000 y $1.000.000");
 
                       }';
 
@@ -992,7 +992,51 @@
                 }
                 else {
                    echo 'if ($("#monto").val()< 5000 || $("#monto").val() > 1000000) {
-                      alert("El monto a apostar debe estar entre $5.000 y $1.000.000 para Colombia y $30 a $60.000 para Mexico");
+                      alert("El monto a apostar debe estar entre $5.000 y $1.000.000");
+
+                      }';
+
+                      echo 'else if($(".total").val() > 10000000){
+                      $(".total").val(10000000);
+           
+                      if(confirm("La ganancia máxima es de 10 millones de pesos, ¿desea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                      }';
+                      echo 'else  $("#apuesta").submit();';
+                }
+              
+              
+            }
+
+             else if ($_SESSION["pais"]==3) {
+               if ($_SESSION["tipo"]=="normal") {
+                  echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
+                      alert("El saldo es insuficiente para realizar la apuesta");
+
+                    }';
+
+                    echo 'else {';
+
+                      echo 'if ($("#monto").val()< 30 || $("#monto").val() > 60000) {
+                      alert("El monto a apostar debe estar entre $30 a $60.000");
+
+                      }';
+
+                      echo 'else if($(".total").val() > 10000000){
+                      $(".total").val(10000000);
+           
+                      if(confirm("La ganancia máxima es de 10 millones de pesos, ¿desea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                      }';
+                       echo 'else  $("#apuesta").submit();';
+                    echo '}';
+          
+                }
+                else {
+                    echo 'if ($("#monto").val()< 30 || $("#monto").val() > 60000) {
+                      alert("El monto a apostar debe estar entre $30 a $60.000");
 
                       }';
 
