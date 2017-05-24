@@ -94,12 +94,31 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                   <a href="#"> <img src="img/fcolombia.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
-                                    <div class="carousel-caption">
-                                        <h3>Fútbol Colombiano</h3>
-                                        <p>¡Vive con nosotros toda la pasión!</p>
+                                   <a href="#"> <img src="img/final_ucl.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
+                                    <div class="#">
+                                        
+                                        
                                     </div>
                                 </div>
+                                 <div class="item">
+                                    <img src="img/final_u2.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                 <div class="item">
+                                    <img src="img/final_el.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                 <div class="item">
+                                    <img src="img/final_cr.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                
                                 <div class="item">
                                     <img src="img/RECARGA.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
@@ -126,66 +145,58 @@
                                 </div>
                                 <div class="item">
                                     <img src="img/hockey_finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
-                                    <div class="carousel-caption">
-                                        <h3>Hockey Playoffs</h3>
-                                        <p>Los mejores equipos se disputan el titulo</p>
+                                    <div class="">
+                                       
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="img/nba_finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
-                                    <div class="carousel-caption">
-                                        <h3>NBA Playoffs</h3>
-                                        <p>Vive con nostros toda la pasión</p>
+                                    <div class="">
+                                        
+                                        
                                     </div>
                                 </div>
                                  <div class="item">
                                     <img src="img/futbol.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
-                                    <div class="carousel-caption">
-                                        <h3>Fútbol</h3>
-                                        <p>Todas las Ligas</p>
+                                    <div class="">
+                                        
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="img/Lebron.jpg" alt="..." width="100%">
-                                    <div class="carousel-caption">
-                                        <h3>Baloncesto</h3>
-                                        <p>NBA / Colegial</p>
+                                    <div class="">
+                                       
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="img/mcabrera.jpg" alt="..." width="100%">
-                                    <div class="carousel-caption">
-                                        <h3>Béisbol</h3>
-                                        <p>Grandes Ligas</p>
+                                    <div class="">
+                                        
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/nadal.jpg" alt="..." width="100%">
-                                    <div class="carousel-caption">
-                                        <h3>Tenis</h3>
-                                        <p>ATP</p>
+                                    <img src="img/fcolombia.jpg" alt="..." width="100%">
+                                    <div class="">
+                                        
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="img/peiton.jpg" alt="..." width="100%">
-                                    <div class="carousel-caption">
-                                        <h3>Fútbol Americano</h3>
-                                        <p>NFL</p>
+                                    <div class="">
+                                        
                                     </div>
                                 </div>
                                 <div class="item">
                                     <img src="img/nhl.jpg" alt="..." width="100%">
-                                    <div class="carousel-caption">
-                                        <h3>Hockey sobre hielo</h3>
-                                        <p>NHL Stanley Cup</p>
+                                    <div class="">
+                                        
                                     </div>
                                     
                                 </div>
                                 <div class="item">
                                     <img src="img/boxeo.jpg" alt="..." width="100%">
-                                    <div class="carousel-caption">
-                                        <h3>Boxeo</h3>
-                                        <p>Las Mejores peleas</p>
+                                    <div class="">
+                                        
                                     </div>
                                     
                                 </div>

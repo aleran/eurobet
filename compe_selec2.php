@@ -1,6 +1,6 @@
+<?php session_start()  ?>
 <!DOCTYPE html>
 <html lang="es">
-<?php session_start()  ?>
 <head>
 
      <?php
@@ -747,8 +747,8 @@
   
     </script>
     
-  <h3><center><strong>ATENCIÓN:</strong><strong> LAS PERSONAS QUE JUGARON EL LOGRO DE <font color="BLUE">MILLONARIOS A 565</font> ESA JUGADA NO ES VÁLIDA SERÁ CANCELADA SIN EXCEPCIÓN <font color="RED">EL LOGRO REAL ES -350</font>, PARA APUESTAS COMBINADAS SE TOMARÁ COMO <font color="GREEN">PUSH</font></strong></center></h3>
-    <h6><center><strong>SE INFORMA:</strong> QUE EN CASO DE EMPATE DE LOGRO (PUSH), DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h6>
+  
+   <h4><center><strong>SE INFORMA:</strong> QUE EN CASO DE <font color="BLUE">EMPATE DE LOGRO (PUSH),</font> DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h4>
     
 </body>
 

@@ -1,9 +1,8 @@
+<?php include("time_sesion.php");  
+    include("conexion/conexion.php");  
+?>
 <!DOCTYPE html>
 <html lang="es">
-<?php include("time_sesion.php");  
-    include("conexion/conexion.php");
-   
-?>
 <head>
 
      <?php

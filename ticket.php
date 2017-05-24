@@ -1,4 +1,3 @@
-<link href="css/bootstrap.min.css" rel="stylesheet">
 <?php
 	include("time_sesion.php"); 
 	include("conexion/conexion.php");
@@ -249,6 +248,7 @@
 	
 
 ?>
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>

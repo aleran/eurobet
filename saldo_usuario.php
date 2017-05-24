@@ -1,8 +1,11 @@
+<?php include("time_sesion.php");
+    if ($_SESSION['tipo']=="normal") {
+          header("Location: bienvenido.php");
+      }
+    include("conexion/conexion.php");  
+?>
 <!DOCTYPE html>
 <html lang="es">
-<?php include("time_sesion.php");  
-    include("conexion/conexion.php");
-?>
 <head>
 
      <?php

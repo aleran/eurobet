@@ -1,5 +1,8 @@
 <?php 
-	include("time_sesion.php");  
+	include("time_sesion.php");
+	if ($_SESSION['tipo']=="normal") {
+          header("Location: bienvenido.php");
+      }  
     include("conexion/conexion.php");
     if (isset($_POST["recarga"])) {
     	$sql_s="SELECT saldo FROM usuarios WHERE cedula='".$_POST["cedula"]."'";

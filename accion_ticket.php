@@ -2,7 +2,6 @@
 	include("time_sesion.php");
 	include("conexion/conexion.php");
 	if (isset($_GET["anular"])) {
-
 		$sql_anular="UPDATE parlay SET activo='0' WHERE codigo='".$_GET["anular"]."'";
 		$rs_anular=mysqli_query($mysqli,$sql_anular) or die(mysqli_error($mysqli));
 		echo "<script>alert('ticket anulado');window.location='activos.php?desde=".$_GET["desde"]."&hasta=".$_GET["hasta"]."'</script>";
