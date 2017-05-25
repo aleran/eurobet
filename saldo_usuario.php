@@ -118,6 +118,59 @@
                         <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#modalPagar">Pagar al usuario</button>
 
                     </div>
+
+                    <div class="col-lg-6">
+                     <?php if ($_SESSION["tipo"]=="root"){ ?>
+                        <h4>Historial de Transacciones</h4>
+                        <?php 
+                             $sql_trans="SELECT * FROM trans_usuario WHERE cedula='".$_POST["usuario"]."' ORDER BY id DESC";
+                                $rs_trans=mysqli_query($mysqli,$sql_trans) or die (mysqli_error());
+                            
+                        ?>
+                       
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Trans</th>
+                                    <th>Monto</th>
+                                    <th>Fecha</th>
+                                    <th>Hora</th>
+                                    <th>Agente</th>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        while ($row_trans=mysqli_fetch_array($rs_trans)) {
+                                            $sql_agente="SELECT nombre, apellido FROM usuarios WHERE cedula='".$row_trans["agente"]."'";
+                                                $rs_agente=mysqli_query($mysqli,$sql_agente) or die (mysqli_error()); 
+                                                $row_agente=mysqli_fetch_array($rs_agente);
+                                                $agente=$row_agente["nombre"]." ". $row_agente["apellido"];
+                                                list($a,$m,$d) = explode("-", $row_trans["fecha"]);
+                                                $fecha_trans=$d."/".$m."/".$a;
+                                            echo "<tr>";
+                                                echo "<td>";
+                                                    echo $row_trans["tipo"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                    echo $row_trans["monto"];
+                                                echo "</td>";
+                                                 echo "<td>";
+                                                    echo $fecha_trans;
+                                                echo "</td>";
+                                                 echo "<td>";
+                                                    echo $row_trans["hora"];
+                                                echo "</td>";
+                                                echo "<td>";
+                                                    echo $agente;
+                                                echo "</td>";
+                                            echo "<tr>";
+
+                                        }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    <?php } ?>
+                    </div>
                     
                 </div>
         </div> 
