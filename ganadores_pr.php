@@ -1,9 +1,12 @@
-<?php include("time_sesion.php"); 
-    include("conexion/conexion.php");
+<?php include("time_sesion.php");
+if ($_SESSION['tipo']=="normal") {
+    header("Location: bienvenido.php");
+} 
+    include("conexion/conexion.php");    
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
      <?php
         include("head.php");
@@ -14,15 +17,6 @@
 </head>
 
 <body>
-    <div style="float:right;">
-        <script src="js/meses.js"></script>
-    </div>
-
-
-    <script src="js/fecha.js"></script>
-
-<div id="reloj" style="font-size:14px;"></div>
-<div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un máximo de 15, monto mínimo $5000 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
  
     <div id="wrapper">
 
@@ -51,36 +45,105 @@
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
                         ?> 
-                            <a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>
+                            <a href="cerrar_sesion.php"> Salir</a></h4>
                     </div>
                     
                 </div>
-                <br>
+                
                 <div class="row">
-                <h2> Seleccione los tickes a consultar:</h2><br>
-                    <div class="col-lg-2">
-                        <a href="tickets_fecha.php" class="btn btn-primary" title="muestra de tickets en juego">ACTIVOS</a>
-                        
-                    </div>
-                     <div class="col-lg-2">
-                        <a href="por_pagar.php" class="btn btn-warning" title="muestra de tickets en juego">POR PAGAR</a>
-                        
-                    </div>
-                     <div class="col-lg-2">
-                        <a href="tickets_fecha_p.php" class="btn btn-danger">PERDEDORES</a>
-                    </div>
-                    <div class="col-lg-2">
-                        <a href="tickets_fecha_g.php" class="btn btn-success">GANADORES</a>
-                    </div>
-                    <div class="col-lg-2">
-                        <a href="tickets_fecha_gr.php" class="btn btn-info">GANADORES POR<br>RECARGAS</a>
-                    </div>
-                    <div class="col-lg-2">
-                        <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalT">BUSCAR</a>
-                    </div>
+                    <?php
 
+                         if (isset($_POST["desde"])) {
+                             $desde=$_POST["desde"];
+                             $hasta=$_POST["hasta"];
+                         } 
+                         else {
+                             $desde=$_GET["desde"];
+                             $hasta=$_GET["hasta"];
+                         } 
+
+                        list($a,$m,$d) = explode("-", $desde);
+                        $de=$d."/".$m."/".$a;
+                         list($a2,$m2,$d2) = explode("-", $hasta);
+                        $a=$d2."/".$m2."/".$a2;
+
+                    ?>
+                    <h3> Tickets Ganadores Por Recargas Del: <?php echo $de; ?> Al: <?php echo $a; ?></h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Codigo</th>
+                                <th>Apuesta</th>
+                                <th>Fecha - Hora</th>
+                                <th>Usuario</th>
+                                <th>Apostado</th>
+                                <th>Ganancia</th>
+                            </thead>
+                            <tbody>
+                                
                     
-                </div>
+                    <?php
+                       
+                        if ($_SESSION["tipo"]=="root") {
+                            $sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND cedula!='' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+
+                            $sql_t_pagar="SELECT SUM(premio) AS t_pagar FROM parlay WHERE activo='1' AND ganar='1' AND cedula!='' AND pagado='0' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+                            $rs_t_pagar=mysqli_query($mysqli, $sql_t_pagar) or die(mysqli_error());
+                            $row_t_pagar=mysqli_fetch_array($rs_t_pagar);
+                        }
+                        else {
+                            $sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='1' AND cedula!='' AND agencia='".$_SESSION["agencia"]."' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+
+                            $sql_t_pagar="SELECT SUM(premio) AS t_pagar FROM parlay WHERE activo='1' AND ganar='1' AND cedula!='' AND pagado='0' AND agencia='".$_SESSION["agencia"]."' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+                            $rs_t_pagar=mysqli_query($mysqli, $sql_t_pagar) or die(mysqli_error());
+                            $row_t_pagar=mysqli_fetch_array($rs_t_pagar);
+                        }
+                        
+                        $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
+                        while ($row_act=mysqli_fetch_array($rs_act)) {
+                                $sql_usr="SELECT nombre, apellido, correo FROM usuarios WHERE cedula='".$row_act["cedula"]."'";
+                                $rs_usr=mysqli_query($mysqli, $sql_usr) or die(mysqli_error());
+                                $row_usr=mysqli_fetch_array($rs_usr);
+                                list($a3,$m3,$d3) = explode("-", $row_act["fecha"]);
+                                $fecha=$d3."/".$m3."/".$a3;
+                                echo"<tr>";
+                                    echo"<td>";
+                                        echo "<a href='con_p_g.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
+                                    echo"</td>";
+                                    echo"<td>";
+                                        echo $row_act["tipo"];
+                                    echo"</td>";
+                                    echo"<td>";
+                                        echo $fecha ." - ". $row_act["hora"];
+                                    echo"</td>";
+                                    echo"<td>";
+                                        echo $row_usr["correo"]. ": ". $row_usr["nombre"]. " ". $row_usr["apellido"];
+                                    echo"</td>";
+                                    echo"<td>";
+                                        echo $row_act["monto"];
+                                    echo"</td>";
+                                    echo"<td>";
+                                        echo $row_act["premio"];
+                                    echo"</td>";
+                                echo"</tr>";
+                               
+
+                        }
+
+                         echo"<td></td>";
+                            echo"<td></td><td></td><td></td>";
+                            echo"<td><b>Total a Pagar :<b></td>";
+                            echo"<td>";
+                        echo $row_t_pagar["t_pagar"];
+                            echo"<td>";
+                        echo"<tr>";
+
+                    ?>
+                            
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 
             
                 <br>
@@ -178,48 +241,6 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             <button class="btn btn-success">Crear Usuario</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-
-             <!-- Modal Buscar Ticket -->
-
-            <div class="modal fade" id="modalT" tabindex="-1" role="dialog" aria-labelledby="modalUsuariosLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="modalUsuariosLabel">Buscar Ticket por codigo</h4>
-                        </div>
-                        <div class="modal-body">
-                        
-                            <form class="form-horizontal" method="POST" action="con_codigo.php">
-                                <?php 
-                                    if ($_SESSION["tipo"]=="root") {
-                                        echo "Introduzca el codigo completo";
-                                    }
-                                    else {
-                                        echo "introduzca los numeros despues del guíon";
-                                    }
-                                ?>
-                                
-                                <div class="form-group">
-                                    <label for="codigo" class="col-sm-4 control-label">Codigo:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="codigo" id="codigo" placeholder="" required>
-                                    </div>
-                                </div>
-                                
-                            
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <button class="btn btn-success">Buscar</button>
                         </div>
                         </form>
                     </div>

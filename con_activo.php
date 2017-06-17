@@ -294,6 +294,66 @@
                                                             
                                 }
 
+                                if ($row["logro"]=="gg") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> GG: ".$row["valor_logro"]."<br>";
+                                    if ($_SESSION["pais"]==2) {
+                                        echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+                                    }
+                                    else {
+                                        echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    }
+                                    echo "-------------------------------------------------------------<br>";
+                                    
+                                }
+
+                                if ($row["logro"]=="ng") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> NG: ".$row["valor_logro"]."<br>";
+                                    if ($_SESSION["pais"]==2) {
+                                        echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+                                    }
+                                    else {
+                                        echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    }
+                                    echo "-------------------------------------------------------------<br>";
+                                                            
+                                }
+
+                                if ($row["logro"]=="dc1x") {
+                                    echo $row_eq1["equipo"]."-> DC1x: ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
+                                    if ($_SESSION["pais"]==2) {
+                                        echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+                                    }
+                                    else {
+                                        echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    }
+                                    echo "-------------------------------------------------------------<br>";
+
+                                }
+
+                                if ($row["logro"]=="dc2x") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> DC2x: ".$row["valor_logro"]."<br>";
+                                    if ($_SESSION["pais"]==2) {
+                                        echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+                                    }
+                                    else {
+                                        echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    }
+                                    echo "-------------------------------------------------------------<br>";
+                                                            
+                                }
+
+                                if ($row["logro"]=="dc12") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> DC12: ".$row["valor_logro"]."<br>";
+                                    if ($_SESSION["pais"]==2) {
+                                        echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+                                    }
+                                    else {
+                                        echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
+                                    }
+                                    echo "-------------------------------------------------------------<br>";
+                                                            
+                                }
+
                              }
 
                             echo "Apostado: ".$row_ticket["monto"]."<br>";

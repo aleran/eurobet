@@ -830,6 +830,301 @@
                             }   
                                         }
 
+                                              }
+
+                                              if (isset($_POST["gg"])){
+                                                $gg=$_POST["gg"];
+                                                 
+                                                  
+                                        foreach ($gg as $pa => $valor46) {
+                                          list($p46,$l46) = explode("/",$valor46);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "GG";
+                                                      echo '</td>';
+
+                                                    $sql7="SELECT * FROM partidos WHERE id='$p46'";
+                                          $rs7=mysqli_query($mysqli, $sql7) or die (mysqli_error());
+
+                                          $row7=mysqli_fetch_array($rs7);
+                                          $sql8="SELECT *  FROM equipos  WHERE id='".$row7["equipo1"]."'";
+                                                  $rs8=mysqli_query($mysqli, $sql8) or die (mysqli_error());
+                                                  $row8=mysqli_fetch_array($rs8);
+                                                  $sql9="SELECT *  FROM equipos  WHERE id='".$row7["equipo2"]."'";
+                                                  $rs9=mysqli_query($mysqli, $sql9) or die (mysqli_error());
+                                                  $row9=mysqli_fetch_array($rs9);
+
+
+                                                    
+                                                    echo '<td>';
+                                                        echo $row8["equipo"]." - ". $row9["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo  $l46;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+
+                                                    for ($i=1; $i<=count ($l46); $i++){
+                                                      if ($l46 < 0) {
+                                                        $datos[] =1 +100/($l46 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l46/100;
+                                                      }
+ 
+                              
+                            }
+
+                            for ($i=1; $i<=count ($p46); $i++){
+ 
+                              
+                                                        $partidos[] = $p46."/"."gg"."/".$l46;
+                                                      
+                            }       
+                                        }
+
+                                              }
+
+                                              if (isset($_POST["ng"])){
+                                                $ng=$_POST["ng"];
+                                                 
+                                                  
+                                        foreach ($ng as $pa => $valor47) {
+                                          list($p47,$l47) = explode("/",$valor47);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "NG";
+                                                      echo '</td>';
+
+                                                    $sql7="SELECT * FROM partidos WHERE id='$p47'";
+                                          $rs7=mysqli_query($mysqli, $sql7) or die (mysqli_error());
+
+                                          $row7=mysqli_fetch_array($rs7);
+                                          $sql8="SELECT *  FROM equipos  WHERE id='".$row7["equipo1"]."'";
+                                                  $rs8=mysqli_query($mysqli, $sql8) or die (mysqli_error());
+                                                  $row8=mysqli_fetch_array($rs8);
+                                                  $sql9="SELECT *  FROM equipos  WHERE id='".$row7["equipo2"]."'";
+                                                  $rs9=mysqli_query($mysqli, $sql9) or die (mysqli_error());
+                                                  $row9=mysqli_fetch_array($rs9);
+
+
+                                                    
+                                                    echo '<td>';
+                                                        echo $row8["equipo"]." - ". $row9["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo  $l47;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+
+                                                    for ($i=1; $i<=count ($l47); $i++){
+                                                      if ($l47 < 0) {
+                                                        $datos[] =1 +100/($l47 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l47/100;
+                                                      }
+ 
+                              
+                            }
+
+                            for ($i=1; $i<=count ($p47); $i++){
+ 
+                              
+                                                        $partidos[] = $p47."/"."ng"."/".$l47;
+                                                      
+                            }       
+                                        }
+
+                                              }
+
+                                              if (isset($_POST["dc1x"])){
+                                              $dc1x=$_POST["dc1x"];
+                                              
+                                              
+                                        foreach ($dc1x as $pa => $valor49) {
+                                          list($p49,$l49) = explode("/",$valor49);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "DC1X";
+                                                      echo '</td>';
+
+                                                    $sql="SELECT * FROM partidos WHERE id='$p49'";
+                                          $rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
+
+                                          $row=mysqli_fetch_array($rs);
+                                          $sql2="SELECT *  FROM equipos  WHERE id='".$row["equipo1"]."'";
+                                                  $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
+                                                  $row2=mysqli_fetch_array($rs2);
+                                                    
+                                                    echo '<td>';
+                                                        echo $row2["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo $l49;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+
+                                                    for ($i=1; $i<=count ($l49); $i++){
+ 
+                              if ($l49 < 0) {
+                                                        $datos[] =1 +100/($l49 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l49/100;
+                                                      }
+                                                      
+                            }  
+
+                            for ($i=1; $i<=count ($p49); $i++){
+ 
+                              
+                                                        $partidos[] = $p49."/"."dc1x"."/".$l49;
+                                                  
+                                                      
+                            }  
+
+
+                                                    
+                                        }
+                                        
+                                        
+
+                                       
+
+                                        
+
+                                              }
+
+                                              if (isset($_POST["dc2x"])){
+                                              $dc2x=$_POST["dc2x"];
+                                              
+                                              
+                                        foreach ($dc2x as $pa => $valor50) {
+                                          list($p50,$l50) = explode("/",$valor50);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "DC2X";
+                                                      echo '</td>';
+
+                                                    $sql="SELECT * FROM partidos WHERE id='$p50'";
+                                          $rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
+
+                                          $row=mysqli_fetch_array($rs);
+                                          $sql2="SELECT *  FROM equipos  WHERE id='".$row["equipo2"]."'";
+                                                  $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
+                                                  $row2=mysqli_fetch_array($rs2);
+                                                    
+                                                    echo '<td>';
+                                                        echo $row2["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo $l50;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+
+                                                    for ($i=1; $i<=count ($l50); $i++){
+ 
+                              if ($l50 < 0) {
+                                                        $datos[] =1 +100/($l50 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l50/100;
+                                                      }
+                                                      
+                            }  
+
+                            for ($i=1; $i<=count ($p50); $i++){
+ 
+                              
+                                                        $partidos[] = $p50."/"."dc2x"."/".$l50;
+                                                  
+                                                      
+                            }  
+
+
+                                                    
+                                        }
+                                        
+                                        
+
+                                       
+
+                                        
+
+                                              }
+
+                                              if (isset($_POST["dc12"])){
+                                                $dc12=$_POST["dc12"];
+                                                 
+                                                  
+                                        foreach ($dc12 as $pa => $valor51) {
+                                          list($p51,$l51) = explode("/",$valor51);
+
+                                          echo '<tr>';
+                                                      echo '<td>';
+                                                        echo "DC12";
+                                                      echo '</td>';
+
+                                                    $sql7="SELECT * FROM partidos WHERE id='$p51'";
+                                          $rs7=mysqli_query($mysqli, $sql7) or die (mysqli_error());
+
+                                          $row7=mysqli_fetch_array($rs7);
+                                          $sql8="SELECT *  FROM equipos  WHERE id='".$row7["equipo1"]."'";
+                                                  $rs8=mysqli_query($mysqli, $sql8) or die (mysqli_error());
+                                                  $row8=mysqli_fetch_array($rs8);
+                                                  $sql9="SELECT *  FROM equipos  WHERE id='".$row7["equipo2"]."'";
+                                                  $rs9=mysqli_query($mysqli, $sql9) or die (mysqli_error());
+                                                  $row9=mysqli_fetch_array($rs9);
+
+
+                                                    
+                                                    echo '<td>';
+                                                        echo $row8["equipo"]." - ". $row9["equipo"];
+                                                      echo '</td>';
+                                                  
+                                                    echo '<td>';
+                                                        echo  $l51;
+                                                      echo '</td>';
+                                                  
+                                                    echo '</tr>';
+
+
+                                                    for ($i=1; $i<=count ($l51); $i++){
+                                                      if ($l51 < 0) {
+                                                        $datos[] =1 +100/($l51 * -1);
+                                                      }
+                                                      else{
+                                                        $datos[] =1 +$l51/100;
+                                                      }
+ 
+                              
+                            }
+
+                            for ($i=1; $i<=count ($p51); $i++){
+ 
+                              
+                                                        $partidos[] = $p51."/"."dc12"."/".$l51;
+                                                      
+                            }       
+                                        }
+
                                               } 
                                           
                                                 

@@ -183,6 +183,8 @@
                                                     if ($row["id_deporte"] == 1) {
 	                                                	echo '<td>Primer Tiempo</td>';
                                                         echo '<td>Segundo Tiempo</td>';
+                                                        echo '<td>GG/NG</td>';
+                                                        echo '<td>DoubleC</td>';
                                                     }
                                                     
 	                                                if ($row["id_deporte"] == 2) {
@@ -218,6 +220,9 @@
                                                     if ($row["id_deporte"] == 1) {
                                                 	echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="gst1[]" id="gst1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gg[]" id="gg'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gg"].'"> GG: '.$row2["gg"].'</td>';
+
+                                                    echo '<td> <input type="checkbox" class="chk"  name="dc1x[]" id="dc1x'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc1x"].'"> DC1X: '.$row2["dc1x"].'</td>';
                                                 	
                                                     }
                                                 	if ($row["id_deporte"] == 2) {
@@ -240,6 +245,9 @@
                                                     if ($row["id_deporte"] == 1) {
                                                 	echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="gst2[]" id="gst2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="ng[]" id="ng'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["ng"].'"> NG: '.$row2["ng"].'</td>';
+
+                                                    echo '<td> <input type="checkbox" class="chk"  name="dc2x[]" id="dc2x'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc2x"].'"> DC2X: '.$row2["dc2x"].'</td>';
 
                                                 	
                                                     }
@@ -254,7 +262,11 @@
                                                     echo '<td>Empate</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="empate[]" id="empate'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empate"].'"> '.$row2["empate"].'</td>';
                                                     echo '<td></td><td></td>';
-                                                     echo '<td> <input type="checkbox" class="chk"  name="empatept[]" id="empatept'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empatept"].'"> '.$row2["empatept"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="empatept[]" id="empatept'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empatept"].'"> '.$row2["empatept"].'</td>';
+
+                                                    echo '<td></td><td></td>';
+
+                                                    echo '<td> <input type="checkbox" class="chk"  name="dc12[]" id="dc12'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc12"].'"> DC12: '.$row2["dc12"].'</td>';
                                                       }
 
                                                    
@@ -283,6 +295,16 @@
                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
 
                                                                    $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gg'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#ng'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#dc1x'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#dc2x'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#dc12'.$row2["id"].'").prop("checked", false)
  
                                                             }
                                                             
@@ -305,6 +327,16 @@
                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
 
                                                                    $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gg'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#ng'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#dc1x'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#dc2x'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#dc12'.$row2["id"].'").prop("checked", false)
                                                             
                                                             }
 
@@ -564,6 +596,145 @@
                                                                    $("#g5to1'.$row2["id"].'").prop("checked", false)
                                                                     
                                         
+                                                            
+                                                            }
+
+                                                            if ($("#gg'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#ng'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#alta'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt1'.$row2["id"].'").prop("checked", false)
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empatept'.$row2["id"].'").prop("checked", false)
+
+                                                            
+                                                            }
+
+                                                            if ($("#ng'.$row2["id"].'").prop("checked")) {
+                                                                
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#alta'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#baja'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt1'.$row2["id"].'").prop("checked", false)
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empatept'.$row2["id"].'").prop("checked", false)
+
+                                                            
+                                                            }
+
+                                                            if ($("#dc1x'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#dc2x'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#dc12'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt1'.$row2["id"].'").prop("checked", false)
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#alta'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empatept'.$row2["id"].'").prop("checked", false)
+
+                                                            
+                                                            }
+
+                                                            if ($("#dc2x'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#dc1x'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#dc12'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt1'.$row2["id"].'").prop("checked", false)
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#alta'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empatept'.$row2["id"].'").prop("checked", false)
+
+                                                            
+                                                            }
+
+                                                            if ($("#dc12'.$row2["id"].'").prop("checked")) {
+                                                                
+                                                                $("#dc1x'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#dc2x'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#runline2'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#gj1'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#gj2'.$row2["id"].'").prop("checked", false)
+
+                                                                    $("#gpt1'.$row2["id"].'").prop("checked", false)
+                                                                   $("#gpt2'.$row2["id"].'").prop("checked", false)
+                                                                    
+                                                                    $("#gst1'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#gst2'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#alta'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#baja'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empate'.$row2["id"].'").prop("checked", false)
+
+                                                                   $("#empatept'.$row2["id"].'").prop("checked", false)
+
                                                             
                                                             }
 

@@ -106,12 +106,13 @@
                                        
                                     </div>
                                 </div>
-                                 <div class="item">
-                                    <img src="img/final_el.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                <div class="item">
+                                    <img src="img/esp_17.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
+                                
                                  <div class="item">
                                     <img src="img/final_cr.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">

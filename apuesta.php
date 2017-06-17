@@ -52,7 +52,5 @@ $partidos= $_POST["partido"];
 
       }
    echo "<script>window.location='ticket.php?cod_t=".$ticket."'</script>";       
-   }
-           
-                      
+   }                    
 ?>

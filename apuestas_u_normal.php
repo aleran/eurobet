@@ -71,7 +71,7 @@
 	                            <th>Fecha - Hora</th>
 	                            <th>Apostado</th>
 	                            <th>Ganancia</th>
-	                            <th>Estatus</th>
+	                            <th>Estado</th>
 	                        </thead>
 	                        <tbody>
 	                        	
@@ -103,7 +103,7 @@
 	                    			echo"</td>";
 	                    			echo"<td>";
 	                    				if ($row_act["ganar"]==3) {
-	                    					echo "Por Verificar";
+	                    					echo "Activo";
 	                    				}
 	                    				else if ($row_act["ganar"]==1) {
 	                    					echo "Ganado";
