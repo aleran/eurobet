@@ -109,7 +109,7 @@ if ($_SESSION['tipo']=="normal") {
                             echo "Serial: ".$row_ticket["codigo"]."<br>";
                             echo "Ticket vigente por 7 días.<br><br>";
 
-                            $sql="SELECT p.*, a.id_partido, a.logro, a.valor_logro, j.* FROM parlay p
+                            $sql="SELECT p.*, a.id_partido, a.logro, a.val_alta, a.valor_logro, j.* FROM parlay p
                             JOIN apuestas a ON p.codigo=a.ticket
                             JOIN partidos j ON a.id_partido=j.id WHERE p.codigo='".$codigo."'";
                             $rs=(mysqli_query($mysqli, $sql)) or die(mysqli_error());
@@ -174,8 +174,8 @@ if ($_SESSION['tipo']=="normal") {
                                                             
                                 }
 
-                                if ($row["logro"]=="alta") {
-                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Alta( ".$row["v_alta"]." ): ".$row["valor_logro"]."<br>";
+                                 if ($row["logro"]=="alta") {
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Alta( ".$row["val_alta"]." ): ".$row["valor_logro"]."<br>";
                                     if ($_SESSION["pais"]==2) {
                                         echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
                                     }
@@ -187,7 +187,7 @@ if ($_SESSION['tipo']=="normal") {
                                 }
 
                                 if ($row["logro"]=="baja") {
-                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Baja( ".$row["v_alta"]." ): ".$row["valor_logro"]."<br>";
+                                    echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Baja( ".$row["val_alta"]." ): ".$row["valor_logro"]."<br>";
                                     if ($_SESSION["pais"]==2) {
                                         echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
                                     }

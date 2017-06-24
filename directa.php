@@ -131,7 +131,7 @@
                             for ($i=1; $i<=count ($p); $i++){
  
                               
-                                                        $partidos[] = $p."/"."gj1"."/".$l;
+                                                        $partidos[] = $p."/"."gj1"."/"."0"."/".$l;
                                                   
                                                       
                             }  
@@ -191,7 +191,7 @@
                               for ($i=1; $i<=count ($p2); $i++){
  
                               
-                                                        $partidos[] = $p2."/"."gj2"."/".$l2;
+                                                        $partidos[] = $p2."/"."gj2"."/"."0"."/".$l2;
                                                       
                             }    
                                         }
@@ -245,7 +245,7 @@
                             for ($i=1; $i<=count ($p3); $i++){
  
                               
-                                                        $partidos[] = $p3."/"."empate"."/".$l3;
+                                                        $partidos[] = $p3."/"."empate"."/"."0"."/".$l3;
                                                       
                             }      
                                         }
@@ -299,7 +299,7 @@
                             for ($i=1; $i<=count ($p30); $i++){
  
                               
-                                                        $partidos[] = $p30."/"."empatept"."/".$l30;
+                                                        $partidos[] = $p30."/"."empatept"."/"."0"."/".$l30;
                                                       
                             }      
                                         }
@@ -355,7 +355,7 @@
                             for ($i=1; $i<=count ($p4); $i++){
  
                               
-                                                        $partidos[] = $p4."/"."alta"."/".$l4;
+                                                        $partidos[] = $p4."/"."alta"."/".$v_a."/".$l4;
                                                       
                             }       
                                         }
@@ -410,7 +410,7 @@
                             for ($i=1; $i<=count ($p5); $i++){
  
                               
-                                                        $partidos[] = $p5."/"."baja"."/".$l5;
+                                                        $partidos[] = $p5."/"."baja"."/".$v_b."/".$l5;
                                                       
                             }       
                                         }
@@ -462,7 +462,7 @@
                             for ($i=1; $i<=count ($p6); $i++){
  
                               
-                                                        $partidos[] = $p6."/"."runline1"."/".$l6;
+                                                        $partidos[] = $p6."/"."runline1"."/"."0"."/".$l6;
                                                       
                             }         
                                         }
@@ -513,7 +513,7 @@
                             for ($i=1; $i<=count ($p7); $i++){
  
                               
-                                                        $partidos[] = $p7."/"."runline2"."/".$l7;
+                                                        $partidos[] = $p7."/"."runline2"."/"."0"."/".$l7;
                                                       
                             }          
                                         }
@@ -565,7 +565,7 @@
                             for ($i=1; $i<=count ($p8); $i++){
  
                               
-                                                        $partidos[] = $p8."/"."gpt1"."/".$l8;
+                                                        $partidos[] = $p8."/"."gpt1"."/"."0"."/".$l8;
                                                       
                             }    
                                         }
@@ -619,7 +619,7 @@
                             for ($i=1; $i<=count ($p9); $i++){
  
                               
-                                                        $partidos[] = $p9."/"."gpt2"."/".$l9;
+                                                        $partidos[] = $p9."/"."gpt2"."/"."0"."/".$l9;
                                                       
                             }    
                                         }
@@ -670,7 +670,7 @@
                             for ($i=1; $i<=count ($p80); $i++){
  
                               
-                                                        $partidos[] = $p80."/"."gst1"."/".$l80;
+                                                        $partidos[] = $p80."/"."gst1"."/"."0"."/".$l80;
                                                       
                             }    
                                         }
@@ -721,7 +721,7 @@
                             for ($i=1; $i<=count ($p90); $i++){
  
                               
-                                                        $partidos[] = $p90."/"."gst2"."/".$l90;
+                                                        $partidos[] = $p90."/"."gst2"."/"."0"."/".$l90;
                                                       
                             }    
                                         }
@@ -773,7 +773,7 @@
                             for ($i=1; $i<=count ($p12); $i++){
  
                               
-                                                        $partidos[] = $p12."/"."g5to1"."/".$l12;
+                                                        $partidos[] = $p12."/"."g5to1"."/"."0"."/".$l12;
                                                       
                             }   
                                         }
@@ -825,7 +825,7 @@
                             for ($i=1; $i<=count ($p13); $i++){
  
                               
-                                                        $partidos[] = $p13."/"."g5to2"."/".$l13;
+                                                        $partidos[] = $p13."/"."g5to2"."/"."0"."/".$l13;
                                                       
                             }   
                                         }
@@ -882,7 +882,7 @@
                             for ($i=1; $i<=count ($p46); $i++){
  
                               
-                                                        $partidos[] = $p46."/"."gg"."/".$l46;
+                                                        $partidos[] = $p46."/"."gg"."/"."0"."/".$l46;
                                                       
                             }       
                                         }
@@ -939,7 +939,7 @@
                             for ($i=1; $i<=count ($p47); $i++){
  
                               
-                                                        $partidos[] = $p47."/"."ng"."/".$l47;
+                                                        $partidos[] = $p47."/"."ng"."/"."0"."/".$l47;
                                                       
                             }       
                                         }
@@ -991,7 +991,7 @@
                             for ($i=1; $i<=count ($p49); $i++){
  
                               
-                                                        $partidos[] = $p49."/"."dc1x"."/".$l49;
+                                                        $partidos[] = $p49."/"."dc1x"."/"."0"."/".$l49;
                                                   
                                                       
                             }  
@@ -1053,7 +1053,7 @@
                             for ($i=1; $i<=count ($p50); $i++){
  
                               
-                                                        $partidos[] = $p50."/"."dc2x"."/".$l50;
+                                                        $partidos[] = $p50."/"."dc2x"."/"."0"."/".$l50;
                                                   
                                                       
                             }  
@@ -1120,7 +1120,7 @@
                             for ($i=1; $i<=count ($p51); $i++){
  
                               
-                                                        $partidos[] = $p51."/"."dc12"."/".$l51;
+                                                        $partidos[] = $p51."/"."dc12"."/"."0"."/".$l51;
                                                       
                             }       
                                         }
@@ -1237,7 +1237,7 @@
 
       $("#monto").keyup(function(){
       	var monto = $("#monto").val();
-      	console.log(monto);
+      	//console.log(monto);
       	var producto=$("#poduc_l").val();
       	var resultado = monto * producto;
       	resultado=Math.round(resultado);

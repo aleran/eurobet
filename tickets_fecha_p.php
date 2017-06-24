@@ -50,7 +50,7 @@
                 <div class="row">
                
                     <div class="col-sm-6 col-xs-offset-2">
-                		<center><h3>Seleccione las fechas para mostrar tickets perdedores:</h3><br></center>
+                		<h3><center><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Seleccione las fechas para mostrar:</b></center></h3><br>
 	                	 <form class="form-horizontal" method="POST" action="perdidos.php">
 
                             <div class="form-group">

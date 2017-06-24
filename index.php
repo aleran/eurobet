@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <?php 
     if (!isset($_GET["pais"])) {
         echo '<script type="text/javascript">
@@ -74,13 +75,14 @@
             <header>
                 <img src="img/header3.png" class="img-responsive" alt="">
         </header>
+        
         <br>
             <div class="container-fluid">
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <center><h3>Iniciar Sesión</h3><form class="form-inline" method="POST" action="login.php"><br>
                     <div class="form-group">
                         <label for="login">Correo&nbsp;</label>
-                        <input type="text" class="form-control" name="correo" id="login" placeholder="admin">
+                        <input type="text" class="form-control" name="correo" id="login" placeholder="admin@gmail.com">
                     </div>
                     <div class="form-group">
                         <label for="contraseña">Contraseña&nbsp;</label>
@@ -94,32 +96,42 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                   <a href="#"> <img src="img/final_ucl.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
+                                   <a href="#"> <img src="img/oferta.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
                                     <div class="#">
                                         
                                         
                                     </div>
                                 </div>
-                                 <div class="item">
-                                    <img src="img/final_u2.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                        <div class="item">
+                                    <img src="img/futsal.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/esp_17.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <img src="img/confe.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
-                                
-                                 <div class="item">
-                                    <img src="img/final_cr.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                <div class="item">
+                                    <img src="img/voleibol.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
-                                
+                                <div class="item">
+                                    <img src="img/asia.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="img/ufc.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <div class="">
+                                       
+                                    </div>
+                                </div>
                                 <div class="item">
                                     <img src="img/RECARGA.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
@@ -138,12 +150,7 @@
                                        
                                     </div>
                                 </div>
-                                <div class="item">
-                                    <img src="img/confederaciones.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
-                                    <div class="">
-                                       
-                                    </div>
-                                </div>
+                             
                                 <div class="item">
                                     <img src="img/hockey_finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
@@ -151,7 +158,7 @@
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/nba_finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <img src="img/finales.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                         
                                         
@@ -215,7 +222,7 @@
                         </div>
                     </div>
                     <div class="col-lg-6 descripcion">
-                        <p><strong>EUROBET</strong> reúne un grupo de profesionales dedicados al mundo de las apuestas  Parlay, estamos  en Colombia y en la actualidad poseemos clientes en todo nuestro país, así como también Venezuela, México y otros países</p>
+                        <p><strong>EUROBET</strong> reúne un grupo de profesionales dedicados al mundo de las apuestas  Parlay, estamos  en Colombia, con clientes y agentes satisfechos en todo el país, así como también Venezuela, México y otras naciones</p>
                         
                         <p><strong>¡Juega tranquilo y seguro!</strong>, Donde estés, a través de cualquier dispositivo y a la hora que desees.</p>
                         <p><a href="ayuda.html"><strong>¿Listo para ganar?</strong></a></p>

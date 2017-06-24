@@ -91,31 +91,31 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>Cedula:</td>
+                                        <td><b>Cédula:</b></td>
                                         <td><?php echo $row["cedula"]; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Nombre:</td>
+                                        <td><b>Nombres:</b></td>
                                         <td><?php echo $row["nombre"]; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Apellido:</td>
+                                        <td><b>Apellidos:</b></td>
                                         <td><?php echo $row["apellido"]; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Correo:</td>
+                                        <td><b>E-mail:</b></td>
                                         <td><?php echo $row["correo"]; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Saldo:</td>
-                                        <td><?php echo $row["saldo"]; ?></td>
+                                        <td><b>Saldo Disponible:</b></td>
+                                        <td> $, <?php echo $row["saldo"]; ?></td>
                                         <input type="hidden" id="saldo" value="<?php echo $row["saldo"]; ?>">
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRecargas">Recargar saldo</button>
-                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#modalPagar">Pagar al usuario</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalRecargas">Recargar</button>
+                        <button type="button" class="btn btn-success"  data-toggle="modal" data-target="#modalPagar">Pagar</button>
 
                     </div>
 

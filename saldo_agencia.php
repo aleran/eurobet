@@ -108,7 +108,7 @@
                     <div class="col-sm-6 col-xs-offset-3">
                     <?php
                         if ($_SESSION["tipo"]=="root") {
-                            echo '<h3>Resumen Económico de la Agencia:'; echo $row["agencia"]; echo '</h3>';
+                            echo '<h3><center>Resumen económico para la Agencia:&nbsp;'; echo $row ["agencia"]; echo '</center></h3>';
                         }
 
                         else {
@@ -126,13 +126,13 @@
                                     list($a2,$m2,$d2)=explode("-", $_POST["hasta"]);
                                     $f2=$d2."/".$m2."/".$a2;
                                 ?>
-                                <th colspan="2">Del: <?php echo $f1; ?> Al: <?php echo $f2; ?></th>
+                                <th colspan="2">Balance desde: <?php echo $f1; ?> hasta: <?php echo $f2; ?></th>
                             </thead>
                             <tbody>
                                
-                                <tr><td>Apostado:</td> <td><?php echo $row_sum["t_monto"]; ?></td></tr>
-                                <tr><td>Perdido:</td> <td><?php echo $total_perdido; ?></td></tr>
-                                <tr><td>Total:</td> <td><?php echo $total; ?></td></tr>
+                                <tr><td><b>Apostado:</b></td> <td>$ <?php echo $row_sum["t_monto"]; ?> </td></tr>
+                                <tr><td><b>Perdido:</b></td> <td>$ <?php echo $total_perdido; ?></td></tr>
+                                <tr><td><b>Total:</b></td> <td>$ <?php echo $total; ?></td></tr>
                                 <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
                             </tbody>
                         </table>   
@@ -201,13 +201,13 @@
                                     list($a2,$m2,$d2)=explode("-", $_POST["hasta"]);
                                     $f2=$d2."/".$m2."/".$a2;
                                 ?>
-                                <th colspan="2">Del: <?php echo $f1; ?> Al: <?php echo $f2; ?></th>
+                                <th colspan="2">Balances desde: <?php echo $f1; ?> hasta: <?php echo $f2; ?></th>
                             </thead>
                             <tbody>
                                
-                                <tr><td>Apostado:</td> <td><?php echo $row_sum1["t_monto"]; ?></td></tr>
-                                <tr><td>Perdido:</td> <td><?php echo $total_perdido1; ?></td></tr>
-                                <tr><td>Total:</td> <td><?php echo $total1; ?></td></tr>
+                                <tr><td><b>Apostado:</b></td> <td>$ <?php echo $row_sum1["t_monto"]; ?></td></tr>
+                                <tr><td><b>Perdido:</b></td> <td>$ <?php echo $total_perdido1; ?></td></tr>
+                                <tr><td><b>Total:</b></td> <td>$ <?php echo $total1; ?></td></tr>
                                 <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
                             </tbody>
                         </table>   
@@ -235,12 +235,12 @@
                                     list($a2,$m2,$d2)=explode("-", $_POST["hasta"]);
                                     $f2=$d2."/".$m2."/".$a2;
                                 ?>
-                                <th colspan="2">Del: <?php echo $f1; ?> Al: <?php echo $f2; ?></th>
+                                <th colspan="2">Balance desde: <?php echo $f1; ?> hasta: <?php echo $f2; ?></th>
                             </thead>
                             <tbody>
                                
-                                <tr><td>Recargas:</td> <td><?php echo $row_recargas["t_recargas"]; ?></td></tr>
-                                <tr><td>Pagos:</td> <td><?php echo $row_pagos["t_pagos"]; ?></td></tr>
+                                <tr><td><b>Recargas:</b></td> <td>$ <?php echo $row_recargas["t_recargas"]; ?></td></tr>
+                                <tr><td><b>Pagos:</b></td> <td>$ <?php echo $row_pagos["t_pagos"]; ?></td></tr>
                                 
                                 <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
                             </tbody>

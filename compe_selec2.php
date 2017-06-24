@@ -178,7 +178,7 @@
                                                     if ($row["id_deporte"] == 1) {
                                                         echo '<td>Primer Tiempo</td>';
                                                         //echo '<td>Segundo Tiempo</td>';
-                                                        echo '<td>GG/NG</td>';
+                                                        //echo '<td>GG/NG</td>';
                                                         echo '<td>DoubleC</td>';
                                                     }
                                                     
@@ -215,7 +215,7 @@
                                                     if ($row["id_deporte"] == 1) {
                                                     echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
                                                    // echo '<td> <input type="checkbox" class="chk"  name="gst1[]" id="gst1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
-                                                    echo '<td> <input type="checkbox" class="chk"  name="gg[]" id="gg'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gg"].'"> GG: '.$row2["gg"].'</td>';
+                                                    //echo '<td> <input type="checkbox" class="chk"  name="gg[]" id="gg'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gg"].'"> GG: '.$row2["gg"].'</td>';
 
                                                     echo '<td> <input type="checkbox" class="chk"  name="dc1x[]" id="dc1x'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc1x"].'"> DC1X: '.$row2["dc1x"].'</td>';
                                                     
@@ -240,7 +240,7 @@
                                                     if ($row["id_deporte"] == 1) {
                                                     echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
                                                     //echo '<td> <input type="checkbox" class="chk"  name="gst2[]" id="gst2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
-                                                    echo '<td> <input type="checkbox" class="chk"  name="ng[]" id="ng'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["ng"].'"> NG: '.$row2["ng"].'</td>';
+                                                    //echo '<td> <input type="checkbox" class="chk"  name="ng[]" id="ng'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["ng"].'"> NG: '.$row2["ng"].'</td>';
 
                                                     echo '<td> <input type="checkbox" class="chk"  name="dc2x[]" id="dc2x'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc2x"].'"> DC2X: '.$row2["dc2x"].'</td>';
 
@@ -259,7 +259,7 @@
                                                     echo '<td></td><td></td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="empatept[]" id="empatept'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["empatept"].'"> '.$row2["empatept"].'</td>';
 
-                                                    echo '<td></td>';
+                                                    //echo '<td></td>';
 
                                                     echo '<td> <input type="checkbox" class="chk"  name="dc12[]" id="dc12'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc12"].'"> DC12: '.$row2["dc12"].'</td>';
                                                       }
@@ -921,7 +921,8 @@
     </script>
     
   
-   <h4><center><strong>SE INFORMA:</strong> QUE EN CASO DE <font color="BLUE">EMPATE DE LOGRO (PUSH),</font> DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h4>
+   <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>GOL-GOL (GG)</strong></font> Ésta apuesta es válida si cada equipo marca al menos un gol. Ejemplo (Real Madrid 3 - Barcelona 1)</h5>
+   <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>NO-GOL (NG)</strong></font> Ésta apuesta es válida si uno o ambos equipos NO marcan gol. Ejemplo (Real Madrid 2 - Barcelona 0 )</h5>
     
 </body>
 

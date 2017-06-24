@@ -61,15 +61,15 @@
             
 	        	<div class="row">
                     <div class="col-lg-6">
-                        <h3>Buscar usuario para Recargar o Pagar:</h3>
+                        <h3><b>Buscar usuario para Recargar o Pagar:</b></h3><br>
                         <form class="form-horizontal" method="POST" action="saldo_usuario.php">
                         	<div class="form-group">
-                                    <label for="usuario" class="col-sm-4 control-label">Cedula del Usuario:</label>
+                                    <label for="usuario" class="col-sm-4 control-label">Cédula del Usuario:</label>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="usuario" id="usuario" placeholder="" required>
+                                        <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ejm: 101097599" required>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <button class="btn btn-primary">Buscar</button>
+                                    <div class="col-sm-6"><br>
+                                        <button class="btn btn-success">Buscar</button>
                                     </div>
                                 </div>
                         </form>

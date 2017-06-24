@@ -60,8 +60,8 @@
                         $sql_normal="SELECT nombre,apellido FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
                         $rs_normal=mysqli_query($mysqli,$sql_normal) or die(mysqli_error());
                         $row_normal=mysqli_fetch_array($rs_normal);
-                        echo "<h4>Usuario: ". $row_normal["nombre"].", ".$row_normal["apellido"]."";
-                        echo '<a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>'; 
+                        echo "<h4><b>En Línea:</b>&nbsp; ". $row_normal["nombre"].", ".$row_normal["apellido"]."";
+                        echo '<a href="cerrar_sesion.php"> &nbsp;Desconectarse</a></h4>'; 
                     }
                     else {
                         if (isset($_SESSION["agencia"])) {

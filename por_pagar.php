@@ -52,15 +52,15 @@ if ($_SESSION['tipo']=="normal") {
                 
                 <div class="row">
                     
-                  <h3>Tickets por pagar</h3>
+                  <h3><center><b>Premios pendientes por Pagar</b></center></h3><br>
                 	<div class="table-responsive">
                 		<table class="table table-striped">
 	                		<thead>
-	                            <th>Codigo</th>
+	                            <th>Serial</th>
 	                            <th>Apuesta</th>
 	                            <th>Fecha - Hora</th>
 	                            <th>Apostado</th>
-	                            <th>Ganancia</th>
+	                            <th>Ganancia Máxima</th>
 	                        </thead>
 	                        <tbody>
 	                        	

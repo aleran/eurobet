@@ -57,23 +57,23 @@
                 </div>
                 <br>
                 <div class="row">
-                <h2> Seleccione los tickes a consultar:</h2><br>
+                <h3><center><b>Por favor, presione sobre el módulo de tickets a consultar:</b></center></h3><br><br>
                     <div class="col-lg-2">
-                        <a href="tickets_fecha.php" class="btn btn-primary" title="muestra de tickets en juego">ACTIVOS</a>
+                        <a href="tickets_fecha.php" class="btn btn-primary" title="Muestra de tickets en juego">ACTIVOS</a>
                         
                     </div>
                      <div class="col-lg-2">
-                        <a href="por_pagar.php" class="btn btn-warning" title="muestra de tickets en juego">POR PAGAR</a>
+                        <a href="por_pagar.php" class="btn btn-warning" title="Muestra de tickets pendientes por pagar">POR PAGAR</a>
                         
                     </div>
                      <div class="col-lg-2">
-                        <a href="tickets_fecha_p.php" class="btn btn-danger">PERDEDORES</a>
+                        <a href="tickets_fecha_p.php" class="btn btn-danger" title="Histórico de tickets perdedores">PERDEDORES</a>
                     </div>
                     <div class="col-lg-2">
-                        <a href="tickets_fecha_g.php" class="btn btn-success">GANADORES</a>
+                        <a href="tickets_fecha_g.php" class="btn btn-success" title="Histórico de tickets ganadores">GANADORES</a>
                     </div>
                     <div class="col-lg-2">
-                        <a href="tickets_fecha_gr.php" class="btn btn-info">GANADORES POR<br>RECARGAS</a>
+                        <a href="tickets_fecha_gr.php" class="btn btn-info" title="Ganadores por Recargas">GN. POR RECARGAS</a>
                     </div>
                     <div class="col-lg-2">
                         <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalT">BUSCAR</a>

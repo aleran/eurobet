@@ -815,7 +815,8 @@
   
     </script>
   
-    <h4><center><strong>SE INFORMA:</strong> QUE EN CASO DE <font color="BLUE">EMPATE DE LOGRO (PUSH),</font> DE SER UN TICKET GANADOR ÉSTA SE ELIMINA Y SE CALCULA EL PREMIO EN BASE A LAS RESTANTES</center></h4>
+    <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>GOL-GOL (GG)</strong></font> Ésta apuesta es válida si cada equipo marca al menos un gol. Ejemplo (Real Madrid 3 - Barcelona 1)</h5>
+    <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>NO-GOL (NG)</strong></font> Ésta apuesta es válida si uno o ambos equipos NO marcan gol. Ejemplo (Real Madrid 2 - Barcelona 0 )</h5>
 </body>
 
 

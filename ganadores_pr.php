@@ -68,16 +68,16 @@ if ($_SESSION['tipo']=="normal") {
                         $a=$d2."/".$m2."/".$a2;
 
                     ?>
-                    <h3> Tickets Ganadores Por Recargas Del: <?php echo $de; ?> Al: <?php echo $a; ?></h3>
+                    <h3><center>Ganadores por Recargas desde: <?php echo $de; ?> hasta: <?php echo $a; ?></center></h3><br>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
-                                <th>Codigo</th>
+                                <th>Serial</th>
                                 <th>Apuesta</th>
-                                <th>Fecha - Hora</th>
-                                <th>Usuario</th>
+                                <th>Fecha | Hora</th>
+                                <th>Cédula | Nombre de Usuario</th>
                                 <th>Apostado</th>
-                                <th>Ganancia</th>
+                                <th>Ganancia Máxima</th>
                             </thead>
                             <tbody>
                                 
@@ -101,7 +101,7 @@ if ($_SESSION['tipo']=="normal") {
                         
                         $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
                         while ($row_act=mysqli_fetch_array($rs_act)) {
-                                $sql_usr="SELECT nombre, apellido, correo FROM usuarios WHERE cedula='".$row_act["cedula"]."'";
+                                $sql_usr="SELECT nombre, apellido FROM usuarios WHERE cedula='".$row_act["cedula"]."'";
                                 $rs_usr=mysqli_query($mysqli, $sql_usr) or die(mysqli_error());
                                 $row_usr=mysqli_fetch_array($rs_usr);
                                 list($a3,$m3,$d3) = explode("-", $row_act["fecha"]);
@@ -117,7 +117,7 @@ if ($_SESSION['tipo']=="normal") {
                                         echo $fecha ." - ". $row_act["hora"];
                                     echo"</td>";
                                     echo"<td>";
-                                        echo $row_usr["correo"]. ": ". $row_usr["nombre"]. " ". $row_usr["apellido"];
+                                        echo $row_act["cedula"]. ": ". $row_usr["nombre"]. " ". $row_usr["apellido"];
                                     echo"</td>";
                                     echo"<td>";
                                         echo $row_act["monto"];

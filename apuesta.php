@@ -23,8 +23,8 @@
 
 $partidos= $_POST["partido"];
    foreach ($partidos as $key => $partido) {
-      list($id_partido,$logro,$v_logro) = explode("/", $partido);
-      $sql_apostar="INSERT INTO apuestas(id_partido,logro,valor_logro,ticket) VALUES('".$id_partido."','".$logro."','".$v_logro."','".$ticket."')";
+      list($id_partido,$logro,$alta,$v_logro) = explode("/", $partido);
+      $sql_apostar="INSERT INTO apuestas(id_partido,logro,val_alta,valor_logro,ticket) VALUES('".$id_partido."','".$logro."','".$alta."','".$v_logro."','".$ticket."')";
       $rs=mysqli_query($mysqli,$sql_apostar) or die(mysqli_error($mysqli));
                                  
 

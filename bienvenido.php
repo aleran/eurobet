@@ -1,5 +1,6 @@
-<?php include("time_sesion.php");  
-    include("conexion/conexion.php");
+<?php 
+include("time_sesion.php");  
+include("conexion/conexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -55,8 +56,8 @@
                                 $sql_normal="SELECT nombre,apellido FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
                                 $rs_normal=mysqli_query($mysqli,$sql_normal) or die(mysqli_error());
                                 $row_normal=mysqli_fetch_array($rs_normal);
-                                echo "<h4>Usuario: ". $row_normal["nombre"].", ".$row_normal["apellido"]."";
-                                echo '<a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>'; 
+                                echo "<h4><b>En Línea:&nbsp;</b> ". $row_normal["nombre"].", ".$row_normal["apellido"]."";
+                                echo '<a href="cerrar_sesion.php"> &nbsp;Desconectarse</a></h4>'; 
                             }
                             else {
                                 $sql_ag="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
@@ -74,13 +75,13 @@
                 
             
         <br><br><br><br>
-            <h1>¡Bienvenido!, Comience a Apostar.</h1>
+            <h1><b>¡Bienvenido!,</b> <a href="http://eurobet.com.co/competiciones.php">¿Listo para Jugar?, ¡Haz click!</a></h1>
             <?php 
                 if ($_SESSION["tipo"]=="normal") {
                 $sql_sal="SELECT saldo FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
                 $rs_sal=mysqli_query($mysqli,$sql_sal) or die(mysqli_error());
                 $row_sal=mysqli_fetch_array($rs_sal);
-                echo "<center><h3>Saldo: ". $row_sal["saldo"]."</h3></center>";
+                echo "<center><h3><b>Saldo disponible: $,</b> ". $row_sal["saldo"]."</h3></center>";
                 }
             ?>
             </div>

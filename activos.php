@@ -69,15 +69,15 @@ if ($_SESSION['tipo']=="normal") {
                         $a=$d2."/".$m2."/".$a2;
 
                     ?>
-                    <h3> Tickets Del: <?php echo $de; ?> Al: <?php echo $a; ?></h3>
+                    <h3><center><b>Tickets Activos desde: <?php echo $de; ?> hasta: <?php echo $a; ?></b></center></h3><br>
                 	<div class="table-responsive">
                 		<table class="table table-striped">
 	                		<thead>
-	                            <th>Codigo</th>
+	                            <th>Serial</th>
 	                            <th>Apuesta</th>
 	                            <th>Fecha - Hora</th>
 	                            <th>Apostado</th>
-	                            <th>Ganancia</th>
+	                            <th>Ganancia Máxima</th>
 	                        </thead>
 	                        <tbody>
 	                        	
