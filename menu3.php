@@ -24,11 +24,14 @@
                         <a href="tickets_fecha_n.php" title="Consulta Apuestas realizadas"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
                     </li>';
                     
-                
+                 echo '<li>
+                                <a href="cambiar_clave.php" title="Cambiar Contraseña"><span class="icon-checkmark2"></span>&nbsp;Cambiar Clave</a>
+                       </li>';
                 echo '<li>
                     <a href="reglas-de-juego.html" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>
                             
                 </li>
+
                 <li>
                     <a href="ayuda.html" target="_blank" title="¿Necesitas ayuda? , Comunícate con nosotros"><span class="icon-bullhorn"></span>&nbsp;¿Cómo Apostar?</a>
                 </li>

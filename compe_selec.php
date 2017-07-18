@@ -817,6 +817,9 @@
   
     <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>GOL-GOL (GG)</strong></font> Ésta apuesta es válida si cada equipo marca al menos un gol. Ejemplo (Real Madrid 3 - Barcelona 1)</h5>
     <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>NO-GOL (NG)</strong></font> Ésta apuesta es válida si uno o ambos equipos NO marcan gol. Ejemplo (Real Madrid 2 - Barcelona 0 )</h5>
+    <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>GANA O EMPATA VISITANTE (DC1X)</strong></font> Ésta apuesta es válida si gana o empata el equipo visitante</h5>
+    <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>GANA O EMPATA LOCAL (DC2X)</strong></font> Ésta apuesta es válida si gana o empata el equipo local</h5>
+    <h5><font color="BLUE">NUEVA COMBINACIÓN EN FÚTBOL: <strong>GANA CUALQUIERA (DC12)</strong></font> Ésta apuesta es válida si gana cualquiera de los dos equipos</h5>
 </body>
 
 

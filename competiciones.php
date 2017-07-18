@@ -118,7 +118,7 @@
                                     <div class="table-responsive">
                                         <table class="table table-striped">    
                                             <thead>
-                                                <th>'.$row['deporte'].'</th>
+                                                <th><b>'.$row['deporte'].'</b></th>
                                             </thead>';
                                             echo '<tbody>';
 
