@@ -84,10 +84,213 @@ include("conexion/conexion.php");
 					$rs_eq2=mysqli_query($mysqli, $sql_eq2) or die (mysqli_error());
 					$row_eq2=mysqli_fetch_array($rs_eq2);
 
-
 					echo "Partido: ".$row_eq1["equipo"]. " vs " .$row_eq2["equipo"]. " (".$row_compe["competicion"].")";
         		?>
-           
+           		
+           		<form class="form-horizontal" method="POST" action="evaluado.php">
+                    
+					<input type="hidden" name="id_partido" value="<?php echo $row_part["id"] ?>">
+					<input type="hidden" name="dep" value="<?php echo $row_compe["id_deporte"] ?>">
+                    <div class="form-group">
+                        <label for="r_gj1" class="col-sm-4 control-label">ML: <?php echo $row_eq1["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_gj1" id="r_gj1" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_gj2" class="col-sm-4 control-label">ML: <?php echo $row_eq2["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_gj2" id="r_gj2" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <?php if ($row_compe["id_deporte"]==1) {?>
+                    <div class="form-group">
+                        <label for="r_empate" class="col-sm-4 control-label">EMPATE:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_empate" id="r_empate" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <?php if ($row_compe["id_deporte"] == 1 || $row_compe["id_deporte"]== 2 || $row_compe["id_deporte"]== 3 || $row_compe["id_deporte"]== 4) { ?>
+                    <div class="form-group">
+                        <label for="r_alta" class="col-sm-4 control-label">ALTA: <?php echo $row_part["v_alta"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_alta" id="r_alta" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_baja" class="col-sm-4 control-label">BAJA: <?php echo $row_part["v_alta"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_baja" id="r_baja" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <div class="form-group">
+                        <label for="r_gpt1" class="col-sm-4 control-label">G 1T: <?php echo $row_eq1["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_gpt1" id="r_gpt1" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_gpt2" class="col-sm-4 control-label">G 1T: <?php echo $row_eq2["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_gpt2" id="r_gpt2" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+					<?php if ($row_compe["id_deporte"]==1) {?>
+                    <div class="form-group">
+                        <label for="r_empatept" class="col-sm-4 control-label">Empate 1T:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_empatept" id="r_empatept" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_gg" class="col-sm-4 control-label">GG:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_gg" id="r_gg" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_ng" class="col-sm-4 control-label">NG:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_ng" id="r_ng" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_dc1x" class="col-sm-4 control-label">DC1X:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_dc1x" id="r_dc1x" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_dc2x" class="col-sm-4 control-label">DC2X:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_dc2x" id="r_dc2x" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_dc12" class="col-sm-4 control-label">DC12:</label>
+                        <div class="col-sm-3">
+                            <select  name="r_dc12" id="r_dc12" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <?php }?>
+                    <?php if ($row_compe["id_deporte"] == 1 || $row_compe["id_deporte"]== 2 || $row_compe["id_deporte"]== 3 || $row_compe["id_deporte"]== 4 || $row_compe["id_deporte"]== 5) { ?>
+                    <div class="form-group">
+                        <label for="r_runline1" class="col-sm-4 control-label">RUNLINE (<?php echo $row_part["v_runline1"]; ?>): <?php echo $row_eq1["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_runline1" id="r_runline1" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_runline2" class="col-sm-4 control-label">RUNLINE (<?php echo $row_part["v_runline2"]; ?>): <?php echo $row_eq2["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_runline2" id="r_runline2" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <?php } ?>
+                     <?php if ($row_compe["id_deporte"]== 2) { ?>
+                    <div class="form-group">
+                        <label for="r_g5to1" class="col-sm-4 control-label">G 5to: <?php echo $row_eq1["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_g5to1" id="r_g5to1" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="r_g5to2" class="col-sm-4 control-label">G 5to: <?php echo $row_eq2["equipo"]; ?></label>
+                        <div class="col-sm-3">
+                            <select  name="r_g5to2" id="r_g5to2" class="form-control">
+                            	<option value="0">SELEC</option>
+                            	<option value="1">GANADOR</option>
+                            	<option value="2">PERDEDOR</option>
+                            	<option value="3">PUSH</option>
+                            </select>
+                        </div>
+                    </div>
+                    <?php } ?>               
+                            <button class="btn btn-success">Evaluar</button>
+                        
+                </form>
             </div>
             
             <!-- Modal Crear de Usuarios -->

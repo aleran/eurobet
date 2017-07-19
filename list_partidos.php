@@ -58,7 +58,7 @@ if ($_SESSION['tipo']=="normal") {
                         <table class="table table-striped">
                             <thead>
                                 <th>Liga</th>
-                                <th>Equipos</th>
+                                <th>Partido</th>
                                 <th>Fecha - Hora</th>
                             </thead>
                             <tbody>
@@ -91,7 +91,7 @@ if ($_SESSION['tipo']=="normal") {
                                         echo $row_compe["competicion"];
                                     echo"</td>";
                                     echo"<td>";
-                                        echo "<a href='eval_partidos.php?partido=".$row_partidos["id"]."'>".$row_eq1["equipo"]." - ".$row_eq2["equipo"]." </a>";
+                                        echo "<a href='eval_partidos.php?partido=".$row_partidos["id"]."'>".$row_eq1["equipo"]." VS ".$row_eq2["equipo"]." </a>";
                                     echo"</td>";
                                     echo"<td>";
                                         echo $fecha ." - ". $row_partidos["hora"];
