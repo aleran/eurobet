@@ -375,11 +375,11 @@ if ($_SESSION['tipo']=="normal") {
                     
                     <?php
 
-                        if ($_SESSION["tipo"]=="root") {
-                                 echo ' <a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
-                                        <br>';
+                        if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin") {
+                            echo '<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
+                                <br><br>';
 
-                                } 
+                        } 
                         if ($row_ticket["ganar"]=='1') {
                             echo "<h3>Ganador</h3>";
                              if ($_SESSION["tipo"]=="root"|| $_SESSION["tipo"]=="admin") {

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+include("time_sesion.php")
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head><meta http-equiv="Content-Type" content="text/html; charset=euc-jp">

@@ -600,22 +600,25 @@
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script>
-    var ticket= $("#ticket2").html();
-    <?php if ($_SESSION["tipo"]=="admin" || $_SESSION["tipo"]=="root") { ?>
-        if($(window).width() <= 768)  {
-            window.location="com.fidelier.printfromweb://$small$"+ticket+"$intro$$intro$$cut$$intro$"
-        }
-        else {
-            window.print();
-        }
-    <?php }?>
-    <?php if ($row_ticket["tipo"]=="parlay") { ?>
-        window.location="compe_selec.php?compe_select=<?php echo $compe_select;?>";
-    <?php } 
-    else { ?>
+    $(function(){
+         var ticket= $("#ticket2").html();
+        <?php if ($_SESSION["tipo"]=="admin" || $_SESSION["tipo"]=="root") { ?>
+            if($(window).width() <= 768)  {
+                window.location="com.fidelier.printfromweb://$small$"+ticket+"$intro$$intro$$cut$$intro$"
+            }
+            else {
+                window.print();
+            }
+        <?php }?>
+        <?php if ($row_ticket["tipo"]=="parlay") { ?>
+            window.location="compe_selec.php?compe_select=<?php echo $compe_select;?>";
+        <?php } 
+        else { ?>
 
-        window.location="compe_selec2.php?compe_select=<?php echo $compe_select;?>";
-    <?php }?>
+            window.location="compe_selec2.php?compe_select=<?php echo $compe_select;?>";
+        <?php }?>
+    })
+   
       
 
 </script>

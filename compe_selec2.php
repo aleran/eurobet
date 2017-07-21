@@ -1,4 +1,6 @@
-<?php session_start()  ?>
+<?php 
+include("time_sesion.php")
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -71,7 +73,7 @@
 
                         }
 
-                        else {
+                        else if($_SESSION["pais"]==1 || $_GET["pais"]==1 || $_SESSION["pais"]==3 || $_GET["pais"]==3) {
 
                              $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
@@ -138,7 +140,7 @@
                                             	</thead>';
                                             	 echo '<tbody>';
                                             $id_comp=$row["id_competicion"];
-                                             if ($_SESSION["pais"]==1 || $_GET["pais"]==1) {
+                                             if ($_SESSION["pais"]==1 || $_GET["pais"]==1 || $_SESSION["pais"]==3 || $_GET["pais"]==3) {
 
                                                 $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."' ORDER BY fecha ASC";
                                                 $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
@@ -882,7 +884,7 @@
     <script src="js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
-    $(".menu-toggle").click(function() {
+    $(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
