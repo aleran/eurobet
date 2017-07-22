@@ -129,10 +129,16 @@
                                     list($a2,$m2,$d2)= explode("-",$row["fecha"]);
                                     $fecha2 = $d2."/".$m2."/".$a2;
                                     
+                                    $sql_resul="SELECT * FROM resultados WHERE id_partido='".$row["id_partido"]."'";
+                                    $rs_resul=mysqli_query($mysqli,$sql_resul) or die(mysqli_error());
+                                    $row_resul=mysqli_fetch_array($rs_resul);
+                                    
                                 if ($row["logro"]=="gj1") {
                                     echo $row_eq1["equipo"]."-> Ganar: ".$row["valor_logro"]." vs ".$row_eq2["equipo"]."<br>";
+                                    echo $row_resul["r_gj1"]."<br>";
                                     if ($_SESSION["pais"]==2) {
                                         echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
+
                                     }
                                     else {
                                         echo "Fecha: ".$fecha2." Hora: ".$row["hora"]."<br>";
@@ -193,6 +199,7 @@
 
                                 if ($row["logro"]=="baja") {
                                     echo $row_eq1["equipo"]." vs ".$row_eq2["equipo"]."-> Baja( ".$row["val_alta"]." ): ".$row["valor_logro"]."<br>";
+                                    echo $row_resul["r_gj1"]."<br>";
                                     if ($_SESSION["pais"]==2) {
                                         echo "Fecha: ".$fecha2." Hora(VE): ".$row["hora_v"]."<br>";
                                     }
