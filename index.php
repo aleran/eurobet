@@ -50,6 +50,7 @@
                     <option value="1">COLOMBIA</option>
                     <option value="2">VENEZUELA</option>
                     <option value="3">MEXICO</option>
+                    <option value="4">USA (MIAMI)</option>
                 </select></center>
                 
             </div>

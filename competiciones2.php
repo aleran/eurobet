@@ -1,5 +1,5 @@
 <?php 
-include("time_sesion.php")
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -82,12 +82,19 @@ include("time_sesion.php")
                 
                 
                  <?php 
-                    if (isset($_SESSION["pais"])) {
-                        echo '<center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a> <a href="competiciones2.php" class="btn btn-info">Directa</a></center>';
+                     if (isset($_SESSION["pais"])) {
+                        echo '<center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a>';
+                        if($_SESSION["pais"] != 4) {
+                            echo '<a href="competiciones2.php" class="btn btn-info">Directa</a></center>';
+                        }
                     }
 
                     else {
-                        echo '<center>Tipo de Apuesta: <a href="competiciones.php?pais='.$_GET["pais"].'" class="btn btn-primary">Parlay</a> <a href="competiciones2.php?pais='.$_GET["pais"].'" class="btn btn-info">Directa</a></center>';
+                        echo '<center>Tipo de Apuesta: <a href="competiciones.php?pais='.$_GET["pais"].'" class="btn btn-primary">Parlay</a>';
+
+                        if($_GET["pais"] != 4) {
+                            echo '<a href="competiciones2.php?pais='.$_GET["pais"].'" class="btn btn-info">Directa</a></center>';
+                        }
                     }
 
                 ?>
@@ -139,6 +146,7 @@ include("time_sesion.php")
                                 ?>
                            
                     </div>
+                    <input type="hidden" name="pais" value="<?php echo $_GET["pais"]; ?>">
                      <button>Continuar</button>
                         </form>
                                 

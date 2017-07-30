@@ -1306,7 +1306,7 @@ include("time_sesion.php")
               
             }
 
-             else if ($_SESSION["pais"]==3) {
+             if ($_SESSION["pais"]==3) {
                if ($_SESSION["tipo"]=="normal") {
                   echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
                       alert("El saldo es insuficiente para realizar la apuesta");
@@ -1350,7 +1350,7 @@ include("time_sesion.php")
               
             }
 
-            else {
+            if ($_SESSION["pais"]==2) {
                 if ($_SESSION["tipo"]=="normal") {
                    echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
                       alert("El saldo es insuficiente para realizar la apuesta");
@@ -1384,6 +1384,48 @@ include("time_sesion.php")
                       $(".total").val(300000);
            
                       if(confirm("La ganancia maxima es de Bs.F 300.000 ¿desea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                      }';
+                      echo 'else  $("#apuesta").submit();';
+                }
+             
+            }
+
+            if ($_SESSION["pais"]==4) {
+                if ($_SESSION["tipo"]=="normal") {
+                   echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
+                      alert("El saldo es insuficiente para realizar la apuesta");
+
+                    }';
+
+                    echo 'else {';
+                       echo 'if ($("#monto").val()< 5 || $("#monto").val() > 500) {
+                      alert("El monto a apostar debe estar entre 5 USD y 500 USD");
+
+                      }';
+
+                      echo 'else if($(".total").val() > 5000){
+                      $(".total").val(5000);
+           
+                      if(confirm("La ganancia maxima es de 5000 USD ¿desea continuar?")){
+                      $("#apuesta").submit();
+                      }
+                      }';
+                      echo 'else  $("#apuesta").submit();';
+                    echo '}';
+                }
+
+                else {
+                   echo 'if ($("#monto").val()< 5 || $("#monto").val() > 500) {
+                      alert("El monto a apostar debe estar entre 5 USD y 500 USD");
+
+                      }';
+
+                      echo 'else if($(".total").val() > 5000){
+                      $(".total").val(5000);
+           
+                     if(confirm("La ganancia maxima es de 5000 USD ¿desea continuar?")){
                       $("#apuesta").submit();
                       }
                       }';

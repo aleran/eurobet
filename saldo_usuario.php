@@ -1,7 +1,7 @@
 <?php include("time_sesion.php");
-    if ($_SESSION['tipo']=="normal") {
+    if ($_SESSION['tipo']=="normal" || $_SESSION['tipo']=="taquilla") {
           header("Location: bienvenido.php");
-      }
+      }  
     include("conexion/conexion.php");  
 ?>
 <!DOCTYPE html>
@@ -280,6 +280,16 @@
                                             }
 
                                         ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tipo" class="col-sm-4 control-label">Tipo de usuario:</label>
+                                    <div class="col-sm-6">
+                                        <select  name="tipo" id="tipo" class="form-control">
+                                            <option value="admin">Admin</option>
+                                            <option value="taquilla">Taquilla</option>
                                         </select>
                                     </div>
                                 </div>

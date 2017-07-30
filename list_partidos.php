@@ -156,6 +156,16 @@ if ($_SESSION['tipo']=="normal") {
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="tipo" class="col-sm-4 control-label">Tipo de usuario:</label>
+                                    <div class="col-sm-6">
+                                        <select  name="tipo" id="tipo" class="form-control">
+                                            <option value="admin">Admin</option>
+                                            <option value="taquilla">Taquilla</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="cedula" class="col-sm-4 control-label">Cédula:</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required>

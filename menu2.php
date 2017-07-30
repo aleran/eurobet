@@ -13,9 +13,11 @@
                     
                     <a href="bienvenido.php" title="Bienvenido a Eurobet"><span class="icon-checkmark2"></span>&nbsp;Inicio</a>
                 </li>';
+                if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin" ) {
                  echo '<li>
                         <a href="buscar_usuario.php" title="Recarga de saldo"><span class="icon-coin-dollar"></span>&nbsp;Recargas</a>
                         </li>';
+                }
                     if ($_SESSION["tipo"]=="root") {
                         echo '<li>
                         <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
@@ -34,11 +36,11 @@
                     echo '<li>
                         <a href="consultas.php" title="Consulta de Tickets Activos"><span class="icon-file-text2"></span>&nbsp;Tickets</a>
                     </li>';
-                    
+                    if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin" ) {
                     echo '<li>
                                 <a href="saldos.php" title="Resumen Económico detallado de Agencias"><span class="icon-coin-dollar"></span>&nbsp;Cuentas</a>
                             </li>';
-
+                    }
                     echo '<li>
                                 <a href="cambiar_clave.php" title="Cambiar Contraseña"><span class="icon-checkmark2"></span>&nbsp;Cambiar Clave</a>
                             </li>';

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if ($_SESSION["pais"]==2) {
+	if ($_SESSION["pais"]==2 || $_SESSION["pais"]==4) {
 		date_default_timezone_set('America/Caracas');
 		
 	}
@@ -8,10 +8,10 @@
 		date_default_timezone_set('America/Bogota');
 	}
  	
- 	if (isset($_SESSION["tipo"])) {
+
  		if ($_SESSION["autentificado"] != "SI") {
 		//si no está logueado lo envío a la página de autentificación
-		header("location:./bienvenido.php");
+		header("location:./index.php");
 		}
 		else {
 			//sino, calculamos el tiempo transcurrido
@@ -33,6 +33,5 @@
 			}
          	
 		}
- 	}
 	
 ?> 

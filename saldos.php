@@ -1,4 +1,7 @@
-<?php include("time_sesion.php");  
+<?php include("time_sesion.php");
+    if ($_SESSION['tipo']=="normal" || $_SESSION['tipo']=="taquilla") {
+          header("Location: bienvenido.php");
+      }  
     include("conexion/conexion.php");   
 ?>
 <!DOCTYPE html>

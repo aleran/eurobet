@@ -1,5 +1,12 @@
 <?php 
-include("time_sesion.php")
+session_start(); 
+    if ($_SESSION["pais"]==2 || $_SESSION["pais"]==4 || $_POST["pais"]==2 || $_POST["pais"]==4) {
+        date_default_timezone_set('America/Caracas');
+        
+    }
+    else {
+        date_default_timezone_set('America/Bogota');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -58,7 +65,7 @@ include("time_sesion.php")
                     <div class="col-lg-6">
                    		<?php 
                     include("conexion/conexion.php");
-                        if ($_SESSION["pais"]==2 || $_GET["pais"]==2) {
+                        if ($_SESSION["pais"]==2 || $_POST["pais"]==2 || $_SESSION["pais"]==4 || $_POST["pais"]==4) {
 
                             $sql_inicio="SELECT id, hora_v FROM partidos WHERE fecha_v='".date("Y-m-d")."' AND inicio_v='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
@@ -73,7 +80,7 @@ include("time_sesion.php")
 
                         }
 
-                        else if($_SESSION["pais"]==1 || $_GET["pais"]==1 || $_SESSION["pais"]==3 || $_GET["pais"]==3) {
+                        else if($_SESSION["pais"]==1 || $_POST["pais"]==1 || $_SESSION["pais"]==3 || $_POST["pais"]==3) {
 
                              $sql_inicio="SELECT id, hora FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio='0'";
                             $rs_inicio=mysqli_query($mysqli,$sql_inicio) or die(mysqli_error());
@@ -124,7 +131,7 @@ include("time_sesion.php")
                             }
                            
                             if (!isset($competicion)) {
-                              echo "<script>alert('no selecciono ligas');window.location='competiciones.php?pais=".$_GET["pais"]."'</script>";
+                              echo "<script>alert('no selecciono ligas');window.location='competiciones.php?pais=".$_POST["pais"]."'</script>";
                             }
                              foreach ($competicion as $pb => $valor) {
 								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
@@ -140,7 +147,7 @@ include("time_sesion.php")
                                             	</thead>';
                                             	 echo '<tbody>';
                                             $id_comp=$row["id_competicion"];
-                                             if ($_SESSION["pais"]==1 || $_GET["pais"]==1 || $_SESSION["pais"]==3 || $_GET["pais"]==3) {
+                                             if ($_SESSION["pais"]==1 || $_POST["pais"]==1 || $_SESSION["pais"]==3 || $_POST["pais"]==3) {
 
                                                 $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."' ORDER BY fecha ASC";
                                                 $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
@@ -191,14 +198,14 @@ include("time_sesion.php")
                                                 echo '</tr>';
                                                 echo '<tr class="agg">';
 
-                                                if ($_SESSION["pais"]==2 || $_GET["pais"]==2) {
-                                                    list($a,$m,$d) = explode("-",$row2["fecha"]);
+                                                if ($_SESSION["pais"]==2 || $_POST["pais"]==2 || $_SESSION["pais"]==4 || $_POST["pais"]==4 ) {
+                                                    list($a,$m,$d) = explode("-",$row2["fecha_v"]);
                                                     echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora_v"].'</td>';
                                                     
                                                 }
 
                                                 else {
-                                                    list($a,$m,$d) = explode("-",$row2["fecha_v"]);
+                                                    list($a,$m,$d) = explode("-",$row2["fecha"]);
                                                     echo '<td>'.$d.'/'.$m.'/'.$a.' - '.$row2["hora"].'</td>';
 
                                                 }
