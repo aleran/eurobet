@@ -601,7 +601,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script>
          var ticket= $("#ticket2").html();
-        <?php if ($_SESSION["tipo"]=="admin" || $_SESSION["tipo"]=="root") { ?>
+        <?php if ($_SESSION["tipo"]!="normal") { ?>
             if($(window).width() <= 768)  {
                 window.location="com.fidelier.printfromweb://$small$"+ticket+"$intro$$intro$$cut$$intro$"
             }

@@ -412,7 +412,7 @@ if ($_SESSION['tipo']=="normal") {
                     
                     <?php
 
-                    if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin") {
+                    if ($_SESSION["tipo"]=="root" || $_SESSION["usuario"]=="1") {
                             echo '<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
                                 <br><br>';
 

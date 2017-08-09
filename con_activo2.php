@@ -418,7 +418,7 @@
                     
                     <?php
 
-                    if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin") {
+                    if ($_SESSION["tipo"]=="root" || $_SESSION["usuario"]=="1") {
                             echo '<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
                                 <br><br>';
 
@@ -769,16 +769,6 @@
                                             }
 
                                         ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="tipo" class="col-sm-4 control-label">Tipo de usuario:</label>
-                                    <div class="col-sm-6">
-                                        <select  name="tipo" id="tipo" class="form-control">
-                                            <option value="admin">Admin</option>
-                                            <option value="taquilla">Taquilla</option>
                                         </select>
                                     </div>
                                 </div>

@@ -21,6 +21,10 @@ echo '<div id="sidebar-wrapper">
                     <a href="competiciones.php?pais='.$_GET["pais"].'"  title="Líneas del día"><span class="icon-file-text2"></span>&nbsp;Logros / Líneas</a>
                 </li>
                 
+                <li>
+                    <a href="http://www.eurobet.com.co/descargas/eurobet.apk"  title="Descarga nuestra aplicación y juega comodo desde tu casa"><span class="icon-download"></span>&nbsp;¡Descarga la APP!</a>
+                </li>
+                
                 
                 <li>
                     <a href="reglas-de-juego.html?pais='.$_GET["pais"].'"" target="_blank"  title="Conoce nuestras políticas y términos de prestación de Servicio"><span class="icon-library"></span>&nbsp;Reglas</a>

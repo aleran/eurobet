@@ -1,5 +1,5 @@
  <?php
-   include("time_sesion.php"); 
+include("time_sesion.php"); 
    include("conexion/conexion.php");
    include("lib/fecha_hora.php");
    if (isset($_SESSION["tipo"])) {

@@ -133,7 +133,7 @@
                                 <tr><td><b>Apostado:</b></td> <td>$ <?php echo $row_sum["t_monto"]; ?> </td></tr>
                                 <tr><td><b>Perdido:</b></td> <td>$ <?php echo $total_perdido; ?></td></tr>
                                 <tr><td><b>Total:</b></td> <td>$ <?php echo $total; ?></td></tr>
-                                <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
+                                <tr><td><em>Valores expresados en su moneda local</em></td> <td><br></tr>
                             </tbody>
                         </table>   
                     </div>
@@ -208,7 +208,7 @@
                                 <tr><td><b>Apostado:</b></td> <td>$ <?php echo $row_sum1["t_monto"]; ?></td></tr>
                                 <tr><td><b>Perdido:</b></td> <td>$ <?php echo $total_perdido1; ?></td></tr>
                                 <tr><td><b>Total:</b></td> <td>$ <?php echo $total1; ?></td></tr>
-                                <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
+                                <tr><td><em>Valores expresados en su manera local</em></td> <td><br></tr>
                             </tbody>
                         </table>   
                     </div>
@@ -242,7 +242,7 @@
                                 <tr><td><b>Recargas:</b></td> <td>$ <?php echo $row_recargas["t_recargas"]; ?></td></tr>
                                 <tr><td><b>Pagos:</b></td> <td>$ <?php echo $row_pagos["t_pagos"]; ?></td></tr>
                                 
-                                <tr><td><em>Valores expresados en Pesos Colombianos ($ COP)</em></td> <td><br></tr>
+                                <tr><td><em>Valores expresados en su moneda local</em></td> <td><br></tr>
                             </tbody>
                         </table>   
                     </div>
