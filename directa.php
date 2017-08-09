@@ -1140,6 +1140,7 @@ include("time_sesion.php")
                                 ?>
                           
                     </div>
+                    <center><a href="competiciones2.php" class="btn btn-success">Volver a Ligas</a></center>
                     <center>
                     <?php 
                       if (isset($_SESSION["tipo"])) {

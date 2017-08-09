@@ -9,7 +9,11 @@ session_start();
         include("head.php");
     ?>
 
-
+<style>
+    .principales{
+        color:#FF8500;
+    }
+</style>
 
 </head>
 
@@ -134,7 +138,12 @@ session_start();
                                                 $num_np=mysqli_num_rows($rs_np);
                                                 echo '<tr><td>';
                                                 echo '<input type="checkbox" name="competicion[]" value="'.$row2["id_competicion"].'"> ';
-                                                echo $row2["competicion"]." <b>(".$num_np.")</b>";
+                                               if ($row2["id_competicion"]==1 || $row2["id_competicion"]==2 || $row2["id_competicion"]==3 || $row2["id_competicion"]==4 || $row2["id_competicion"]==5 || $row2["id_competicion"]==6 || $row2["id_competicion"]==7 || $row2["id_competicion"]==8 || $row2["id_competicion"]==9 || $row2["id_competicion"]==10 || $row2["id_competicion"]==11 || $row2["id_competicion"]==12) {
+                                                    echo "<span class='principales'><b>".$row2["competicion"]." (".$num_np.")</b><span>";
+                                                }
+                                                else {
+                                                     echo $row2["competicion"]." <b>(".$num_np.")</b>";
+                                                }
                                                 echo '</td></tr>';
                                             }
                                             echo  '</tbody>';
