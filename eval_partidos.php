@@ -95,9 +95,9 @@ include("conexion/conexion.php");
                         <label for="r_gj1" class="col-sm-4 control-label">ML: <?php echo $row_eq1["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_gj1" id="r_gj1" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -106,9 +106,9 @@ include("conexion/conexion.php");
                         <label for="r_gj2" class="col-sm-4 control-label">ML: <?php echo $row_eq2["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_gj2" id="r_gj2" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -118,9 +118,9 @@ include("conexion/conexion.php");
                         <label for="r_empate" class="col-sm-4 control-label">EMPATE:</label>
                         <div class="col-sm-3">
                             <select  name="r_empate" id="r_empate" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -131,9 +131,9 @@ include("conexion/conexion.php");
                         <label for="r_alta" class="col-sm-4 control-label">ALTA: <?php echo $row_part["v_alta"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_alta" id="r_alta" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -142,9 +142,9 @@ include("conexion/conexion.php");
                         <label for="r_baja" class="col-sm-4 control-label">BAJA: <?php echo $row_part["v_alta"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_baja" id="r_baja" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -154,9 +154,9 @@ include("conexion/conexion.php");
                         <label for="r_gpt1" class="col-sm-4 control-label">G 1T: <?php echo $row_eq1["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_gpt1" id="r_gpt1" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -165,9 +165,9 @@ include("conexion/conexion.php");
                         <label for="r_gpt2" class="col-sm-4 control-label">G 1T: <?php echo $row_eq2["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_gpt2" id="r_gpt2" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -177,9 +177,9 @@ include("conexion/conexion.php");
                         <label for="r_empatept" class="col-sm-4 control-label">Empate 1T:</label>
                         <div class="col-sm-3">
                             <select  name="r_empatept" id="r_empatept" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -188,9 +188,9 @@ include("conexion/conexion.php");
                         <label for="r_gg" class="col-sm-4 control-label">GG:</label>
                         <div class="col-sm-3">
                             <select  name="r_gg" id="r_gg" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -199,9 +199,9 @@ include("conexion/conexion.php");
                         <label for="r_ng" class="col-sm-4 control-label">NG:</label>
                         <div class="col-sm-3">
                             <select  name="r_ng" id="r_ng" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -210,9 +210,9 @@ include("conexion/conexion.php");
                         <label for="r_dc1x" class="col-sm-4 control-label">DC1X:</label>
                         <div class="col-sm-3">
                             <select  name="r_dc1x" id="r_dc1x" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -221,9 +221,9 @@ include("conexion/conexion.php");
                         <label for="r_dc2x" class="col-sm-4 control-label">DC2X:</label>
                         <div class="col-sm-3">
                             <select  name="r_dc2x" id="r_dc2x" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -232,9 +232,9 @@ include("conexion/conexion.php");
                         <label for="r_dc12" class="col-sm-4 control-label">DC12:</label>
                         <div class="col-sm-3">
                             <select  name="r_dc12" id="r_dc12" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -245,9 +245,9 @@ include("conexion/conexion.php");
                         <label for="r_runline1" class="col-sm-4 control-label">RUNLINE (<?php echo $row_part["v_runline1"]; ?>): <?php echo $row_eq1["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_runline1" id="r_runline1" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -256,9 +256,9 @@ include("conexion/conexion.php");
                         <label for="r_runline2" class="col-sm-4 control-label">RUNLINE (<?php echo $row_part["v_runline2"]; ?>): <?php echo $row_eq2["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_runline2" id="r_runline2" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -269,9 +269,9 @@ include("conexion/conexion.php");
                         <label for="r_g5to1" class="col-sm-4 control-label">G 5to: <?php echo $row_eq1["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_g5to1" id="r_g5to1" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>
@@ -280,9 +280,9 @@ include("conexion/conexion.php");
                         <label for="r_g5to2" class="col-sm-4 control-label">G 5to: <?php echo $row_eq2["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_g5to2" id="r_g5to2" class="form-control">
-                            	<option value="0">SELEC</option>
-                            	<option value="GANADOR">GANADOR</option>
+                            	
                             	<option value="PERDEDOR">PERDEDOR</option>
+                            	<option value="GANADOR">GANADOR</option>
                             	<option value="PUSH">PUSH</option>
                             </select>
                         </div>

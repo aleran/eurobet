@@ -22,6 +22,10 @@
                         echo '<li>
                         <a href="#" title="crear usuarios" data-toggle="modal" data-target="#modalUsuarios"><span class="icon-user-tie"></span>&nbsp;Crear Usuarios</a>
                         </li>';
+
+                        echo '<li>
+                        <a href="list_partidos.php" title="Evaluacion de Partidos"><span class="icon-checkmark2"></span>&nbsp;Evaluar Partidos</a>
+                        </li>';
                     
                    
                     
