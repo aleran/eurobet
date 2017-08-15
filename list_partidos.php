@@ -66,7 +66,7 @@ if ($_SESSION['tipo']=="normal") {
                     
                     <?php               
                         
-                            $sql_partidos="SELECT id, id_competicion, equipo1, equipo2, fecha, hora FROM partidos WHERE inicio='1' AND eval='0' ORDER BY fecha ASC";
+                            $sql_partidos="SELECT id, id_competicion, equipo1, equipo2, fecha, hora FROM partidos WHERE inicio='1' AND eval='0' ORDER BY fecha, hora ASC";
             
                         
                         $rs_partidos=mysqli_query($mysqli, $sql_partidos) or die(mysqli_error());

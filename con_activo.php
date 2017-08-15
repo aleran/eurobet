@@ -622,7 +622,7 @@
                     
                     <?php
 
-                    if ($_SESSION["tipo"]=="root" || $_SESSION["usuario"]=="1") {
+                    if ($_SESSION["tipo"]=="root" || $_SESSION["usuario"]=="111111111") {
                             echo '<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
                                 <br><br>';
 
@@ -1082,7 +1082,12 @@
                 $("#imprimir2").click(function(){
                     window.location="com.fidelier.printfromweb://$small$"+ticket+"$intro$$intro$$cut$$intro$";
                 });
-            }    
+            }
+            else {
+                 $("#imprimir").click(function(){
+                    window.print();
+                });
+            }
         })
     </script>
 </body>

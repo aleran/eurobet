@@ -66,6 +66,11 @@
                         width: 302px;
                         text-align:justify;
                     }
+                     #ticket2 {
+                        width: 302px;
+                        text-align:justify;
+                        display: none;
+                    }
                  </style>
                     <div class="col-sm-6 col-xs-offset-4 ">
                 	
@@ -614,13 +619,16 @@
                     
                     <?php
 
-                   if ($_SESSION["tipo"]=="root" || $_SESSION["usuario"]=="1") {
+                   if ($_SESSION["tipo"]=="root" || $_SESSION["usuario"]=="111111111") {
                             echo '<a href="#" id="anular" class="btn btn-danger hidden-print">Anular Ticket</a> 
                                 <br><br>';
 
                         } 
                         if ($row_ticket["ganar"]=='1') {
                             echo "<h3>Ganador</h3>";
+                            if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin") {
+                                 echo '<a href="#" id="pagar" class="btn btn-success hidden-print">Pagar Ticket</a><br> ';
+                            }
 
                         }
                         else if ($row_ticket["ganar"]=='3') {
@@ -632,6 +640,7 @@
                         }
                         else {
                             echo "<h3>Perdedeor</h3>";
+                             
                         }
 
 
@@ -919,25 +928,10 @@
                                     echo "*PUSH*: ".$row_ticket["push"]."<br><br>";
 
                                 }
-                            echo "<button class='btn btn-primary hidden-print' id='imprimir' type='button'>Imprimir</button>";
+                            
 
                         	                ?>
                     		
-                	
-                	
-                    <?php 
-                        if ($row_ticket["ganar"]=='1') {
-                            echo "<h3>Ganador</h3>";
-                             if ($_SESSION["tipo"]=="root" || $_SESSION["tipo"]=="admin") {
-                                 echo '<a href="#" id="pagar" class="btn btn-success hidden-print">Pagar Ticket</a><br> ';
-                            }
-                        }
-
-
-
-                        
-                   
-                    ?>
                 
             
                 <br>

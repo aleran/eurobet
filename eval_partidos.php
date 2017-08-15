@@ -150,6 +150,7 @@ include("conexion/conexion.php");
                         </div>
                     </div>
                     <?php } ?>
+                    <?php if ($row_compe["id_deporte"]==1) {?>
                     <div class="form-group">
                         <label for="r_gpt1" class="col-sm-4 control-label">G 1T: <?php echo $row_eq1["equipo"]; ?></label>
                         <div class="col-sm-3">
@@ -172,7 +173,7 @@ include("conexion/conexion.php");
                             </select>
                         </div>
                     </div>
-					<?php if ($row_compe["id_deporte"]==1) {?>
+					
                     <div class="form-group">
                         <label for="r_empatept" class="col-sm-4 control-label">Empate 1T:</label>
                         <div class="col-sm-3">
@@ -207,7 +208,7 @@ include("conexion/conexion.php");
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="r_dc1x" class="col-sm-4 control-label">DC1X:</label>
+                        <label for="r_dc1x" class="col-sm-4 control-label">DC1X: <?php echo $row_eq1["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_dc1x" id="r_dc1x" class="form-control">
                             	
@@ -218,7 +219,7 @@ include("conexion/conexion.php");
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="r_dc2x" class="col-sm-4 control-label">DC2X:</label>
+                        <label for="r_dc2x" class="col-sm-4 control-label">DC2X: <?php echo $row_eq2["equipo"]; ?></label>
                         <div class="col-sm-3">
                             <select  name="r_dc2x" id="r_dc2x" class="form-control">
                             	

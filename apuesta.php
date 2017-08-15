@@ -1,4 +1,4 @@
- <?php
+<?php
 include("time_sesion.php"); 
    include("conexion/conexion.php");
    include("lib/fecha_hora.php");
