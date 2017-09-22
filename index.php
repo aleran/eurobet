@@ -74,7 +74,7 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header3.png" class="img-responsive" alt="">
+                <a href="https://www.solucionesartech.com" target="_blank"><img src="img/header3.png" class="img-responsive" alt=""></a>
         </header>
         
         <br>
@@ -97,32 +97,32 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                   <a href="#"> <img src="img/oferta.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
+                                   <a href="#"> <img src="img/carreras.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
                                     <div class="#">
                                         
                                         
                                     </div>
                                 </div>
                         <div class="item">
-                                    <img src="img/coro.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <img src="img/galgos1.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/futsal.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <img src="img/seriea.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/confe.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <img src="img/francia1.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>
                                 </div>
                                 <div class="item">
-                                    <img src="img/voleibol.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
+                                    <img src="img/oferta.jpg" alt="..." align="" width="100%" title="LaLiga Santander, Premier League. Tenemos todas las ligas disponibles">
                                     <div class="">
                                        
                                     </div>

@@ -226,17 +226,16 @@
 					  	<div class="form-group">
 					    	
 					    	<div class="col-sm-8">
-					      		<input type="text" required class="form-control" autocomplete="off" onkeyup="busc_ms2();bus_h2()" name="equipo1" id="equipo1" placeholder="Equipo 1">
-					      		<input type="hidden" name="equipo1_selec" id="equipo1_selec"><div id="suggestions2"></div>
+					      		<input type="text" required class="form-control" autocomplete="off" onkeyup="busc_ms3();bus_h3()" name="equipo2" id="equipo2" placeholder="Equipo 2">
+					      		<input type="hidden" name="equipo2_selec" id="equipo2_selec"><div id="suggestions3"></div>
 					    	</div>
 					  	</div>
 					</div>
 					<div class="col-sm-6">
 					  	<div class="form-group">
-					    	
 					    	<div class="col-sm-8">
-					      		<input type="text" required class="form-control" autocomplete="off" onkeyup="busc_ms3();bus_h3()" name="equipo2" id="equipo2" placeholder="Equipo 2">
-					      		<input type="hidden" name="equipo2_selec" id="equipo2_selec"><div id="suggestions3"></div>
+					      		<input type="text" required class="form-control" autocomplete="off" onkeyup="busc_ms2();bus_h2()" name="equipo1" id="equipo1" placeholder="Equipo 1">
+					      		<input type="hidden" name="equipo1_selec" id="equipo1_selec"><div id="suggestions2"></div>
 					    	</div>
 					  	</div>
 					  	
@@ -245,17 +244,15 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="gj1" id="gj1" placeholder="ML 1">
+					      	<input type="text" required class="form-control" name="gj2" id="gj2" placeholder="ML 2">
 					    </div>
 				  	</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="gj2" id="gj2" placeholder="ML 2">
+					      	<input type="text" required class="form-control" name="gj1" id="gj1" placeholder="ML 1">
 					    </div>
 					</div>
 				</div>
@@ -308,10 +305,11 @@
 			<?php if ($_POST["deporte"] == 1 || $_POST["deporte"]== 2 || $_POST["deporte"]== 3 || $_POST["deporte"]== 4 || $_POST["deporte"]== 5) { ?>
 			<div class="row">
 				<div class="col-sm-3">
+				
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="v_runline1" id="v_runline1" placeholder="Valor RL1">
+						    <input type="text" required class="form-control" name="v_runline2" id="v_runline2" placeholder="Valor RL2">
 						</div>
 					</div>
 					
@@ -319,28 +317,28 @@
 				<div class="col-sm-3">
 				
 					<div class="form-group">
-						    	
-						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="runline1" id="runline1" placeholder="Runline 1">
-						</div>
+						 <div class="col-sm-8">
+						    <input type="text" required class="form-control" name="runline2" id="runline2" placeholder="Runline2">
+						</div>   	
+						
 					 </div>
 					
 					
 				</div>
 				<div class="col-sm-3">
-					<div class="form-group">
+						<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="v_runline2" id="v_runline2" placeholder="Valor RL2">
+						    <input type="text" required class="form-control" name="v_runline1" id="v_runline1" placeholder="Valor RL1">
 						</div>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="runline2" id="runline2" placeholder="Runline2">
-						</div>
+						    <input type="text" required class="form-control" name="runline1" id="runline1" placeholder="Runline 1">
+						</div>    	
+						
 					</div>
 				</div>
 			</div><br>
@@ -349,18 +347,18 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="gpt1" id="gpt1" placeholder="1T 1">
-					    </div>
+					      	<input type="text" required class="form-control" name="gpt2"" id="gpt2" placeholder="1T 2">
+					    </div>	
+					    
 				  	</div>
 				</div>
 				<div class="col-sm-6">
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="gpt2"" id="gpt2" placeholder="1T 2">
-					    </div>
+					      	<input type="text" required class="form-control" name="gpt1" id="gpt1" placeholder="1T 1">
+					    </div>	
+					    
 					</div>
 				</div>
 
@@ -422,19 +420,21 @@
 				<div class="col-sm-4">
 					
 					<div class="form-group">
-						    	
-						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="dc1x" id="dc1x" placeholder="DC1X">
+					    <div class="col-sm-8">
+						    <input type="text" required class="form-control" name="dc2x" id="dc2x" placeholder="DC2X">
 						</div>
+					       	
+						
 					</div>
 				</div>
 				<div class="col-sm-4">
 
 					<div class="form-group">
-						    	
-						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="dc2x" id="dc2x" placeholder="DC2X">
-						</div>
+					    <div class="col-sm-8">
+						    <input type="text" required class="form-control" name="dc12" id="dc12" placeholder="DC12">
+						</div>	 
+						   	
+						
 					</div>
 					
 				</div>
@@ -442,8 +442,10 @@
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="dc12" id="dc12" placeholder="DC12">
-						</div>
+						    <input type="text" required class="form-control" name="dc1x" id="dc1x" placeholder="DC1X">
+						    
+						    
+						</div> 
 					</div>
 				</div>
 			</div><br>
@@ -453,19 +455,19 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="g5to1" id="g5to1" placeholder="1eraM 1">
-					    </div>
+					      	<input type="text" required class="form-control" name="g5to2" id="g5to2" placeholder="1eraM 2">
+					    </div>	
+					    
 				  	</div>
 				</div>
 				<div class="col-sm-6">
 
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="g5to2" id="g5to2" placeholder="1eraM 2">
-					    </div>
+					      	<input type="text" required class="form-control" name="g5to1" id="g5to1" placeholder="1eraM 1">
+					    </div>	
+					    
 					</div>
 				</div>
 
@@ -474,38 +476,38 @@
 			<div class="row">
 				<div class="col-sm-3">
 					<div class="form-group">
-						    	
-						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="v_srl1" id="vsrl1" placeholder="Valor SRL1">
-						</div>
+					    <div class="col-sm-8">
+						    <input type="text" required class="form-control" name="v_srl2" id="v_srl2" placeholder="Valor SRL2">
+						</div> 	
+						
 					</div>
 					
 				</div>
 				<div class="col-sm-3">
 				
 					<div class="form-group">
-						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="srl1" id="srl1" placeholder="SRL 1">
-						</div>
+						    <input type="text" required class="form-control" name="srl2" id="srl2" placeholder="SRL 2">
+						</div>    	
+						
 					 </div>
 					
 					
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="v_srl2" id="v_srl2" placeholder="Valor SRL2">
-						</div>
+						    <input type="text" required class="form-control" name="v_srl1" id="vsrl1" placeholder="Valor SRL1">
+						</div>    	
+						
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="srl2" id="srl2" placeholder="SRL 2">
-						</div>
+						    <input type="text" required class="form-control" name="srl1" id="srl1" placeholder="SRL 1">
+						</div>    	
+						
 					</div>
 				</div>
 			</div><br>
@@ -534,19 +536,19 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="ap1" id="ap1" placeholder="AP 1">
-					    </div>
+					      	<input type="text" required class="form-control" name="ap2" id="ap2" placeholder="AP 2">
+					    </div>	
+					    
 				  	</div>
 				</div>
 				<div class="col-sm-6">
 
 					<div class="form-group">
-					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="ap2" id="ap2" placeholder="AP 2">
-					    </div>
+					      	<input type="text" required class="form-control" name="ap1" id="ap1" placeholder="AP 1">
+					    </div>	
+					    
 					</div>
 				</div>
 
@@ -558,7 +560,7 @@
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="bst1" id="bst1" placeholder="BST A">
+						    <input type="text" required class="form-control" name="bst2" id="bst2" placeholder="BST B">
 						</div>
 					</div>
 				</div>
@@ -574,10 +576,10 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="form-group">
-						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="bst2" id="bst2" placeholder="BST B">
-						</div>
+						    <input type="text" required class="form-control" name="bst1" id="bst1" placeholder="BST A">
+						</div>    	
+						
 					</div>
 				</div>
 			</div><br>
@@ -620,7 +622,7 @@
 					<div class="form-group">
 					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="gmt1" id="gmt1" placeholder="MT 1">
+					      	<input type="text" required class="form-control" name="gmt2" id="gmt2" placeholder="MT 2">
 					    </div>
 				  	</div>
 				</div>
@@ -629,7 +631,7 @@
 					<div class="form-group">
 					    	
 					    <div class="col-sm-8">
-					      	<input type="text" required class="form-control" name="gmt2" id="gmt2" placeholder="MT 2">
+					        <input type="text" required class="form-control" name="gmt1" id="gmt1" placeholder="MT 1">
 					    </div>
 					</div>
 				</div>
@@ -671,7 +673,7 @@
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="v_runline_mt1" id="v_runline_mt1" placeholder="Valor RL MT1">
+						    <input type="text" required class="form-control" name="v_runline_mt2" id="v_runline_mt2" placeholder="Valor RL MT2">
 						</div>
 					</div>
 					
@@ -681,7 +683,7 @@
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="runline_mt1" id="runline_mt1" placeholder="RL MT1">
+						    <input type="text" required class="form-control" name="runline_mt2" id="runline_mt2" placeholder="RL MT2">
 						</div>
 					 </div>
 					
@@ -691,7 +693,7 @@
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="v_runline_mt2" id="v_runline_mt2" placeholder="Valor RL MT2">
+						   <input type="text" required class="form-control" name="v_runline_mt1" id="v_runline_mt1" placeholder="Valor RL MT1">
 						</div>
 					</div>
 				</div>
@@ -699,7 +701,8 @@
 					<div class="form-group">
 						    	
 						<div class="col-sm-8">
-						    <input type="text" required class="form-control" name="runline_mt2" id="runline_mt2" placeholder="RL MT2">
+						    <input type="text" required class="form-control" name="runline_mt1" id="runline_mt1" placeholder="RL MT1">
+						    
 						</div>
 					</div>
 				</div>

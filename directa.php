@@ -1,5 +1,12 @@
-<?php 
-include("time_sesion.php")
+<?php
+session_start(); 
+    if ($_SESSION["pais"]==2 || $_SESSION["pais"]==4 || $_POST["pais"]==2 || $_POST["pais"]==4) {
+        date_default_timezone_set('America/Caracas');
+        
+    }
+    else {
+        date_default_timezone_set('America/Bogota');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -1275,7 +1282,7 @@ include("time_sesion.php")
             
           }
 
-          else if ($_SESSION["pais"]==3) {
+          if ($_SESSION["pais"]==3) {
             if ($_SESSION["tipo"]=="normal") {
               echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
                       alert("El saldo es insuficiente para realizar la apuesta");
@@ -1300,7 +1307,7 @@ include("time_sesion.php")
             
           }
 
-          else {
+        if ($_SESSION["pais"]==2) {
              if ($_SESSION["tipo"]=="normal") {
                 echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
                       alert("El saldo es insuficiente para realizar la apuesta");
@@ -1336,6 +1343,32 @@ include("time_sesion.php")
                   echo 'else  $("#apuesta").submit();';
               }
           }
+          
+          if ($_SESSION["pais"]==4) {
+                if ($_SESSION["tipo"]=="normal") {
+                   echo 'if (parseInt($("#saldo").val()) < parseInt($("#monto").val())) {
+                      alert("El saldo es insuficiente para realizar la apuesta");
+
+                    }';
+
+                    echo 'else {';
+                       echo 'if ($("#monto").val()< 5) {
+                      alert("El monto minimo es de 5 USD");
+
+                      }';
+                      echo 'else  $("#apuesta").submit();';
+                    echo '}';
+                }
+
+                else {
+                   echo 'if ($("#monto").val()< 5) {
+                      alert("El monto minimo es de 5 USD");
+
+                      }';
+                      echo 'else  $("#apuesta").submit();';
+                }
+             
+            }
         ?>
         
 

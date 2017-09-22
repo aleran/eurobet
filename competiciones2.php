@@ -88,9 +88,9 @@ session_start();
                  <?php 
                      if (isset($_SESSION["pais"])) {
                         echo '<center>Tipo de Apuesta: <a href="competiciones.php" class="btn btn-primary">Parlay</a>';
-                        if($_SESSION["pais"] != 4) {
+                        
                             echo '<a href="competiciones2.php" class="btn btn-info">Directa</a></center>';
-                        }
+                        
                     }
 
                     else {

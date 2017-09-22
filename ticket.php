@@ -1,5 +1,5 @@
 <?php
-    include("time_sesion.php"); 
+    session_start(); 
     include("conexion/conexion.php");
 
     $sql_ticket="SELECT codigo, agencia, tipo, fecha, hora, monto, premio, tipo FROM parlay WHERE codigo='".$_GET["cod_t"]."'";

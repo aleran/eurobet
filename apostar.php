@@ -1,5 +1,12 @@
-<?php 
-include("time_sesion.php")
+<?php
+session_start(); 
+    if ($_SESSION["pais"]==2 || $_SESSION["pais"]==4 || $_POST["pais"]==2 || $_POST["pais"]==4) {
+        date_default_timezone_set('America/Caracas');
+        
+    }
+    else {
+        date_default_timezone_set('America/Bogota');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -1402,8 +1409,8 @@ include("time_sesion.php")
                     }';
 
                     echo 'else {';
-                       echo 'if ($("#monto").val()< 5 || $("#monto").val() > 500) {
-                      alert("El monto a apostar debe estar entre 5 USD y 500 USD");
+                       echo 'if ($("#monto").val()< 5) {
+                     alert("El monto minimo a apostar es de 5 USD");
 
                       }';
 
@@ -1419,8 +1426,8 @@ include("time_sesion.php")
                 }
 
                 else {
-                   echo 'if ($("#monto").val()< 5 || $("#monto").val() > 500) {
-                      alert("El monto a apostar debe estar entre 5 USD y 500 USD");
+                   echo 'if ($("#monto").val()< 5) {
+                      alert("El monto minimo a apostar es de 5 USD");
 
                       }';
 

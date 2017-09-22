@@ -34,7 +34,7 @@ $partidos= $_POST["partido"];
       if ($_SESSION["tipo"]=="normal") {
          
          if ($_POST["monto"] > $_POST["saldo"]) {
-            echo "<script>alert('Saldo insuficiente para realizar apuesta'); window.location='competiciones.php';</script>";
+            header('Location: competiciones.php');
          }
          else {
 
@@ -45,6 +45,10 @@ $partidos= $_POST["partido"];
             $rs_s=mysqli_query($mysqli,$sql_s) or die(mysqli_error());
             $row_s=mysqli_fetch_array($rs_s);
             $saldo_final = $row_s["saldo"] - $_POST["monto"];
+            if($saldo_final < 0) {
+                $saldo_final=0;
+                header('Location: competiciones.php');
+            } 
             $sql_as="UPDATE usuarios SET saldo='".$saldo_final."' WHERE cedula='".$_SESSION["usuario"]."'";
             $rs_as=mysqli_query($mysqli,$sql_as) or die(mysqli_error($mysqli));
             

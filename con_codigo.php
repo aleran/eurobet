@@ -328,7 +328,7 @@ if ($_SESSION['tipo']=="normal") {
                                        echo "<span class='perdedor'>".$row_resul["r_runline2"]."</span><br>";
                                     }
                                     else {
-                                        echo "<span class='push'>".$row_resul["r_runlin2"]."</span><br>";
+                                        echo "<span class='push'>".$row_resul["r_runline2"]."</span><br>";
                                     }
                                     echo "-------------------------------------------------------------<br>";
 
