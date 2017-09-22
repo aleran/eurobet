@@ -2,6 +2,22 @@
 	include("time_sesion.php");
 	include("conexion/conexion.php");
 	if (isset($_GET["anular"])) {
+		$sql1="SELECT cedula, monto FROM parlay WHERE codigo='".$_GET["anular"]."'";
+		$rs1=mysqli_query($mysqli,$sql1) or die(mysqli_error());
+		$row1=mysqli_fetch_array($rs1);
+
+		if ($row1["cedula"]!="") {
+			$sql2="SELECT saldo FROM usuarios WHERE cedula='".$row1["cedula"]."'";
+			$rs2=mysqli_query($mysqli,$sql2) or die(mysqli_error());
+			$row2=mysqli_fetch_array($rs2);
+
+			$saldo_dev= $row1["monto"] + $row2["saldo"];
+
+			$sql3="UPDATE usuarios SET saldo='".$saldo_dev."' WHERE cedula='".$row1["cedula"]."'";
+			$rs3=mysqli_query($mysqli,$sql3) or die(mysqli_error($mysqli));
+
+		}
+
 		$sql_anular="UPDATE parlay SET activo='0' WHERE codigo='".$_GET["anular"]."'";
 		$rs_anular=mysqli_query($mysqli,$sql_anular) or die(mysqli_error($mysqli));
 		echo "<script>alert('ticket anulado');window.location='activos.php?desde=".$_GET["desde"]."&hasta=".$_GET["hasta"]."'</script>";
