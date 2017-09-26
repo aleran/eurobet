@@ -127,7 +127,7 @@ session_start();
                     </div>
                     
                 </div>
-               	<form action="apostar_c.php" name="jugadas" id="jugadas" method="POST">
+               	<form action="directa_c.php" name="jugadas" id="jugadas" method="POST">
                     <div class="row">
                     
                         <?php
@@ -931,7 +931,7 @@ session_start();
     });
 
        
-       var formul = document.jugadas,
+       /*var formul = document.jugadas,
         elementos = formul.elements;
         longElementos = elementos.length;
         var validar = function validar(e){
@@ -958,7 +958,7 @@ session_start();
             
          
     }
-     formul.addEventListener("submit", validar)
+     formul.addEventListener("submit", validar)*/
       
   
     </script>
