@@ -126,6 +126,7 @@
                             echo "Fecha: ".$fecha." ".$row_ticket["hora"]."<br>";
                             echo "Serial: ".$row_ticket["codigo"]."<br>";
                             echo "Ticket vigente por 7 días.<br><br>";
+                             echo "<h4 class='perdedor'>TICKET NULO</h4>";
 
                             $sql="SELECT p.*, a.id_partido, a.logro, a.val_alta, a.valor_logro, j.* FROM parlay p
                             JOIN apuestas a ON p.codigo=a.ticket
