@@ -789,6 +789,17 @@ session_start();
     <script src="js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
+       
+
+      setInterval(function(){
+
+            
+           window.location="bienvenido.php";
+        
+        
+       
+      },60000);
+
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
@@ -820,7 +831,13 @@ session_start();
             }
          
     }
-     formul.addEventListener("submit", validar)   
+     formul.addEventListener("submit", validar)
+
+     
+      
+       
+        
+      
       
   
     </script>

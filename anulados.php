@@ -1,9 +1,13 @@
-<?php include("time_sesion.php"); 
-    include("conexion/conexion.php");
+<?php include("time_sesion.php");
+if ($_SESSION['tipo']=="normal") {
+    header("Location: bienvenido.php");
+} 
+    include("conexion/conexion.php");  
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
      <?php
         include("head.php");
@@ -14,15 +18,6 @@
 </head>
 
 <body>
-    <div style="float:right;">
-        <script src="js/meses.js"></script>
-    </div>
-
-
-    <script src="js/fecha.js"></script>
-
-<div id="reloj" style="font-size:14px;"></div>
-<div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un máximo de 15, monto mínimo $5000 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
  
     <div id="wrapper">
 
@@ -51,40 +46,87 @@
                             $row_ag=mysqli_fetch_array($rs_ag);
                             echo "<h4>Agencia: ". $row_ag["agencia"]; 
                         ?> 
-                            <a href="cerrar_sesion.php"> Cerrar Sesión</a></h4>
+                            <a href="cerrar_sesion.php"> Salir</a></h4>
                     </div>
                     
                 </div>
-                <br>
+                
                 <div class="row">
-                <h3><center><b>Por favor, presione sobre el módulo de tickets a consultar:</b></center></h3><br><br>
-                    <div class="col-lg-2">
-                        <a href="tickets_fecha.php" class="btn btn-primary" title="Muestra de tickets en juego">ACTIVOS</a>
-                        
-                    </div>
-                     <div class="col-lg-2">
-                        <a href="tickets_fecha_a.php" class="btn btn-danger" title="Muestra de tickets en juego">ANULADOS</a>
-                        
-                    </div>
-                     <div class="col-lg-2">
-                        <a href="por_pagar.php" class="btn btn-warning" title="Muestra de tickets pendientes por pagar">POR PAGAR</a>
-                        
-                    </div>
-                     <div class="col-lg-2">
-                        <a href="tickets_fecha_p.php" class="btn btn-danger" title="Histórico de tickets perdedores">PERDEDORES</a>
-                    </div>
-                    <div class="col-lg-2">
-                        <a href="tickets_fecha_g.php" class="btn btn-success" title="Histórico de tickets ganadores">GANADORES</a>
-                    </div>
-                    <div class="col-lg-2">
-                        <a href="tickets_fecha_gr.php" class="btn btn-info" title="Ganadores por Recargas">GN. POR RECARGAS</a>
-                    </div>
-                    <div class="col-lg-2">
-                        <a href="" class="btn btn-default" data-toggle="modal" data-target="#modalT">BUSCAR</a>
-                    </div>
+                    <?php
 
-                    
-                </div>
+                         if (isset($_POST["desde"])) {
+                             $desde=$_POST["desde"];
+                             $hasta=$_POST["hasta"];
+                         } 
+                         else {
+                             $desde=$_GET["desde"];
+                             $hasta=$_GET["hasta"];
+                         } 
+
+                        list($a,$m,$d) = explode("-", $desde);
+                        $de=$d."/".$m."/".$a;
+                         list($a2,$m2,$d2) = explode("-", $hasta);
+                        $a=$d2."/".$m2."/".$a2;
+
+                    ?>
+                    <h3><center><b>Tickets Nulos desde: <?php echo $de; ?> hasta: <?php echo $a; ?></b></center></h3><br>
+                	<div class="table-responsive">
+                		<table class="table table-striped">
+	                		<thead>
+	                            <th>Serial</th>
+	                            <th>Apuesta</th>
+	                            <th>Fecha - Hora</th>
+	                            <th>Apostado</th>
+	                            <th>Ganancia Máxima</th>
+	                        </thead>
+	                        <tbody>
+	                        	
+                	
+	                <?php
+                       
+	                	if ($_SESSION["tipo"]=="root") {
+	                		$sql_act="SELECT * FROM parlay WHERE activo='0' AND ganar='3' AND pagado='0' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+
+                            
+	                	}
+	                	else {
+	                		$sql_act="SELECT * FROM parlay WHERE activo='0' AND ganar='3' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+
+                          
+	                	}
+	                    
+	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
+	                    while ($row_act=mysqli_fetch_array($rs_act)) {
+	                    		list($a3,$m3,$d3) = explode("-", $row_act["fecha"]);
+                                $fecha=$d3."/".$m3."/".$a3;
+	                    		echo"<tr>";
+	                    			echo"<td>";
+	                    				echo "<a href='con_nulo.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["tipo"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $fecha ." - ". $row_act["hora"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["monto"];
+	                    			echo"</td>";
+	                    			echo"<td>";
+	                    				echo $row_act["premio"];
+	                    			echo"</td>";
+	                    		echo"</tr>";
+
+	                    }
+
+                   
+
+	                ?>
+                    		
+                				
+                			</tbody>
+                		</table>
+                	</div>
                 
             
                 <br>
@@ -192,48 +234,6 @@
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             <button class="btn btn-success">Crear Usuario</button>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-
-
-             <!-- Modal Buscar Ticket -->
-
-            <div class="modal fade" id="modalT" tabindex="-1" role="dialog" aria-labelledby="modalUsuariosLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="modalUsuariosLabel">Buscar Ticket por codigo</h4>
-                        </div>
-                        <div class="modal-body">
-                        
-                            <form class="form-horizontal" method="POST" action="con_codigo.php">
-                                <?php 
-                                    if ($_SESSION["tipo"]=="root") {
-                                        echo "Introduzca el codigo completo";
-                                    }
-                                    else {
-                                        echo "introduzca los numeros despues del guíon";
-                                    }
-                                ?>
-                                
-                                <div class="form-group">
-                                    <label for="codigo" class="col-sm-4 control-label">Codigo:</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" name="codigo" id="codigo" placeholder="" required>
-                                    </div>
-                                </div>
-                                
-                            
-
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <button class="btn btn-success">Buscar</button>
                         </div>
                         </form>
                     </div>

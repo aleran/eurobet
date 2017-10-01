@@ -86,9 +86,17 @@ if ($_SESSION['tipo']=="normal") {
                        
 	                	if ($_SESSION["tipo"]=="root") {
 	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='3' AND pagado='0' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+
+                            $sql_t_apostado="SELECT SUM(monto) AS t_apostado FROM parlay WHERE activo='1' AND ganar='3' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+                            $rs_t_apostado=mysqli_query($mysqli, $sql_t_apostado) or die(mysqli_error());
+                            $row_t_apostado=mysqli_fetch_array($rs_t_apostado);
 	                	}
 	                	else {
 	                		$sql_act="SELECT * FROM parlay WHERE activo='1' AND ganar='3' AND pagado='0' AND agencia='".$_SESSION["agencia"]."'AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+
+                            $sql_t_apostado="SELECT SUM(monto) AS t_apostado FROM parlay WHERE activo='1' AND ganar='3' AND agencia='".$_SESSION["agencia"]."' AND (fecha BETWEEN '".$desde."' AND '".$hasta."')";
+                            $rs_t_apostado=mysqli_query($mysqli, $sql_t_apostado) or die(mysqli_error());
+                            $row_t_apostado=mysqli_fetch_array($rs_t_apostado);
 	                	}
 	                    
 	                    $rs_act=mysqli_query($mysqli, $sql_act) or die(mysqli_error());
@@ -114,6 +122,8 @@ if ($_SESSION['tipo']=="normal") {
 	                    		echo"</tr>";
 
 	                    }
+
+                        echo "<tr><td></td><td></td><td><b>Total Apostado:</b></td><td><b>".$row_t_apostado["t_apostado"]."</td></b></tr>";
 
 	                ?>
                     		
