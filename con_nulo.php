@@ -584,34 +584,19 @@
                             echo "Conozco y acepto las reglas de EUROBET.<br>";
                             echo "¡Mucha suerte!<br>";
                             echo "</div><br>";
-                            if ($_SESSION["tipo"]=="root") {
-                                if ($row_ticket["push"]=="") {
-                                    echo "<form action='push.php' method='POST' class='hidden-print'>";
-                                    echo "*PUSH*: ";
-                                    echo "<textarea name='push' id=''></textarea><br>";
+                            
                                 
-                                    echo "Ganancia con *PUSH*: ";
-                                    echo "<input type='number' name='premio' ><br>";
-                                    echo "<input type='hidden' name='codigo' value='".$row_ticket["codigo"]."'><br>";
-                                    echo "<input type='hidden' name='desde' value='".$_GET["desde"]."'><br>";
-                                    echo "<input type='hidden'name='hasta'  value='".$_GET["hasta"]."'><br>";
-                                    echo "<button>PUSH</button></form><br><br>";
-
-                                }
-                                else {
-
-                                    echo "*PUSH*: ".$row_ticket["push"]."<br><br>";
-                                }
+                               
                                 
-                            }
-                            else {
+                            
+                            
                                 if ($row_ticket["push"]!="") {
                                     echo "*PUSH*: ".$row_ticket["push"]."<br><br>";
                                 }
-                            }
-                            echo "<button class='btn btn-primary hidden-print hidden-xs' id='imprimir' type='button'>Imprimir</button><br>";
+                            
+                            
 
-                            echo "<br><button class='btn btn-primary hidden-print visible-xs' id='imprimir2' type='button'>Imprimir</button><br>";
+                            
 
                               
                             
@@ -1051,17 +1036,7 @@
 
             });
            
-            var ticket= $("#ticket2").html();
-            if($(window).width() <= 768)  {
-                $("#imprimir2").click(function(){
-                    window.location="com.fidelier.printfromweb://$small$"+ticket+"$intro$$intro$$cut$$intro$";
-                });
-            }
-            else {
-                 $("#imprimir").click(function(){
-                    window.print();
-                });
-            }
+            
         })
     </script>
 </body>
