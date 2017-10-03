@@ -578,12 +578,87 @@ session_start();
 
                                                                 $("#quiniela1'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta1b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta1c'.$row2["id"].'").prop("checked", false)
- 
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
+
+
+
+
                                                             }
 
                                                             if ($("#exacta2'.$row2["id"].'").prop("checked")) {
@@ -608,13 +683,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta2'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta2b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -640,13 +787,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta3'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta3b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -672,13 +891,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta4'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta4b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -704,13 +995,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta5'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta5b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -736,13 +1099,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+$("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta6'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta6b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -768,13 +1203,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta7'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta7b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -800,13 +1307,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta8'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta8b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -832,13 +1411,85 @@ session_start();
 
                                                                 $("#exacta10'.$row2["id"].'").prop("checked", false)
 
+                                                               $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta9'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta9b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
                                                             }
 
@@ -864,11 +1515,83 @@ session_start();
 
                                                                 $("#exacta9'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta10c'.$row2["id"].'").prop("checked", false)
  
@@ -899,11 +1622,83 @@ session_start();
 
                                                                 $("#quiniela1'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta1b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta2b'.$row2["id"].'").prop("checked")) {
@@ -928,13 +1723,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta2'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta2b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta3b'.$row2["id"].'").prop("checked")) {
@@ -959,13 +1826,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta3'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta3b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta4b'.$row2["id"].'").prop("checked")) {
@@ -990,13 +1929,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta4'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta4b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta5b'.$row2["id"].'").prop("checked")) {
@@ -1021,13 +2032,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta5'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta5b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta6b'.$row2["id"].'").prop("checked")) {
@@ -1052,13 +2135,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta6'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta6b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta7b'.$row2["id"].'").prop("checked")) {
@@ -1083,13 +2238,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta7'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta7b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta8b'.$row2["id"].'").prop("checked")) {
@@ -1114,13 +2341,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta8'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta8b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta9b'.$row2["id"].'").prop("checked")) {
@@ -1145,13 +2444,85 @@ session_start();
 
                                                                 $("#exacta10b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta9'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta9b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#exacta10b'.$row2["id"].'").prop("checked")) {
@@ -1176,11 +2547,83 @@ session_start();
 
                                                                 $("#exacta9b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#quiniela1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#quiniela9'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#quiniela10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta10'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
@@ -1189,90 +2632,630 @@ session_start();
 
                                                                 $("#trifecta1'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta1b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela2'.$row2["id"].'").prop("checked")) {
 
+                                                               $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta2b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela3'.$row2["id"].'").prop("checked")) {
 
+                                                               $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta3b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela4'.$row2["id"].'").prop("checked")) {
 
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta4b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                              if ($("#quiniela5'.$row2["id"].'").prop("checked")) {
 
+                                                               $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta5b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela6'.$row2["id"].'").prop("checked")) {
 
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta6b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela7'.$row2["id"].'").prop("checked")) {
 
+                                                                $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta7b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                              if ($("#quiniela8'.$row2["id"].'").prop("checked")) {
 
+                                                               $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta8b'.$row2["id"].'").prop("checked", false)
 
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela9'.$row2["id"].'").prop("checked")) {
 
+                                                               $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta9b'.$row2["id"].'").prop("checked", false)
 
-                                                                $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+                                                                $("#trifecta10b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#quiniela10'.$row2["id"].'").prop("checked")) {
 
+                                                               $("#trifecta1'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9'.$row2["id"].'").prop("checked", false)
+
                                                                 $("#trifecta10'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta1b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8b'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta9b'.$row2["id"].'").prop("checked", false)
 
                                                                 $("#trifecta10b'.$row2["id"].'").prop("checked", false)
 
-                                                                $("#trifecta10c'.$row2["id"].'").prop("checked", false)
+                                                                $("#trifecta1c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta2c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta3c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta4c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta5c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta6c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta7c'.$row2["id"].'").prop("checked", false)
+
+                                                                $("#trifecta8c'.$row2["id"].'").prop("checked", false)
+
+                                                                 $("#trifecta9c'.$row2["id"].'").prop("checked", false)
+
+                                                                  $("#trifecta10c'.$row2["id"].'").prop("checked", false)
                                                             }
 
                                                             if ($("#trifecta1'.$row2["id"].'").prop("checked")) {
@@ -1442,6 +3425,25 @@ session_start();
     var formul = document.jugadas;
     var validar = function validar(e){
         
+        var elementos = formul.elements;
+        var longElementos = elementos.length;
+
+        var n=0;
+
+        for(i=0; i < longElementos; i++){
+
+            if (elementos[i].type=="checkbox") {
+                if (elementos[i].checked) {
+                    n++;
+                }
+
+            }
+        }
+
+        if(n < 1) {
+            alert("Debe seleccionar una apuesta");
+            e.preventDefault();
+        }
 
         var eexacta= $(".exacta").length;
         var ex=0;
@@ -1488,9 +3490,12 @@ session_start();
                     
             }
         }
-        if(t < 3){
-            alert("debe seleccionar 3 trifectas");
-            e.preventDefault();
+        if(t > 0){
+            if (t < 3) {
+                alert("debe seleccionar 3 trifectas");
+                e.preventDefault();
+            }
+            
         }  
             
          
