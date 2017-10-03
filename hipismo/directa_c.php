@@ -428,7 +428,7 @@ session_start();
 
                                               if (isset($_POST["ganar6"])){
                                                 $ganar6=$_POST["ganar6"];
-                                                foreach ($ganar5 as $pa => $valor) {
+                                                foreach ($ganar6 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -492,7 +492,7 @@ session_start();
 
                                               if (isset($_POST["ganar7"])){
                                                 $ganar7=$_POST["ganar7"];
-                                                foreach ($ganar5 as $pa => $valor) {
+                                                foreach ($ganar7 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -556,7 +556,7 @@ session_start();
 
                                               if (isset($_POST["ganar8"])){
                                                 $ganar8=$_POST["ganar8"];
-                                                foreach ($ganar5 as $pa => $valor) {
+                                                foreach ($ganar8 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -684,7 +684,7 @@ session_start();
 
                                               if (isset($_POST["ganar10"])){
                                                 $ganar10=$_POST["ganar10"];
-                                                foreach ($ganar5 as $pa => $valor) {
+                                                foreach ($ganar10 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1068,7 +1068,7 @@ session_start();
 
                                               if (isset($_POST["place6"])){
                                                 $place6=$_POST["place6"];
-                                                foreach ($place5 as $pa => $valor) {
+                                                foreach ($place6 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1132,7 +1132,7 @@ session_start();
 
                                               if (isset($_POST["place7"])){
                                                 $place7=$_POST["place7"];
-                                                foreach ($place5 as $pa => $valor) {
+                                                foreach ($place7 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1196,7 +1196,7 @@ session_start();
 
                                               if (isset($_POST["place8"])){
                                                 $place8=$_POST["place8"];
-                                                foreach ($place5 as $pa => $valor) {
+                                                foreach ($place8 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1324,7 +1324,7 @@ session_start();
 
                                               if (isset($_POST["place10"])){
                                                 $place10=$_POST["place10"];
-                                                foreach ($place5 as $pa => $valor) {
+                                                foreach ($place10 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1708,7 +1708,7 @@ session_start();
 
                                               if (isset($_POST["show6"])){
                                                 $show6=$_POST["show6"];
-                                                foreach ($show5 as $pa => $valor) {
+                                                foreach ($show6 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1772,7 +1772,7 @@ session_start();
 
                                               if (isset($_POST["show7"])){
                                                 $show7=$_POST["show7"];
-                                                foreach ($show5 as $pa => $valor) {
+                                                foreach ($show7 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1836,7 +1836,7 @@ session_start();
 
                                               if (isset($_POST["show8"])){
                                                 $show8=$_POST["show8"];
-                                                foreach ($show5 as $pa => $valor) {
+                                                foreach ($show8 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';
@@ -1964,7 +1964,7 @@ session_start();
 
                                               if (isset($_POST["show10"])){
                                                 $show10=$_POST["show10"];
-                                                foreach ($show5 as $pa => $valor) {
+                                                foreach ($show10 as $pa => $valor) {
                                                   list($p,$l) = explode("/",$valor);
 
                                                   echo '<tr>';

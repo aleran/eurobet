@@ -30,11 +30,11 @@ session_start();
 
 <body>
     <div style="float:right;">
-        <script src="js/meses.js"></script>
+        <script src="../js/meses.js"></script>
     </div>
 
 
-    <script src="js/fecha.js"></script>
+    <script src="../js/fecha.js"></script>
 
 <div id="reloj" style="font-size:14px;"></div>
 <div id="avisow"><marquee>..:: Se informa que las taquillas de venta  permiten un mínimo de 2 jugadas y un máximo de 15, monto mínimo es de $5000 ::EuroBet - Tus Apuestas seguras en línea</marquee></div>
@@ -200,6 +200,7 @@ session_start();
                                             	$sql_c4="SELECT * FROM caballos WHERE id=$row2[caballo4]";
                                             	$rs_c4=mysqli_query($mysqli, $sql_c4) or die (mysqli_error());
                                             	$row_c4=mysqli_fetch_array($rs_c4);
+
                                             	if ($row2["logro5"]!=0) {
 
 	                                            	$sql_c5="SELECT * FROM caballos WHERE id=$row2[caballo5]";
@@ -207,6 +208,7 @@ session_start();
 	                                            	$row_c5=mysqli_fetch_array($rs_c5);
 
                                             	}
+
                                             	if ($row2["logro6"]!=0) {
 
 	                                            	$sql_c6="SELECT * FROM caballos WHERE id=$row2[caballo6]";
@@ -270,7 +272,6 @@ session_start();
 
                                                 echo '<tr class="agg">';
 
-                                               
                                               
                                                 	echo '<td>'.$row_c1["caballo"].'( '.$row2["logro1"].' )</td>';
 
@@ -280,12 +281,8 @@ session_start();
 
                                                 	echo '<td>'.$row_c1["jinete"].'</td>';
 
-                                                	
                                                 	echo '<td> <input type="checkbox" class="chk" name="ganar1[]" id="ganar1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro1"].'"></td>';
-                                                		# code...
-                                                	
-
-                                                	
+           	
                                                 	echo '<td> <input type="checkbox" class="chk" name="place1[]" id="place1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro1"].'"></td>';
                                                 	
                                                 	 
@@ -307,9 +304,6 @@ session_start();
 
                                                 	
                                                 	echo '<td> <input type="checkbox" class="chk" name="ganar2[]" id="ganar2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro2"].'"></td>';
-                                                		# code...
-                                                	
-
                                                 	
                                                 	echo '<td> <input type="checkbox" class="chk" name="place2[]" id="place2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro2"].'"></td>';
                                                 	
@@ -330,9 +324,6 @@ session_start();
                                                 	
                                                 	
                                                 	echo '<td> <input type="checkbox" class="chk" name="ganar3[]" id="ganar3'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro3"].'"></td>';
-                                                		# code...
-                                                	
-
                                                 	
                                                 	echo '<td> <input type="checkbox" class="chk" name="place3[]" id="place3'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro3"].'"></td>';
                                                 	
@@ -353,9 +344,6 @@ session_start();
                                                 	
                                                 	
                                                 	echo '<td> <input type="checkbox" class="chk" name="ganar4[]" id="ganar4'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro4"].'"></td>';
-                                                		# code...
-                                                	
-
                                                 	
                                                 	echo '<td> <input type="checkbox" class="chk" name="place4[]" id="place4'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro4"].'"></td>';
                                                 	
@@ -379,6 +367,7 @@ session_start();
 	                                                	echo '<td>'.$row_c5["jinete"].'</td>';
 
 	                                                	echo '<td> <input type="checkbox" class="chk" name="ganar5[]" id="ganar5'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro5"].'"></td>';
+
 	                                                	echo '<td> <input type="checkbox" class="chk" name="place5[]" id="place5'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro5"].'"></td>';
 	                                                	
 	                                                	 
@@ -403,13 +392,91 @@ session_start();
 	                                                	echo '<td>'.$row_c6["edad"].'</td>';
 
 	                                                	echo '<td>'.$row_c6["jinete"].'</td>';
+
 	                                                	echo '<td> <input type="checkbox" class="chk" name="ganar6[]" id="ganar6'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro6"].'"></td>';
+
 	                                                	echo '<td> <input type="checkbox" class="chk" name="place6[]" id="place6'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro6"].'"></td>';
                                                 	
                                                 	 
                                                 		echo '<td> <input type="checkbox" class="chk" name=show6[]" id=show6'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro6"].'"></td>';
 	                                                		
                                                 	}
+
+                                                    if ($row2["logro7"]!=0) {
+
+                                                        echo '<td>'.$row_c7["caballo"].'( '.$row2["logro7"].' )</td>';
+                                                    
+                                                        echo '<td>'.$row_c7["peso"].'</td>';
+
+                                                        echo '<td>'.$row_c7["edad"].'</td>';
+
+                                                        echo '<td>'.$row_c7["jinete"].'</td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="ganar7[]" id="ganar7'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro7"].'"></td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="place7[]" id="place7'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro7"].'"></td>';
+                                                    
+                                                     
+                                                        echo '<td> <input type="checkbox" class="chk" name=show7[]" id=show7'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro7"].'"></td>';
+                                                            
+                                                    }
+
+                                                    if ($row2["logro8"]!=0) {
+
+                                                        echo '<td>'.$row_c8["caballo"].'( '.$row2["logro8"].' )</td>';
+                                                    
+                                                        echo '<td>'.$row_c8["peso"].'</td>';
+
+                                                        echo '<td>'.$row_c8["edad"].'</td>';
+
+                                                        echo '<td>'.$row_c8["jinete"].'</td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="ganar8[]" id="ganar8'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro8"].'"></td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="place8[]" id="place8'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro8"].'"></td>';
+                                                    
+                                                     
+                                                        echo '<td> <input type="checkbox" class="chk" name=show8[]" id=show8'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro8"].'"></td>';
+                                                            
+                                                    }
+
+                                                    if ($row2["logro9"]!=0) {
+
+                                                        echo '<td>'.$row_c9["caballo"].'( '.$row2["logro9"].' )</td>';
+                                                    
+                                                        echo '<td>'.$row_c9["peso"].'</td>';
+
+                                                        echo '<td>'.$row_c9["edad"].'</td>';
+
+                                                        echo '<td>'.$row_c9["jinete"].'</td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="ganar9[]" id="ganar9'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro9"].'"></td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="place9[]" id="place9'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro9"].'"></td>';
+                                                    
+                                                     
+                                                        echo '<td> <input type="checkbox" class="chk" name=show9[]" id=show9'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro9"].'"></td>';
+                                                            
+                                                    }
+
+                                                    if ($row2["logro10"]!=0) {
+
+                                                        echo '<td>'.$row_c10["caballo"].'( '.$row2["logro10"].' )</td>';
+                                                    
+                                                        echo '<td>'.$row_c10["peso"].'</td>';
+
+                                                        echo '<td>'.$row_c10["edad"].'</td>';
+
+                                                        echo '<td>'.$row_c10["jinete"].'</td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="ganar10[]" id="ganar10'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro10"].'"></td>';
+
+                                                        echo '<td> <input type="checkbox" class="chk" name="place10[]" id="place10'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro10"].'"></td>';
+                                                    
+                                                     
+                                                        echo '<td> <input type="checkbox" class="chk" name=show10[]" id=show10'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["logro10"].'"></td>';
+                                                            
+                                                    }
 
                                                 	
                                                 	
@@ -922,7 +989,7 @@ session_start();
     
 
     
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
     $(".menu-toggle").click(function(e) {

@@ -798,7 +798,7 @@ session_start();
         
         
        
-      },60000);
+      },240000);
 
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
