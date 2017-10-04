@@ -122,10 +122,10 @@ session_start();
                     
                         <?php
                             if (isset($_SESSION["pais"])) {
-                                echo '<form id="form" action="carrera_selec2.php" method="POST">';
+                                echo '<form id="form" action="carrera_selec3.php" method="POST">';
                             }
                             else {
-                                echo '<form id="form" action="carrera_selec2.php?pais='.$_GET["pais"].'" method="POST">';
+                                echo '<form id="form" action="carrera_selec3.php?pais='.$_GET["pais"].'" method="POST">';
                             }
                             
 

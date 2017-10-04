@@ -4001,7 +4001,7 @@ session_start();
                         <label for="total">Ganancia: </label>
                         <input type="text" class="form-control total" disabled="">
                       </div>
-                      <input type="hidden" name="tipo" value="directa">     
+                      <input type="hidden" name="tipo" value="mixta">     
                       <input type="hidden" name="premio" class="total">
                       
                           
