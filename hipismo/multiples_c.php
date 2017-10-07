@@ -2277,7 +2277,7 @@ session_start();
         t--;
         if (t<=0) {
             
-           window.location="bienvenido.php";
+           window.location="carreras3.php";
         }
         $("#time").html(t);
       },1000);';

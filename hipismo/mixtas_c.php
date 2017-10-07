@@ -4198,7 +4198,7 @@ session_start();
         t--;
         if (t<=0) {
             
-           window.location="bienvenido.php";
+           window.location="carreras2.php";
         }
         $("#time").html(t);
       },1000);';

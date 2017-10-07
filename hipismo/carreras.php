@@ -27,11 +27,11 @@ session_start();
 
 <body>
     <div style="float:right;">
-        <script src="js/meses.js"></script>
+        <script src="../js/meses.js"></script>
     </div>
 
 
-    <script src="js/fecha.js"></script>
+    <script src="../js/fecha.js"></script>
 
 <div id="reloj" style="font-size:14px;"></div>
 <div id="avisow"><marquee>..::<strong>IMPORTANTE:</strong> <strong>LA COMBINACIÓN GANAR Y ALTA, RUNLINE Y ALTA NO SE ENCUENTRA DISPONIBLE, PUEDES JUGAR GANAR Y BAJA O EMPATE Y ALTA/BAJA</strong> -- Nuestra plataforma permite un mínimo de 2 jugadas y un máximo de 15. Montos mínimos de apuesta: <strong>COLOMBIA:</strong> $ 5.000 , <strong>VENEZUELA</strong> : Bs.F 500 ,  <strong>MÉXICO</strong>: $ 30 ::<strong>EUROBET  - ¡Tus Apuestas seguras en línea! --- </strong></marquee></div>
@@ -101,31 +101,36 @@ session_start();
                 
                 <?php 
                     if (isset($_SESSION["pais"])) {
-                        echo '<center>Tipo de Apuesta: <a href="index.php" class="btn btn-primary">Simple o Directa</a>';
+                        echo '<center>Tipo de Apuesta: <a href="carreras.php" class="btn btn-primary">Directa</a>';
         
-                            echo ' <a href="carreras2.php" class="btn btn-info">Multiples</a></center>';
+                        echo ' <a href="carreras2.php" class="btn btn-info">Mixtas</a>';
+
+                        echo ' <a href="carreras3.php" class="btn btn-success">Multiples</a></center>';
                         
                     }
 
                     else {
-                        echo '<center>Tipo de Apuesta: <a href="competiciones.php?pais='.$_GET["pais"].'" class="btn btn-primary">Parlay</a>';
+                        echo '<center>Tipo de Apuesta: <a href="carreras.php?pais='.$_GET["pais"].'" class="btn btn-primary">Directa</a>';
 
-                        if($_GET["pais"] != 4) {
-                            echo '<a href="competiciones2.php?pais='.$_GET["pais"].'" class="btn btn-info">Directa</a></center>';
-                        }
+                        
+                        echo '<a href="carreras2.php?pais='.$_GET["pais"].'" class="btn btn-info">Mixtas</a></center>';
+
+                        echo '<a href="carreras3.php?pais='.$_GET["pais"].'" class="btn btn-succes">Multiples</a></center>';
+                        
                     }
 
                 ?>
                 
                 <div class="row">
 
+                    <br><center><h3>Directa</h3></center>
                     
                         <?php
                             if (isset($_SESSION["pais"])) {
-                                echo '<form id="form" action="carrera_selec3.php" method="POST">';
+                                echo '<form name="form" id="form" action="carrera_selec.php" method="POST">';
                             }
                             else {
-                                echo '<form id="form" action="carrera_selec3.php?pais='.$_GET["pais"].'" method="POST">';
+                                echo '<form name="form" id="form" action="carrera_selec.php?pais='.$_GET["pais"].'" method="POST">';
                             }
                             
 
@@ -308,14 +313,44 @@ session_start();
 
     
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
     $(".menu-toggle").click(function(e) {
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+
+    var formul = document.form,
+        elementos = formul.elements,
+        longElementos = elementos.length;
+        var validar = function validar(e){
+            
+            var n=0;
+            for(i=0; i < longElementos; i++){
+
+                if (elementos[i].type=="checkbox") {
+                    if (elementos[i].checked) {
+                        n++;
+                    }
+
+                }
+            }
+
+           if(n > 1){
+                alert("Puede Seleccionar solo una carrera");
+                e.preventDefault();
+             }
+            else if(n < 1) {
+                alert("Debe seleccionar una carrera");
+                e.preventDefault();
+             }
+            
+         
+    }
+    formul.addEventListener("submit", validar)
 
    
     </script>

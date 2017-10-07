@@ -135,16 +135,16 @@ session_start();
                             include("../lib/fecha_hora.php");
                             
                             if (isset($_POST["carrera"])) {
-                                $competicion=$_POST["carrera"];
+                                $carrera=$_POST["carrera"];
                             }
-                            else if (isset($_GET["compe_select"])) {
-                                $competicion=unserialize(urldecode(stripslashes($_GET["compe_select"])));
+                            else if (isset($_GET["carrera_select"])) {
+                                $carrera=unserialize(urldecode(stripslashes($_GET["carrera_select"])));
                             }
                            
-                            if (!isset($competicion)) {
-                              echo "<script>alert('¡No seleccionó ligas!');window.location='competiciones.php?pais=".$_POST["pais"]."'</script>";
+                            if (!isset($carrera)) {
+                              echo "<script>alert('¡No seleccionó ligas!');window.location='carreras3.php?pais=".$_POST["pais"]."'</script>";
                             }
-                             foreach ($competicion as $pb => $valor) {
+                             foreach ($carrera as $pb => $valor) {
 
                                 if ($_SESSION["pais"]==1 || $_POST["pais"]==1 || $_SESSION["pais"]==3 || $_POST["pais"]==3) {
 
