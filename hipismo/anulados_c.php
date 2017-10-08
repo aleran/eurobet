@@ -110,7 +110,7 @@ include("../conexion/conexion.php");
                                 $fecha=$d3."/".$m3."/".$a3;
 	                    		echo"<tr>";
 	                    			echo"<td>";
-	                    				echo "<a href='con_nulo.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
+	                    				echo "<a href='t_anulado.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
 	                    			echo"</td>";
 	                    			echo"<td>";
 	                    				echo $row_act["tipo"];

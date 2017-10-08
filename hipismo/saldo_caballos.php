@@ -1,13 +1,22 @@
-<?php include("time_sesion.php");  
-    include("conexion/conexion.php");  
+<?php include("../time_sesion.php");  
+    include("../conexion/conexion.php");  
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head><meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 
-     <?php
-        include("head.php");
-    ?>
+      <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+        <meta name="description" content="Sitio de Apuestas en colombia, Parlays, Apuestas directas">
+        <meta name="author" content="">
+        <title>EUROBET :: Tu sitio de apuestas parlay</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../fonts/style.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
+        <link rel="icon"  href="balon.ico">
+        <link rel="stylesheet" href="../lib/jquery-ui-1.12.1/jquery-ui.min.css">
 
 
 
@@ -20,7 +29,7 @@
         <!-- Sidebar -->
         <!-- Menu -->
         <?php 
-            include("menu2.php");
+            include("../menu2.php");
         ?>
     </div>
 
@@ -54,52 +63,52 @@
                                 $rs=mysqli_query($mysqli,$sql);
                                 $row=mysqli_fetch_array($rs);
 
-                            $sql_sum="SELECT SUM(monto) AS t_monto FROM parlay WHERE agencia='".$_POST["agencia"]."' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_sum="SELECT SUM(monto) AS t_monto FROM tickets_c WHERE agencia='".$_POST["agencia"]."' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_sum=mysqli_query($mysqli,$sql_sum) or die(mysqli_error());
                             $row_sum=mysqli_fetch_array($rs_sum);
 
 
-                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_POST["agencia"]."' AND ganar='1' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM tickets_c WHERE agencia='".$_POST["agencia"]."' AND ganar='1' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
                              $row_perdi=mysqli_fetch_array($rs_perdi);
 
-                             $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
+                            $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
 
-                            $sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE agencia='".$_POST["agencia"]."' AND tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            /*$sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE agencia='".$_POST["agencia"]."' AND tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_recargas=mysqli_query($mysqli,$sql_recargas) or die(mysqli_error());
                             $row_recargas=mysqli_fetch_array($rs_recargas);
 
                             $sql_pagos="SELECT SUM(monto) AS t_pagos FROM trans_usuario WHERE agencia='".$_POST["agencia"]."' AND tipo='pago' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_pagos=mysqli_query($mysqli,$sql_pagos) or die(mysqli_error());
-                            $row_pagos=mysqli_fetch_array($rs_pagos);
+                            $row_pagos=mysqli_fetch_array($rs_pagos);*/
                         }
                         else {
                             $sql="SELECT agencia FROM agencias WHERE id='".$_SESSION["agencia"]."'";
                                 $rs=mysqli_query($mysqli,$sql);
                                 $row=mysqli_fetch_array($rs);
 
-                            $sql_sum="SELECT SUM(monto) AS t_monto FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_sum="SELECT SUM(monto) AS t_monto FROM tickets_c WHERE agencia='".$_SESSION["agencia"]."' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_sum=mysqli_query($mysqli,$sql_sum) or die(mysqli_error());
                             $row_sum=mysqli_fetch_array($rs_sum);
 
 
-                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM parlay WHERE agencia='".$_SESSION["agencia"]."' AND ganar='1' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            $sql_perdi="SELECT SUM(monto) AS m_perdido, SUM(premio) AS arr_perdido FROM tickets_c WHERE agencia='".$_SESSION["agencia"]."' AND ganar='1' AND activo='1' AND cedula='' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
                              $row_perdi=mysqli_fetch_array($rs_perdi);
 
-                             $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
+                            $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
 
-                            $sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE agencia='".$_SESSION["agencia"]."' AND tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
+                            /*$sql_recargas="SELECT SUM(monto) AS t_recargas FROM trans_usuario WHERE agencia='".$_SESSION["agencia"]."' AND tipo='recarga' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_recargas=mysqli_query($mysqli,$sql_recargas) or die(mysqli_error());
                             $row_recargas=mysqli_fetch_array($rs_recargas);
 
                             $sql_pagos="SELECT SUM(monto) AS t_pagos FROM trans_usuario WHERE agencia='".$_SESSION["agencia"]."' AND tipo='pago' AND (fecha BETWEEN '".$_POST["desde"]."' AND '".$_POST["hasta"]."')";
                             $rs_pagos=mysqli_query($mysqli,$sql_pagos) or die(mysqli_error());
-                            $row_pagos=mysqli_fetch_array($rs_pagos);
+                            $row_pagos=mysqli_fetch_array($rs_pagos);*/
                         }
 
                     ?>
@@ -143,7 +152,7 @@
 
                 <!--consulta de usuarios registrados-->
             <?php
-                        if ($_SESSION["tipo"]=="root") {
+                       /* if ($_SESSION["tipo"]=="root") {
 
                             $sql1="SELECT agencia FROM agencias WHERE id='".$_POST["agencia"]."'";
                                 $rs1=mysqli_query($mysqli,$sql1);
@@ -158,7 +167,7 @@
                             $rs_perdi1=mysqli_query($mysqli,$sql_perdi1) or die(mysqli_error());
                              $row_perdi1=mysqli_fetch_array($rs_perdi1);
 
-                            $total_perdido1=$row_perdi1["arr_perdido"] - $row_perdi1["m_perdido"];
+                            $total_perdido1=$row_perdi1["arr_perdido"];
                             
                             $total1=  $row_sum1["t_monto"] - $total_perdido1;
                         }
@@ -176,13 +185,13 @@
                             $rs_perdi1=mysqli_query($mysqli,$sql_perdi1) or die(mysqli_error());
                              $row_perdi1=mysqli_fetch_array($rs_perdi1);
 
-                            $total_perdido1=$row_perdi1["arr_perdido"] - $row_perdi1["m_perdido"];
+                            $total_perdido1=$row_perdi1["arr_perdido"];
                             
                             $total1=  $row_sum1["t_monto"] - $total_perdido1;
-                        }
+                        }*/
 
                     ?>
-                <div class="row">
+                <!--<div class="row">
                     
                     <div class="col-sm-6 col-xs-offset-3">
                     <?php
@@ -248,7 +257,7 @@
                     </div>
                     
                     </div>
-            </div>
+            </div>-->
             
            
             
@@ -268,8 +277,8 @@
 
     
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <!-- Menu Toggle Script -->
     <script>
         $(".menu-toggle").click(function(e) {

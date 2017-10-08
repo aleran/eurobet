@@ -95,7 +95,7 @@ if ($_SESSION['tipo']=="normal") {
                                 $fecha=$d3."/".$m3."/".$a3;
 	                    		echo"<tr>";
 	                    			echo"<td>";
-	                    				echo "<a href='con_pp.php?codigo=".$row_act["codigo"]."'>".$row_act["codigo"]."</a>";
+	                    				echo "<a href='t_pagar.php?codigo=".$row_act["codigo"]."'>".$row_act["codigo"]."</a>";
 	                    			echo"</td>";
 	                    			echo"<td>";
 	                    				echo $row_act["tipo"];

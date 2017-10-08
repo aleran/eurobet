@@ -20,7 +20,7 @@ if ($_SESSION['tipo']=="normal") {
         <link href="../css/style.css" rel="stylesheet">
         <link href="../pacejs/themes/orange/pace-theme-barber-shop.css" rel="stylesheet">
         <link rel="icon"  href="balon.ico">
-        <link rel="stylesheet" href="lib/jquery-ui-1.12.1/jquery-ui.min.css">
+        <link rel="stylesheet" href="../lib/jquery-ui-1.12.1/jquery-ui.min.css">
 
 
 
@@ -114,7 +114,7 @@ if ($_SESSION['tipo']=="normal") {
                                 $fecha=$d3."/".$m3."/".$a3;
 	                    		echo"<tr>";
 	                    			echo"<td>";
-	                    				echo "<a href='con_activo.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
+	                    				echo "<a href='t_activo.php?codigo=".$row_act["codigo"]."&desde=".$desde."&hasta=".$hasta."'>".$row_act["codigo"]."</a>";
 	                    			echo"</td>";
 	                    			echo"<td>";
 	                    				echo $row_act["tipo"];
