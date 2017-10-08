@@ -63,7 +63,7 @@
                             $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
                              $row_perdi=mysqli_fetch_array($rs_perdi);
 
-                             $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
+                            $total_perdido=$row_perdi["arr_perdido"];
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
 
@@ -89,7 +89,7 @@
                             $rs_perdi=mysqli_query($mysqli,$sql_perdi) or die(mysqli_error());
                              $row_perdi=mysqli_fetch_array($rs_perdi);
 
-                             $total_perdido=$row_perdi["arr_perdido"] - $row_perdi["m_perdido"];
+                            $total_perdido=$row_perdi["arr_perdido"];
                             
                             $total=  $row_sum["t_monto"] - $total_perdido;
 
@@ -158,7 +158,7 @@
                             $rs_perdi1=mysqli_query($mysqli,$sql_perdi1) or die(mysqli_error());
                              $row_perdi1=mysqli_fetch_array($rs_perdi1);
 
-                            $total_perdido1=$row_perdi1["arr_perdido"] - $row_perdi1["m_perdido"];
+                            $total_perdido1=$row_perdi1["arr_perdido"];
                             
                             $total1=  $row_sum1["t_monto"] - $total_perdido1;
                         }
@@ -176,7 +176,7 @@
                             $rs_perdi1=mysqli_query($mysqli,$sql_perdi1) or die(mysqli_error());
                              $row_perdi1=mysqli_fetch_array($rs_perdi1);
 
-                            $total_perdido1=$row_perdi1["arr_perdido"] - $row_perdi1["m_perdido"];
+                            $total_perdido1=$row_perdi1["arr_perdido"];
                             
                             $total1=  $row_sum1["t_monto"] - $total_perdido1;
                         }
