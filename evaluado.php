@@ -23,9 +23,15 @@
 		$sql="INSERT INTO resultados(id_partido,r_gj1,r_gj2,r_runline1,r_runline2) VALUES('".$_POST["id_partido"]."','".$_POST["r_gj1"]."','".$_POST["r_gj2"]."','".$_POST["r_runline1"]."','".$_POST["r_runline2"]."')";
 	}
 
-	if ($_POST["dep"]==6 || $_POST["dep"]==7) {
+	if ($_POST["dep"]==6) {
 
 		$sql="INSERT INTO resultados(id_partido,r_gj1,r_gj2) VALUES('".$_POST["id_partido"]."','".$_POST["r_gj1"]."','".$_POST["r_gj2"]."')";
+
+	}
+	
+	if ($_POST["dep"]==7) {
+
+		$sql="INSERT INTO resultados(id_partido,r_gj1,r_gj2) VALUES('".$_POST["id_partido"]."','".$_POST["r_gj1"]."','".$_POST["r_gj2"]."','".$_POST["r_alta"]."','".$_POST["r_baja"]."')";
 
 	}
 

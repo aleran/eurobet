@@ -51,7 +51,7 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <img src="img/header3.png" class="img-responsive hidden-print" alt="">
+                <img src="../img/header_c.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">

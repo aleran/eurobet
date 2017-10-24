@@ -126,7 +126,7 @@ include("conexion/conexion.php");
                         </div>
                     </div>
                     <?php } ?>
-                    <?php if ($row_compe["id_deporte"] == 1 || $row_compe["id_deporte"]== 2 || $row_compe["id_deporte"]== 3 || $row_compe["id_deporte"]== 4) { ?>
+                    <?php if ($row_compe["id_deporte"] == 1 || $row_compe["id_deporte"]== 2 || $row_compe["id_deporte"]== 3 || $row_compe["id_deporte"]== 4 || $row_compe["id_deporte"]== 7) { ?>
                     <div class="form-group">
                         <label for="r_alta" class="col-sm-4 control-label">ALTA: <?php echo $row_part["v_alta"]; ?></label>
                         <div class="col-sm-3">

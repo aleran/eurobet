@@ -270,7 +270,7 @@
 				</div>
 			</div><br>
 			<?php } ?>
-			<?php if ($_POST["deporte"] == 1 || $_POST["deporte"]== 2 || $_POST["deporte"]== 3 || $_POST["deporte"]== 4) { ?>
+			<?php if ($_POST["deporte"] == 1 || $_POST["deporte"]== 2 || $_POST["deporte"]== 3 || $_POST["deporte"]== 4 || $_POST["deporte"]== 7) { ?>
 			<div class="row">
 				<div class="col-sm-4">
 					

@@ -61,7 +61,7 @@ session_start();
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <a href="index.php"><img src="img/header3.png" class="img-responsive" alt=""></a>
+                <img src="../img/header_c.png" class="img-responsive" alt="">
         </header>
         <br>
             <div class="container-fluid">
@@ -338,7 +338,7 @@ session_start();
                 }
             }
 
-           if(n < 3){
+           if(n < 2){
                 alert("Debe seleccionar tres carreras minimo");
                 e.preventDefault();
              }

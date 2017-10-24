@@ -41,11 +41,19 @@
 		$rs_cp=mysqli_query($mysqli,$sql_cp)or die(mysqli_error($mysqli));
 	}
 
-	if ($_POST["dep"]==6 || $_POST["dep"]==7) {
+	if ($_POST["dep"]==6) {
 
 		$sql_cp="INSERT INTO partidos
 								(id,id_competicion,equipo1,equipo2,fecha,hora,fecha_v,hora_v,gj1,gj2)
 								VALUES('".$_POST["id"]."','".$_POST["compe_selec"]."','".$_POST["equipo1_selec"]."','".$_POST["equipo2_selec"]."','".$_POST["fecha"]."','".$_POST["hora"]."','".$_POST["fecha_v"]."','".$_POST["hora_v"]."','".$_POST["gj1"]."','".$_POST["gj2"]."')";
+		$rs_cp=mysqli_query($mysqli,$sql_cp)or die(mysqli_error($mysqli));
+	}
+	
+	if ($_POST["dep"]==7) {
+
+		$sql_cp="INSERT INTO partidos
+								(id,id_competicion,equipo1,equipo2,fecha,hora,fecha_v,hora_v,gj1,gj2,v_alta,alta,baja)
+								VALUES('".$_POST["id"]."','".$_POST["compe_selec"]."','".$_POST["equipo1_selec"]."','".$_POST["equipo2_selec"]."','".$_POST["fecha"]."','".$_POST["hora"]."','".$_POST["fecha_v"]."','".$_POST["hora_v"]."','".$_POST["gj1"]."','".$_POST["gj2"]."','".$_POST["v_alta"]."','".$_POST["alta"]."','".$_POST["baja"]."')";
 		$rs_cp=mysqli_query($mysqli,$sql_cp)or die(mysqli_error($mysqli));
 	}
 	
