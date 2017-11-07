@@ -10,7 +10,14 @@ include("conexion/conexion.php");
         include("head.php");
     ?>
 
-
+<style>
+    hr {
+   height: 1px;
+   border: 0;
+   color: #E40505;
+   background-color: #F77719;
+}
+</style>
 
 </head>
 
@@ -91,184 +98,238 @@ include("conexion/conexion.php");
                     
 					<input type="hidden" name="id_partido" value="<?php echo $row_part["id"] ?>">
 					<input type="hidden" name="dep" value="<?php echo $row_compe["id_deporte"] ?>">
-                    <div class="form-group">
-                        <label for="r_gj1" class="col-sm-4 control-label">ML: <?php echo $row_eq1["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_gj1" id="r_gj1" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_gj1" class="col-sm-6 control-label">ML: <?php echo $row_eq1["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_gj1" id="r_gj1" class="form-control">
+                                        
+                                        <option value="PERDEDOR">PERDEDOR</option>
+                                        <option value="GANADOR">GANADOR</option>
+                                        <option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="r_gj2" class="col-sm-4 control-label">ML: <?php echo $row_eq2["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_gj2" id="r_gj2" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_gj2" class="col-sm-6 control-label">ML: <?php echo $row_eq2["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_gj2" id="r_gj2" class="form-control">
+                                        
+                                        <option value="PERDEDOR">PERDEDOR</option>
+                                        <option value="GANADOR">GANADOR</option>
+                                        <option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <?php if ($row_compe["id_deporte"]==1) {?>
-                    <div class="form-group">
-                        <label for="r_empate" class="col-sm-4 control-label">EMPATE:</label>
-                        <div class="col-sm-3">
-                            <select  name="r_empate" id="r_empate" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="form-group">
+                                <label for="r_empate" class="col-sm-6 control-label">EMPATE:</label>
+                                <div class="col-sm-6">
+                                    <select  name="r_empate" id="r_empate" class="form-control">
+                                        
+                                        <option value="PERDEDOR">PERDEDOR</option>
+                                        <option value="GANADOR">GANADOR</option>
+                                        <option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <hr>
                     <?php } ?>
                     <?php if ($row_compe["id_deporte"] == 1 || $row_compe["id_deporte"]== 2 || $row_compe["id_deporte"]== 3 || $row_compe["id_deporte"]== 4 || $row_compe["id_deporte"]== 7) { ?>
-                    <div class="form-group">
-                        <label for="r_alta" class="col-sm-4 control-label">ALTA: <?php echo $row_part["v_alta"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_alta" id="r_alta" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_alta" class="col-sm-6 control-label">ALTA: <?php echo $row_part["v_alta"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_alta" id="r_alta" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_baja" class="col-sm-6 control-label">BAJA: <?php echo $row_part["v_alta"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_baja" id="r_baja" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>    
                     </div>
-                    <div class="form-group">
-                        <label for="r_baja" class="col-sm-4 control-label">BAJA: <?php echo $row_part["v_alta"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_baja" id="r_baja" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
-                        </div>
-                    </div>
+                    <hr>
                     <?php } ?>
                     <?php if ($row_compe["id_deporte"]==1) {?>
-                    <div class="form-group">
-                        <label for="r_gpt1" class="col-sm-4 control-label">G 1T: <?php echo $row_eq1["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_gpt1" id="r_gpt1" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_gpt1" class="col-sm-6 control-label">G 1T: <?php echo $row_eq1["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_gpt1" id="r_gpt1" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_gpt2" class="col-sm-6 control-label">G 1T: <?php echo $row_eq2["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_gpt2" id="r_gpt2" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="r_gpt2" class="col-sm-4 control-label">G 1T: <?php echo $row_eq2["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_gpt2" id="r_gpt2" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+
+					<div class="row">
+                        <div class="col-sm-6 col-sm-offset-3"> 
+                            <div class="form-group">
+                                <label for="r_empatept" class="col-sm-6 control-label">Empate 1T:</label>
+                                <div class="col-sm-6">
+                                    <select  name="r_empatept" id="r_empatept" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-					
-                    <div class="form-group">
-                        <label for="r_empatept" class="col-sm-4 control-label">Empate 1T:</label>
-                        <div class="col-sm-3">
-                            <select  name="r_empatept" id="r_empatept" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_gg" class="col-sm-6 control-label">GG:</label>
+                                <div class="col-sm-6">
+                                    <select  name="r_gg" id="r_gg" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_ng" class="col-sm-6 control-label">NG:</label>
+                                <div class="col-sm-6">
+                                    <select  name="r_ng" id="r_ng" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="r_gg" class="col-sm-4 control-label">GG:</label>
-                        <div class="col-sm-3">
-                            <select  name="r_gg" id="r_gg" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_dc1x" class="col-sm-6 control-label">DC1X: <?php echo $row_eq1["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_dc1x" id="r_dc1x" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_dc2x" class="col-sm-6 control-label">DC2X: <?php echo $row_eq2["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_dc2x" id="r_dc2x" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="r_ng" class="col-sm-4 control-label">NG:</label>
-                        <div class="col-sm-3">
-                            <select  name="r_ng" id="r_ng" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="form-group">
+                                <label for="r_dc12" class="col-sm-6 control-label">DC12:</label>
+                                <div class="col-sm-6">
+                                    <select  name="r_dc12" id="r_dc12" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="r_dc1x" class="col-sm-4 control-label">DC1X: <?php echo $row_eq1["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_dc1x" id="r_dc1x" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="r_dc2x" class="col-sm-4 control-label">DC2X: <?php echo $row_eq2["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_dc2x" id="r_dc2x" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="r_dc12" class="col-sm-4 control-label">DC12:</label>
-                        <div class="col-sm-3">
-                            <select  name="r_dc12" id="r_dc12" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
-                        </div>
-                    </div>
+                    <hr>
                     <?php }?>
                     <?php if ($row_compe["id_deporte"] == 1 || $row_compe["id_deporte"]== 2 || $row_compe["id_deporte"]== 3 || $row_compe["id_deporte"]== 4 || $row_compe["id_deporte"]== 5) { ?>
-                    <div class="form-group">
-                        <label for="r_runline1" class="col-sm-4 control-label">RUNLINE (<?php echo $row_part["v_runline1"]; ?>): <?php echo $row_eq1["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_runline1" id="r_runline1" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_runline1" class="col-sm-6 control-label">RUNLINE (<?php echo $row_part["v_runline1"]; ?>): <?php echo $row_eq1["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_runline1" id="r_runline1" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="r_runline2" class="col-sm-4 control-label">RUNLINE (<?php echo $row_part["v_runline2"]; ?>): <?php echo $row_eq2["equipo"]; ?></label>
-                        <div class="col-sm-3">
-                            <select  name="r_runline2" id="r_runline2" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="r_runline2" class="col-sm-6 control-label">RUNLINE (<?php echo $row_part["v_runline2"]; ?>): <?php echo $row_eq2["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_runline2" id="r_runline2" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <?php } ?>
                      <?php if ($row_compe["id_deporte"]== 2) { ?>
                     <div class="form-group">
-                        <label for="r_g5to1" class="col-sm-4 control-label">G 5to: <?php echo $row_eq1["equipo"]; ?></label>
-                        <div class="col-sm-3">
+                        <label for="r_g5to1" class="col-sm-6 control-label">G 5to: <?php echo $row_eq1["equipo"]; ?></label>
+                        <div class="col-sm-6">
                             <select  name="r_g5to1" id="r_g5to1" class="form-control">
                             	
                             	<option value="PERDEDOR">PERDEDOR</option>
@@ -278,8 +339,8 @@ include("conexion/conexion.php");
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="r_g5to2" class="col-sm-4 control-label">G 5to: <?php echo $row_eq2["equipo"]; ?></label>
-                        <div class="col-sm-3">
+                        <label for="r_g5to2" class="col-sm-6 control-label">G 5to: <?php echo $row_eq2["equipo"]; ?></label>
+                        <div class="col-sm-6">
                             <select  name="r_g5to2" id="r_g5to2" class="form-control">
                             	
                             	<option value="PERDEDOR">PERDEDOR</option>
@@ -307,7 +368,7 @@ include("conexion/conexion.php");
                         
                             <form class="form-horizontal" method="POST" action="crear_usuarios.php">
                                 <div class="form-group">
-                                    <label for="pais" class="col-sm-4 control-label">Pais:</label>
+                                    <label for="pais" class="col-sm-6 control-label">Pais:</label>
                                     <div class="col-sm-6">
                                         <select  name="pais" id="pais" class="form-control">
                                         <?php 
@@ -322,7 +383,7 @@ include("conexion/conexion.php");
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label for="agencia" class="col-sm-4 control-label">Agencia:</label>
+                                    <label for="agencia" class="col-sm-6 control-label">Agencia:</label>
                                     <div class="col-sm-6">
                                         <select  name="agencia" id="agencia" class="form-control">
                                         <?php 
@@ -338,7 +399,7 @@ include("conexion/conexion.php");
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="tipo" class="col-sm-4 control-label">Tipo de usuario:</label>
+                                    <label for="tipo" class="col-sm-6 control-label">Tipo de usuario:</label>
                                     <div class="col-sm-6">
                                         <select  name="tipo" id="tipo" class="form-control">
                                             <option value="admin">Admin</option>
@@ -348,43 +409,43 @@ include("conexion/conexion.php");
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="cedula" class="col-sm-4 control-label">Cédula:</label>
+                                    <label for="cedula" class="col-sm-6 control-label">Cédula:</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="cedula" id="cedula" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="nombre" class="col-sm-4 control-label">Nombre:</label>
+                                    <label for="nombre" class="col-sm-6 control-label">Nombre:</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="apellido" class="col-sm-4 control-label">Apellido:</label>
+                                    <label for="apellido" class="col-sm-6 control-label">Apellido:</label>
                                     <div class="col-sm-6">
                                         <input type="text" class="form-control" name="apellido" id="apellido" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="correo" class="col-sm-4 control-label">Correo:</label>
+                                    <label for="correo" class="col-sm-6 control-label">Correo:</label>
                                     <div class="col-sm-6">
                                         <input type="email" class="form-control" name="correo" id="correo" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="clave" class="col-sm-4 control-label">Password:</label>
+                                    <label for="clave" class="col-sm-6 control-label">Password:</label>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control" name="clave" id="clave" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="direccion" class="col-sm-4 control-label">Dirección:</label>
+                                    <label for="direccion" class="col-sm-6 control-label">Dirección:</label>
                                     <div class="col-sm-6">
                                         <textarea class="form-control" name="direccion" id="direccion"  rows="3" required=""></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="telefono" class="col-sm-4 control-label">Teléfono:</label>
+                                    <label for="telefono" class="col-sm-6 control-label">Teléfono:</label>
                                     <div class="col-sm-6">
                                         <input type="tel" class="form-control" name="telefono" id="telefono" placeholder="" required>
                                     </div>

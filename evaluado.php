@@ -31,7 +31,7 @@
 	
 	if ($_POST["dep"]==7) {
 
-		$sql="INSERT INTO resultados(id_partido,r_gj1,r_gj2) VALUES('".$_POST["id_partido"]."','".$_POST["r_gj1"]."','".$_POST["r_gj2"]."','".$_POST["r_alta"]."','".$_POST["r_baja"]."')";
+		$sql="INSERT INTO resultados(id_partido,r_gj1,r_gj2,r_alta,r_baja) VALUES('".$_POST["id_partido"]."','".$_POST["r_gj1"]."','".$_POST["r_gj2"]."','".$_POST["r_alta"]."','".$_POST["r_baja"]."')";
 
 	}
 

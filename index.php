@@ -74,7 +74,7 @@
         <!-- Contenido -->
         <div id="page-content-wrapper">
             <header>
-                <a href="https://www.solucionesartech.com" target="_blank"><img src="img/header3.png" class="img-responsive" alt=""></a>
+                <img src="img/header3.png" class="img-responsive" alt="">
         </header>
         
         <br>

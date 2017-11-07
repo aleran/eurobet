@@ -368,7 +368,7 @@
                                     if ($row_resul["r_gpt2"]=="GANADOR") {
                                         echo "<span class='ganador'>".$row_resul["r_gpt2"]."</span><br>";
                                     }
-                                    elseif ($row_resul["r_runline2"]=="PERDEDOR") {
+                                    elseif ($row_resul["r_gpt2"]=="PERDEDOR") {
                                        echo "<span class='perdedor'>".$row_resul["r_gpt2"]."</span><br>";
                                     }
                                     else {

@@ -29,7 +29,7 @@
         <!-- Sidebar -->
         <!-- Menu -->
         <?php 
-            include("../menu2.php");
+            include("menu_h.php");
         ?>
     </div>
 
