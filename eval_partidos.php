@@ -325,32 +325,39 @@ include("conexion/conexion.php");
                             </div>
                         </div>
                     </div>
+                    <hr>
                     <?php } ?>
                      <?php if ($row_compe["id_deporte"]== 2) { ?>
-                    <div class="form-group">
-                        <label for="r_g5to1" class="col-sm-6 control-label">G 5to: <?php echo $row_eq1["equipo"]; ?></label>
+                    <div class="row">
                         <div class="col-sm-6">
-                            <select  name="r_g5to1" id="r_g5to1" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                            <div class="form-group">
+                                <label for="r_g5to1" class="col-sm-6 control-label">G 5to: <?php echo $row_eq1["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_g5to1" id="r_g5to1" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="r_g5to2" class="col-sm-6 control-label">G 5to: <?php echo $row_eq2["equipo"]; ?></label>
                         <div class="col-sm-6">
-                            <select  name="r_g5to2" id="r_g5to2" class="form-control">
-                            	
-                            	<option value="PERDEDOR">PERDEDOR</option>
-                            	<option value="GANADOR">GANADOR</option>
-                            	<option value="PUSH">PUSH</option>
-                            </select>
+                            <div class="form-group">
+                                <label for="r_g5to2" class="col-sm-6 control-label">G 5to: <?php echo $row_eq2["equipo"]; ?></label>
+                                <div class="col-sm-6">
+                                    <select  name="r_g5to2" id="r_g5to2" class="form-control">
+                                    	
+                                    	<option value="PERDEDOR">PERDEDOR</option>
+                                    	<option value="GANADOR">GANADOR</option>
+                                    	<option value="PUSH">PUSH</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <?php } ?>               
-                            <button class="btn btn-success">Evaluar</button>
+                            <center><button class="btn btn-success">Evaluar</button></center><br>
                         
                 </form>
             </div>
