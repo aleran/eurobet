@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if ($_SESSION["pais"]==2 || $_SESSION["pais"]==4) {
+	if ($_SESSION["pais"]==2) {
 		date_default_timezone_set('America/Caracas');
 		
 	}
