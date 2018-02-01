@@ -28,6 +28,7 @@
 
 
 <body>
+    
     <div style="float:right;">
         <script src="js/meses.js"></script>
     </div>
@@ -35,16 +36,17 @@
 
     <script src="js/fecha.js"></script>
 
-    <div id="reloj" style="font-size:14px;"></div>
-    <div id="avisow"><marquee>..::<strong>IMPORTANTE:</strong> <strong>LA COMBINACIÓN <em>GANAR CON ALTA Y  RUNLINE CON ALTA</em> NO SE ENCUENTRA DISPONIBLE, PUEDES JUGAR GANAR Y BAJA O EMPATE Y ALTA</strong> -- Nuestra plataforma permite un mínimo de 2 jugadas y un máximo de 15. Montos mínimos de apuesta: <strong>COLOMBIA:</strong> $ 5.000 , <strong>VENEZUELA</strong> : Bs.F 500 ,  <strong>MÉXICO</strong>: $ 30 ::<strong>EUROBET  - ¡Tus Apuestas seguras en línea! --- </strong></marquee></div>
+    <div id="reloj" style="font-size:18px;"></div>
+    <div id="avisow"><marquee>..::<strong>IMPORTANTE:</strong> <strong>Tarifas Mínimas para: Colombia $ 2.000, México $ 30, Estados Unidos 5 $</STRONG></marquee></div>
     <div id="myModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 
-                <h4 class="modal-title"><center>¡HOLA!, BIENVENIDO A EUROBET</center></h4>
+               <h4 class="modal-title"><center>¡Hola,Bienvenido a Eurobet!</center></h4>
             </div>
             <div class="modal-body">
+                <!--<h3><center>FELIZ AÑO PARA TODOS</b><b> ¡COMIENZA A JUGAR!</center></b></h3>-->
                 <p>Este es un sitio de apuestas deportivas sólo para mayores de 18 años , ¿Deseas continuar?&nbsp;&nbsp; <strong>Elija su país y presione continuar:</strong></p>
                 <center><select name="pais" id="pais">
                     <option value="1">COLOMBIA</option>
@@ -97,7 +99,7 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                   <a href="#"> <img src="img/carreras.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
+                                   <a href="#"> <img src="img/RECARGA.jpg" alt="..." align="" width="100%" title="Recarga y juega desde la comodidad de tu hogar"></a>
                                     <div class="#">
                                         
                                         

@@ -140,7 +140,7 @@ session_start();
                                             $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                                 
                                             while($row2=mysqli_fetch_array($rs2)) {
-                                                $sql_np="SELECT id FROM partidos WHERE id_competicion='".$row2["id_competicion"]."' AND inicio=0";
+                                                $sql_np="SELECT id FROM partidos WHERE id_competicion='".$row2["id_competicion"]."' AND fecha >='".date("Y-m-d")."' AND inicio=0";
                                                 $rs_np=mysqli_query($mysqli,$sql_np) or die(mysqli_error());
                                                 $num_np=mysqli_num_rows($rs_np);
                                                 echo '<tr><td>';
