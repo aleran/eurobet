@@ -126,18 +126,9 @@ session_start();
                                 
                             include("lib/fecha_hora.php");
                             
-                            if (isset($_POST["competicion"])) {
-                                $competicion=$_POST["competicion"];
-                            }
-                            else if (isset($_GET["compe_select"])) {
-                                $competicion=unserialize(urldecode(stripslashes($_GET["compe_select"])));
-                            }
-                           
-                            if (!isset($competicion)) {
-                              echo "<script>alert('¡No seleccionó ligas!');window.location='competiciones.php?pais=".$_POST["pais"]."'</script>";
-                            }
-                             foreach ($competicion as $pb => $valor) {
-								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
+                            
+                             
+								$sql="SELECT c.id_competicion, c.competicion, c.id_deporte FROM partidos p JOIN competiciones c ON p.id_competicion=c.id_competicion WHERE p.inicio='0' AND p.fecha='".fecha()."' GROUP BY p.id_competicion";
                             	$rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
                                 
                             	while ($row=mysqli_fetch_array($rs)) {
@@ -149,17 +140,17 @@ session_start();
 
                                             	</thead>';
                                             	 echo '<tbody>';
-
+                                            $id_comp=$row["id_competicion"];
                                             $id_comp=$row["id_competicion"];
                                             if ($_SESSION["pais"]==1 || $_POST["pais"]==1 || $_SESSION["pais"]==3 || $_POST["pais"]==3 || $_SESSION["pais"]==4 || $_POST["pais"]==4) {
 
-                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."' ORDER BY fecha ASC";
+                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha = '".fecha()."' ORDER BY fecha ASC";
                                                 $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                                 $num2=mysqli_num_rows($rs2);
 
                                             }
                                             else {
-                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio_v=0 AND fecha_v >= '".fecha()."' ORDER BY fecha ASC";
+                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio_v=0 AND fecha_v= '".fecha()."' ORDER BY fecha ASC";
                                                 $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                                 $num2=mysqli_num_rows($rs2);
 
@@ -760,13 +751,14 @@ session_start();
 
                             	}
                             	
-							}
+							
 
 
                           
                            
                                      
                                 ?>
+                                <input type="hidden" name="hoy" value="hoy">
                                <tr> <td><center><button class="btn btn-primary" id="ap">CONTINUAR</button></center></td></tr>
                         </form>
                         

@@ -900,7 +900,7 @@ session_start();
         
         
        
-      },240000);
+      },360000);
 
     
     $(".menu-toggle").click(function(e) {

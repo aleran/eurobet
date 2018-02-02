@@ -108,7 +108,19 @@ session_start();
                     }
 
                 ?>
-                
+                <?php
+                     $sql_np2="SELECT count(id) as partidos FROM partidos WHERE fecha='".date("Y-m-d")."' AND inicio=0";
+                    $rs_np2=mysqli_query($mysqli,$sql_np2) or die(mysqli_error());
+                    $num_np2=mysqli_fetch_array($rs_np2);
+                    
+                ?>
+                <center>
+                    <h4 style="color:#FF8500;">Combinada</h4>
+                    <form action="partidos_hoy.php" method="POST">
+                        <input type="hidden" name="pais" value="<?php echo $_GET["pais"]; ?>">
+                        <button class='btn btn-success'>PARTIDOS DE HOY(<?php echo $num_np2["partidos"] ?>)</button>
+                    </form>
+                </center>
                 <div class="row">
 
                     
@@ -128,6 +140,7 @@ session_start();
                           
                             while($row=mysqli_fetch_array($rs)) {
                                     echo '<div class="col-lg-6">
+
                                     <div class="table-responsive">
                                         <table class="table table-striped">    
                                             <thead>

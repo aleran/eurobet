@@ -64,7 +64,7 @@ session_start();
                 <div align="center" class="visible-xs"><a href="#menu-toggle" class="btn btn-info menu-toggle"><span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> Menu</a></div>
                 <div class="row">
                     <div class="col-lg-6">
-                   	  <?php 
+                      <?php 
                     include("conexion/conexion.php");
                         if ($_SESSION["pais"]==2 || $_POST["pais"]==2) {
 
@@ -119,47 +119,38 @@ session_start();
                     </div>
                     
                 </div>
-               	<form action="apostar.php" name="jugadas" id="jugadas" method="POST">
+                <form action="directa.php" name="jugadas" id="jugadas" method="POST">
                     <div class="row">
                     
                         <?php
                                 
                             include("lib/fecha_hora.php");
                             
-                            if (isset($_POST["competicion"])) {
-                                $competicion=$_POST["competicion"];
-                            }
-                            else if (isset($_GET["compe_select"])) {
-                                $competicion=unserialize(urldecode(stripslashes($_GET["compe_select"])));
-                            }
-                           
-                            if (!isset($competicion)) {
-                              echo "<script>alert('¡No seleccionó ligas!');window.location='competiciones.php?pais=".$_POST["pais"]."'</script>";
-                            }
-                             foreach ($competicion as $pb => $valor) {
-								$sql="SELECT * FROM competiciones Where id_competicion=$valor";
-                            	$rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
+                            
+                             
+                                $sql="SELECT c.id_competicion, c.competicion, c.id_deporte FROM partidos p JOIN competiciones c ON p.id_competicion=c.id_competicion WHERE p.inicio='0' AND p.fecha='".fecha()."' GROUP BY p.id_competicion";
+                                $rs=mysqli_query($mysqli, $sql) or die (mysqli_error());
                                 
-                            	while ($row=mysqli_fetch_array($rs)) {
-                            		echo '<div class="col-lg-12">
-                                		<div class="table-responsive">
-                                        	<table class="table table-striped">    
-                                            	<thead>
-                                                	<th>'.$row['competicion'].'</th>
+                                while ($row=mysqli_fetch_array($rs)) {
+                                    echo '<div class="col-lg-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">    
+                                                <thead>
+                                                    <th>'.$row['competicion'].'</th>
 
-                                            	</thead>';
-                                            	 echo '<tbody>';
-
+                                                </thead>';
+                                                 echo '<tbody>';
+                                            $id_comp=$row["id_competicion"];
                                             $id_comp=$row["id_competicion"];
                                             if ($_SESSION["pais"]==1 || $_POST["pais"]==1 || $_SESSION["pais"]==3 || $_POST["pais"]==3 || $_SESSION["pais"]==4 || $_POST["pais"]==4) {
 
-                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha >= '".fecha()."' ORDER BY fecha ASC";
+                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio=0 AND fecha = '".fecha()."' ORDER BY fecha ASC";
                                                 $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                                 $num2=mysqli_num_rows($rs2);
 
                                             }
                                             else {
-                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio_v=0 AND fecha_v >= '".fecha()."' ORDER BY fecha ASC";
+                                                $sql2="SELECT * FROM partidos WHERE id_competicion=$id_comp AND inicio_v=0 AND fecha_v = '".fecha()."' ORDER BY fecha ASC";
                                                 $rs2=mysqli_query($mysqli, $sql2) or die (mysqli_error());
                                                 $num2=mysqli_num_rows($rs2);
 
@@ -174,33 +165,33 @@ session_start();
                                                 echo "</tr>";
                                             }
                                             while($row2=mysqli_fetch_array($rs2)) {
-                                            	$sql3="SELECT id, equipo FROM equipos WHERE id=$row2[equipo1]";
-                                            	$rs3=mysqli_query($mysqli, $sql3) or die (mysqli_error());
-                                            	$row3=mysqli_fetch_array($rs3);
-                                            	$sql4="SELECT id, equipo FROM equipos WHERE id=$row2[equipo2]";
-                                            	$rs4=mysqli_query($mysqli, $sql4) or die (mysqli_error());
-                                            	$row4=mysqli_fetch_array($rs4);
+                                                $sql3="SELECT id, equipo FROM equipos WHERE id=$row2[equipo1]";
+                                                $rs3=mysqli_query($mysqli, $sql3) or die (mysqli_error());
+                                                $row3=mysqli_fetch_array($rs3);
+                                                $sql4="SELECT id, equipo FROM equipos WHERE id=$row2[equipo2]";
+                                                $rs4=mysqli_query($mysqli, $sql4) or die (mysqli_error());
+                                                $row4=mysqli_fetch_array($rs4);
                                                 echo '<tr class="danger">';
                                                 echo '<td>Fecha - Hora</td>';
-	                                                echo '<td>Equipos</td>';
-	                                                echo '<td>Moneyline</td>';
-	                                                 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4|| $row["id_deporte"]== 7) {
-	                                                 echo '<td>Alta/Baja</td>';
-	                                             	}
-	                                                if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
-	                                                	echo '<td>Runline</td>';
-	                                                }
+                                                    echo '<td>Equipos</td>';
+                                                    echo '<td>Moneyline</td>';
+                                                     if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4|| $row["id_deporte"]== 7) {
+                                                     echo '<td>Alta/Baja</td>';
+                                                    }
+                                                    if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+                                                        echo '<td>Runline</td>';
+                                                    }
                                                     if ($row["id_deporte"] == 1) {
-	                                                	echo '<td>Primer Tiempo</td>';
+                                                        echo '<td>Primer Tiempo</td>';
                                                         //echo '<td>Segundo Tiempo</td>';
                                                         echo '<td>GG/NG</td>';
                                                         echo '<td>DoubleC</td>';
                                                     }
                                                     
-	                                                if ($row["id_deporte"] == 2) {
-	                                                	echo '<td>5to ining</td>';
-	                                                }
-	                                                
+                                                    if ($row["id_deporte"] == 2) {
+                                                        echo '<td>5to ining</td>';
+                                                    }
+                                                    
                                                 echo '</tr>';
                                                 echo '<tr class="agg">';
 
@@ -216,54 +207,54 @@ session_start();
 
                                                 }
                                               
-                                                	echo '<td>'.$row3["equipo"].'</td>';
+                                                    echo '<td>'.$row3["equipo"].'</td>';
 
-                                                	echo '<td> <input type="checkbox" class="chk" name="gj1[]" id="gj1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk" name="gj1[]" id="gj1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj1"].'"> '.$row2["gj1"].'</td>';
 
-                                                	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4|| $row["id_deporte"]== 7) {
-                                                		echo '<td> <input type="checkbox" class="chk"  name="alta[]" id="alta'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["alta"].'/'.$row2["v_alta"].'"> Alta: ( '.$row2["v_alta"].' ) '.$row2["alta"].'</td>';
-                                                	}
-                                                	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
-                                                	echo '<td> <input type="checkbox" class="chk"  name="runline1[]" id="runline1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline1"].'/'.$row2["v_runline1"].'"> ( '.$row2["v_runline1"].' )'.$row2["runline1"].'</td>';
-	                                                	
-	                                                }
+                                                     if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4|| $row["id_deporte"]== 7) {
+                                                        echo '<td> <input type="checkbox" class="chk"  name="alta[]" id="alta'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["alta"].'/'.$row2["v_alta"].'"> Alta: ( '.$row2["v_alta"].' ) '.$row2["alta"].'</td>';
+                                                    }
+                                                     if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+                                                    echo '<td> <input type="checkbox" class="chk"  name="runline1[]" id="runline1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline1"].'/'.$row2["v_runline1"].'"> ( '.$row2["v_runline1"].' )'.$row2["runline1"].'</td>';
+                                                        
+                                                    }
                                                     if ($row["id_deporte"] == 1) {
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gpt1[]" id="gpt1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt1"].'"> '.$row2["gpt1"].'</td>';
                                                    // echo '<td> <input type="checkbox" class="chk"  name="gst1[]" id="gst1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst1"].'"> '.$row2["gst1"].'</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="gg[]" id="gg'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gg"].'"> GG: '.$row2["gg"].'</td>';
 
                                                     echo '<td> <input type="checkbox" class="chk"  name="dc1x[]" id="dc1x'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc1x"].'"> DC1X: '.$row2["dc1x"].'</td>';
-                                                	
+                                                    
                                                     }
-                                                	if ($row["id_deporte"] == 2) {
-	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to1[]" id="g5to1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
-	                                                }
-                                                	
+                                                    if ($row["id_deporte"] == 2) {
+                                                        echo '<td> <input type="checkbox" class="chk"  name="g5to1[]" id="g5to1'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to1"].'"> '.$row2["g5to1"].'</td>';
+                                                    }
+                                                    
 
                                                 echo '</tr>';
                                            
                                                 echo '<tr>';
                                                    echo '<td></td>';
-                                                	echo '<td> '.$row4["equipo"].'</td>';
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gj2[]" id="gj2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
-                                                	 if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4|| $row["id_deporte"]== 7) {
-                                                		echo '<td> <input type="checkbox" class="chk"  name="baja[]"" id="baja'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["baja"].'/'.$row2["v_alta"].'">  Baja: ( '.$row2["v_alta"].' )'.$row2["baja"].'</td>';
-                                                	}
-                                                	if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
-                                                	echo '<td> <input type="checkbox" class="chk"  name="runline2[]" id="runline2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline2"].'/'.$row2["v_runline2"].'"> ( '.$row2["v_runline2"].' )'.$row2["runline2"].'</td>';
+                                                    echo '<td> '.$row4["equipo"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gj2[]" id="gj2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gj2"].'"> '.$row2["gj2"].'</td>';
+                                                     if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 4|| $row["id_deporte"]== 7) {
+                                                        echo '<td> <input type="checkbox" class="chk"  name="baja[]"" id="baja'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["baja"].'/'.$row2["v_alta"].'">  Baja: ( '.$row2["v_alta"].' )'.$row2["baja"].'</td>';
+                                                    }
+                                                    if ($row["id_deporte"] == 1 || $row["id_deporte"]== 2 || $row["id_deporte"]== 3 || $row["id_deporte"]== 5) {
+                                                    echo '<td> <input type="checkbox" class="chk"  name="runline2[]" id="runline2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["runline2"].'/'.$row2["v_runline2"].'"> ( '.$row2["v_runline2"].' )'.$row2["runline2"].'</td>';
                                                 }
                                                     if ($row["id_deporte"] == 1) {
-                                                	echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
+                                                    echo '<td> <input type="checkbox" class="chk"  name="gpt2[]" id="gpt2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gpt2"].'"> '.$row2["gpt2"].'</td>';
                                                     //echo '<td> <input type="checkbox" class="chk"  name="gst2[]" id="gst2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["gst2"].'"> '.$row2["gst2"].'</td>';
                                                     echo '<td> <input type="checkbox" class="chk"  name="ng[]" id="ng'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["ng"].'"> NG: '.$row2["ng"].'</td>';
 
                                                     echo '<td> <input type="checkbox" class="chk"  name="dc2x[]" id="dc2x'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["dc2x"].'"> DC2X: '.$row2["dc2x"].'</td>';
 
-                                                	
+                                                    
                                                     }
-                                                	if ($row["id_deporte"] == 2) {
-	                                                	echo '<td> <input type="checkbox" class="chk"  name="g5to2[]" id="g5to2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
-	                                                }
+                                                    if ($row["id_deporte"] == 2) {
+                                                        echo '<td> <input type="checkbox" class="chk"  name="g5to2[]" id="g5to2'.$row2["id"].'" value="'.$row2["id"].'/'.$row2["g5to2"].'"> '.$row2["g5to2"].'</td>';
+                                                    }
                                                 echo '</tr>';
 
                                                 echo '<tr>';
@@ -756,17 +747,18 @@ session_start();
                                                     </script>'; 
                                             }
                                             echo  '</tbody>';
-                            		 echo '</div>';
+                                     echo '</div>';
 
-                            	}
-                            	
-							}
+                                }
+                                
+                            
 
 
                           
                            
                                      
                                 ?>
+                                <input type="hidden" name="hoy" value="hoy">
                                <tr> <td><center><button class="btn btn-primary" id="ap">CONTINUAR</button></center></td></tr>
                         </form>
                         
@@ -821,14 +813,15 @@ session_start();
                 }
             }
 
-            if(n < 2){
-                alert("minimo 2 jugadas");
+           if(n > 1){
+                alert("Puede Seleccionar solo una jugada");
                 e.preventDefault();
-            }
-            else if(n >= 15){
-                alert("Maximo 15 jugadas");
+             }
+            else if(n < 1) {
+                alert("Debe seleccionar una jugada");
                 e.preventDefault();
-            }
+             }
+            
          
     }
      formul.addEventListener("submit", validar)
