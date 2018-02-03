@@ -32,23 +32,22 @@ $partidos= $_POST["partido"];
 
     
       if ($_SESSION["tipo"]=="normal") {
-         
-         if ($_POST["monto"] > $_POST["saldo"]) {
+
+         $sql_s="SELECT saldo FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
+         $rs_s=mysqli_query($mysqli,$sql_s) or die(mysqli_error());
+         $row_s=mysqli_fetch_array($rs_s);
+         $saldo = $row_s["saldo"];
+
+         if ($_POST["monto"] > $saldo) {
             header('Location: competiciones.php');
          }
-         else {
+         else if ($_POST["monto"] <= $saldo){
 
             $sql_parlay="INSERT INTO parlay(codigo,agencia,cedula,tipo,fecha,hora,monto,premio,ganar,pagado,activo) VALUES('".$ticket."','".$_SESSION['agencia']."','".$_SESSION['usuario']."','".$_POST['tipo']."','".fecha()."','".hora()."','".$_POST["monto"]."','".$_POST["premio"]."','3','0','1')";
             $rs=mysqli_query($mysqli,$sql_parlay) or die(mysqli_error($mysqli));
 
-            $sql_s="SELECT saldo FROM usuarios WHERE cedula='".$_SESSION["usuario"]."'";
-            $rs_s=mysqli_query($mysqli,$sql_s) or die(mysqli_error());
-            $row_s=mysqli_fetch_array($rs_s);
-            $saldo_final = $row_s["saldo"] - $_POST["monto"];
-            if($saldo_final < 0) {
-                $saldo_final=0;
-                header('Location: competiciones.php');
-            } 
+            $saldo_final = $saldo - $_POST["monto"];
+
             $sql_as="UPDATE usuarios SET saldo='".$saldo_final."' WHERE cedula='".$_SESSION["usuario"]."'";
             $rs_as=mysqli_query($mysqli,$sql_as) or die(mysqli_error($mysqli));
             

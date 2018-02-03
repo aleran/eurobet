@@ -111,7 +111,7 @@ session_start();
                     <h4 style="color:#FF8500;">Directa</h4>
                     <form action="partidos_hoy2.php" method="POST">
                         <input type="hidden" name="pais" value="<?php echo $_GET["pais"]; ?>">
-                        <button class='btn btn-success'>PARTIDOS DE HOY(<?php echo $num_np2 ?>)</button>
+                        <button class='btn btn-success'>PARTIDOS DE HOY (<?php echo $num_np2 ?>)</button>
                     </form>
                 </center>
                 <div class="row">

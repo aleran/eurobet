@@ -174,14 +174,6 @@
 				<form class="form-horizontal" action="cp.php" method="POST">
 				<input type="hidden" name="dep" id="dep" value="<?php echo $_POST["deporte"];?>">
 				
-				<div class="col-sm-6 col-sm-offset-3">
-					<div class="form-group">
-						
-						<div class="col-sm-8">
-						    <input type="text" required autocomplete="off" class="form-control" name="id" id="id" placeholder="ID">
-						</div>
-					</div>
-				</div>
 
 				<div class="col-sm-6 col-sm-offset-3">
 					<div class="form-group">
